@@ -15,12 +15,19 @@ class TmuxFingers < Formula
   end
 
   depends_on "crystal" => :build
+  depends_on "pkgconf" => :build
   depends_on "bdw-gc"
   depends_on "pcre2"
   depends_on "tmux"
 
+  deny_network_access!
+
+  def fetch
+    system "shards", "install", "--production", "--skip-postinstall"
+  end
+
   def install
-    system "shards", "build", "--release"
+    system "shards", "build", "--production", "--release", "--no-debug"
     bin.install "bin/tmux-fingers"
   end
 
