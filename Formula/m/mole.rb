@@ -23,6 +23,12 @@ class Mole < Formula
   depends_on "go" => :build
   depends_on :macos
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # Remove prebuilt binaries
     buildpath.glob("bin/*-go").map(&:unlink)
