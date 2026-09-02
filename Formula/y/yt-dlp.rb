@@ -75,6 +75,8 @@ class YtDlp < Formula
     sha256 "d5fa1639f63b5c4af8d932495f60689d5370f1a095782c944f7f62a303eb104e"
   end
 
+  deny_network_access! :postinstall
+
   def install
     system "make", "lazy-extractors", "pypi-files" if build.head?
     virtualenv_install_with_resources
