@@ -10,6 +10,8 @@ class Nvm < Formula
     sha256 cellar: :any_skip_relocation, all: "74e2745fc054dbbd8df6d2bd24fe4c276f3fff4d290c35853207fd24a1ecf388"
   end
 
+  deny_network_access!
+
   def install
     (prefix/"nvm.sh").write <<~SH
       # $NVM_DIR should be "$HOME/.nvm" by default to avoid user-installed nodes destroyed every update
