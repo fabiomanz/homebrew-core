@@ -39,6 +39,8 @@ class JpegTurbo < Formula
   link_overwrite "share/man/man1/cjpeg.1", "share/man/man1/djpeg.1", "share/man/man1/jpegtran.1",
                  "share/man/man1/rdjpgcom.1", "share/man/man1/wrjpgcom.1"
 
+  deny_network_access!
+
   def install
     args = ["-DWITH_JPEG8=1", "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-rpath,#{rpath}"]
     if Hardware::CPU.arm? && OS.mac?
