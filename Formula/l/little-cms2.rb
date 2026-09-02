@@ -30,6 +30,8 @@ class LittleCms2 < Formula
   depends_on "jpeg-turbo"
   depends_on "libtiff"
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args
     system "make", "install"
