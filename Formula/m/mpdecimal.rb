@@ -24,6 +24,8 @@ class Mpdecimal < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f540928b0baae439b6b7bbbb54aa0b0d8fda3631a2fb46c1d1ccd6bf9c2b5389"
   end
 
+  deny_network_access!
+
   def install
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}"
     ENV.append "LDXXFLAGS", "-Wl,-rpath,#{rpath}"
