@@ -1,8 +1,8 @@
 class NetlifyCli < Formula
   desc "Netlify command-line tool"
   homepage "https://www.netlify.com/docs/cli"
-  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-27.3.0.tgz"
-  sha256 "252b9af41c6646ec7a6e730aa95a35521d2feadc4d6660c2685bf7b9f4f9a6f4"
+  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-27.4.2.tgz"
+  sha256 "db93463ff011c66bc050c646f586cb8957398189b3c6d4e3f41e34a119a4e83b"
   license "MIT"
 
   bottle do
@@ -36,8 +36,8 @@ class NetlifyCli < Formula
   end
 
   resource "node-gyp" do
-    url "https://registry.npmjs.org/node-gyp/-/node-gyp-13.0.1.tgz"
-    sha256 "455327cde805c299d5a16603419e106853db5b9257dfb85e44eb7f4ec4d99de5"
+    url "https://registry.npmjs.org/node-gyp/-/node-gyp-13.0.2.tgz"
+    sha256 "1b1524d914331bd01312729e31a828192d53af84e113dacb6e36afabb6c21a6d"
   end
 
   def install
