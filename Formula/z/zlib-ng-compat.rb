@@ -29,6 +29,8 @@ class ZlibNgCompat < Formula
 
   link_overwrite "include/zconf.h", "include/zlib.h", "lib/libz.*", "lib/pkgconfig/zlib.pc"
 
+  deny_network_access!
+
   def install
     ENV.runtime_cpu_detection
     args = %w[
