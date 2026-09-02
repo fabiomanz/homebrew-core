@@ -33,6 +33,8 @@ class Expat < Formula
 
   keg_only :provided_by_macos
 
+  deny_network_access!
+
   def install
     if build.head?
       cd "expat"
