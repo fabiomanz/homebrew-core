@@ -22,8 +22,6 @@ class VapoursynthVszip < Formula
 
   deny_network_access! [:postinstall, :test]
 
-  def python3 = "python3.14"
-
   def install
     plugindir = "#{Language::Python.site_packages(python3)}/vapoursynth/plugins"
     system "zig", "build", "--prefix-lib-dir", plugindir, *std_zig_args
