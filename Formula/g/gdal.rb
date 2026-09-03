@@ -98,8 +98,6 @@ class Gdal < Formula
     resolves "https://github.com/OSGeo/gdal/pull/15042"
   end
 
-  def python3 = "python3.14"
-
   def install
     site_packages = prefix/Language::Python.site_packages(python3)
     # Work around Homebrew's "prefix scheme" patch which causes non-pip installs
@@ -116,7 +114,7 @@ class Gdal < Formula
       -DENABLE_PAM=ON
       -DBUILD_PYTHON_BINDINGS=ON
       -DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}
-      -DPython_EXECUTABLE=#{which(python3)}
+      -DPython_EXECUTABLE=#{python3}
       -DGDAL_PYTHON_INSTALL_LIB=#{site_packages}
       -DCMAKE_CXX_STANDARD=17
       -DGDAL_USE_OPENMP=OFF
