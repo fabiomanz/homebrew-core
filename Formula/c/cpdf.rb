@@ -1,10 +1,9 @@
 class Cpdf < Formula
   desc "PDF Command-line Tools"
   homepage "https://github.com/johnwhitington/cpdf-source"
-  url "https://github.com/johnwhitington/cpdf-source/archive/refs/tags/v2.9.1.tar.gz"
-  sha256 "8f96f92b2b19b42a6ee3aeb5986e7223a9fcfc8c65e534b6b45cb9525251ca80"
+  url "https://github.com/johnwhitington/cpdf-source/archive/refs/tags/v2.9.2.tar.gz"
+  sha256 "bfcabf3a1e1a55840df55229afc992873b311ae50bd5a9b4135c9aef7ef91f0e"
   license "AGPL-3.0-only"
-  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "1b8cdfed347cffdda29e39d92ecfd2935039aae8805bcdf507803f94b612761c"
