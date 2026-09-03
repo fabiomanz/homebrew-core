@@ -75,10 +75,6 @@ class OpencvAT4 < Formula
     end
   end
 
-  def python3
-    "python3.14"
-  end
-
   # Fix builds with FFmpeg 9.
   patch do
     url "https://github.com/opencv/opencv/commit/7551012b4e1c854c1dc36483c893f90b1c236977.patch?full_index=1"
@@ -150,7 +146,7 @@ class OpencvAT4 < Formula
       -DWITH_VTK=ON
       -DBUILD_opencv_python2=OFF
       -DBUILD_opencv_python3=ON
-      -DPYTHON3_EXECUTABLE=#{which(python3)}
+      -DPYTHON3_EXECUTABLE=#{python3}
     ]
 
     args += if OS.mac?
