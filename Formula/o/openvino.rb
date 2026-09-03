@@ -89,10 +89,6 @@ class Openvino < Formula
     sha256 "8bf8127218e51e99547bf38b8fb85a8b31c9bf96e6f3a82eb0b3b6a34155977c"
   end
 
-  def python3
-    "python3.14"
-  end
-
   # Newer OpenCL-CLHPP dropped the macro used to declare the CL_DEVICE_HOST_UNIFIED_MEMORY trait
   patch do
     url "https://github.com/openvinotoolkit/openvino/commit/dc4633aadac8e644dfab6d8aced84ebe33e09b6e.patch?full_index=1"
