@@ -81,10 +81,6 @@ class Opencv < Formula
     depends_on "zlib-ng-compat"
   end
 
-  def python3
-    "python3.14"
-  end
-
   # Drop the Caffe protobuf leftovers so DNN builds against external protobuf.
   patch do
     url "https://github.com/opencv/opencv/commit/f7ad23157f1b99b59bc9a706e9c7e4c8394947ac.patch?full_index=1"
@@ -170,7 +166,7 @@ class Opencv < Formula
       -DWITH_VTK=ON
       -DBUILD_opencv_python2=OFF
       -DBUILD_opencv_python3=ON
-      -DPYTHON3_EXECUTABLE=#{which(python3)}
+      -DPYTHON3_EXECUTABLE=#{python3}
     ]
 
     args += if OS.mac?
