@@ -12,11 +12,8 @@ class Orc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e329172340cf223077ac19ca64c9de1151f2cd70f6fa80a5c6f3e69a108d1a7b"
-    sha256 cellar: :any, arm64_sequoia: "d6858cbca62184f1e2eb4fae6b5c8dd877b0febfe61c1c834427481805ce242f"
-    sha256 cellar: :any, arm64_sonoma:  "760744ee7c33e20b65f7673e254ffa141edaa5b02d00392e0c8b6527e136dd40"
-    sha256 cellar: :any, arm64_linux:   "da2a1a311fce9111c9af82f96348fbd8f398b6436487dfb1cfac72cfc5f9dcd5"
-    sha256 cellar: :any, x86_64_linux:  "824cf43e0ada73a3476e79fb89f6926f0d2562dd717e2aef7da37c7cbb12a0c0"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 cellar: :any, tahoe: "ccc606265b76f56d1b49653fe2fbc4eee8a78f783068622801e2a33151102a47"
   end
 
   depends_on "meson" => :build

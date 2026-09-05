@@ -21,11 +21,8 @@ class Qtshadertools < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3d0bf5ce8ec69dc8c39acf4ed20556443d63dff8f67743cc6fa7b6e590dcfb4c"
-    sha256 cellar: :any, arm64_sequoia: "2ef6ac078dbc0fa9dcb90231d00430e70f72d20bd34b82745353e8fda2dd444a"
-    sha256 cellar: :any, arm64_sonoma:  "c2606bc42523b6ac8580674b0c3a648076224d1d184b95480cf251fe6ee8bbdb"
-    sha256 cellar: :any, arm64_linux:   "f2422660ec1184a399bb32f83a884813c0ad682261f4233f1bc30def5eaa5ecc"
-    sha256 cellar: :any, x86_64_linux:  "828192d5dcbc902079ab07c56c73b58defec955e7a83ee338a2457d416e5ffc0"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 cellar: :any, tahoe: "08d767722e3134339fbc766f23c3ec2353a46f505341e0b9965aabe2a21f6d2e"
   end
 
   depends_on "cmake" => :build

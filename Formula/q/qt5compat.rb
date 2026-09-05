@@ -18,11 +18,8 @@ class Qt5compat < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "66845c7323bde40e8dd99e7c78cd542ae66c889ee11dc7a24cc95198449d8f62"
-    sha256 cellar: :any, arm64_sequoia: "484b4777ba21d6dfc2320b235636f0b90b74c9cf637cf4aa97511a4912783455"
-    sha256 cellar: :any, arm64_sonoma:  "2c2045f903a552a0868a99ef15768cd755a776dc861076f20626293ac9fa9832"
-    sha256 cellar: :any, arm64_linux:   "5f902ae3afea1b20561a9659c6980418d7a574498187902bb5689175f884beb7"
-    sha256 cellar: :any, x86_64_linux:  "aac838a45f12d91833d0d3764ad6d9946b17fd560b73b18e165330367f248c9b"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 cellar: :any, tahoe: "a543e63d16893e3cdca8efda059381a461164e10d86ca5cde8158ca93b0f1359"
   end
 
   depends_on "cmake" => [:build, :test]

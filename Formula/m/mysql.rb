@@ -13,11 +13,8 @@ class Mysql < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "edfbd06d0838afb932e0865ee566037667f12bd497d3eef5af41a45756da94b3"
-    sha256 arm64_sequoia: "6937f7cd44328631f332feb5c65047a5932e2ba84a96d20656961321da6116b0"
-    sha256 arm64_sonoma:  "66a150de8a76c0eea0264d68bb9ca68413d3048364626e11b9a50db666ebbe4b"
-    sha256 arm64_linux:   "c34f8c6ccede7517ebc94ad4b5bbabbf6b2a63360911ac76b790d5f3799eac46"
-    sha256 x86_64_linux:  "3b8803ed680694cadc6f0e4e83b4603ce1bfcfcd55a8c43fec16e3d96d9536e3"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 tahoe: "ce4853aecc4d4e25b8da31d010c85b21f9a69127da9ddb45479f2ecfaa582e79"
   end
 
   depends_on "bison" => :build
