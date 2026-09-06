@@ -8,11 +8,8 @@ class Rclone < Formula
   head "https://github.com/rclone/rclone.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78f829e872a2cf2757f66502239928bcab3d7cb6fb8f0d16adfd201dfb52ff03"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3699a7a9dbc929eb2982767e6f6c43adc25726ffd6586b99bd107eac83a748f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "69e48179feccb544567f5ff3b81c871fe6053189f91710b49c9312552f19d2f6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc84378db8d922f9f0d932716676dc4c67e4452c827cf7d53f7e26285f10032c"
-    sha256 cellar: :any,                 x86_64_linux:  "15fbcca86cc4db10eafd1db3fa91d4678e060a70db453e9bdbeb108c72d0c873"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 cellar: :any_skip_relocation, tahoe: "9aaa3b7ab990f9b8a2c0f08d2a7e9d6167271220b2058c2c0657f4e5b6f3c93b"
   end
 
   depends_on "go" => :build
