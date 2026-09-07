@@ -30,7 +30,6 @@ class Influxdb < Formula
   uses_from_macos "bzip2"
 
   def install
-    python3 = which("python3.14")
     ENV["PYO3_PYTHON"] = python3
     ENV["PYTHON_SYS_EXECUTABLE"] = python3
 
@@ -70,7 +69,6 @@ class Influxdb < Formula
                           "--http-bind", "0.0.0.0:#{port}"
 
     sleep 5
-    sleep 5 if OS.mac? && Hardware::CPU.intel?
 
     curl_output = shell_output("curl --silent --head #{host}")
     assert_match "401 Unauthorized", curl_output

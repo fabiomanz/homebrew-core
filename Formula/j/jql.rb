@@ -1,18 +1,17 @@
 class Jql < Formula
   desc "JSON query language CLI tool"
   homepage "https://github.com/yamafaktory/jql"
-  url "https://github.com/yamafaktory/jql/archive/refs/tags/jql-v8.1.2.tar.gz"
-  sha256 "a8d76cf0d6c15988034cb186975fb0da360041e59350b2abead52c7801747315"
+  url "https://github.com/yamafaktory/jql/archive/refs/tags/jql-v8.1.3.tar.gz"
+  sha256 "98627a6cca5c66ee6232245a60718e1e1752e011bfda0a0b8563422d1af1c54c"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/yamafaktory/jql.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a82127900b48ff5cab1b78b1b1a4f502491aaf7a5c9108cf5f40774e3ce3a856"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0af5b5ae39fb698d0d51505b252a69c7608ad9c01493307fefd7cb4a9bef26f8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d53f0562177b605d34917aee2b142c63ee92e9bb9fce6adab96f1605ef017eea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b5460290197caa35f2a9f4bb0624fcbf5090efb45073a8a37821ffb3dab7fc2e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3dcc62490d154fe8bca6ef6a93aa42a69fdff2c9910140afa16df7366941f1a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de3883d7e0ce9eca2dafe0a3e714b38cb16257786cbb9186e28c8772620d266d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7843adbdb5e15c7acf59988f3939d44366a938b89d4cc653da59b0aeabbf4893"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d2d7cff99a9d7b2459b273286a86d4549038158ee2d70dd6d088e19cd03250b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7efbe14805c95da7a409b588bf35f472fec4355a747c5d53a5999c051fc95836"
+    sha256 cellar: :any,                 arm64_linux:   "6dbb40b982d7dd67196575c1c35d6fb350cb737588e9bdc04759d77ae858072a"
+    sha256 cellar: :any,                 x86_64_linux:  "f47153767407cfab924ac3dfbc27306a78fe50903fb65eb964c215418339de2d"
   end
 
   depends_on "rust" => :build

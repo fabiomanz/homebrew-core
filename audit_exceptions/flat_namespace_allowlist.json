@@ -12,7 +12,6 @@
   "pypy",
   "pypy3.10",
   "pypy3.11",
-  "pypy3.9",
   "soapysdr",
   "tcl-tk@8",
   "uhd"
