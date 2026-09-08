@@ -7,8 +7,11 @@ class Pygobject3 < Formula
   compatibility_version 1
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "91150f8e17322db8cc8325fe6dbead50c61d50d4b1e15188aafa6dbe5ac0f5de"
+    sha256 cellar: :any, arm64_tahoe:   "e0cea8a3c19efd7f42aeafcb4984c91021d32ec33236026fa0076188d387bce8"
+    sha256 cellar: :any, arm64_sequoia: "c74b6b2e15dacaf078d61343744a187b1314cac236d400ee3a2919e5a5ea80ba"
+    sha256 cellar: :any, arm64_sonoma:  "951312ab397caff435a557403b8a3df7729e975ed607374953a1ed2049ea5e42"
+    sha256 cellar: :any, arm64_linux:   "b6585e7540b17a48d30f88fcc9544cf5b5b2d1586a9ed3cc9069f90810c76876"
+    sha256 cellar: :any, x86_64_linux:  "47da6e2a9f3449014a5d741fb7758443fa0a353d5c309395eff5e33f720774ec"
   end
 
   depends_on "meson" => :build

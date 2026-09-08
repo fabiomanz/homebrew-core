@@ -2,17 +2,16 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
-  revision 3
   compatibility_version 1
 
   stable do
-    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.28.6/gstreamer-1.28.6.tar.bz2"
-    sha256 "fd51f0e32fded3f78ed31eab94a7e41b1cd56763abc853f6fd03d740d8bc4b90"
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.28.7/gstreamer-1.28.7.tar.bz2"
+    sha256 "4aabbbf88837a592d425c592c852c577359df65f62c2f58d57db7695d6ebbaa8"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.28.6/gst-plugins-rs-gstreamer-1.28.6.tar.bz2"
-      sha256 "2e565b9add015d054cc2d1b9e553f75f366f8e13127a74e9366b7d577491492e"
+      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.28.7/gst-plugins-rs-gstreamer-1.28.7.tar.bz2"
+      sha256 "d5acc3e2cd92f09ccfefa357905758274b205ce9b3521ab1d88dbb4072a25f21"
 
       livecheck do
         formula :parent
@@ -26,8 +25,11 @@ class Gstreamer < Formula
   end
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "08d7247b36dda26bf72ab03eac80b07d29f921a8579d22054f6ceaf91ee13c4c"
+    sha256 arm64_tahoe:   "137dabbbaeada1baaed79a2f5241f85e6f4324ed463d3e40b551474225deb12f"
+    sha256 arm64_sequoia: "0a65b9e2d40c5d0d5ccdea02318b2dbf1b341d7e5ccc624eac46d98d74a0f629"
+    sha256 arm64_sonoma:  "ecd26bccedb5ea49050dc3560949f02d3a44f7c5e4121391b04b544e5baece94"
+    sha256 arm64_linux:   "b521cfdb0b68573c1ddb02bd9f4d23e3dc079835a06ef6eee8d12c17b6e0d904"
+    sha256 x86_64_linux:  "f111660004f18eb8f1437591731fcb021fa5bbe8b6f17195e20794c1bb8c1406"
   end
 
   head do
