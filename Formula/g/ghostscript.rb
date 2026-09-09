@@ -20,11 +20,8 @@ class Ghostscript < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "9fdf9326aaf65459113953809f9abbffbd48e99158ba7a3505895bd61df89e46"
-    sha256 arm64_sequoia: "e2ef1284b4e8818c789f968ffa2193b9d4f51c0879ca1d2a93be5239efc2bc95"
-    sha256 arm64_sonoma:  "be72b022398cf813a67a667dd0b5537d78b178808002af8f653365d8594d29f1"
-    sha256 arm64_linux:   "3e85f7ce71f33514c033e2018f7414a0cec27095c6fc65de7786814e758050a4"
-    sha256 x86_64_linux:  "94327e6306a4691f6967628aaa58c160a4a78f46ae793f05316e0a7a13a49f2b"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 tahoe: "05524baae467ac558a2a860aa660a395dac71699c7f19aa0761925fe543d0b05"
   end
 
   head do
