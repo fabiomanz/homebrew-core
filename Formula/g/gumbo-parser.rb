@@ -7,11 +7,8 @@ class GumboParser < Formula
   compatibility_version 2
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "aeb97dc8e078af3ca64411c25764f720da99caa323eecac8b03977e120093dc7"
-    sha256 cellar: :any, arm64_sequoia: "c5912aa60532919751ec4b2ab685d3528c93307893d3cf8e9769f96d8fb95062"
-    sha256 cellar: :any, arm64_sonoma:  "2e1ef3ac6dab8b652948b93cedb24cce0c9d63aebcd7e91091b62cf83ec3f981"
-    sha256 cellar: :any, arm64_linux:   "3559d483ddc898a201c1be70e9a2da4eb5116537badd05dbfcd4c45c01774501"
-    sha256 cellar: :any, x86_64_linux:  "964e6729f73031fee018819b1f746092bfa6b33c64aaaf2a864981f653374ce9"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 cellar: :any, tahoe: "c97e47b375731e64bccfba60d2e9ff3c470fe44744a71c22dabc4f6976ffabee"
   end
 
   depends_on "autoconf" => :build
