@@ -12,12 +12,12 @@ class LlvmAT22 < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "25c3eb544ec9c7d127c652f4a05dffe6820c38d00bf1493fffc0281fb450245c"
-    sha256               arm64_sequoia: "fdf8af7b6a66548f0a6a0e8c2e253198f094a8d35dfd91ed2718448b5321cc61"
-    sha256               arm64_sonoma:  "e970188c03ce29a4e8adcad5e61b5df6182939d8725c7e97d15ee37073614959"
-    sha256 cellar: :any, sonoma:        "7532f55fe6277c80b610036b41c53e547c76416e118bad15e5731b877786ba96"
-    sha256 cellar: :any, arm64_linux:   "e72b0df8106b8e65928f3b464771abe4981a4d3b05f7d2cfbc46cee471a851aa"
-    sha256 cellar: :any, x86_64_linux:  "2277ba3b8ea295ee15e50b8057ef1161c7bec8b309117c215ed8e7e8cfe823ac"
+    rebuild 2
+    sha256               arm64_golden_gate: "3979809f7ab4398bbb738355bd32b186911800faef497b85a1ce8ca3bd6ee1a3"
+    sha256               arm64_tahoe:       "a321c5b4ac3657f54fab8fe455146c9f15c0b4f074983c822dba955fb04e0840"
+    sha256               arm64_sequoia:     "9705fde2a45b982f91bdfe60d1023fabf12266e67d24ba7bacc963c2950174d1"
+    sha256 cellar: :any, arm64_linux:       "94785e8ca8fcf820119a423f17fed2153c49b78768f12e81062a3a3c2d47ddbf"
+    sha256 cellar: :any, x86_64_linux:      "6a24b4e413983d48cebda87e1d3e7a19287e07213d84a18825d52ab0638ab4ba"
   end
 
   keg_only :versioned_formula
@@ -43,6 +43,26 @@ class LlvmAT22 < Formula
     sha256 "f6dafd762737eb79761ab7ef814a9fc802ec4bb8d20f46691f07178053b0eb36"
     type :unofficial
     resolves "https://github.com/llvm/llvm-project/pull/111397"
+  end
+
+  # Backport fixes for macOS 27
+  patch do
+    url "https://github.com/llvm/llvm-project/commit/18c1cbce6874a7341f357014befb66d4c11a04a9.patch?full_index=1"
+    sha256 "e2d7fc13d39948e8d957f386fb8081abdda50f76ba61d4fa9ecdfcd3556423e3"
+    type :backport
+    resolves "https://github.com/llvm/llvm-project/pull/203680"
+  end
+  patch do
+    url "https://github.com/llvm/llvm-project/commit/6e562169fd026e26124fe4e2e435d3a4c522ffe2.patch?full_index=1"
+    sha256 "8091d44d10ad585052fbb13669095b8a804bc00681b3df4ff32dc37c48784e47"
+    type :backport
+    resolves "https://github.com/llvm/llvm-project/pull/205044"
+  end
+  patch do
+    url "https://github.com/llvm/llvm-project/commit/b8007a8e4020b8bca2b12e941660e10bf5bf6716.patch?full_index=1"
+    sha256 "e41e300eb6f5cca9172ab344e572c3fb24f0d05885ae23dd7cb4f9c2528839f7"
+    type :backport
+    resolves "https://github.com/llvm/llvm-project/pull/222721"
   end
 
   def clang_config_file_dir
