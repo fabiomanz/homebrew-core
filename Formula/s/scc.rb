@@ -12,8 +12,11 @@ class Scc < Formula
   end
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, tahoe: "8d1f762599546f5d6c38faa997971a861fc3b32be948e98546673eeb678f5204"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "74e37c3265026b9cbe198cc876d592b94a59636ad22ebcc5a83935cbf6826d3c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "74e37c3265026b9cbe198cc876d592b94a59636ad22ebcc5a83935cbf6826d3c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "74e37c3265026b9cbe198cc876d592b94a59636ad22ebcc5a83935cbf6826d3c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "19a4f2048124c8b2f493e96738a9795c17f31d9d94ccf61894c768e6e52efde3"
+    sha256 cellar: :any,                 x86_64_linux:  "256fd514180a491c9d415b665dc21de9d0f026efdab2f582e56662224866997d"
   end
 
   depends_on "go" => :build

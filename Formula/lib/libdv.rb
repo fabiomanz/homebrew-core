@@ -27,17 +27,18 @@ class Libdv < Formula
   depends_on "pkgconf" => :build
   depends_on "popt"
 
+  # On macOS, _SC_PRIORITY_SCHEDULING is defined but sched_setscheduler is unavailable
+  # https://sourceforge.net/p/libdv/patches/43/
+  patch :p0 do
+    url "https://sourceforge.net/p/libdv/patches/_discuss/thread/7c774d02/1f37/attachment/libdv-1.0.0-darwin.patch"
+    sha256 "6c9632b4ff6a6580b00f294b5db5b27e058fc04b87f4cf2134e056da13f0a305"
+    type :unofficial
+  end
+
   # remove SDL1 dependency by force
   patch :DATA
 
   def install
-    # This fixes an undefined symbol error on compile.
-    # See the port file for libdv:
-    #   https://trac.macports.org/browser/trunk/dports/multimedia/libdv/Portfile
-    # This flag is the preferred method over what macports uses.
-    # See the apple docs: https://cl.ly/2HeF bottom of the "Finding Imported Symbols" section
-    ENV.append "LDFLAGS", "-undefined dynamic_lookup" if OS.mac?
-
     system "autoreconf", "--force", "--install", "--verbose"
 
     # Fix compile with newer Clang

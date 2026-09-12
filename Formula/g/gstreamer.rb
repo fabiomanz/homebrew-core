@@ -25,8 +25,11 @@ class Gstreamer < Formula
   end
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "69cf1babaa1da4421c09a3bd02c2e7b42bc7853b334269d46ac1c6715505843f"
+    sha256 arm64_tahoe:   "137dabbbaeada1baaed79a2f5241f85e6f4324ed463d3e40b551474225deb12f"
+    sha256 arm64_sequoia: "0a65b9e2d40c5d0d5ccdea02318b2dbf1b341d7e5ccc624eac46d98d74a0f629"
+    sha256 arm64_sonoma:  "ecd26bccedb5ea49050dc3560949f02d3a44f7c5e4121391b04b544e5baece94"
+    sha256 arm64_linux:   "b521cfdb0b68573c1ddb02bd9f4d23e3dc079835a06ef6eee8d12c17b6e0d904"
+    sha256 x86_64_linux:  "f111660004f18eb8f1437591731fcb021fa5bbe8b6f17195e20794c1bb8c1406"
   end
 
   head do

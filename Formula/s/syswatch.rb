@@ -1,16 +1,16 @@
 class Syswatch < Formula
   desc "Cross-platform system diagnostics TUI"
   homepage "https://www.netwatchlabs.com/labs/syswatch"
-  url "https://github.com/matthart1983/syswatch/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "2d8086cf67b3a5cf661d2c2ee552e29c40a1f46b655170360d9f8aae9cd097e8"
+  url "https://github.com/matthart1983/syswatch/archive/refs/tags/v0.14.1.tar.gz"
+  sha256 "c76f0f9f29044f6854edf5280533d0c560d3a52302c134dd37223e222cc86148"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ecaeb84842633946cc10619b0e6a5fc5f003d311d422d4e37d15842ab162f9eb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52ab613c0e418b8d05d4f638309ae54f5a2016662080e275435c55b78b5bd290"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d678d5a20b4bac94c4dfe8b9a18fa32f44e9abc8a0f8aa577828c35f72f6f07d"
-    sha256 cellar: :any,                 arm64_linux:   "d84e3a0757a8b15f60e6a4fa2210d5cfba7445c0e0034d9d5248c35517c34299"
-    sha256 cellar: :any,                 x86_64_linux:  "767b96c83309303811d7c263b162fd76513f801a0e532b624c516ef6251f3a9d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9b8c5a1f185bdc4a3927401d8a3d4c88d1cbde6d7747895d9e0743de9ffd9f75"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f6e5d1394f3b06418b657b04487d6327e9a510a7b807d0b628805ad76ec69328"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7cdad0285df290844cfebf5b88edfe92e896768a590beb5dd7603c73e25b5fa9"
+    sha256 cellar: :any,                 arm64_linux:       "a2033119b94c264b659848bfcdb50321211ede0a0a541cb7dc75c72657d58502"
+    sha256 cellar: :any,                 x86_64_linux:      "641b381b742a74b124f089fc799659351b86e016511b1645c43d5450b6d176b4"
   end
 
   depends_on "rust" => :build
@@ -36,7 +36,7 @@ class Syswatch < Formula
       Process.kill("TERM", wait_thr.pid)
     end
 
-    screenlog = (testpath/"screenlog.txt").read
+    screenlog = (testpath/"screenlog.txt").read.scrub
     assert_match "Services", screenlog
     # match text in help dialog
     assert_match "Procs tab", screenlog

@@ -15,7 +15,9 @@ class Opentofu < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c217fa12380b0aaf4836ec0dd9d53cb124755aa4d7975073a84b5cec85caac24"
   end
 
-  depends_on "go" => :build
+  # TODO: unpin go@1.26 when OpenTofu supports Go 1.27
+  # Ref: https://github.com/opentofu/opentofu/pull/4496
+  depends_on "go@1.26" => :build
 
   conflicts_with "tenv", "tofuenv", because: "both install tofu binary"
 
