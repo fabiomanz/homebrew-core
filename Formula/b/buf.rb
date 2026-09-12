@@ -15,11 +15,8 @@ class Buf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "df04188ac60caaed0d938a0c192a6b014720e000f91a5ef9a325f92452071841"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "df04188ac60caaed0d938a0c192a6b014720e000f91a5ef9a325f92452071841"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "df04188ac60caaed0d938a0c192a6b014720e000f91a5ef9a325f92452071841"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8b079ebce6f2b387af366ea19a2462d58f5746b4d59f2b99cb8e799f874810dc"
-    sha256 cellar: :any,                 x86_64_linux:      "8820ef7b124ded0b13751752af6d2c754340c9d84c3a6dac7cce112b49b3fac2"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 cellar: :any_skip_relocation, tahoe: "732546e7585b9451ac7753c043de1e7c1f715000e1d89f641a606d874de30eef"
   end
 
   depends_on "go" => :build
