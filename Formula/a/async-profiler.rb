@@ -50,7 +50,7 @@ class AsyncProfiler < Formula
 
     # The profiler can begin started as a JVMTI agent
     agent_lib = shared_library("libasyncProfiler")
-    system Formula["openjdk"].bin/"java",
+    system formula_opt_bin("openjdk")/"java",
            "-agentpath:#{lib}/#{agent_lib}=start,event=cpu,lock=10ms,file=test-profile-via-lib.jfr",
            testpath/"Main.java", "2"
     assert_path_exists testpath/"test-profile-via-lib.jfr"

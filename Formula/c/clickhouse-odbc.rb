@@ -125,9 +125,9 @@ class ClickhouseOdbc < Formula
     ENV["ODBCINI"] = "#{ENV["ODBCSYSINI"]}/my.odbc.ini"
 
     assert_match "Connected!",
-      pipe_output("#{Formula["unixodbc"].bin}/isql 'ClickHouse ODBC Test DSN A'", "quit\n")
+      pipe_output("#{formula_opt_bin("unixodbc")}/isql 'ClickHouse ODBC Test DSN A'", "quit\n")
 
     assert_match "Connected!",
-      pipe_output("#{Formula["unixodbc"].bin}/iusql 'ClickHouse ODBC Test DSN W'", "quit\n")
+      pipe_output("#{formula_opt_bin("unixodbc")}/iusql 'ClickHouse ODBC Test DSN W'", "quit\n")
   end
 end

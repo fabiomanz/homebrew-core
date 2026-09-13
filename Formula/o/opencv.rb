@@ -25,11 +25,12 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a2044b00390dcd02cd22e763ad0f6be1cbde5c483f2ad37aa167436b413ff696"
-    sha256 arm64_sequoia: "b3ac01527017d5a9c00bae53f0f31640be164db958136e8e720b8ac17b91f62a"
-    sha256 arm64_sonoma:  "55d176d2c40cae1e9bca6f499bcf0f51932c0e5d8911b4aa9306931ee84e65ce"
-    sha256 arm64_linux:   "b6a22a320aeea9526a7ad1928e104bdb6884f0566d1c4ff8778be93154dc8402"
-    sha256 x86_64_linux:  "3187ab15a6e24271a3234d5edcb8c706f4535ddbb9344ea4e78392e4131c228c"
+    sha256 arm64_golden_gate: "c3b4699b9b846542771fd2140fc5f1cbf4506cef5bfcf9f156602eda7b9f9b57"
+    sha256 arm64_tahoe:       "a2044b00390dcd02cd22e763ad0f6be1cbde5c483f2ad37aa167436b413ff696"
+    sha256 arm64_sequoia:     "b3ac01527017d5a9c00bae53f0f31640be164db958136e8e720b8ac17b91f62a"
+    sha256 arm64_sonoma:      "55d176d2c40cae1e9bca6f499bcf0f51932c0e5d8911b4aa9306931ee84e65ce"
+    sha256 arm64_linux:       "b6a22a320aeea9526a7ad1928e104bdb6884f0566d1c4ff8778be93154dc8402"
+    sha256 x86_64_linux:      "3187ab15a6e24271a3234d5edcb8c706f4535ddbb9344ea4e78392e4131c228c"
   end
 
   head do
@@ -182,8 +183,8 @@ class Opencv < Formula
         -DOPENEXR_ILMTHREAD_LIBRARY=#{formula_opt_lib("openexr")}/libIlmThread.so
         -DPNG_LIBRARY=#{formula_opt_lib("libpng")}/libpng.so
         -DPROTOBUF_LIBRARY=#{formula_opt_lib("protobuf")}/libprotobuf.so
-        -DPROTOBUF_INCLUDE_DIR=#{Formula["protobuf"].include}
-        -DPROTOBUF_PROTOC_EXECUTABLE=#{Formula["protobuf"].bin}/protoc
+        -DPROTOBUF_INCLUDE_DIR=#{formula_opt_include("protobuf")}
+        -DPROTOBUF_PROTOC_EXECUTABLE=#{formula_opt_bin("protobuf")}/protoc
         -DTIFF_LIBRARY=#{formula_opt_lib("libtiff")}/libtiff.so
         -DWITH_V4L=OFF
         -DZLIB_LIBRARY=#{formula_opt_lib("zlib-ng-compat")}/libz.so

@@ -12,8 +12,12 @@ class Dartaotruntime < Formula
   end
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, tahoe: "3039813df1450e816a3cbe707ff5b75db3a259ebc573adc3f8da379de890b785"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "84cd16acf230ae245e9e8ceeba1db15964a8f0cdd65b4ab76ad23eb3f0d1d461"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "874eebf42fd268371e55411baa47b420e57e6722e8ad98a7f598db8ae5f78a92"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "57265a76550b5a1dd6e8cc5003410d4d533eb0a01aa71812f06fd4ec1663da4d"
+    sha256 cellar: :any,                 arm64_linux:       "9b0ca40301c174d20635d33f3a7e319cc38a24ffbbc749602afe3ce435f1a5c1"
+    sha256 cellar: :any,                 x86_64_linux:      "371cc589cc8fbd3689cfef83bb4971d1d1547f35a8d4d4ece255ab4f91aa2681"
   end
 
   depends_on "ninja" => :build
@@ -44,7 +48,11 @@ class Dartaotruntime < Formula
     ENV["DEPOT_TOOLS_UPDATE"] = "0"
     ENV.append_path "PATH", buildpath/"depot-tools"
 
-    system "gclient", "config", "--name", "sdk", "https://dart.googlesource.com/sdk.git@#{version}"
+    # Roll clang to include lld support for arm64e.x1 targets in the macOS 27 SDK (llvm/llvm-project#222721)
+    # TODO: Remove when upstream rolls clang past that commit, see https://github.com/dart-lang/sdk/issues/64264
+    system "gclient", "config", "--name", "sdk",
+           "--custom-var", 'clang_version="git_revision:07d67299a15ce03b053736e2d31a668ee0576987"',
+           "https://dart.googlesource.com/sdk.git@#{version}"
     system "gclient", "sync", "--no-history"
 
     cd "sdk" do

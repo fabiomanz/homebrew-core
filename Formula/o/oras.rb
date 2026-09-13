@@ -22,6 +22,13 @@ class Oras < Formula
 
   depends_on "go" => :build
 
+  # `test do` block binds a local port
+  deny_network_access! [:build, :postinstall]
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -X oras.land/oras/internal/version.Version=#{version}
