@@ -1,8 +1,8 @@
 class Apko < Formula
   desc "Build OCI images from APK packages directly without Dockerfile"
   homepage "https://github.com/chainguard-dev/apko"
-  url "https://github.com/chainguard-dev/apko/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "0f9e882489b04b3a36b2c620ab4df6ae485dd84dbed3cab742d70b2b56655ef9"
+  url "https://github.com/chainguard-dev/apko/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "34c32c9410c6f2a20ae7a60c1607a02414364d9fb23b62bfed353fd2f6c07489"
   license "Apache-2.0"
   head "https://github.com/chainguard-dev/apko.git", branch: "main"
 
@@ -15,12 +15,11 @@ class Apko < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c4da30844094ed39545e57b327b369665cd9faa261fc8821776d9f76d975c89a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "12e39d3639fb37851570afe09de84d07bc88dc70146d0e38ea23f36996791900"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "93c685c9333b130c2f9e1a88474d813d1d2cbc897f6b5bc94cecb21155e9bda1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "554093ba5ae521bf9983038306311c69c82d96b9cd1f3370af54c9b36543bcef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b5efdc29772c5ed4654e9be61563063908496a7b0d0bab269ad5818afaed88f0"
-    sha256 cellar: :any,                 x86_64_linux:      "8599af396faaf112b21d0c244835e0dd35d5357badb109b45688f6a61ef3353f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "000e90490851458379918dfafc7d7ec3d990870634b7d00110b6e3d6fc070147"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a205e41c1edcb5da502e23a2fda6e3d5308f7db61a3197c3c586769c6264c15f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b1f7b6475421c41defd78614bced06fb6538912cd9c3194b987f635521078fca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8b70e416201c80cbd548d8b54b6e6b7041856a2078543cdb69f23aa573d88696"
+    sha256 cellar: :any,                 x86_64_linux:      "11bb057992dc8c42ee55799b33d2d31d54409882a4bfd38b1b3f4a68cbbf4ede"
   end
 
   depends_on "go" => :build

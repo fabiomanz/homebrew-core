@@ -29,9 +29,14 @@ class Supabase < Formula
     depends_on "icu4c@78"
   end
 
-  def install
-    system "pnpm", "install", "--frozen-lockfile", "--ignore-scripts"
+  deny_network_access!
 
+  def fetch
+    system "go", "mod", "download", "-C", "apps/cli-go"
+    system "pnpm", "install", "--frozen-lockfile", "--ignore-scripts"
+  end
+
+  def install
     # plpgsql-deparser imports @libpg-query/parser without declaring it, which pnpm's
     # global virtual store cannot resolve. Link it in rather than patching
     # pnpm-workspace.yaml, which would invalidate the lockfile.
