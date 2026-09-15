@@ -12,8 +12,12 @@ class Dartaotruntime < Formula
   end
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, tahoe: "ec0c7e3925648b98121d007d5dfae45a599cc52bc6dedc8c0bc58df6a8636cc7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "84cd16acf230ae245e9e8ceeba1db15964a8f0cdd65b4ab76ad23eb3f0d1d461"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "874eebf42fd268371e55411baa47b420e57e6722e8ad98a7f598db8ae5f78a92"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "57265a76550b5a1dd6e8cc5003410d4d533eb0a01aa71812f06fd4ec1663da4d"
+    sha256 cellar: :any,                 arm64_linux:       "9b0ca40301c174d20635d33f3a7e319cc38a24ffbbc749602afe3ce435f1a5c1"
+    sha256 cellar: :any,                 x86_64_linux:      "371cc589cc8fbd3689cfef83bb4971d1d1547f35a8d4d4ece255ab4f91aa2681"
   end
 
   depends_on "ninja" => :build
@@ -61,7 +65,7 @@ class Dartaotruntime < Formula
   end
 
   test do
-    dart = Formula["dart-sdk"].bin/"dart"
+    dart = formula_opt_bin("dart-sdk")/"dart"
     system dart, "create", "dart-test"
     cd "dart-test" do
       system dart, "compile", "aot-snapshot", "bin/dart_test.dart"

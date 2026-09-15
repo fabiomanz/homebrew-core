@@ -25,6 +25,13 @@ class MongodbAtlasCli < Formula
 
   conflicts_with "atlas", "nim", because: "both install `atlas` executable"
 
+  # `test do` block expects an `unauthorized` error from cloud.mongodb.com
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["ATLAS_VERSION"] = version.to_s
     ENV["MCLI_GIT_SHA"] = "homebrew-release"

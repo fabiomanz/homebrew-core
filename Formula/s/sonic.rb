@@ -1,18 +1,16 @@
 class Sonic < Formula
   desc "Fast, lightweight & schema-less search backend"
   homepage "https://github.com/valeriansaliou/sonic"
-  url "https://github.com/valeriansaliou/sonic/archive/refs/tags/v1.8.1.tar.gz"
-  sha256 "41e18e27fc8f1aa5d156877497fbc8960a4800c771cbd76ac5d221b0c203c95f"
+  url "https://github.com/valeriansaliou/sonic/archive/refs/tags/v1.9.0.tar.gz"
+  sha256 "4ce52d4bcb5411eb11a78648ed466bad938abedba1f20c4f17397108c23306b7"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c9be0feeb6dd9c413ae52c56dc422dc0517137bf996ddf25153017629c855416"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "62f7f84c587f8dcd4b10bb2f6d5d1d90f41d801a48a71e961ce3c0578c366a1c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "36253e08494b81dda36c123ff2087b5eca859cb40ede9ca24f67880d999d78ab"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a893cd56f7143dc605d4c16ef6e42476181a15398f9ceaa0bff4a9ebdf69f396"
-    sha256 cellar: :any_skip_relocation, sonoma:            "6b836a5514f7f2433f84fdc8a3423ffec0c9a2ce46b37280cb1c9881b016237b"
-    sha256 cellar: :any,                 arm64_linux:       "386ad2610ffa0db0f447b0a275297f698a5a40e99bbea68d1079945d7d285871"
-    sha256 cellar: :any,                 x86_64_linux:      "13a3c03f6e821b12af217c45b65202df0102c90a8d3767120023e9ae893a9eb8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cc2c86807f17ccc0172887722822dbb1613944e22f7324393a08afa8bb2df0e3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7944100f15990a407495fdd5af647d7c8db208ee705ca70c633c9d6a7035edaa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e7e26d2b4e16f863ecc12a104fbbe926385195e5f22c6e623de788a08320f653"
+    sha256 cellar: :any,                 arm64_linux:       "2bddc8accb772d356576c1f20ff43d1f9020d9c9a49f4e2d5489e178a34b97f0"
+    sha256 cellar: :any,                 x86_64_linux:      "38ef42be0c377e65ad5a43da3840701c3b70111196b96bc630ffe35b7919ec48"
   end
 
   depends_on "rust" => :build
