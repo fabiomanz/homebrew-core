@@ -96,6 +96,10 @@ class PortableRuby < PortableFormula
       --disable-dependency-tracking
     ]
 
+    # The Intel bottle is cross-built on a GitHub macos-15 runner whose Xcode
+    # ships <stdckdint.h>, so configure bakes HAVE_STDCKDINT_H into the shipped
+    # config.h and native gem builds on older Xcode/CLT fail to find it.
+    args << "ac_cv_header_stdckdint_h=no" if OS.mac? && Hardware::CPU.intel?
     # We don't specify OpenSSL as we want it to use the pkg-config, which `--with-openssl-dir` will disable
     args += %W[
       --with-libyaml-dir=#{libyaml.opt_prefix}

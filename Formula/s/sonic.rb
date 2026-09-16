@@ -1,21 +1,28 @@
 class Sonic < Formula
   desc "Fast, lightweight & schema-less search backend"
   homepage "https://github.com/valeriansaliou/sonic"
-  url "https://github.com/valeriansaliou/sonic/archive/refs/tags/v1.9.0.tar.gz"
-  sha256 "4ce52d4bcb5411eb11a78648ed466bad938abedba1f20c4f17397108c23306b7"
+  url "https://github.com/valeriansaliou/sonic/archive/refs/tags/v1.9.1.tar.gz"
+  sha256 "e17bdd7ee68dd4e7fe4d992f134a5819c3af63a8dc467a6f092450e8e744efc0"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cc2c86807f17ccc0172887722822dbb1613944e22f7324393a08afa8bb2df0e3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7944100f15990a407495fdd5af647d7c8db208ee705ca70c633c9d6a7035edaa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e7e26d2b4e16f863ecc12a104fbbe926385195e5f22c6e623de788a08320f653"
-    sha256 cellar: :any,                 arm64_linux:       "2bddc8accb772d356576c1f20ff43d1f9020d9c9a49f4e2d5489e178a34b97f0"
-    sha256 cellar: :any,                 x86_64_linux:      "38ef42be0c377e65ad5a43da3840701c3b70111196b96bc630ffe35b7919ec48"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5df83ddd3c235107da258734e7b9706509ba185ef576584c8330d03807c82844"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c1cfb531591a40593eb201b5029b139697aca06cbdd4fd08426ed4d2c28b0cd1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3b731a264f1388a0cf976114fd155d885502cedd2f2238dba389fc9b6b6668c7"
+    sha256 cellar: :any,                 arm64_linux:       "3ee5ce055b9d547357a8919d3751e37707e39262b48f32f0585a0d25b488ff5b"
+    sha256 cellar: :any,                 x86_64_linux:      "343d22af66d4917ea629365a5f22b3278a115b7c9f044d3d3fe185f775cac2c6"
   end
 
   depends_on "rust" => :build
 
   uses_from_macos "llvm" => :build
+
+  # `test do` block runs a local server
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", "--locked", "--target", "host-tuple"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "server")
