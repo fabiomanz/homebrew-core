@@ -13,11 +13,8 @@ class GitlabRunner < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4cc74411141a95c4d90fe213a292e7ba968cf487ae9fc1220f994189646ce3bf"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "019bda430e04e32d6f484359ba326a1c59358440442cc063b25739666ab824e4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3f5db4ad6285d5b2f9aec15052710565a2e9e79e8004e06b3d62a86767085c91"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "a5e18c5c9c392d633eae044d7a4149774aacee206af4d47349709245c0424cdf"
-    sha256 cellar: :any,                 x86_64_linux:      "2d1819f4910428167134ec6e72b1fad7e899669a33443ffffb040301200627e7"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 cellar: :any_skip_relocation, tahoe: "c6f4f448ffdab78ac913f66643ba810239f4d66e9176a8ac01fef22ff6091e23"
   end
 
   depends_on "go" => :build
