@@ -67,12 +67,14 @@ class Hashcat < Formula
   end
 
   test do
+    ENV["XDG_CACHE_HOME"] = testpath
     ENV["XDG_DATA_HOME"] = testpath
-    mkdir testpath/"hashcat"
+    (testpath/"hashcat").mkpath
 
     # OpenCL is not supported on virtualized arm64 macOS
-    no_opencl = OS.mac? && Hardware::CPU.arm?
-    no_metal = !OS.mac?
+    # Metal on macOS 27 doesn't seem to work yet
+    no_opencl = OS.mac? && Hardware::CPU.virtualized?
+    no_metal = !OS.mac? || MacOS.version >= :golden_gate
 
     args = %w[
       --benchmark
@@ -80,9 +82,11 @@ class Hashcat < Formula
       --workload-profile=2
     ]
     args << (no_opencl ? "--backend-ignore-opencl" : "--opencl-device-types=1,2")
+    args << "--backend-ignore-metal" if OS.mac? && no_metal
 
     if no_opencl && no_metal
-      assert_match "No devices found/left", shell_output("#{bin}/hashcat_bin #{args.join(" ")} 2>&1", 255)
+      no_platform_message = "No OpenCL, Metal, HIP or CUDA compatible platform found"
+      assert_match no_platform_message, shell_output("#{bin}/hashcat_bin #{args.join(" ")} 2>&1", 255)
     else
       assert_match "Hash-Mode 0 (MD5)", shell_output("#{bin}/hashcat_bin #{args.join(" ")}")
     end

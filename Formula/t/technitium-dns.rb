@@ -6,12 +6,13 @@ class TechnitiumDns < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c1f9589bb845e20fe1656aa2f5497cfc6c38c7e8afac99e43e35e97a2e1e094d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ac6b266bc1b4049133a31fe2dc740c6c4fb78790c4c0c9c86177251b56fc342"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e6be35d3f857eefd16c05243ae0477cc563c1c7c4032807734f2bddc5259217"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dd1e87cc0bcf3e8d38de1973058325cb731ced1fad42abe97551a6c536f50191"
-    sha256 cellar: :any,                 arm64_linux:   "2d4c052c18c61fd0e4084d0c737a47639ae0f443d72a3ffe71a919eb8f38ab8c"
-    sha256 cellar: :any,                 x86_64_linux:  "9d865328dc5a00d9194c26dabbdb5c0fe610bb40e5c738688a5c09ee267c81f0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8c8289857759e84f69827b6975b594d9ca8f956470f187d573748e57affe4a9b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c1f9589bb845e20fe1656aa2f5497cfc6c38c7e8afac99e43e35e97a2e1e094d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7ac6b266bc1b4049133a31fe2dc740c6c4fb78790c4c0c9c86177251b56fc342"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0e6be35d3f857eefd16c05243ae0477cc563c1c7c4032807734f2bddc5259217"
+    sha256 cellar: :any_skip_relocation, sonoma:            "dd1e87cc0bcf3e8d38de1973058325cb731ced1fad42abe97551a6c536f50191"
+    sha256 cellar: :any,                 arm64_linux:       "2d4c052c18c61fd0e4084d0c737a47639ae0f443d72a3ffe71a919eb8f38ab8c"
+    sha256 cellar: :any,                 x86_64_linux:      "9d865328dc5a00d9194c26dabbdb5c0fe610bb40e5c738688a5c09ee267c81f0"
   end
 
   depends_on "dotnet"
@@ -58,6 +59,9 @@ class TechnitiumDns < Formula
   end
 
   test do
+    # The sandbox denies FSEvents, so .NET's config file watcher would hang
+    ENV["DOTNET_USE_POLLING_FILE_WATCHER"] = "1" if OS.mac?
+
     dotnet = Formula["dotnet"]
     # Start the DNS server
     require "pty"

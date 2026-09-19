@@ -8,8 +8,12 @@ class Coreutils < Formula
   compatibility_version 1
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "5aa86c679e21a6022e5eb1830c02ebc4203c21eea231e8bb81b8f436ba2d7ff0"
+    rebuild 1
+    sha256 arm64_golden_gate: "47f3076c16c02a734c142e52d16646bb76961353e7f9dc621b6e45215d916cb3"
+    sha256 arm64_tahoe:       "df8e4e3dfb6ee737404df9e8dc78bb54d5eeb3c767241fca617fa5196c5747e2"
+    sha256 arm64_sequoia:     "208a94fb7d6c2ebfb412fc127a6699d8ccb37e8492a940b843d1046db6a1e755"
+    sha256 arm64_linux:       "d379b254313c151324d2220ef1009f5e7572eb7e39fac15ba9cc0a8b3e877687"
+    sha256 x86_64_linux:      "2694642f5877654a15ef2277bdf7197b578368f9d505d45690a9dc06aec27616"
   end
 
   head do
@@ -19,11 +23,11 @@ class Coreutils < Formula
     depends_on "automake" => :build
     depends_on "bison" => :build
     depends_on "gettext" => :build
-    depends_on "texinfo" => :build
     depends_on "wget" => :build
     depends_on "xz" => :build
   end
 
+  depends_on "texinfo" => :build
   depends_on "gmp"
   uses_from_macos "gperf" => :build
 
@@ -43,6 +47,17 @@ class Coreutils < Formula
   # https://github.com/Homebrew/homebrew-core/pull/36494
   def breaks_macos_users
     %w[dir dircolors vdir]
+  end
+
+  # GNU coreutils-9.12 added quoting to 'env' and 'printenv'. This has caused
+  # some unforeseen issues in some invocations. Use a patch from upstream which
+  # only quotes when standard output is not a terminal. See the following
+  # mailing list discussion:
+  # https://lists.gnu.org/archive/html/coreutils/2026-09/msg00061.html
+  patch do
+    url "https://github.com/coreutils/coreutils/commit/782a1e5bc2090212273bb731dceee2cc2a071e54.patch?full_index=1"
+    sha256 "d93cf338341d9418522a637e3c99c4211a25a967d0cffd2f036fd18871f15e35"
+    type :backport
   end
 
   deny_network_access!
