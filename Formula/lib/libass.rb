@@ -8,11 +8,8 @@ class Libass < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a066041fedbe188a5330faff55c9e3baac12f5d2ca156b7ae7d4cb1826ed8d84"
-    sha256 cellar: :any, arm64_tahoe:       "29ac9a179908bc0c3d918b0f41fc40f7fbdfbc8819fa774ac85f0620b9281dc3"
-    sha256 cellar: :any, arm64_sequoia:     "b893a0f114554c1b9ea3e046d8102d59c6cf98106936da144835310cab2878f3"
-    sha256 cellar: :any, arm64_linux:       "3bec3705e79ddd9243520f702d071fdc7786e88b7759ca96f99f15bc2cfa5a52"
-    sha256 cellar: :any, x86_64_linux:      "c07f0ce111a608118591aba37efc4c77643f6fe29a8c837efec9c093569f47d2"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 cellar: :any, tahoe: "6f857b013007a295864765bf08ca649d1d0663c1e2183394b3b25c39a0db9a4a"
   end
 
   head do
