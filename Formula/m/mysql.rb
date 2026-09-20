@@ -8,8 +8,7 @@ class Mysql < Formula
   revision 1
 
   livecheck do
-    url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src",
-        user_agent: :browser
+    url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src"
     regex(/href=.*?mysql[._-](?:boost[._-])?v?(\d+(?:\.\d+)+)\.t/i)
   end
 

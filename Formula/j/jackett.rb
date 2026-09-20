@@ -7,10 +7,11 @@ class Jackett < Formula
   head "https://github.com/Jackett/Jackett.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1e1ac4854003477b3a55dc04daee8ff20fe8addc49ce6fe101dd0077e4dd9d6e"
-    sha256 cellar: :any, arm64_sequoia: "e5f20917af528597cb9effc939d40148613f249bef77e861c49bd11e21704892"
-    sha256 cellar: :any, arm64_linux:   "db91eb9aeabd6a49176ce3503f66c5fa8ea1c40b74a6b1bf194fd015fe92b783"
-    sha256 cellar: :any, x86_64_linux:  "84ea93a99b4e7bdf8d4d5cb4b3736183b832cc5f6cd0ef736b7cc29e5f3fda8d"
+    sha256 cellar: :any, arm64_golden_gate: "959f39257fdc797d06b603b52b34113c08fcf5b7c03b0fac061ca186f41c4a0d"
+    sha256 cellar: :any, arm64_tahoe:       "1e1ac4854003477b3a55dc04daee8ff20fe8addc49ce6fe101dd0077e4dd9d6e"
+    sha256 cellar: :any, arm64_sequoia:     "e5f20917af528597cb9effc939d40148613f249bef77e861c49bd11e21704892"
+    sha256 cellar: :any, arm64_linux:       "db91eb9aeabd6a49176ce3503f66c5fa8ea1c40b74a6b1bf194fd015fe92b783"
+    sha256 cellar: :any, x86_64_linux:      "84ea93a99b4e7bdf8d4d5cb4b3736183b832cc5f6cd0ef736b7cc29e5f3fda8d"
   end
 
   # Aligned to .NET dependency. Can remove if updated to latest .NET

@@ -22,6 +22,12 @@ class Redress < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # https://github.com/goretk/redress/blob/develop/Makefile#L11-L14
     gore_version = File.read(buildpath/"go.mod").scan(%r{goretk/gore v(\S+)}).flatten.first

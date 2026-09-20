@@ -3,13 +3,13 @@ class Virtualenv < Formula
 
   desc "Tool for creating isolated virtual python environments"
   homepage "https://virtualenv.pypa.io/"
-  url "https://files.pythonhosted.org/packages/ba/37/e4f918e5a6547ab868aede62babdd696514bf1f282e71439db91597d7d9c/virtualenv-21.7.14.tar.gz"
-  sha256 "6f14bcaeb6c3438cd8c8cf3ab1805973592fb900e9b724427d1102aaa3db7fbb"
+  url "https://files.pythonhosted.org/packages/cb/8f/d4da8965384182e79d005cf165097c194e15df7b9f13c2dc09d7fa3d4b97/virtualenv-21.7.15.tar.gz"
+  sha256 "072c16d3d1d796cb6a851145d2eae314f8434bd625a55f18b8b72b29890cc366"
   license "MIT"
   head "https://github.com/pypa/virtualenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "82bfc06d45654a3c4ef837b20c39c0a4cd8826737b7d43c419c014cc3ecca67c"
+    sha256 cellar: :any_skip_relocation, all: "702fe0cd72cdda77cf063ed843d3c75d5b091227e44aa59ade5032bdc10328a7"
   end
 
   depends_on "python@3.14"

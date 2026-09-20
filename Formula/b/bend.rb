@@ -1,13 +1,13 @@
 class Bend < Formula
   desc "Language that blocks AI mistakes via proof"
   homepage "https://bend-lang.com"
-  url "https://github.com/bendlang/bend/archive/refs/tags/v2.0.16.tar.gz"
-  sha256 "1c7733dcda658eae77d75a9515002e6ba42c91f95e84db62762fdb39625ed2af"
+  url "https://github.com/bendlang/bend/archive/refs/tags/v2.0.20.tar.gz"
+  sha256 "aed470331b14a2978a4d96bc10fff41b5299adf7df9b7d7497d989cf35b885cb"
   license "Apache-2.0"
   head "https://github.com/bendlang/bend.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c223aad3fe367ad76d0fb71b34e34d3315b492b23297054ef4178cf1fa313f3d"
+    sha256 cellar: :any_skip_relocation, all: "d5c82341d326d2d9eb0c635c09f2ed8bf8252c72c0d889aa7926dd5ec3f8a3f1"
   end
 
   depends_on "bun"
@@ -24,7 +24,7 @@ class Bend < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/bend --version")
+    assert_match version.to_s, shell_output("#{bin}/bend version")
 
     (testpath/"test.bend").write <<~BEND
       import Base
