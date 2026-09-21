@@ -15,8 +15,11 @@ class Cppcheck < Formula
   end
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "72c4bea1736483013ce02c3fba4021770641fd5bb2c6e7e6929e4ba7eb34b857"
+    sha256 arm64_golden_gate: "e5954f4f24f2c6e2fccfe9f477a1a6be25636c2ccae29430f945551630195c7e"
+    sha256 arm64_tahoe:       "2db5c07999f39897185f2abe9689c1af372cc2c54e6e24794e3b99b14008226b"
+    sha256 arm64_sequoia:     "382697c060216d4155ac9d45c4f8dec957fc2ca98de0356cb9d7a1a2ef103003"
+    sha256 arm64_linux:       "330c0222ca146fff64dcebc83b9305e0f014b1df0d636278c620d93df6d240d3"
+    sha256 x86_64_linux:      "c9afd395fbeebeb198e8045dab895fabf0b5282963d7389623e7cad0c1bd8ef8"
   end
 
   depends_on "cmake" => :build

@@ -8,8 +8,11 @@ class Openexr < Formula
   compatibility_version 1
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "616665c872e8028d6ace81c6b21d35a699297992f8fd8f1b8f3d2814847d8307"
+    sha256 cellar: :any, arm64_golden_gate: "323a18f3c7559329d1acf951fde64e45a1eb1f80bd23d9f5fd3a39bb83d96920"
+    sha256 cellar: :any, arm64_tahoe:       "d39dec713189bc50b736633144a4e2470873bd9217c5c143550bdb3def9d6ac8"
+    sha256 cellar: :any, arm64_sequoia:     "cb318ab0fa2e9ed37ef5499930bc13425c4bb9a4f12e51b4903f8a1b7d4c6749"
+    sha256 cellar: :any, arm64_linux:       "7fa5c416ca58a9371d46c7c425daffb6bb597ddb2cb7a1ca39f7e434fa1e7994"
+    sha256 cellar: :any, x86_64_linux:      "de98d6d88cf196dd5aee2a9dd95e4c5d1dfcb03787490516f03c1494ae5434e2"
   end
 
   depends_on "cmake" => :build
