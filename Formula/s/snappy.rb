@@ -8,8 +8,11 @@ class Snappy < Formula
   head "https://github.com/google/snappy.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "13fe362ca1cb552704e0d746d49f1d2dc0e34200499a9f37fe83a21c6d293fa6"
+    sha256 cellar: :any, arm64_golden_gate: "7f20ac629eaf9a34a0e4d0e1fe60a933d42ececf3d956988fa8b24916e467c85"
+    sha256 cellar: :any, arm64_tahoe:       "11f6a15644bc2dece119e6d0cf912e702ed5355ec706409a57bb8d482ff022b0"
+    sha256 cellar: :any, arm64_sequoia:     "0b5ff66b47727b8af0cc62797ff3bd88632be5a6de6d03786a706114d8883488"
+    sha256 cellar: :any, arm64_linux:       "10c3b695f1253505788952dcd0fe7fdbb81d6b16e2ae5906ac8bf765aa9de69b"
+    sha256 cellar: :any, x86_64_linux:      "0c8c71cc1a07999d9ee6761178c594cae7d7e7519de4cb4f870b76a27210fdf3"
   end
 
   depends_on "cmake" => :build
@@ -18,6 +21,8 @@ class Snappy < Formula
   # Fix issue where `snappy` setting -fno-rtti causes build issues on `folly`
   # `folly` issue ref: https://github.com/facebook/folly/issues/1583
   patch :DATA
+
+  deny_network_access!
 
   def install
     args = %w[

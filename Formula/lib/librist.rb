@@ -13,8 +13,12 @@ class Librist < Formula
   end
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "2bc94ca11e23e0280c48edd60f77f4361408a2a8a4e042cffb1dc31ac6fb6541"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "c752266fb4814a60518c578a17fb741d637b3553c29880464ccae428af599181"
+    sha256 cellar: :any, arm64_tahoe:       "d53fe875d0331485ee81cf492045ba8cf5551e596299104fc428666bdd328a8d"
+    sha256 cellar: :any, arm64_sequoia:     "eb3efefc1292c5e105f3fa8e585d229a5cd9b853f97603acbbe26445faafe342"
+    sha256 cellar: :any, arm64_linux:       "301e312087c08d893a3f6fe428932d134059d10d6d1b25c9060f2f982e892bb2"
+    sha256 cellar: :any, x86_64_linux:      "0307064edb0c463e4c4fad1649dfd2de9eaf6faf1863a91fe6e45abf5e290564"
   end
 
   depends_on "meson" => :build

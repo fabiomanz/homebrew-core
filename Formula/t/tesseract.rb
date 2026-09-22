@@ -13,8 +13,12 @@ class Tesseract < Formula
   end
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "9587230b7d370f6174e56d8d57ca51f958ad8ce1c8d3ddc3708243cf3f6bc887"
+    rebuild 1
+    sha256 arm64_golden_gate: "0059a0945a6d5ac2ef57b084eb2bf87666df0040d22a2ba8cf0448a3fd6b06a9"
+    sha256 arm64_tahoe:       "5dc22e82f5c9fe0c466830671388866626a076032e7569bbe6ff6d27f1271599"
+    sha256 arm64_sequoia:     "200b865fec2696d87c27a6273aaf2f870fd0796586ad695ac7b138d9db667f17"
+    sha256 arm64_linux:       "9075db5e294c636408738b0e4e7d9b848ee74736a4bec61ce7eef9257d32815c"
+    sha256 x86_64_linux:      "0aab2fc2d381eb44264e2368359fe514aa27f1e1400bec4e8d0de8de4f9641f0"
   end
 
   depends_on "autoconf" => :build
@@ -44,6 +48,9 @@ class Tesseract < Formula
     url "https://github.com/tesseract-ocr/tessdata_fast/raw/4.1.0/osd.traineddata"
     sha256 "9cf5d576fcc47564f11265841e5ca839001e7e6f38ff7f7aacf46d15a96b00ff"
   end
+
+  # Test downloads a sample image to OCR
+  allow_network_access! :test
 
   def install
     # explicitly state leptonica header location, as the makefile defaults to /usr/local/include,
