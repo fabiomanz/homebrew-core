@@ -13,12 +13,8 @@ class Webp < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "85d3cb86c87f53f027b48cdfe15a31e82932caa43344a6fe06e00e5de402a3e7"
-    sha256 cellar: :any, arm64_tahoe:       "89d7380c156284433cf5a130b82423b1a3d83b4aac88fe88ba35d174bcc9d3b6"
-    sha256 cellar: :any, arm64_sequoia:     "3f5c1ccc592312b2170bc1ea673f902aa65fc479aa9a4c308ff0b1b1a35315fe"
-    sha256 cellar: :any, arm64_linux:       "3aa68517215779bc0c0a877c934c81ed82e5d5727c0114878ccfd6a1fa138fae"
-    sha256 cellar: :any, x86_64_linux:      "74466119f8e80a2375631657c0daaf53c910938c4a8754385c579b4d71f95887"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 cellar: :any, tahoe: "7480c393771594d3ee71f8dade5a0b8c48e96b24349339bb9109aa10b9568e11"
   end
 
   depends_on "cmake" => :build
