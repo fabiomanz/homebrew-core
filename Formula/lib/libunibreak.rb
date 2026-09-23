@@ -15,8 +15,11 @@ class Libunibreak < Formula
   end
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "c74844e2b4597b47789a4137d65e11b45b0628aab6567274844ac5c63272619e"
+    sha256 cellar: :any, arm64_golden_gate: "aacd69ecf3c43aca5ffd2b37d41cb7de99fd5a1d2e48ffc9cdf2c0a66c717408"
+    sha256 cellar: :any, arm64_tahoe:       "b5ea43d5ae7e12db466b52c75ae517be48aa31c270e9dbb2cb8a9412d94f1aff"
+    sha256 cellar: :any, arm64_sequoia:     "fdd04ab1291384622b07b5409786fd297ddb2ceec4715074f9f35c807649ff50"
+    sha256 cellar: :any, arm64_linux:       "216db2d318c3de5b050e09fc11eda2e201f2e6fdab7a1efc32614a77831fe7c5"
+    sha256 cellar: :any, x86_64_linux:      "b26dbb5d7886f37e4300d510a1d0947b5044ed4871039a4064cb258bf21e1083"
   end
 
   def install

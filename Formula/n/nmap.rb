@@ -13,8 +13,12 @@ class Nmap < Formula
   end
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "404e94dcb129aa571856bfeb3eaccec47ea337d0314ee06688d5ac076502cc34"
+    rebuild 1
+    sha256 arm64_golden_gate: "da686a61f09704b97db2f688d77925bc343dc5cd0f9bbd2fa5214d3439763c7d"
+    sha256 arm64_tahoe:       "2af6d8142c901b9cafa4a51a9c4f6af9efb5e25dff425640ee9b191e48bd45d0"
+    sha256 arm64_sequoia:     "9981df8a0aedf35b1d0d6aa07d824f21616d2bc19a89d312677467066e73891f"
+    sha256 arm64_linux:       "8f39c06169f489bf54172bddc47690e8f45575f10b1fed412db8457a426c2313"
+    sha256 x86_64_linux:      "7e587aad517ea562de25586e3da591bc88e7edef09783a8e0cac6b0c8a0b4d6a"
   end
 
   depends_on "python-setuptools" => :build

@@ -11,8 +11,11 @@ class Pv < Formula
   end
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "48aaa734562b5007a3a6df9ea12260d6f6d786dd1a3466ef287cfc572ca6011c"
+    sha256 arm64_golden_gate: "4474aa564a01214715138402980661cf1f4503e2ee21b71640b4adc10e0ead04"
+    sha256 arm64_tahoe:       "cd91923ccdde058fb984dc9a25c12cf903ded4da91ac8b33e21c659ffb18c076"
+    sha256 arm64_sequoia:     "b9c9b8620083d6686cd48ae66c9db086c6919b8c1946d7cc9fffb20af880530b"
+    sha256 arm64_linux:       "31f26810cc198c0c96791eb6e9f0a517dd6ec094ac401bd08463739f4a94507b"
+    sha256 x86_64_linux:      "20fb9b8f6b82b6f954345ad449fc182b8deb0be548c27e1984f4d30250317b05"
   end
 
   uses_from_macos "ncurses"

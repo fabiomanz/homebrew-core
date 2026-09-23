@@ -7,8 +7,11 @@ class Md4c < Formula
   head "https://github.com/mity/md4c.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "19832466002b340a4a884a6bb0c7e9594a99af7f5351c2bd96b7e92ceea82b38"
+    sha256 cellar: :any, arm64_golden_gate: "39d01500e866f6e934898a804827632f1ad6ed19a3cb077ce1ebfbbd3c277779"
+    sha256 cellar: :any, arm64_tahoe:       "e332bdecfcbea2fdf20eb00fd1fcc973970aad2765c2a239b4e1a85617df9291"
+    sha256 cellar: :any, arm64_sequoia:     "480a50456cf91e1ed3d04f1ef33e617f0febbc472f26880ae1bc6c903c3f535d"
+    sha256 cellar: :any, arm64_linux:       "033936261176a8211d449226d12ad01ba7f911492e6446062da1f0b9b6ac6761"
+    sha256 cellar: :any, x86_64_linux:      "53c8c2e65e2867b21cb7b65165f5386b8b4015b3529a0f6b19bce2717029478c"
   end
 
   depends_on "cmake" => :build

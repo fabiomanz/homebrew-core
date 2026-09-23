@@ -7,8 +7,12 @@ class Libx11 < Formula
   compatibility_version 1
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "e4806405b467932168a1a3f780f5172ba460e883025b7a72deb57d0d72d3a218"
+    rebuild 1
+    sha256 arm64_golden_gate: "0e2fe58e32bcc6a65fd01f653b9f6986c38723f295a60fdf3648111d774dc3ee"
+    sha256 arm64_tahoe:       "eea875959b2cd7b129fe9459e1771141b9215f3452e671996434f664fe96e193"
+    sha256 arm64_sequoia:     "af553e32325d1817b6526682e3ca5d73e354145df362790eb9fc9f231e6d8a35"
+    sha256 arm64_linux:       "93f44b03e57d3d6b02eb9a5155a969b974b0b4040d8de2f0a88d25e34f5eaff1"
+    sha256 x86_64_linux:      "bf17b051a14a369ee1aa3e3566338aafe21fedae9735f6b178197e871d042ac2"
   end
 
   depends_on "pkgconf" => :build
