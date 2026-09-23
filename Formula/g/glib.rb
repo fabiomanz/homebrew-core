@@ -17,11 +17,8 @@ class Glib < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "07422c68ee1c3d01ba6ac6296668e82cad2ee21c9466e60e79a70da2c5947207"
-    sha256 arm64_tahoe:       "e2d2d3cff3bb121e8f6c98f9a831e03f78b66e88063fc5d432a68bf0b4951092"
-    sha256 arm64_sequoia:     "91df2202a093cd00b90fa9919f1c1e61e8f78d8ddd9a307009af6d4007072180"
-    sha256 arm64_linux:       "456f327b958864c762c53286469ec4471fd41a57c031ce2d8c3e24f6dedbad0f"
-    sha256 x86_64_linux:      "91d875d68772c609400983913f59695beb053223973791ee32ee33d1edd9df6c"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 tahoe: "2c50e682da9069a6312e54a4ba1d658487cedb2e1c4bec863defa30214f289f0"
   end
 
   depends_on "bison" => :build # for gobject-introspection
