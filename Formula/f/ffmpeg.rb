@@ -16,8 +16,11 @@ class Ffmpeg < Formula
   end
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "03d99408693736c5200eee7ce091da3791450bc4648f7e2e214a235cfa5a7433"
+    sha256 arm64_golden_gate: "0971a5e8c62bd62e15da5244712cd14e98044320eb67886b0b5481a4af9ea8f0"
+    sha256 arm64_tahoe:       "1c3f1b92bece4e10027a022be15a87e8544a54ab0df16b05f098e9abef8abdd6"
+    sha256 arm64_sequoia:     "c8006779a2919e921e66bbdbf2aa5c989acc5f3626884ec725e58e161f5e843f"
+    sha256 arm64_linux:       "cee18bd4fc292a8c80b03c5056737366d4ac82c35648610bd16d3f0300ffe8da"
+    sha256 x86_64_linux:      "5842bd5128b334ffc423d2031525284546c0c5521eafae82beb44fab8a8adbbc"
   end
 
   depends_on "pkgconf" => :build

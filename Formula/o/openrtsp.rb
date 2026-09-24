@@ -14,14 +14,17 @@ class Openrtsp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8c48238ef5e9f9728a0619b8294a5f56d905928940c827979ca6d56fc1370d23"
-    sha256 cellar: :any, arm64_tahoe:       "cd73adae6df4013d3c68dc112a6094bdd7d88bd5a31b63a00973524a7802969a"
-    sha256 cellar: :any, arm64_sequoia:     "43550e7092b2e4831162df5550da740490d90b1720420b4afd59e38cfa0d7ee2"
-    sha256 cellar: :any, arm64_linux:       "42449e6df557187a9658180566d55ac163c5935e3df7f28ad2f6b6812031de03"
-    sha256 cellar: :any, x86_64_linux:      "816cfb29bb29f67a064c70d2c4defba3b2aa35cbb66105859673a0a6f03eaa68"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "8233da38c6d55a151733c9848910ed2e7a943498476f650108375bdc10d480f8"
+    sha256 cellar: :any, arm64_tahoe:       "a3b2f72c67651a5cb6150e6a6abe42a1710cdbc3e186edd8319d392e4ba369e8"
+    sha256 cellar: :any, arm64_sequoia:     "4c39375d0f66cb9c8a760cb059d5a2ed37de1a050501badbf56937042ba04352"
+    sha256 cellar: :any, arm64_linux:       "4e2a8ecb51e8e79cb2fc24f6f705129bfa37dbd765040d7532ad2fe62125b4ae"
+    sha256 cellar: :any, x86_64_linux:      "6f2e5492d46a0a019b775582cb6145288e39a3fdaec5487ee424e67010af58ea"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  deny_network_access!
 
   def install
     # "test" was added to std::atomic_flag in C++20
@@ -30,8 +33,8 @@ class Openrtsp < Formula
 
     # Avoid linkage to system OpenSSL
     libs = [
-      formula_opt_lib("openssl@3")/shared_library("libcrypto"),
-      formula_opt_lib("openssl@3")/shared_library("libssl"),
+      formula_opt_lib("openssl@4")/shared_library("libcrypto"),
+      formula_opt_lib("openssl@4")/shared_library("libssl"),
     ]
 
     os_flag = OS.mac? ? "macosx-bigsur" : "linux"

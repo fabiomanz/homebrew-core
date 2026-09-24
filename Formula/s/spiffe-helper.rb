@@ -1,19 +1,17 @@
 class SpiffeHelper < Formula
   desc "Tool that can be used to retrieve and manage SVIDs on behalf of a workload"
   homepage "https://github.com/spiffe/spiffe-helper"
-  url "https://github.com/spiffe/spiffe-helper/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "124b009c0dc737c5e5f7afd11eed4fe41b0ac9b98e98fc51cd1a49b38b3e6090"
+  url "https://github.com/spiffe/spiffe-helper/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "374b3df65f07a395c6440bde595329bee08543dc7493ae89f6b6e052d8ed4383"
   license "Apache-2.0"
   head "https://github.com/spiffe/spiffe-helper.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "06bd8da81f413831536e96a50ff82245e564a504257ea8d33c8cfd706eb93a27"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c489a48d0b8d1593f7badfe5b735b7038ec85fdc573027626ade3c005ee04306"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c489a48d0b8d1593f7badfe5b735b7038ec85fdc573027626ade3c005ee04306"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c489a48d0b8d1593f7badfe5b735b7038ec85fdc573027626ade3c005ee04306"
-    sha256 cellar: :any_skip_relocation, sonoma:            "fa6bf56087d81d01a312e2c855fba496e9e3f99d8c526655f6092d783aace956"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "cac2dbc3746b6296cb35a00d1ea90a96fe1ca593f52d72cde19b74b66c35c286"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3f2053bc574698df586253d646f5a5324e556b366b01d04f34c238c1aae6ac73"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "18c7eb0639a9c9f0eb597eefbc5310c9ed7ed66ebc98babc4fc084583063473b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "18c7eb0639a9c9f0eb597eefbc5310c9ed7ed66ebc98babc4fc084583063473b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "18c7eb0639a9c9f0eb597eefbc5310c9ed7ed66ebc98babc4fc084583063473b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ba482378cc2b8b0efcdfc2d42cf7bf04c3e128e4f7e4d8e68992694fe7d77ba8"
+    sha256 cellar: :any,                 x86_64_linux:      "09e314b30ebfcac674e8022a5fd55d8ea648ae5ab0e92b9bc78110db67e58328"
   end
 
   depends_on "go" => :build
