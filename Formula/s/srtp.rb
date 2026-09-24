@@ -13,11 +13,8 @@ class Srtp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3649654b411ae51017c7bec40da936c910bd5eea3498be0002775cd8654890bd"
-    sha256 cellar: :any, arm64_tahoe:       "6f392a60b22b5699938c7a3d1622cc69cbc70c3f9e1d241f4e4d76c86b6eefbc"
-    sha256 cellar: :any, arm64_sequoia:     "3c19e95950df9ef96eb6ca4d100ac7811bf6055b0a0ea41911138d016ff62de2"
-    sha256 cellar: :any, arm64_linux:       "aeea299389b07bab9158c453a11cb00bd1fefa82156285e8b9f6345976e2d74e"
-    sha256 cellar: :any, x86_64_linux:      "89882f2b0d9bc32098721fb2855719e9d217b8b33f1345215972c3da1412c141"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 cellar: :any, tahoe: "83266b24205eca4f410f35e191d9484ccccc3e4a5003913689aa7e1367b82389"
   end
 
   depends_on "pkgconf" => :build
