@@ -13,8 +13,11 @@ class Gtk4 < Formula
   end
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "699793d447ad7f0f97f6f2ab62c8baffa277f86a9d4ecf8583510cbd99657898"
+    sha256 arm64_golden_gate: "e961a4a869a1239a061210a634e4cd1fa6603a4b66926a9cc123b3cb153d6977"
+    sha256 arm64_tahoe:       "77e526ad01e0e9d05198acf36060460ef735da867954313a4e4186c26868f6cc"
+    sha256 arm64_sequoia:     "d2221f37696c4d5b85568dc632b26cefa13fb2f3819f29a935542de1d46b0cce"
+    sha256 arm64_linux:       "0e5854a1e71d695cb1aa294d5ad210d77e3c84d1914b69207277f50b36fd1652"
+    sha256 x86_64_linux:      "eabbf5b8e23334303ac72b3947025fb3da3fcee159155b630a551149ca074321"
   end
 
   depends_on "dart-sass" => :build

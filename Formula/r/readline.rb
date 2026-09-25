@@ -75,8 +75,11 @@ class Readline < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "c3bd463450a3bc2baab882a400e3d8ff4528678d81f97689484afa101d8aa9eb"
+    sha256 cellar: :any, arm64_golden_gate: "74b458562c5a589a612ebba8f8fc12f3ecbe083223eb4a368c723d88b26a454d"
+    sha256 cellar: :any, arm64_tahoe:       "15cdd69af824537192843db389cbfd2459b3797cf4f36c906f8f8ab617d7d59f"
+    sha256 cellar: :any, arm64_sequoia:     "461763fa21c050a59e5bbceedf67dcacf24e4aa4604490d73f0c9fa0f40e7fe5"
+    sha256 cellar: :any, arm64_linux:       "ba75518e6b5d5376aa56fe6754deaf9188cf5df9b24f5885dbf0baf8e27a5bbe"
+    sha256 cellar: :any, x86_64_linux:      "4edcc5d53fb104818fd0e642f18edaace69e60c24b5e892df2bd437670c32857"
   end
 
   keg_only :shadowed_by_macos, "macOS provides BSD libedit"
