@@ -13,12 +13,8 @@ class Socat < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "8216d9bb5ee04d0c8c8099711a81846dbd5b90e8b012ba9be3205a5e4cd3be6d"
-    sha256 cellar: :any, arm64_tahoe:       "f59f7e2df3f1428f970cd4d7c260f316ff1378895319a6de915836d27eaf7ead"
-    sha256 cellar: :any, arm64_sequoia:     "31d9e7870de62e53e7735298a2f1757581053ddc78fddab97eec0a53097b999e"
-    sha256 cellar: :any, arm64_linux:       "fdb97fc1cb97cb27468ef27e9174aaa9a773200944917d1e73639256194014ba"
-    sha256 cellar: :any, x86_64_linux:      "f65c3124803b8f92bc474a82009327ed5420794cc82d0bccce827d065f94b909"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 cellar: :any, tahoe: "23cd4b6c045968fa24ea2867bd253a4b62aa8e393a40c1c740b48b207cb9a4da"
   end
 
   depends_on "openssl@4"
