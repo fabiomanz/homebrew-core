@@ -12,8 +12,11 @@ class Hwloc < Formula
   end
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "89448594ed02cacb5ad7c5c7a53ceb2303099d8d14b481a765c4e0557c57b804"
+    sha256 cellar: :any, arm64_golden_gate: "4c19c2e509ec4730569f93af374d728bf018739eb24d065424654ebe83ec0725"
+    sha256 cellar: :any, arm64_tahoe:       "57c2792ce1624499ce1b5dabe5af80179ff6e722ed7d14ffa882835636bdd7c5"
+    sha256 cellar: :any, arm64_sequoia:     "ee94ec61d74f506590e5498b938df7d068452e79685e784594d5ec48aa17b284"
+    sha256 cellar: :any, arm64_linux:       "d69c3e8ece8e550570133666203dda31683a8b16f3ba0b9540245e4c74b9d5e6"
+    sha256 cellar: :any, x86_64_linux:      "2429a479251d2d279ab5c200a2c9c8fab7844c354574c37ed8d3ac39490e66c5"
   end
 
   head do

@@ -9,8 +9,12 @@ class Libnghttp3 < Formula
   head "https://github.com/ngtcp2/nghttp3.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "5ac7b10881f9f0991d5c4478f69f4fa43b918e3a5fc51d1688e365a6ccf6d2c7"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "b04718068d48592d75eac39237bc5c792313ac1bf267bf5a4c91f26c45aa45b1"
+    sha256 cellar: :any, arm64_tahoe:       "f06612abad603898100dfc4fdcff8464789a2b57593ec70255ed633d664020e7"
+    sha256 cellar: :any, arm64_sequoia:     "f0c56bcde3273d2599455d0ab18a281d6a329d63af4672fdbdf3f07633276475"
+    sha256 cellar: :any, arm64_linux:       "aabb9a105e6abaef3fb08330986306c71ff1716ff27a5edc29963b9279134657"
+    sha256 cellar: :any, x86_64_linux:      "70585a5cc3fd09d477862550303e6d356361da783605bc6854ac556be5047512"
   end
 
   depends_on "cmake" => :build

@@ -13,8 +13,12 @@ class Ninja < Formula
   end
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, tahoe: "ec2a4984561bd8a8f0a34cb52d5cddc9d564c86d89482655af9947937de3f40a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "efc5badad160831eb4bbdfd252a9cc9184e0fa901968b72e6e4f93f67a4c2057"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7bb261a70d9337d765956329580e10f16a0d1ea4eef5a106db39c9e1f8917f00"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2c07378c1ccb6cfde4bc2e12877c9f365b31c62ddc4ec631421cb80e3a7e1f11"
+    sha256 cellar: :any,                 arm64_linux:       "eff57ad5bb5055d8a76e10950ae9440203b3d902e17f6c5aa0a41d4ffaa15d52"
+    sha256 cellar: :any,                 x86_64_linux:      "e924537f9c4efbf55741478c15af88fd38b6a014cc6d124f0dbdabd52611f482"
   end
 
   uses_from_macos "python" => [:build, :test]
