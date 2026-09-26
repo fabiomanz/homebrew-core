@@ -18,7 +18,7 @@ class Glib < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "02555ff148f7dd16be6f24a477f81e46207bf415d6669437feafae7318437ca3"
+    sha256 tahoe: "4f545e238c16dbd2f463eb35c0e8341752fef6031b83236de86fbdd52d194300"
   end
 
   depends_on "bison" => :build # for gobject-introspection
