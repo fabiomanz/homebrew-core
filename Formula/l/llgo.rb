@@ -1,8 +1,8 @@
 class Llgo < Formula
   desc "Go compiler based on LLVM integrate with the C ecosystem and Python"
   homepage "https://github.com/xgo-dev/llgo"
-  url "https://github.com/xgo-dev/llgo/archive/refs/tags/v1.0.4.tar.gz"
-  sha256 "9479a9baa51d40c062ea77dd256f007b98e1b773c26ef224af5f7a393af845bd"
+  url "https://github.com/xgo-dev/llgo/archive/refs/tags/v1.0.5.tar.gz"
+  sha256 "1f6e13ff062a488cbd4ddcb8f6de7da70ff304be19b5f3acd2205312e5298ae3"
   license "Apache-2.0"
   head "https://github.com/xgo-dev/llgo.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Llgo < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ee6bd570bff321dc8aa0b38deb66eee67a30df17ed42da60a6a7261bbf5379a4"
-    sha256 cellar: :any, arm64_tahoe:       "fbeef5372c8b6731f8d46544ce18d7c32c742c4c152e6b79087017b31c359b33"
-    sha256 cellar: :any, arm64_sequoia:     "e0e4ca2ba35cc16fabf7466ca4d7ee80e797f96b8dd82cececab673583283fc1"
-    sha256               arm64_linux:       "c3c65736a38e953cbbd52052c1bb437fcda39e100176791efd46b600a203adad"
-    sha256               x86_64_linux:      "9cd548129b85d6dcd083dec580f7c4149e22f1fd30dbd2f723cfd22aa7faada6"
+    sha256 cellar: :any, arm64_golden_gate: "244b506d6f9190bcea29d56abfdf1ca66fea434e87a7de0c1561dbd2890110da"
+    sha256 cellar: :any, arm64_tahoe:       "2a3a6062f8a5fe3c7fd1a0c7d1fe80273ad43f53a4abc274ab5399f9f838324d"
+    sha256 cellar: :any, arm64_sequoia:     "f07a248f8d4d0a2843e10a4489f8b55d2a0c82762f30633146411ebcc9427ae9"
+    sha256               arm64_linux:       "094e1fc5b1edc106dd3cc3b536f7e4761e15baefdccab05c7cee495dd3b1f363"
+    sha256               x86_64_linux:      "93cc5001ca0db87e48ea8d75bd8ca38a2fae7ca5e3b2f447d85cee178e3632cd"
   end
 
   depends_on "bdw-gc" => :no_linkage
@@ -32,6 +32,12 @@ class Llgo < Formula
   on_linux do
     depends_on "libunwind"
     depends_on "zlib-ng-compat"
+  end
+
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
   end
 
   def find_dep(name)
