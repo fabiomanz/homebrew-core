@@ -13,11 +13,8 @@ class OpensslAT4 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "3c936c2f2467863901402616e8480af1f5db9f5f37c4723bea48c4853e9baf36"
-    sha256 arm64_tahoe:       "1822703ad677554cfedf84565cf62823ed279bf7df85ce474ecfebb05385c059"
-    sha256 arm64_sequoia:     "8af345d889bb2da344c5c5824f6083d25f5f25d89d2928f4f458cc43ca1d3596"
-    sha256 arm64_linux:       "09c28732c9f3f7a813806d9d4c9704bdd54678d486ed96b611bb1d38f8f25c20"
-    sha256 x86_64_linux:      "d87df67130c9813c4393b4465b2e3ba77a1b1aec24f34a1548a7b117c927aa5e"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 tahoe: "00c09f05adf622e37496919642b2d1351fb695e427edd83ed40801b6bd6322c1"
   end
 
   depends_on "ca-certificates" => :no_linkage
