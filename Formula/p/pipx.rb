@@ -9,11 +9,8 @@ class Pipx < Formula
   head "https://github.com/pypa/pipx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7814d06e45aa63919d8803affb72bb5c62525a7f317835500cca1b517bcc5813"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7814d06e45aa63919d8803affb72bb5c62525a7f317835500cca1b517bcc5813"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7814d06e45aa63919d8803affb72bb5c62525a7f317835500cca1b517bcc5813"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "929c361c14936be0a8d0a5cc89134edbf06364796518e8de1f34b256ba55f2d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "929c361c14936be0a8d0a5cc89134edbf06364796518e8de1f34b256ba55f2d0"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 cellar: :any_skip_relocation, tahoe: "b6ebfde1d43469a0099d423ebf0914b17f59c43ace1bbb024eb6e1edb3e12729"
   end
 
   depends_on "python@3.14"
