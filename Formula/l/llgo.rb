@@ -1,8 +1,8 @@
 class Llgo < Formula
   desc "Go compiler based on LLVM integrate with the C ecosystem and Python"
   homepage "https://github.com/xgo-dev/llgo"
-  url "https://github.com/xgo-dev/llgo/archive/refs/tags/v1.0.5.tar.gz"
-  sha256 "1f6e13ff062a488cbd4ddcb8f6de7da70ff304be19b5f3acd2205312e5298ae3"
+  url "https://github.com/xgo-dev/llgo/archive/refs/tags/v1.0.6.tar.gz"
+  sha256 "b281815ad671b7d09fbb8be553433e28a23ba4496f8e7657616630a382b905be"
   license "Apache-2.0"
   head "https://github.com/xgo-dev/llgo.git", branch: "main"
 
@@ -12,11 +12,12 @@ class Llgo < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "244b506d6f9190bcea29d56abfdf1ca66fea434e87a7de0c1561dbd2890110da"
-    sha256 cellar: :any, arm64_tahoe:       "2a3a6062f8a5fe3c7fd1a0c7d1fe80273ad43f53a4abc274ab5399f9f838324d"
-    sha256 cellar: :any, arm64_sequoia:     "f07a248f8d4d0a2843e10a4489f8b55d2a0c82762f30633146411ebcc9427ae9"
-    sha256               arm64_linux:       "094e1fc5b1edc106dd3cc3b536f7e4761e15baefdccab05c7cee495dd3b1f363"
-    sha256               x86_64_linux:      "93cc5001ca0db87e48ea8d75bd8ca38a2fae7ca5e3b2f447d85cee178e3632cd"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "e89d474ea3adc4c081ad66bec95ecb026c05115ab80047eb8533059cb6f89d82"
+    sha256 cellar: :any, arm64_tahoe:       "2edd730f3bfd24e8ef862ee52d508abce10332ccb604102f95332477dc13fb34"
+    sha256 cellar: :any, arm64_sequoia:     "c216c6e8c04074d96ed4d17f05d0718b622737a82a77d9d27229e770a375cb0e"
+    sha256               arm64_linux:       "205d7c710a7285a468ad4f80cbda8c88dca4befd959ac02572be1579e1cb096b"
+    sha256               x86_64_linux:      "635d20ce528fe9c79134232f94099e59ed3487ee0eda58c8ffc3347818c4bc3b"
   end
 
   depends_on "bdw-gc" => :no_linkage
@@ -24,7 +25,7 @@ class Llgo < Formula
   depends_on "libuv" => :no_linkage
   depends_on "lld@22"
   depends_on "llvm@22"
-  depends_on "openssl@3"
+  depends_on "openssl@4" => :no_linkage # runtime/internal/clite/openssl/openssl.go
   depends_on "pkgconf"
 
   uses_from_macos "libffi"

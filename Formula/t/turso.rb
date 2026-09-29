@@ -1,8 +1,8 @@
 class Turso < Formula
   desc "Interactive SQL shell for Turso"
   homepage "https://github.com/tursodatabase/turso"
-  url "https://github.com/tursodatabase/turso/archive/refs/tags/v0.7.2.tar.gz"
-  sha256 "bf124c80771ff1182c957db904543754b2594cb0222f5505d2d257d4fd852590"
+  url "https://github.com/tursodatabase/turso/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "51f09329c327aca24dc8ca9d4376a4ec9363606950c327db3636585c3c81586e"
   license "MIT"
   head "https://github.com/tursodatabase/turso.git", branch: "main"
 
@@ -12,13 +12,11 @@ class Turso < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "921073cd876546f68ad60c634df1a70bab84b3d659a17230893b9303c4626bd1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "96c80b530952c4d5d5aef1c0046a812a654779b8d03c22e0194baeb5d588bfc8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3e87de85d87f5962fe9841f9225927d616036d4f22247565e987a676a0de657c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "128b6607f6d5446b33938bce772fbb7ddc37b0f2a7b22bb8cec471983f1cfea9"
-    sha256 cellar: :any_skip_relocation, sonoma:            "f280313db40ccf10f223a1e8c255c791d719f5ed917d0baf7d9d31bbea12483f"
-    sha256 cellar: :any,                 arm64_linux:       "a69335cf31f3dfaa1d73a0c644f0ee03e3d806a6b844e4c9d2d1b29af3eec150"
-    sha256 cellar: :any,                 x86_64_linux:      "2d67dada318a1f24d29d311363939a0159271c630554a80f7908f26daff6dc87"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0cd51b388e19ca755f3487fc3a0fe1a73be8dec73532df329ae01aedf7304f09"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "69bd9b58f2e7126abcdceceee638d9d2a42349b85d2c4e6f9833a1d8d358f97c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e5e30f53259595e550b802a2ee7ad4e9280400fd21f1b07ad9afe9d25dcb96ab"
+    sha256 cellar: :any,                 arm64_linux:       "6cae0f46717beb39d920130e9f8c9039cb0e2e695a0b8b79402e2cf9d184c1fd"
+    sha256 cellar: :any,                 x86_64_linux:      "ed8a309c77824aa5bec95c253b840e21a097b814d9d8be4014091eff4ade8002"
   end
 
   depends_on "rust" => :build

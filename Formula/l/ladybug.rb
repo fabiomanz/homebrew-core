@@ -1,8 +1,8 @@
 class Ladybug < Formula
   desc "Embedded graph database built for query speed and scalability"
   homepage "https://ladybugdb.com/"
-  url "https://github.com/LadybugDB/ladybug/archive/refs/tags/v0.20.4.tar.gz"
-  sha256 "4c85fa10f60668df3128fa85812a811f72d78fffbc967622986f57dcc7812e62"
+  url "https://github.com/LadybugDB/ladybug/archive/refs/tags/v0.21.0.tar.gz"
+  sha256 "b367872a9d423b6f4e26b073dce7ba60dacedfba16e876d32d608b5f4977ef63"
   license "MIT"
 
   # There can be a notable gap between when a version is tagged and a
@@ -14,11 +14,11 @@ class Ladybug < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "def9f843151522796b4f4130e6b059c079ac23c75a50d530bf616949c7641bb4"
-    sha256 cellar: :any, arm64_tahoe:       "0f8b61ad5b481aa86292256109f04a8c6f453dbdb90cd80344523deff70c4984"
-    sha256 cellar: :any, arm64_sequoia:     "f16acb68aa27c797b31f494f44446aeaf3cb79c7b5e872041c9510e7cecd5e62"
-    sha256 cellar: :any, arm64_linux:       "d3ecb863c00252e43935a741e5190b5d62ac973c9b78010a334b3a254cc989c9"
-    sha256 cellar: :any, x86_64_linux:      "9f1a8743c54dcf62cf1553b50f1c6f5d1e4efbb7ecdd7bbc9e5c7129aedc1d56"
+    sha256 cellar: :any, arm64_golden_gate: "889f4fd8adeabe08baa8ae2cf57eb6211fd6e59e8e6524b8cfc49a8514525d5c"
+    sha256 cellar: :any, arm64_tahoe:       "bbe62a037403115f4eca91c06ba17628b0378b56a06c3b926af3a553387685ce"
+    sha256 cellar: :any, arm64_sequoia:     "e42bf817f74eab555bb3062c6603d67b2b0f056131fdee6a9ecc5ffcab283bef"
+    sha256 cellar: :any, arm64_linux:       "66a0a956a94291780e8f354183ccefa8d04b888dec59e9316d45b16a0aa016aa"
+    sha256 cellar: :any, x86_64_linux:      "00d46c85f1ac932559e73f4655ce89bb061d035062d896bda7f8a82c93e17855"
   end
 
   depends_on "cmake" => :build

@@ -3,16 +3,12 @@ class Linecast < Formula
 
   desc "Weather, tides, the sun, the moon, and maps, drawn for the terminal"
   homepage "https://github.com/ashuttl/linecast"
-  url "https://files.pythonhosted.org/packages/ba/ba/227c1df8ac84a934845681095ed54f9d22029b23c43bb19d1739addf244a/linecast-2.8.0.tar.gz"
-  sha256 "0f1b7c8ce4a6ef7c31e8180ceb5ed8228685361030e9b33282199dc95940d09a"
+  url "https://files.pythonhosted.org/packages/a0/df/89fc9ff6d5d737cba64c23c179293c5ac6339c655ae9f16662f927d8b5c9/linecast-2.9.2.tar.gz"
+  sha256 "e403464cd7193806a6581ef3b4d4adf7e1498d1d015f6a47db4cbd6ea7cdb1f6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b08b8ad5c17fda1dc2cbb016c9c9211972748fafce5aeae12a5be6fb1d28bc80"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b08b8ad5c17fda1dc2cbb016c9c9211972748fafce5aeae12a5be6fb1d28bc80"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b08b8ad5c17fda1dc2cbb016c9c9211972748fafce5aeae12a5be6fb1d28bc80"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "509aeed8a0e3e46cf27f16ff6f9584bac97c476291d52e2135eb21c760da9413"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "509aeed8a0e3e46cf27f16ff6f9584bac97c476291d52e2135eb21c760da9413"
+    sha256 cellar: :any_skip_relocation, all: "50b8bf2912a26b8680aa149384279efdbb17b1a6454618297ba5824ad7247ee4"
   end
 
   depends_on "python@3.14"

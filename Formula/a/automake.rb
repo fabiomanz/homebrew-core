@@ -8,8 +8,11 @@ class Automake < Formula
   compatibility_version 1
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, tahoe: "3f1aa0ceb5a4a568e11e0bb514cb3bb0666606084f3cb7162efd8a63dacd7f4a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "23c091faee8dac047b0670d8c10da030bf104610fc064b904407de1a1ff8f437"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "23c091faee8dac047b0670d8c10da030bf104610fc064b904407de1a1ff8f437"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "23c091faee8dac047b0670d8c10da030bf104610fc064b904407de1a1ff8f437"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a2b499128c61273de05a0d19251baca23de0c29abd15a74c8f495de2aeec3b40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a2b499128c61273de05a0d19251baca23de0c29abd15a74c8f495de2aeec3b40"
   end
 
   depends_on "autoconf"
