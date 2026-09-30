@@ -21,6 +21,11 @@ class Cpptest < Formula
     depends_on "libtool" => :build
   end
 
+  deprecate! date: "2026-09-28", because: :repo_archived
+  disable! date: "2027-09-28", because: :repo_archived
+
+  deny_network_access!
+
   def install
     system "./autogen.sh" if build.head?
     system "./configure", *std_configure_args

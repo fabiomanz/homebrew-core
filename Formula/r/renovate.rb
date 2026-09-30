@@ -1,8 +1,8 @@
 class Renovate < Formula
   desc "Automated dependency updates. Flexible so you don't need to be"
   homepage "https://github.com/renovatebot/renovate"
-  url "https://registry.npmjs.org/renovate/-/renovate-44.118.0.tgz"
-  sha256 "0ff44373b80db124a46b1019aeaa4444748aa8398f471dbf0a6be6ad9708ac01"
+  url "https://registry.npmjs.org/renovate/-/renovate-44.121.0.tgz"
+  sha256 "1623be99bb1b2adf6d1a93650281964efeb7ced66946e474fbff87e5b007d49e"
   license "AGPL-3.0-only"
 
   # livecheck needs to surface multiple versions for version throttling but
@@ -18,11 +18,11 @@ class Renovate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0381d18f4551bb8f4df5fd6e9c5b8a9f24937004986d0ec13601168110bfa2b4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0381d18f4551bb8f4df5fd6e9c5b8a9f24937004986d0ec13601168110bfa2b4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0381d18f4551bb8f4df5fd6e9c5b8a9f24937004986d0ec13601168110bfa2b4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "9627c0610b453a8fefa2663da0b56d7f1e5df21bc98f75ae1d9a8d6c5b40fdc0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9627c0610b453a8fefa2663da0b56d7f1e5df21bc98f75ae1d9a8d6c5b40fdc0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "83fb36629f110760b204d1e6031d821790f7abde9a4458f1702d585702a9f4b4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "83fb36629f110760b204d1e6031d821790f7abde9a4458f1702d585702a9f4b4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "83fb36629f110760b204d1e6031d821790f7abde9a4458f1702d585702a9f4b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "961dfb916b22e419ef6694764113e5984d8e55a0a8416a556b9e030c0bfee2af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "961dfb916b22e419ef6694764113e5984d8e55a0a8416a556b9e030c0bfee2af"
   end
 
   depends_on "node@24"

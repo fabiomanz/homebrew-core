@@ -7,8 +7,11 @@ class GsettingsDesktopSchemas < Formula
   compatibility_version 1
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, tahoe: "3a997b4dc91f0a5af0e696a45905cfd5732bdb3b872beb98144fa188dd1e731b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d70b0494de9d764c4f893a22f75a736aa97b8de37b9de51da36a0789f134f1a9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d70b0494de9d764c4f893a22f75a736aa97b8de37b9de51da36a0789f134f1a9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d70b0494de9d764c4f893a22f75a736aa97b8de37b9de51da36a0789f134f1a9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "81a6ecb2ebe3b359bd024462b2d780ea5c346c9cadc10cada13f33de87fe2db3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "81a6ecb2ebe3b359bd024462b2d780ea5c346c9cadc10cada13f33de87fe2db3"
   end
 
   depends_on "gettext" => :build

@@ -61,8 +61,6 @@ class Qemu < Formula
     depends_on "zlib-ng-compat"
   end
 
-  deny_network_access!
-
   def install
     ENV["LIBTOOL"] = "glibtool"
 
@@ -99,13 +97,6 @@ class Qemu < Formula
 
     # The arm64 HVF backend needs the macOS 15 SDK for its EL2 sysregs and vGIC
     args << "--disable-hvf" if OS.mac? && Hardware::CPU.arm? && MacOS.version <= :sonoma
-
-    # Starting in Golden Gate, ParavirtualizedGraphics.framework is present but
-    # largely unusable. Remove once QEMU configure script is able to correctly
-    # handle this.
-    #
-    # See https://patchew.org/QEMU/20260826203700.39057-1-dude@angrygoose.dev/.
-    args << "--disable-pvg" if OS.mac? && MacOS.version >= :golden_gate
 
     args += if OS.mac?
       ["--disable-gtk", "--enable-cocoa"]
