@@ -8,8 +8,11 @@ class Utf8proc < Formula
   head "https://github.com/JuliaStrings/utf8proc.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "a5bb6883aae2dd47c45dc43bc4e13940ea9aa3f6cc98f2aecb4f464b8397834a"
+    sha256 cellar: :any, arm64_golden_gate: "3e63a31c768cc93f7743ee4ff460c459523fe33cd5282d4b13a59a8fec205498"
+    sha256 cellar: :any, arm64_tahoe:       "8486e0373e5c6cb0d3e6363ed03628c92949eb2ae628e427e7b0344600d79156"
+    sha256 cellar: :any, arm64_sequoia:     "19202e7aa4183f5fec9335ed196fd804e36c9ac3323040752df86aaec74f8724"
+    sha256 cellar: :any, arm64_linux:       "3e5c802a448f77106977c4b8b351feaa7841ea5a6312778541f6edacc50f6d06"
+    sha256 cellar: :any, x86_64_linux:      "dec70c02054fe975edbb51778338fd632edba7061d97be3527101bc84ddf3aa1"
   end
 
   depends_on "cmake" => :build

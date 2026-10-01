@@ -19,8 +19,11 @@ class Git < Formula
   end
 
   bottle do
-    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "e210f5a14b7368f99dac297283f07881968205e4d4d4583f2df14d6d76255436"
+    sha256 arm64_golden_gate: "32638a7c7c26f1d3d595a7543247baa234abbb819f8887aac5c2b858da91d0a9"
+    sha256 arm64_tahoe:       "1b5d5749c5092daaa6c88b2e0430f095aac55a5c723117da7758910e506a8982"
+    sha256 arm64_sequoia:     "db3fbed936fd0a1dbdc265e1be33bfe6584a98d692aab9c21c10f1890fd3b78b"
+    sha256 arm64_linux:       "d013c21067ac3f044cb1e1c1bdbb5529a2dab364081600424f333f964e1ca755"
+    sha256 x86_64_linux:      "79987fa0d484cc5aabb909cb2bffc83e2aedacfdf4cc98aff8db4803819daeef"
   end
 
   depends_on "gettext" => :build
