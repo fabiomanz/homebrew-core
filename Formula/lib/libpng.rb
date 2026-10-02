@@ -1,8 +1,8 @@
 class Libpng < Formula
   desc "Library for manipulating PNG images"
   homepage "https://www.libpng.org/pub/png/libpng.html"
-  url "https://downloads.sourceforge.net/project/libpng/libpng16/1.6.58/libpng-1.6.58.tar.xz"
-  sha256 "28eb403f51f0f7405249132cecfe82ea5c0ef97f1b32c5a65828814ae0d34775"
+  url "https://downloads.sourceforge.net/project/libpng/libpng16/1.6.59/libpng-1.6.59.tar.xz"
+  sha256 "d80dd2a38a37f803cb9b6ac7b14bd6e74ddc3b654780a8380bdf93523fdb4389"
   license "libpng-2.0"
   compatibility_version 1
 
@@ -13,7 +13,7 @@ class Libpng < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "e570839e89d5bbb4efbaf2cb1386f730446069e2899a4bf4317b898ac223656a"
+    sha256 cellar: :any, tahoe: "983550222f14d7db234a39119dc66c0de74d9b79b74f83ecf4b81a6b694d40de"
   end
 
   head do

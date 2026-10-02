@@ -1,8 +1,8 @@
 class Nss < Formula
   desc "Libraries for security-enabled client and server applications"
   homepage "https://firefox-source-docs.mozilla.org/security/nss/index.html"
-  url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_128_RTM/src/nss-3.128.tar.gz"
-  sha256 "70ea638f4e4fc341b24782ef9af6d88a2d3280ef5e46736748411fe8ca586351"
+  url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_130_RTM/src/nss-3.130.tar.gz"
+  sha256 "afab9f82c78bfa3e7e8b4a61ac31922675c58203f67ff385a2714df7fe9bd5c5"
   license "MPL-2.0"
   compatibility_version 1
 
@@ -16,7 +16,7 @@ class Nss < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "138c0352e30313e876b2a7196e352971250aff9f2dae571accff7b6ba7142120"
+    sha256 cellar: :any, tahoe: "c14aec847771cac8473066177a309c401ff4e03213e45776150f9baa9705dbc3"
   end
 
   depends_on "nspr"

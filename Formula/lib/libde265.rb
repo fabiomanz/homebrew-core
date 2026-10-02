@@ -1,17 +1,19 @@
 class Libde265 < Formula
   desc "Open h.265 video codec implementation"
   homepage "https://github.com/strukturag/libde265"
-  url "https://github.com/strukturag/libde265/releases/download/v1.1.2/libde265-1.1.2.tar.gz"
-  sha256 "eaacd1943ab0c452c19f6136a36ca227e6b761b39a81eaca8454d48c147e1f67"
+  url "https://github.com/strukturag/libde265/releases/download/v1.1.3/libde265-1.1.3.tar.gz"
+  sha256 "554228bd17788c99a7e63b37ab5634722190e6e2bf60c1dcb01cef328e133905"
   license "LGPL-3.0-or-later"
   compatibility_version 1
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "3e411fc2e3f36c7d8e2a8d0a900544e720b0760ac8f79d20638ac422ac2f5d9f"
+    sha256 cellar: :any, tahoe: "22bd6619516c122215be22703611adaf9ae9035eb5e122501314fa126d6457fb"
   end
 
   depends_on "cmake" => :build
+
+  deny_network_access!
 
   def install
     system "cmake", "-S", ".", "-B", "build",
