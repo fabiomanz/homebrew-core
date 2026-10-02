@@ -1,8 +1,8 @@
 class Gnupg < Formula
   desc "GNU Privacy Guard (OpenPGP)"
   homepage "https://gnupg.org/"
-  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.5.22.tar.bz2"
-  sha256 "96e27b020ad26510388e06f5f07f3f70a4ed8916ee995f1b72b7a024e6d9d87e"
+  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.5.24.tar.bz2"
+  sha256 "bf149d01a2b9fcc0e4589b8ae8697d3d5c557ea48ed95a3fa55dd3b1187e6039"
   license "GPL-3.0-or-later"
   compatibility_version 1
 
@@ -19,7 +19,7 @@ class Gnupg < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "65eb5ba6842e9ed39e6b7f164fe7e948d5a4ffa885d04d38977b51682c970a11"
+    sha256 tahoe: "49f6fedc934bc973c7c36b70868d33908670b9ea6e9445f291d120f3d6b48683"
   end
 
   depends_on "pkgconf" => :build
@@ -45,14 +45,14 @@ class Gnupg < Formula
     depends_on "zlib-ng-compat"
   end
 
-  conflicts_with cask: "gpg-suite"
-  conflicts_with cask: "gpg-suite-no-mail"
-  conflicts_with cask: "gpg-suite-pinentry"
-  conflicts_with cask: "gpg-suite@nightly"
+  deny_network_access!
 
   def install
     libusb = Formula["libusb"]
     ENV.append "CPPFLAGS", "-I#{libusb.opt_include}/libusb-#{libusb.version.major_minor}"
+
+    # gpgscm otherwise hard-codes /tmp on Unix.
+    inreplace "tests/gpgscm/tests.scm", "(get-temp-path)", '(getenv "TMPDIR")'
 
     mkdir "build" do
       system "../configure", "--disable-silent-rules",

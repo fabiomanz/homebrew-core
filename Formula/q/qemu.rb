@@ -1,8 +1,8 @@
 class Qemu < Formula
   desc "Generic machine emulator and virtualizer"
   homepage "https://www.qemu.org/"
-  url "https://download.qemu.org/qemu-11.1.1.tar.xz"
-  sha256 "079ffbff8a7111bbc89022107cbabf3bbfd614d5fc9d7cc675991196aca12482"
+  url "https://download.qemu.org/qemu-11.1.2.tar.xz"
+  sha256 "731b5681e4bb18be313231579b8efd0296c5b015fa36dc533874b639ba838016"
   license "GPL-2.0-only"
   compatibility_version 1
   head "https://gitlab.com/qemu-project/qemu.git", branch: "master"
@@ -14,7 +14,7 @@ class Qemu < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "4163a219d008042a4e0acac36cafbc205fbdb1907e0697d864ec8ae9fda32a4b"
+    sha256 tahoe: "d57588ff590aeb360d4bc96543bf1dcdf870f09300e8dbb0e53c751cad4aa0ff"
   end
 
   depends_on "bison" => :build # >= 3.0
@@ -61,6 +61,8 @@ class Qemu < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     ENV["LIBTOOL"] = "glibtool"
 
@@ -97,6 +99,13 @@ class Qemu < Formula
 
     # The arm64 HVF backend needs the macOS 15 SDK for its EL2 sysregs and vGIC
     args << "--disable-hvf" if OS.mac? && Hardware::CPU.arm? && MacOS.version <= :sonoma
+
+    # Starting in Golden Gate, ParavirtualizedGraphics.framework is present but
+    # largely unusable. Remove once QEMU configure script is able to correctly
+    # handle this.
+    #
+    # See https://patchew.org/QEMU/20260826203700.39057-1-dude@angrygoose.dev/.
+    args << "--disable-pvg" if OS.mac? && MacOS.version >= :golden_gate
 
     args += if OS.mac?
       ["--disable-gtk", "--enable-cocoa"]

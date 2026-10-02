@@ -5,16 +5,17 @@ class Mysql < Formula
   mirror "https://repo.mysql.com/apt/ubuntu/pool/mysql-innovation/m/mysql-community/mysql-community_26.7.0.orig.tar.gz"
   sha256 "95e949183b94bbe39e70c6355e6c90d2a640a62ede996ca5f7a6a3e0827a3260"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 1
+  revision 3
 
   livecheck do
-    url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src"
+    url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src",
+        user_agent: :browser
     regex(/href=.*?mysql[._-](?:boost[._-])?v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "ce4853aecc4d4e25b8da31d010c85b21f9a69127da9ddb45479f2ecfaa582e79"
+    sha256 tahoe: "915dea62b16b2f78abecd6c056899e9bbb15e7f04fd5387bbb1240f2853e4af2"
   end
 
   depends_on "bison" => :build

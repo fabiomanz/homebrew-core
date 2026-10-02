@@ -1,8 +1,8 @@
 class Orc < Formula
   desc "Oil Runtime Compiler (ORC)"
   homepage "https://gstreamer.freedesktop.org/modules/orc.html"
-  url "https://gstreamer.freedesktop.org/src/orc/orc-0.4.43.tar.xz"
-  sha256 "82394e20e5c4dffe8b45ea8525c62dd4e3e8be7f253ac11c19297ba7ea5473e0"
+  url "https://gstreamer.freedesktop.org/src/orc/orc-0.4.44.tar.xz"
+  sha256 "4aeb97aea2b58224029dc2b23d7d064cfa990cb4fb8c4da440bcbe9c95bc5d2d"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause"]
   compatibility_version 1
 
@@ -13,7 +13,7 @@ class Orc < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "ccc606265b76f56d1b49653fe2fbc4eee8a78f783068622801e2a33151102a47"
+    sha256 cellar: :any, tahoe: "8f364787f83e761cbadda77e972513515e58e766247d7738eba4d090137aae1d"
   end
 
   depends_on "meson" => :build
