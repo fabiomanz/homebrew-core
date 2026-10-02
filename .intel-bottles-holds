@@ -1,15 +1,12 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
 dart-sdk	Formula/d/dart-sdk.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	3.13.4	3.13.5
 dartaotruntime	Formula/d/dartaotruntime.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	3.13.4	3.13.5
-gnu-getopt	Formula/g/gnu-getopt.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	2.42.3	2.42.4
 gstreamer	Formula/g/gstreamer.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	1.28.7_1	1.28.7_2
 gtk4	Formula/g/gtk4.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	4.24.0	4.24.1
 imagemagick	Formula/i/imagemagick.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	7.1.2-31	7.1.2-32
 libheif	Formula/lib/libheif.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	1.23.3	1.23.5
 lld	Formula/l/lld.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	23.1.0	23.1.2
 node	Formula/n/node.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	26.8.1	26.10.0_1
-qtgrpc	Formula/q/qtgrpc.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	6.11.2_1	6.11.2_2
-qttools	Formula/q/qttools.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	6.11.2	6.11.2_1
 rust	Formula/r/rust.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	1.98.1	1.99.0
 uv	Formula/u/uv.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	0.12.9	0.12.22
 yt-dlp	Formula/y/yt-dlp.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	2026.8.19	2026.8.19_1

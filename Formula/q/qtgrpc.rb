@@ -11,7 +11,7 @@ class Qtgrpc < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # qtgrpcgen; qtprotobufgen
     "BSD-3-Clause", # *.cmake
   ]
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://code.qt.io/qt/qtgrpc.git", branch: "dev"
 
@@ -21,7 +21,7 @@ class Qtgrpc < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "28824e5dbd0e11a24405329b568735aef45134486c4de8395a27a2b4a29a2c66"
+    sha256 cellar: :any, tahoe: "d948a4bf69c7b7d4ba73ceb7c21bda36416a9d15b25c866ff0992c2dfced43d6"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -32,6 +32,8 @@ class Qtgrpc < Formula
   depends_on "protobuf"
   depends_on "qtbase"
   depends_on "qtdeclarative"
+
+  allow_network_access! :test
 
   def install
     args = ["-DCMAKE_STAGING_PREFIX=#{prefix}"]

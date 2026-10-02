@@ -11,6 +11,7 @@ class Qttools < Formula
     "BSD-3-Clause", # *.cmake
     "BSL-1.0", # bundled catch2
   ]
+  revision 1
   head "https://code.qt.io/qt/qttools.git", branch: "dev"
 
   livecheck do
@@ -19,7 +20,7 @@ class Qttools < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "12a6f528dbe157802de11294c2455d49ed17e198f76a17be9d9e8ddd0c9fbe9c"
+    sha256 cellar: :any, tahoe: "d2be2d7c1d6c22f9d1599bd629bd0eb165bdf39434c6da5c35f3ce433bcd47ce"
   end
 
   depends_on "cmake" => [:build, :test]

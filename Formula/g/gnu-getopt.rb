@@ -1,8 +1,8 @@
 class GnuGetopt < Formula
   desc "Command-line option parsing utility"
   homepage "https://github.com/util-linux/util-linux"
-  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.42/util-linux-2.42.3.tar.gz"
-  sha256 "2f4c3484f67c79688a50974b9e0ae52d089fe07a63d2dbb59b20e50ed26fe89f"
+  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.42/util-linux-2.42.4.tar.gz"
+  sha256 "af3241e7776964dcb6bb9a811ca7b0d93000b563e2ae2a8df8f80a7cd6e04d56"
   license "GPL-2.0-or-later"
   compatibility_version 1
 
@@ -40,7 +40,7 @@ class GnuGetopt < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "13c304bda6bba53b3920ced250a44bef907a83a1a2ac23e6318b345865341782"
+    sha256 cellar: :any, tahoe: "8d25d3e02ed550fc41ce3eff55e423f9d2ea845da9f9ef2ce5f78153e8993356"
   end
 
   keg_only :shadowed_by_macos, "macOS provides BSD getopt"
@@ -56,6 +56,8 @@ class GnuGetopt < Formula
     type :unofficial
     resolves "https://github.com/util-linux/util-linux/pull/4173"
   end
+
+  deny_network_access!
 
   def install
     system "./configure", "--disable-silent-rules",
