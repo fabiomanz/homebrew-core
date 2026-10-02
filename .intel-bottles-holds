@@ -3,8 +3,6 @@ dart-sdk	Formula/d/dart-sdk.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	3.13.4	3
 dartaotruntime	Formula/d/dartaotruntime.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	3.13.4	3.13.5
 gstreamer	Formula/g/gstreamer.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	1.28.7_1	1.28.7_2
 gtk4	Formula/g/gtk4.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	4.24.0	4.24.1
-imagemagick	Formula/i/imagemagick.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	7.1.2-31	7.1.2-32
-libheif	Formula/lib/libheif.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	1.23.3	1.23.5
 lld	Formula/l/lld.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	23.1.0	23.1.2
 node	Formula/n/node.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	26.8.1	26.10.0_1
 rust	Formula/r/rust.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	1.98.1	1.99.0
