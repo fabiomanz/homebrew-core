@@ -8,12 +8,8 @@ class AdaUrl < Formula
   head "https://github.com/ada-url/ada.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "6235988a1cb39e53645f3d9b0ef889e94e7278ccd627a2b8fe16c64a7e4c0fb9"
-    sha256 cellar: :any, arm64_tahoe:       "8cd5b8133d5d34575ad20ddc10fd1c999d8445528bb636da563e3f7cb17b1937"
-    sha256 cellar: :any, arm64_sequoia:     "bb5f6f94e6215be0eed9580c6a204148d17618466fe2ee99201e2b7107b05e8e"
-    sha256 cellar: :any, arm64_linux:       "8e442e00c3b47def8f6d8fb38d18d9ad15be89c66a27085ae4ee40f067d0b722"
-    sha256 cellar: :any, x86_64_linux:      "6cc8c56c008d31dcb63f3beca7d20d124fcfb52e9710e69ef8a9ada954ce9df6"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 cellar: :any, tahoe: "904c529522f16c414b5970107f2925c90b79d292d27654e9acfb3058b847e8d6"
   end
 
   depends_on "cmake" => :build
