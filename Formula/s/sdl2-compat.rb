@@ -1,18 +1,20 @@
 class Sdl2Compat < Formula
   desc "SDL2 compatibility layer that uses SDL3 behind the scenes"
   homepage "https://github.com/libsdl-org/sdl2-compat"
-  url "https://github.com/libsdl-org/sdl2-compat/releases/download/release-2.32.72/sdl2-compat-2.32.72.tar.gz"
-  sha256 "a14d2f78dad8e83ef1039b6534ace4d14f11f5b11d023af989affd70ac1bb35e"
+  url "https://github.com/libsdl-org/sdl2-compat/releases/download/release-2.32.74/sdl2-compat-2.32.74.tar.gz"
+  sha256 "ec68abde77e2e459c8abc4f9587b8976b5d2a657b2bfda2fb3a079b0f8924588"
   license "Zlib"
   head "https://github.com/libsdl-org/sdl2-compat.git", branch: "main"
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "cbc418392383ba8a4656ed7d94d546e7ca2ce1985bc4aa38a7ad48714fda2954"
+    sha256 cellar: :any, tahoe: "42fee0f4e61686c0e4f1c06d16ab0c01ccf6e3d55f1b29af88cd90472786f959"
   end
 
   depends_on "cmake" => :build
   depends_on "sdl3" => :no_linkage
+
+  deny_network_access!
 
   def install
     args = ["-DCMAKE_INSTALL_RPATH=#{rpath(target: formula_opt_lib("sdl3"))}"] if OS.mac?
