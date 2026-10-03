@@ -1,10 +1,16 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
-dart-sdk	Formula/d/dart-sdk.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	3.13.4	3.13.5
-dartaotruntime	Formula/d/dartaotruntime.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	3.13.4	3.13.5
-gstreamer	Formula/g/gstreamer.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	1.28.7_1	1.28.7_2
-gtk4	Formula/g/gtk4.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	4.24.0	4.24.1
-lld	Formula/l/lld.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	23.1.0	23.1.2
-node	Formula/n/node.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	26.8.1	26.10.0_1
-rust	Formula/r/rust.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	1.98.1	1.99.0
-uv	Formula/u/uv.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	0.12.9	0.12.22
-yt-dlp	Formula/y/yt-dlp.rb	c44c6e75c8ec3da7452816214eba4c4e10f73c7e	2026.8.19	2026.8.19_1
+dart-sdk	Formula/d/dart-sdk.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	3.13.4	3.13.5
+dartaotruntime	Formula/d/dartaotruntime.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	3.13.4	3.13.5
+gstreamer	Formula/g/gstreamer.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	1.28.7_1	1.28.7_2
+gtk+3	Formula/g/gtk+3.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	3.24.52	3.24.52_1
+gtk4	Formula/g/gtk4.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	4.24.0	4.24.1
+lld	Formula/l/lld.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	23.1.0	23.1.2
+node	Formula/n/node.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	26.8.1	26.10.0_1
+openexr	Formula/o/openexr.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	3.5.1	3.5.2
+pandoc	Formula/p/pandoc.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	3.11	3.12
+pipx	Formula/p/pipx.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	1.17.8	1.17.9
+rust	Formula/r/rust.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	1.98.1	1.99.0
+sdl2-compat	Formula/s/sdl2-compat.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	2.32.72	2.32.74
+sdl3	Formula/s/sdl3.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	3.4.16	3.4.18
+uv	Formula/u/uv.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	0.12.9	0.12.22
+yt-dlp	Formula/y/yt-dlp.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	2026.8.19	2026.8.19_1

@@ -1,33 +1,27 @@
-class Pypy311 < Formula
+class Pypy312 < Formula
   desc "Implementation of Python 3 in Python"
   homepage "https://pypy.org/"
-  url "https://downloads.python.org/pypy/pypy3.11-v8.0.0-src.tar.gz"
-  sha256 "829cef413d84383563488f0234b3cc537a8034e43fda13e0530500dad2d5dc3b"
+  url "https://downloads.python.org/pypy/pypy3.12-v8.0.0-src.tar.gz"
+  sha256 "eb406334e413828901034544d0033d67452c3cf2f11f77fd2daae0cd4fbb0a7b"
   license "MIT"
-  revision 1
 
   livecheck do
     url "https://downloads.python.org/pypy/"
-    regex(/href=.*?pypy3\.11[._-]v?(\d+(?:\.\d+)+)-src\.t/i)
+    regex(/href=.*?pypy3\.12[._-]v?(\d+(?:\.\d+)+)-src\.t/i)
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6dabe6b50efdf80320a33f97a4666f4a0778b4c164c055b61eb04bf5d66e2dbe"
-    sha256 cellar: :any, arm64_tahoe:       "271d94d5d3a95c9eaaaa255563249a5d6dfdd4cb286b1fd695594bbf68c59a57"
-    sha256 cellar: :any, arm64_sequoia:     "8600fd0e9f848d03269a4082d074cb548281c7d8b7cca7f67132ab4f9e627646"
-    sha256 cellar: :any, arm64_linux:       "63be98ba15e693b553d32d3119bc039059b8b5d6e28d337d262aa7366a5a1222"
-    sha256 cellar: :any, x86_64_linux:      "52793346dc2739b8a0b1090c53edbd53ff42b659506d91d757b0aa8497501cf5"
+    sha256 cellar: :any, arm64_golden_gate: "9e8012cff98b27eb6c23cf13d491591d29789f4c8291eba2a613babedd81c85a"
+    sha256 cellar: :any, arm64_tahoe:       "6b5becfadd80286f8f041e56e5c06de9cec9d695c0e236734838280e042b141e"
+    sha256 cellar: :any, arm64_sequoia:     "a3af115730dda79ab7767fa36a15bc25da7db6f1596f96d8fa09ae0ee231efbf"
+    sha256 cellar: :any, arm64_linux:       "80754b0620756cca02468cf119b03455e942c9fa1b7fdc22423650c1c34612a7"
+    sha256 cellar: :any, x86_64_linux:      "f50920558e9d5b855f263f2b1892b7dbe55fc26841b6959bc0ef931227406bf2"
   end
-
-  # https://github.com/pypy/pypy/blob/main/pypy/doc/release-v8.0.1.rst
-  deprecate! date: "2026-10-02", because: "is planned for EOL in next release (8.0.1) and uses EOL Tcl/Tk 8.6"
-  disable! date: "2027-10-02", because: :unmaintained
 
   depends_on "pkgconf" => :build
   depends_on "gdbm"
   depends_on "openssl@3"
   depends_on "sqlite"
-  depends_on "tcl-tk@8"
   depends_on "xz"
 
   uses_from_macos "bzip2"
@@ -39,19 +33,15 @@ class Pypy311 < Formula
     depends_on "zlib-ng-compat"
   end
 
-  link_overwrite "lib/pypy3.11/site-packages/pip*", "lib/pypy3.11/site-packages/setuptools*"
+  link_overwrite "bin/pip_pypy3", "bin/pypy3", "lib/libpypy3-c.dylib", "lib/libpypy3-c.so"
+  link_overwrite "lib/pypy3.12/site-packages/pip*"
 
   pypi_packages package_name:   "",
-                extra_packages: %w[flit-core pip setuptools wheel]
+                extra_packages: %w[flit-core pip setuptools]
 
   resource "flit-core" do
     url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
     sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
-    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "pip" do
@@ -62,11 +52,6 @@ class Pypy311 < Formula
   resource "setuptools" do
     url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
     sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
-  end
-
-  resource "wheel" do
-    url "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz"
-    sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
   end
 
   resource "bootstrap" do
@@ -92,15 +77,6 @@ class Pypy311 < Formula
     end
   end
 
-  # Build fixes:
-  # - Disable Linux tcl-tk detection since the build script only searches system paths.
-  #   When tcl-tk is not found, it uses unversioned `-ltcl -ltk`, which breaks build.
-  patch do
-    file "Patches/pypy/tcl-tk.diff"
-    type :unofficial
-    resolves "https://github.com/pypy/pypy/issues/3538"
-  end
-
   deny_network_access!
 
   def abi_version = stable.url[/pypy(\d+\.\d+)/, 1]
@@ -109,7 +85,7 @@ class Pypy311 < Formula
 
   def site_packages(root) = root/"lib/pypy#{abi_version}/site-packages"
 
-  # Where setuptools will install executable scripts
+  # Where pip will install executable scripts
   def scripts_folder = HOMEBREW_PREFIX/"share/pypy#{abi_version}"
 
   def install
@@ -129,6 +105,9 @@ class Pypy311 < Formula
     end
 
     ENV["PYPY_USESSION_DIR"] = buildpath
+    # TODO: re-enable tkinter when PyPy supports Tcl/Tk 9
+    ENV["PYPY_PACKAGE_WITHOUTTK"] = "1"
+    inreplace "lib_pypy/pypy_tools/build_cffi_imports.py", '("_tkinter", "_tkinter/tklib_build.py"),', "# \\0"
 
     resource("bootstrap").stage buildpath/"bootstrap"
     python = buildpath/"bootstrap/bin/pypy"
@@ -141,6 +120,19 @@ class Pypy311 < Formula
                                                       "--verbose"
     end
 
+    # package.py runs `pip install setuptools` for distutils so prep it to avoid
+    # network access. This will be installed into the buildpath not the prefix.
+    common_pip_args = %w[
+      -v
+      --no-deps
+      --no-binary :all:
+      --no-index
+      --no-build-isolation
+    ]
+    resource("setuptools").stage do
+      system buildpath/"pypy/goal/pypy#{abi_version}-c", "-m", "pip", "install", *common_pip_args, "."
+    end
+
     system python, "pypy/tool/release/package.py", "--archive-name", "pypy3",
                                                    "--targetdir", ".",
                                                    "--no-embedded-dependencies",
@@ -149,37 +141,25 @@ class Pypy311 < Formula
     libexec.mkpath
     system "tar", "-C", libexec.to_s, "--strip-components", "1", "-xf", "pypy3.tar.gz"
 
-    # Prepare virtualenv for wheel
-    common_pip_args = %w[
-      -v
-      --no-deps
-      --no-binary :all:
-      --no-index
-      --no-build-isolation
-    ]
+    # Prepare virtualenv to build pip wheel
     whl_build = buildpath/"whl_build"
     pypy3 = libexec/"bin/pypy#{abi_version}"
     system pypy3, "-m", "venv", whl_build
-    %w[flit-core packaging wheel].each do |r|
-      resource(r).stage do
-        system whl_build/"bin/pip3", "install", *common_pip_args, "."
-      end
+    resource("flit-core").stage do
+      system whl_build/"bin/pip3", "install", *common_pip_args, "."
     end
 
-    # Replace bundled setuptools/pip with our own.
+    # Replace bundled pip with our own.
     wheel_dir = libexec/"lib/pypy#{abi_version}/ensurepip/_bundled"
-    rm wheel_dir.glob("{pip,setuptools}*.whl")
-    %w[setuptools pip].each do |r|
-      resource(r).stage do
-        system whl_build/"bin/pip3", "wheel", *common_pip_args, "--wheel-dir=#{wheel_dir}", "."
-      end
+    rm wheel_dir.glob("pip-*.whl")
+    resource("pip").stage do
+      system whl_build/"bin/pip3", "wheel", *common_pip_args, "--wheel-dir=#{wheel_dir}", "."
     end
 
-    # Patch ensurepip to bootstrap our updated versions of setuptools/pip
-    inreplace wheel_dir.parent/"__init__.py" do |s|
-      s.gsub!(/_SETUPTOOLS_VERSION = .*/, "_SETUPTOOLS_VERSION = \"#{resource("setuptools").version}\"")
-      s.gsub!(/_PIP_VERSION = .*/, "_PIP_VERSION = \"#{resource("pip").version}\"")
-    end
+    # Patch ensurepip to bootstrap our updated version of pip
+    inreplace wheel_dir.parent/"__init__.py",
+              /_PIP_VERSION = .*/,
+              "_PIP_VERSION = \"#{resource("pip").version}\""
 
     # Ensure that our new pip wheel is globally readable.
     pip_wheel = wheel_dir/"pip-#{resource("pip").version}-py3-none-any.whl"
@@ -188,7 +168,7 @@ class Pypy311 < Formula
     # Bootstrap initial install of pip.
     system pypy3, "-Im", "ensurepip"
 
-    # Install desired versions of setuptools and pip using the version of
+    # Install desired versions of pip using the version of
     # pip bootstrapped by ensurepip.
     # Note that while we replaced the ensurepip wheels, there's no guarantee
     # ensurepip actually used them, since other existing installations could
@@ -198,7 +178,6 @@ class Pypy311 < Formula
            "--no-index",
            "--upgrade",
            "--isolated",
-           wheel_dir/"setuptools-#{resource("setuptools").version}-py3-none-any.whl",
            pip_wheel
 
     # Move original libexec/bin directory to allow preserving user-installed scripts.
@@ -216,7 +195,7 @@ class Pypy311 < Formula
     lib.install_symlink libexec/"pypybin"/shared_library("libpypy#{abi_version}-c")
     include.install_symlink libexec/"include/pypy#{abi_version}"
 
-    # Symlink site-packages to retain user packages while letting formula maintain pip/setuptools
+    # Symlink site-packages to retain user packages while letting formula maintain pip
     libexec_site_packages = site_packages(libexec)
     site_packages(prefix).parent.install libexec_site_packages
     libexec_site_packages.parent.install_symlink site_packages(HOMEBREW_PREFIX)
@@ -230,6 +209,8 @@ class Pypy311 < Formula
 
   def caveats
     <<~EOS
+      tkinter is not provided as it needs end-of-life Tcl/Tk 8.6
+
       The install-scripts folder is:
         #{scripts_folder}
 
@@ -237,8 +218,8 @@ class Pypy311 < Formula
       any provided scripts will go into the install-scripts folder above. You may want to add
       it to your PATH *after* #{HOMEBREW_PREFIX}/bin so you don't overwrite tools from CPython.
 
-      Setuptools and pip have been installed, so you can use pip_pypy#{abi_version}.
-      These are managed by the formula and should not be modified.
+      Pip has been installed, so you can use pip_pypy#{abi_version}.
+      It is managed by the formula and should not be modified.
     EOS
   end
 
