@@ -8,11 +8,8 @@ class Deno < Formula
   head "https://github.com/denoland/deno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9d4e5f16210c3832db56e7eb439a2c5b080b01ba0041f69ce00a159d229627e6"
-    sha256 cellar: :any, arm64_tahoe:       "98359a62d2ae77d6878240826153e426929d995f9774514fe91c946be9ad51cd"
-    sha256 cellar: :any, arm64_sequoia:     "c327451c9e121a3f0743f7cd15c6fe74c5b501342d7bfa4323a8cb05531e8839"
-    sha256 cellar: :any, arm64_linux:       "f6765e9904e080c3d56166f7feb39be4e6cf95b80542821ef5c980477698c429"
-    sha256 cellar: :any, x86_64_linux:      "687976b368c278b70d7d12b533659867d04c5ea812feee42e988078a4cf068f4"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 cellar: :any, tahoe: "1f9ae01d979096504561a5322510bfa737e04e521f16b7829f49bd68a4d407bb"
   end
 
   depends_on "cmake" => :build

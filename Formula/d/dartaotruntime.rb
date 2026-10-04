@@ -2,7 +2,7 @@ class Dartaotruntime < Formula
   desc "Command-line tool for running AOT-compiled snapshots of Dart code"
   homepage "https://dart.dev/tools/dartaotruntime"
   # NOTE: Using a placeholder file because the build source is fetched by gclient
-  url "https://raw.githubusercontent.com/dart-lang/sdk/refs/tags/3.13.4/README.md"
+  url "https://raw.githubusercontent.com/dart-lang/sdk/refs/tags/3.13.5/README.md"
   sha256 "ff4301ec8e5c1259c5778c4abc947e303308cd31af30acd55575f5ca7ed6f405"
   license "BSD-3-Clause"
   compatibility_version 3
@@ -13,7 +13,7 @@ class Dartaotruntime < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, tahoe: "29238da43614c0e8da675ae0c5cea68fa53d62b0f769efe530fcd9a3fbe106d8"
+    sha256 cellar: :any_skip_relocation, tahoe: "60c9e0bf2e9a7bd8f2e2656395172a6588cd68bfc7178131a68802c8bbac8f75"
   end
 
   depends_on "ninja" => :build
@@ -30,8 +30,8 @@ class Dartaotruntime < Formula
   # always pull the latest commit from https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/refs/heads/main
   resource "depot-tools" do
     url "https://chromium.googlesource.com/chromium/tools/depot_tools.git",
-        revision: "46afe8bfbb57583700c01d1584e7a49638d586ed"
-    version "46afe8bfbb57583700c01d1584e7a49638d586ed"
+        revision: "b2042c50e4d8a0ecc69ebc60983024a5b477c4ca"
+    version "b2042c50e4d8a0ecc69ebc60983024a5b477c4ca"
 
     livecheck do
       url "https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/refs/heads/main?format=JSON"

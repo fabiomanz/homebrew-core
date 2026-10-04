@@ -1,15 +1,15 @@
 class Uv < Formula
   desc "Extremely fast Python package installer and resolver, written in Rust"
   homepage "https://docs.astral.sh/uv/"
-  url "https://github.com/astral-sh/uv/archive/refs/tags/0.12.9.tar.gz"
-  sha256 "e5655f247a3ef1f44bbedb403a8fbcfaef0c5082d7cb52b6536349a50ebc3df0"
+  url "https://github.com/astral-sh/uv/archive/refs/tags/0.12.23.tar.gz"
+  sha256 "662023e7453d40c2e751ddc9f0c9dc27e09f27324ca7e81249b3d15a5e5e364f"
   license any_of: ["Apache-2.0", "MIT"]
   compatibility_version 1
   head "https://github.com/astral-sh/uv.git", branch: "main"
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, tahoe: "26c2d3f02e2465eb20f5388600df1fcd74059153fa4491b83d50d6dc7140032c"
+    sha256 cellar: :any_skip_relocation, tahoe: "1b3fe20bf3f6e064e7b96fd8fd924d752d9702d23f0afa6f62ffc8961eb84312"
   end
 
   depends_on "pkgconf" => :build
@@ -19,8 +19,12 @@ class Uv < Formula
   uses_from_macos "bzip2"
   uses_from_macos "xz"
 
-  # downloads crates on install and wheels in test
-  deny_network_access! :postinstall
+  # downloads wheels in test
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     ENV["UV_COMMIT_HASH"] = ENV["UV_COMMIT_SHORT_HASH"] = tap.user

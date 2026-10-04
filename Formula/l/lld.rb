@@ -1,8 +1,8 @@
 class Lld < Formula
   desc "LLVM Project Linker"
   homepage "https://lld.llvm.org/"
-  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.0/llvm-project-23.1.0.src.tar.xz"
-  sha256 "ab1f0e3ec52448c33e8782eaf0422504b87c7b016b22514653ee0d8fcee479ff"
+  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.2/llvm-project-23.1.2.src.tar.xz"
+  sha256 "c98bbef08a2b4c2613cd50e9aa9ae7b69b1fe6c16b2c40373bc0ab6116fdf78a"
   license "Apache-2.0" => { with: "LLVM-exception" }
   compatibility_version 2
   head "https://github.com/llvm/llvm-project.git", branch: "main"
@@ -13,7 +13,7 @@ class Lld < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "40ae94ee653f2c77e0c27a72acc314da502c9321b44a113c9901334e671cd084"
+    sha256 cellar: :any, tahoe: "75ea4580359fae650ed4d58905c5743118177d5ea1a21c8f6fc897583c2d4fab"
   end
 
   depends_on "cmake" => :build
