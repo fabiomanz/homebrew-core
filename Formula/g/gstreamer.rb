@@ -2,7 +2,7 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
-  revision 1
+  revision 2
   compatibility_version 1
 
   stable do
@@ -27,7 +27,7 @@ class Gstreamer < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "0f63982cfa14d16b97f8a00a1d31513fa38381bebe840774525c533731347ad8"
+    sha256 tahoe: "41101cd969f56e6e8086070f24ee9447ef5a4c5c607b0ed12946286bd3e677fd"
   end
 
   head do
@@ -150,6 +150,14 @@ class Gstreamer < Formula
   patch do
     url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/commit/49b4b4129e3b488f246493d3a57dc70652ec9dcf.diff"
     sha256 "25ef9fc417878e0aac46ffb0f16c5a5d1a44341cd3364c97111980fb5bfd64b8"
+    type :unofficial
+    resolves "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/merge_requests/12148"
+  end
+
+  # Support faac 2.2 `faac_params_init` signature
+  patch do
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/commit/2890668a8e8aec2f41f36a62036e4e7daf93f976.diff"
+    sha256 "b39d939f1b614dfcb9bfd89e259779196ba64f9d0277588c42be4d16b84486f8"
     type :unofficial
     resolves "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/merge_requests/12148"
   end

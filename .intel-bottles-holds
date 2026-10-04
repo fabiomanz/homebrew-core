@@ -1,3 +1,1 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
-gstreamer	Formula/g/gstreamer.rb	200ca8ca6e86a73d3ed2133e345d0c57e586d54a	1.28.7_1	1.28.7_2
-yt-dlp	Formula/y/yt-dlp.rb	200ca8ca6e86a73d3ed2133e345d0c57e586d54a	2026.8.19	2026.8.19_1
