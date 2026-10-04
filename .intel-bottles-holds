@@ -1,10 +1,11 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
-dart-sdk	Formula/d/dart-sdk.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	3.13.4	3.13.5
-dartaotruntime	Formula/d/dartaotruntime.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	3.13.4	3.13.5
-gstreamer	Formula/g/gstreamer.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	1.28.7_1	1.28.7_2
-gtk4	Formula/g/gtk4.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	4.24.0	4.24.1
-lld	Formula/l/lld.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	23.1.0	23.1.2
-node	Formula/n/node.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	26.8.1	26.10.0_1
-rust	Formula/r/rust.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	1.98.1	1.99.0
-uv	Formula/u/uv.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	0.12.9	0.12.22
-yt-dlp	Formula/y/yt-dlp.rb	d87480c2207b59e3b85d7ec90a2be3d2e2cf9db6	2026.8.19	2026.8.19_1
+dart-sdk	Formula/d/dart-sdk.rb	200ca8ca6e86a73d3ed2133e345d0c57e586d54a	3.13.4	3.13.5
+dartaotruntime	Formula/d/dartaotruntime.rb	200ca8ca6e86a73d3ed2133e345d0c57e586d54a	3.13.4	3.13.5
+gstreamer	Formula/g/gstreamer.rb	200ca8ca6e86a73d3ed2133e345d0c57e586d54a	1.28.7_1	1.28.7_2
+gtk4	Formula/g/gtk4.rb	200ca8ca6e86a73d3ed2133e345d0c57e586d54a	4.24.0	4.24.1
+lld	Formula/l/lld.rb	200ca8ca6e86a73d3ed2133e345d0c57e586d54a	23.1.0	23.1.2
+node	Formula/n/node.rb	200ca8ca6e86a73d3ed2133e345d0c57e586d54a	26.8.1	26.10.0_1
+pipx	Formula/p/pipx.rb	200ca8ca6e86a73d3ed2133e345d0c57e586d54a	1.17.9	1.17.10
+rust	Formula/r/rust.rb	200ca8ca6e86a73d3ed2133e345d0c57e586d54a	1.98.1	1.99.0
+uv	Formula/u/uv.rb	200ca8ca6e86a73d3ed2133e345d0c57e586d54a	0.12.9	0.12.23
+yt-dlp	Formula/y/yt-dlp.rb	200ca8ca6e86a73d3ed2133e345d0c57e586d54a	2026.8.19	2026.8.19_1
