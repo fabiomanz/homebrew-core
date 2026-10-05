@@ -1,7 +1,2 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
-hunspell	Formula/h/hunspell.rb	79ff54378afaad264d67fe1ca250c561ba2052bb	1.7.4	1.7.5
 node	Formula/n/node.rb	79ff54378afaad264d67fe1ca250c561ba2052bb	26.10.0_1	26.10.0_2
-pipx	Formula/p/pipx.rb	79ff54378afaad264d67fe1ca250c561ba2052bb	1.17.10	1.17.11
-poppler	Formula/p/poppler.rb	79ff54378afaad264d67fe1ca250c561ba2052bb	26.09.0	26.10.0
-simdjson	Formula/s/simdjson.rb	79ff54378afaad264d67fe1ca250c561ba2052bb	4.6.11	5.0.2
-yt-dlp	Formula/y/yt-dlp.rb	79ff54378afaad264d67fe1ca250c561ba2052bb	2026.8.19_1	2026.8.19_2
