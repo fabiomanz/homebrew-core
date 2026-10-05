@@ -1,2 +1,1 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
-node	Formula/n/node.rb	79ff54378afaad264d67fe1ca250c561ba2052bb	26.10.0_1	26.10.0_2

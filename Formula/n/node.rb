@@ -2,7 +2,7 @@ class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
   license "MIT"
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -32,7 +32,7 @@ class Node < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "cf387445158997f4b7518bf32abc08da62d437ffe58ae3c1a33156ce02e6187b"
+    sha256 tahoe: "fda6d18edacb40a843f5a5c61e0e96cead948c07b71414d723df4de20a14973b"
   end
 
   depends_on "pkgconf" => :build
@@ -103,6 +103,8 @@ class Node < Formula
   def install
     # make sure subprocesses spawned by make are using our Python 3
     ENV["PYTHON"] = python3
+    # simdjson 5 `key_selector` uses `throw` in consteval, which clang <= 20 rejects with -fno-exceptions
+    ENV.append "CXXFLAGS", "-DSIMDJSON_CONCEPT_DISABLED"
 
     # Ensure Homebrew deps are used
     rm_r(["deps/icu-small", "deps/npm"])
