@@ -1,1 +1,4 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
+expat	Formula/e/expat.rb	ec0abb8a6aed759b27b28d6fe15fcf801adfb375	2.8.5	2.9.0
+harfbuzz	Formula/h/harfbuzz.rb	ec0abb8a6aed759b27b28d6fe15fcf801adfb375	14.5.1	14.6.0
+libheif	Formula/lib/libheif.rb	ec0abb8a6aed759b27b28d6fe15fcf801adfb375	1.23.5	1.23.6
