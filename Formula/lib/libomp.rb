@@ -1,8 +1,8 @@
 class Libomp < Formula
   desc "LLVM's OpenMP runtime library"
   homepage "https://openmp.llvm.org/"
-  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.2/llvm-project-23.1.2.src.tar.xz"
-  sha256 "c98bbef08a2b4c2613cd50e9aa9ae7b69b1fe6c16b2c40373bc0ab6116fdf78a"
+  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.3/llvm-project-23.1.3.src.tar.xz"
+  sha256 "c44186a7762ed28954be72e5ff6df9808e0779d4f1bf014ecc4e7e211d31ee34"
   license "MIT"
   compatibility_version 1
 
@@ -13,7 +13,7 @@ class Libomp < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "e1e24c33228310560aa9a2b8ade931a464a5c4c6aaef84f2142809c24f262ed4"
+    sha256 cellar: :any, tahoe: "0916f6a5a5fef1bf9df61b883162e5870ce8a05280b6dbeab60c76485dcee35f"
   end
 
   # Ref: https://github.com/Homebrew/homebrew-core/issues/112107

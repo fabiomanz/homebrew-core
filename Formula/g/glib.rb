@@ -3,8 +3,8 @@ class Glib < Formula
 
   desc "Core application library for C"
   homepage "https://docs.gtk.org/glib/"
-  url "https://download.gnome.org/sources/glib/2.90/glib-2.90.0.tar.xz"
-  sha256 "17d15cac2af80a33271127408e0abc2748eb297c595c2a26409e81e14e7d1b8f"
+  url "https://download.gnome.org/sources/glib/2.90/glib-2.90.1.tar.xz"
+  sha256 "93c941aa17d5eb1d53fe838365f29a8b4e539c222a256d974ec8f30fc413e396"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
@@ -18,7 +18,7 @@ class Glib < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "4f180b8f89781725d58c0a39d7508c0bf0e96225fc69ef630e18a9f885f61c4a"
+    sha256 tahoe: "3b0aaa12be31d6f764cdca91e2a75efe6f317eabba79a48bdf1467217a0ccbab"
   end
 
   depends_on "bison" => :build # for gobject-introspection
