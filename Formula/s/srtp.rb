@@ -4,6 +4,7 @@ class Srtp < Formula
   url "https://github.com/cisco/libsrtp/archive/refs/tags/v2.8.1.tar.gz"
   sha256 "ef5569220749529d778013aae1178391d972570a2b4f7288dda22effa875b07c"
   license "BSD-3-Clause"
+  revision 1
   compatibility_version 1
   head "https://github.com/cisco/libsrtp.git", branch: "main"
 
@@ -14,11 +15,11 @@ class Srtp < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "0415af7230cf3d0cfa23a2641a8e9ce3858528276173312b5bf3c30399d1c3d2"
+    sha256 cellar: :any, tahoe: "db743cb33f8050edf5e7f05688488e986bba3a39f7dc17d918f8fdc0a8c98736"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   deny_network_access!
 
