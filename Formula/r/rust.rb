@@ -2,6 +2,7 @@ class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https://www.rust-lang.org/"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   compatibility_version 1
   head "https://github.com/rust-lang/rust.git", branch: "main"
 
@@ -85,13 +86,13 @@ class Rust < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "6ed366844e91253cca3968969ad3d5d109f18c73d0093afe9c4d9d5dd4abd033"
+    sha256 cellar: :any, tahoe: "7beacfc87ad4d468a0838cf70b0cc6d7443650001821479a9ee17ab79e878330"
   end
 
   depends_on "libgit2"
   depends_on "libssh2"
   depends_on "llvm"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pkgconf"
   depends_on "sqlite"
 
@@ -105,14 +106,14 @@ class Rust < Formula
   # These used to belong in `rustfmt`.
   link_overwrite "bin/cargo-fmt", "bin/git-rustfmt", "bin/rustfmt", "bin/rustfmt-*"
 
-  def llvm
-    deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+)?$/) }
-  end
+  def llvm = deps.map(&:name).find { |dep| dep.match?(/^llvm(@\d+)?$/) }
+
+  def openssl = deps.map(&:name).find { |dep| dep.start_with?("openssl@") }
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
     # https://docs.rs/openssl/latest/openssl/#manual
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix(openssl)
 
     ENV["LIBGIT2_NO_VENDOR"] = "1"
     ENV["LIBSQLITE3_SYS_USE_PKG_CONFIG"] = "1"
@@ -161,23 +162,17 @@ class Rust < Formula
       --prefix=#{prefix}
       --sysconfdir=#{etc}
       --tools=#{tools.join(",")}
-      --llvm-root=#{llvm.opt_prefix}
+      --llvm-root=#{formula_opt_prefix(llvm)}
       --enable-llvm-link-shared
       --enable-profiler
       --enable-vendor
       --disable-cargo-native-static
       --disable-docs
       --disable-lld
+      --release-channel=#{build.head? ? "nightly" : "stable"}
       --release-description=#{tap.user}
+      --set=build.allocator=jemalloc
     ]
-    if build.head?
-      args << "--disable-rpath"
-      args << "--release-channel=nightly"
-      args << "--set=build.allocator=jemalloc"
-    else
-      args << "--release-channel=stable"
-      args << "--set=rust.jemalloc" # TODO: use `--set=build.allocator=jemalloc` in 1.99.0 as old arg is deprecated
-    end
     # Restrict slower optimizations to bottling
     # https://github.com/rust-lang/rust/blob/main/src/doc/rustc-dev-guide/src/building/optimized-build.md
     if build.bottle?
@@ -204,7 +199,7 @@ class Rust < Formula
     # Replace the renamed llvm-objcopy with a symlink to make sure it can find libLLVM
     arch = Hardware::CPU.arm? ? :aarch64 : Hardware::CPU.arch
     rust_objcopy = lib/"rustlib/#{arch}-apple-darwin/bin/rust-objcopy"
-    llvm_objcopy = llvm.opt_bin/"llvm-objcopy"
+    llvm_objcopy = formula_opt_bin(llvm)/"llvm-objcopy"
     rm(rust_objcopy)
     ln_sf llvm_objcopy.relative_path_from(rust_objcopy.dirname), rust_objcopy
   end
@@ -245,11 +240,11 @@ class Rust < Formula
       bin/"cargo" => [
         formula_opt_lib("libgit2")/shared_library("libgit2"),
         formula_opt_lib("libssh2")/shared_library("libssh2"),
-        formula_opt_lib("openssl@3")/shared_library("libssl"),
+        formula_opt_lib(openssl)/shared_library("libssl"),
       ],
     }
     expected_linkage[bin/"cargo"] << if OS.mac?
-      formula_opt_lib("openssl@3")/shared_library("libcrypto")
+      formula_opt_lib(openssl)/shared_library("libcrypto")
     else
       formula_opt_lib("curl")/shared_library("libcurl")
     end
