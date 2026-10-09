@@ -1,16 +1,16 @@
 class Mp4ff < Formula
   desc "Tools for parsing and manipulating MP4/ISOBMFF files"
   homepage "https://github.com/Eyevinn/mp4ff"
-  url "https://github.com/Eyevinn/mp4ff/archive/refs/tags/v0.58.0.tar.gz"
-  sha256 "ceaa6d4e358c6c83bf8f4d446d3a3525ba9e82eaa81d0e1378678b053c794fc4"
+  url "https://github.com/Eyevinn/mp4ff/archive/refs/tags/v0.59.0.tar.gz"
+  sha256 "7e0c697a658e243a27131756775ea53d2c7c57e3ed771fc24d3e21dea55c0b3d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "85a753a7dccbd39b181c0e5302c6683bc288bd91ed89c597744984f1210b95db"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "85a753a7dccbd39b181c0e5302c6683bc288bd91ed89c597744984f1210b95db"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "85a753a7dccbd39b181c0e5302c6683bc288bd91ed89c597744984f1210b95db"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "252206b32c97c5ab80cc79c9a7f7abed5fc4cf5d3fe0fad401879a57bb69f69e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0fb85133adbc92f84ab8a63f8cb271dfa38dc9610a333dd48042dcca3b0aa563"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4c71e04b85776143de390372be13d1c2f1379f64f96edd6c2da334f3455ee654"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4c71e04b85776143de390372be13d1c2f1379f64f96edd6c2da334f3455ee654"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4c71e04b85776143de390372be13d1c2f1379f64f96edd6c2da334f3455ee654"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b348412ebf763d88a014c65a0503a6c0ec74c08a319ea2bfc31dbcc4a917d873"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b09db7c989581d5f41681ab6b5ba249201700653ac48e6f9ab776588a71657d3"
   end
 
   depends_on "go" => :build
@@ -20,6 +20,31 @@ class Mp4ff < Formula
       mp4ff-crop mp4ff-decrypt mp4ff-defragment mp4ff-encrypt mp4ff-info
       mp4ff-mvhevc mp4ff-nallister mp4ff-pslister mp4ff-subslister
     ]
+  end
+
+  resource "homebrew-init", :test do
+    url "https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.52.0/mp4/testdata/init.mp4"
+    sha256 "09a99ab8be9a39c80dc41ac6d4c9539b16947aab95abbadec903bfcb7a322221"
+  end
+
+  resource "homebrew-segment", :test do
+    url "https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.52.0/mp4/testdata/1.m4s"
+    sha256 "00dd5f29bc6ba64a9d8540cdbeda7a3e5be0f0ed67475ab307506d7462fc2d98"
+  end
+
+  resource "homebrew-prog", :test do
+    url "https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.52.0/mp4/testdata/prog_8s.mp4"
+    sha256 "86651d2aa80c714440fee3499ac3dd258b75043c4ceb455d70babb7873b16feb"
+  end
+
+  resource "homebrew-subs", :test do
+    url "https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.52.0/cmd/mp4ff-subslister/testdata/multi_vttc.mp4"
+    sha256 "1518ba79c86f28414f9285910f8118e00d3b70aa07c6a48ebb1f80b476b1192a"
+  end
+
+  resource "homebrew-mvhevc", :test do
+    url "https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.53.0/cmd/mp4ff-mvhevc/testdata/stereo_spatial.mp4"
+    sha256 "caa53ab7cf493d5a59d98b0eb8788a6add5faac6b5adcba58e89fd533174f90e"
   end
 
   allow_network_access! :test
@@ -35,31 +60,6 @@ class Mp4ff < Formula
   end
 
   test do
-    resource "homebrew-init" do
-      url "https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.52.0/mp4/testdata/init.mp4"
-      sha256 "09a99ab8be9a39c80dc41ac6d4c9539b16947aab95abbadec903bfcb7a322221"
-    end
-
-    resource "homebrew-segment" do
-      url "https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.52.0/mp4/testdata/1.m4s"
-      sha256 "00dd5f29bc6ba64a9d8540cdbeda7a3e5be0f0ed67475ab307506d7462fc2d98"
-    end
-
-    resource "homebrew-prog" do
-      url "https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.52.0/mp4/testdata/prog_8s.mp4"
-      sha256 "86651d2aa80c714440fee3499ac3dd258b75043c4ceb455d70babb7873b16feb"
-    end
-
-    resource "homebrew-subs" do
-      url "https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.52.0/cmd/mp4ff-subslister/testdata/multi_vttc.mp4"
-      sha256 "1518ba79c86f28414f9285910f8118e00d3b70aa07c6a48ebb1f80b476b1192a"
-    end
-
-    resource "homebrew-mvhevc" do
-      url "https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.53.0/cmd/mp4ff-mvhevc/testdata/stereo_spatial.mp4"
-      sha256 "caa53ab7cf493d5a59d98b0eb8788a6add5faac6b5adcba58e89fd533174f90e"
-    end
-
     # Build a combined fragmented MP4 from init segment + media segment
     resource("homebrew-init").stage(testpath/"init")
     resource("homebrew-segment").stage(testpath/"seg")

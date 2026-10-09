@@ -3,20 +3,19 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/6f/1b/36eb0178d6539eb78edb5878cc23056ac982f69a6f7bf9b0c6c5dad7fc34/keepercommander-18.1.5.tar.gz"
-  sha256 "56fbc0fc3a92af441d3b7a24ff38ada43c42f8d7788c5ca51a36007b349fbbe3"
+  url "https://files.pythonhosted.org/packages/86/e6/5f5bad8a216953867f13df1949092894d5e6a93d14328ee571c030171ce8/keepercommander-18.1.8.tar.gz"
+  sha256 "7bbea24a5d3d0184667f5f2b735c942a18807a0b17c0bc38843e75668b3a195a"
   license "MIT"
-  revision 1
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2fff5276ffbbd91080aa9fa71746ce333444f48a31e0bc64f7cf8c349444e64e"
-    sha256 cellar: :any, arm64_tahoe:       "f6f83d811fcc53b2065faae5710256b6221bd1a5a3fa44648efb68727d27df79"
-    sha256 cellar: :any, arm64_sequoia:     "a60dbc721981d75415e7663a7239e9f404c1ea8b91052a02534cba064fd1a398"
-    sha256 cellar: :any, arm64_linux:       "18374b05c791cb4190791e5cadb1f5b3ec999d63f84bdd98bb2a6e7383cafcea"
-    sha256 cellar: :any, x86_64_linux:      "d320658cb4ccc9dd3ca02a5900abc35ec667d0926fa134040257b4cd2f7f8d5b"
+    sha256 cellar: :any, arm64_golden_gate: "6bda0a3d5434ffa80ac78e64896a2ce2c7f938e7868350d1584d212b77ad0b46"
+    sha256 cellar: :any, arm64_tahoe:       "67bed7494f9fb1308533e76404d9860dcc2e70eb1e57be1f2ea42e2d19442f67"
+    sha256 cellar: :any, arm64_sequoia:     "4e86a6a264a9db5303e5a2124351b4088d0086565ec8164f62810b973dfd9e1c"
+    sha256 cellar: :any, arm64_linux:       "fe5e70990d1481ab983777b935fdfd883abc9b0a0b844d8e4d0c172580b5fa42"
+    sha256 cellar: :any, x86_64_linux:      "6baf0225c22d23577ce12a91ba8bdc949b38539d783f5c6acadc889e0785542f"
   end
 
   # `pkgconf` and `rust` are for bcrypt

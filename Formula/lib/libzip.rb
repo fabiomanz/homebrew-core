@@ -1,8 +1,8 @@
 class Libzip < Formula
   desc "C library for reading, creating, and modifying zip archives"
   homepage "https://libzip.org/"
-  url "https://libzip.org/download/libzip-1.11.4.tar.xz"
-  sha256 "8a247f57d1e3e6f6d11413b12a6f28a9d388de110adc0ec608d893180ed7097b"
+  url "https://libzip.org/download/libzip-1.12.tar.xz"
+  sha256 "376908d0f0fda13180a19fdc4f7062a1abfb59e09ca07a392d361253b8e60c2b"
   license "BSD-3-Clause"
   revision 1
   compatibility_version 1
@@ -13,13 +13,11 @@ class Libzip < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "4f3cbd3804d01f6ef7e7cef55d0ce737c6e86f42341fa5220ca9c44055c33a2b"
-    sha256 cellar: :any,                 arm64_tahoe:       "08417964bf803b08c703fa297f87ff23998f73c6cfe0b327103d02c9a41582af"
-    sha256 cellar: :any,                 arm64_sequoia:     "6a65f5a729a460ee8988e05e9af08880215a008692dffede96e51694d0a8b428"
-    sha256 cellar: :any,                 arm64_sonoma:      "41df5da85bc172a781efd6f32c46708f7a88f9b1faa82577cec64992f5254f5b"
-    sha256 cellar: :any,                 sonoma:            "5b808617db89e546465d756a8d8e0ee7068806e7dc58ae06952eea528ebdce8f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "0dd50da8a8ac50d993717bc5d59ed132a311a8d05ff65839ec038890b25bd518"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a6c30ff07c163ba9e53ccf30f1f21124a2fc2942adca5d34c8595840638f6ea2"
+    sha256 cellar: :any, arm64_golden_gate: "c1b0d545310f9986d3086363f1b79f5066b75eeff9cd3588d21ff925ded0fb24"
+    sha256 cellar: :any, arm64_tahoe:       "24a451df5142724086a16439fac719df1b0da9fa0c68a1bfe0133f5db51f05e6"
+    sha256 cellar: :any, arm64_sequoia:     "925c64a198b759de45cbe32aeeae0854560278363e43c9b538e42c6623002c7f"
+    sha256 cellar: :any, arm64_linux:       "2aba53af620dc970f5ee4d354c27ebca615eb2960e3779445e8bf5e5bb7686b5"
+    sha256 cellar: :any, x86_64_linux:      "fd69a2649a8c1dd235d5a8e1cdbef7d60fcdcb76704d99e18cd1d3fdf26a9f21"
   end
 
   depends_on "cmake" => :build
@@ -30,7 +28,7 @@ class Libzip < Formula
   uses_from_macos "bzip2"
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
     depends_on "zlib-ng-compat"
   end
 

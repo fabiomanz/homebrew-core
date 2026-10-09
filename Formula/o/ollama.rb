@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.40.0",
-      revision: "0d0720e51fb2fd9aa58781c3d720c06d720c2e7b"
+      tag:      "v0.40.2",
+      revision: "b061384d90ff455462bc32745dd0de479de717a3"
   license "MIT"
   head "https://github.com/ollama/ollama.git", branch: "main"
 
@@ -16,11 +16,11 @@ class Ollama < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8a549924ba96c0b8228085749c6af543c9c8552990d0f92c620778e086e3c3e4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "33f209e8f2557744ef4c386ea5409842963dc49b1219c034a83ecf872e16a6dc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c1fd33fa42b17052d7d7b47fcedcad603966f9eae3dbeccfb19c40bbf0a15d40"
-    sha256 cellar: :any,                 arm64_linux:       "fb0f2a407e1bbc91f7b4f7b61347c30b26550ea29a6ce384129b5d0be8fdad6d"
-    sha256 cellar: :any,                 x86_64_linux:      "87ecabf044507001bc650e260e103109f8911ff64de93a6122fc15e0e054123e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4d8901795c64e59813647d1c4bb22ea5f1ac7bfbd7cc19dfe9ffb59425184411"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e289f545d86d4cc4b1583f27923da75466abf887e761109452308e2369c6be3c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a5ef6c050c6bbad293a991d2affffb5767f0eb6cd2cd7b772833d720b11a0788"
+    sha256 cellar: :any,                 arm64_linux:       "a5809ca7df7a4122d4d48bc05bc7f1b3d301be4603af1eb34bd86fcd3cf01049"
+    sha256 cellar: :any,                 x86_64_linux:      "d5954a5d918a3a342fbf9fae34e8491e6cab9cc8e5eede80242a4fabc414a9dc"
   end
 
   depends_on "ccache" => :build
@@ -58,6 +58,12 @@ class Ollama < Formula
       sha256 "1e51afe4b8cfed5653289270064370d926258b5bbd662a93eac240d7a37f2735"
       type :unofficial
     end
+  end
+
+  # Check llama-server binary; it needs a model as upstream builds it without router mode support
+  resource "homebrew-test-model", :test do
+    url "https://huggingface.co/ggml-org/models/resolve/499bc8821c6b12b4e53c5bffcb21ec206f212d81/tinyllamas/stories260K.gguf"
+    sha256 "270cba1bd5109f42d03350f60406024560464db173c0e387d91f0426d3bd256d"
   end
 
   # downloads go modules in install and runs a server in test
@@ -165,11 +171,6 @@ class Ollama < Formula
       assert_match "libmlx.dylib", output
     end
 
-    # Check llama-server binary; it needs a model as upstream builds it without router mode support
-    resource "homebrew-test-model" do
-      url "https://huggingface.co/ggml-org/models/resolve/499bc8821c6b12b4e53c5bffcb21ec206f212d81/tinyllamas/stories260K.gguf"
-      sha256 "270cba1bd5109f42d03350f60406024560464db173c0e387d91f0426d3bd256d"
-    end
     testpath.install resource("homebrew-test-model")
 
     require "pty"

@@ -1,9 +1,19 @@
 [
-  "apt",
-  "dasht",
+  "cdxgen",
+  "cyan",
+  "dvisvgm",
   "hive",
+  "julia",
+  "klee",
+  "manticoresearch",
+  "mysql-client@8.4",
+  "neomutt",
   "opencoarrays",
-  "pake",
-  "rpki-client",
-  "tsung"
+  "pdal",
+  "percona-server@8.4",
+  "rtabmap",
+  "sapling",
+  "texlive",
+  "thors-anvil",
+  "undercutf1"
 ]

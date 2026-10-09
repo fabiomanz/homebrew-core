@@ -3,19 +3,18 @@ class AwsSamCli < Formula
 
   desc "CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM"
   homepage "https://aws.amazon.com/serverless/sam/"
-  url "https://files.pythonhosted.org/packages/95/f1/77ee195a7838a6e4117a115eef67690cbed6951f4c4cac3c55b7580465aa/aws_sam_cli-1.166.2.tar.gz"
-  sha256 "5b0ee931145760d1c368573da0309aa03c4d062e6395fa1f3b2b96bd936dce63"
+  url "https://files.pythonhosted.org/packages/3a/0d/01f08ea73de187a7e27940b3a447a2da6d3a5d0c57be29c820a771f57307/aws_sam_cli-1.167.0.tar.gz"
+  sha256 "e0b446ce2a40fd6dc28d24d889056318fbf45c6037b02458005720c47f0ad57c"
   license "Apache-2.0"
   revision 1
   head "https://github.com/aws/aws-sam-cli.git", branch: "develop"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "39c2c8dd8c81fc8f490f83d14b4829072795c432d9e2dfd66eb194ea2b0996b1"
-    sha256 cellar: :any, arm64_tahoe:       "c092b9d06a0ec6d9f547a5dc4c44013848cece0e2f745d09154c6b100311b8a7"
-    sha256 cellar: :any, arm64_sequoia:     "eb3974524b79609b49448af2044e4465ea7ba7724c95d277607778d29a60affb"
-    sha256 cellar: :any, arm64_linux:       "0d16a257312a042278df81bad5c3a66e3f1cc04125d1673566700953e590edb3"
-    sha256 cellar: :any, x86_64_linux:      "667ee2968d163406064107cb485f77ffb554a007d50d05e12cacb2aca685bdb7"
+    sha256 cellar: :any, arm64_golden_gate: "4ca975bd46efb980048bf92378d843e1fa69e117b5d69a117138a6531c00793e"
+    sha256 cellar: :any, arm64_tahoe:       "97bd84de52297cde31158b1a1c247ce628ae00e03954d102a61a614d16c72629"
+    sha256 cellar: :any, arm64_sequoia:     "6e20d9391c41e3cb2b9df8d548dcc07c9b0991835c8bd671ae6b1efe47a5746d"
+    sha256 cellar: :any, arm64_linux:       "37d42a54bc096d4881429d82e4af15602c132da059c05f5cd092879d28e8c0f3"
+    sha256 cellar: :any, x86_64_linux:      "572fb0cfdc626cafdd706df126623398a8f7ab3ce20af46390fdb3c21afbc2dd"
   end
 
   depends_on "go" => :build
@@ -74,8 +73,8 @@ class AwsSamCli < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/ec/30/96cf7d324e75cd2c349e2911ae2334d987fb8525d551495a2ef6758c26f3/boto3-1.43.83.tar.gz"
-    sha256 "6413d6e99f716af5d333a732db140e4b3359cac005a1271b11777b6d9ca82194"
+    url "https://files.pythonhosted.org/packages/9a/e6/2a24a2013beecdd9a381bcf7a11981478a1f5f78e37908c0fddba3cd915f/boto3-1.43.102.tar.gz"
+    sha256 "440bdd9fbf88d57809b68839fb690f19e4db65fa5539e60cc803ebd7b9e5e8fc"
   end
 
   resource "boto3-stubs" do
