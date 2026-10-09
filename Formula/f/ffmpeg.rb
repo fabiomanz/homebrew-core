@@ -7,6 +7,7 @@ class Ffmpeg < Formula
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   # Passing `--enable-version3` changes the license to GPL v3+.
   license "GPL-3.0-or-later"
+  revision 1
   compatibility_version 3
   head "https://github.com/FFmpeg/FFmpeg.git", branch: "master"
 
@@ -17,7 +18,7 @@ class Ffmpeg < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "9fd8e18d8f80d2f3ed27105397382eccb9204a2ca193e74939623c6513bd4b4c"
+    sha256 tahoe: "10b305e5fb3a252ad69f9d4dbca880bebb5b9e9b2f8ca3e69a09cab23f46aebc"
   end
 
   depends_on "pkgconf" => :build
@@ -31,7 +32,7 @@ class Ffmpeg < Formula
   depends_on "lame"
   depends_on "libvmaf" # dependent: ab-av1
   depends_on "libvpx"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "opus"
   depends_on "sdl2-compat"
   depends_on "svt-av1"

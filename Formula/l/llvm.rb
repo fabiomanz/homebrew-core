@@ -6,22 +6,14 @@ class Llvm < Formula
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   stable do
-    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.2/llvm-project-23.1.2.src.tar.xz"
-    sha256 "c98bbef08a2b4c2613cd50e9aa9ae7b69b1fe6c16b2c40373bc0ab6116fdf78a"
+    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.3/llvm-project-23.1.3.src.tar.xz"
+    sha256 "c44186a7762ed28954be72e5ff6df9808e0779d4f1bf014ecc4e7e211d31ee34"
 
     # Fix triple config loading for clang-cl
     patch do
       file "Patches/llvm/pull-111397.diff"
       type :unofficial
       resolves "https://github.com/llvm/llvm-project/pull/111397"
-    end
-
-    # Backport fix for macOS 27 SDK
-    patch do
-      url "https://github.com/llvm/llvm-project/commit/b8007a8e4020b8bca2b12e941660e10bf5bf6716.patch?full_index=1"
-      sha256 "e41e300eb6f5cca9172ab344e572c3fb24f0d05885ae23dd7cb4f9c2528839f7"
-      type :backport
-      resolves "https://github.com/llvm/llvm-project/pull/222721"
     end
   end
 
@@ -32,7 +24,7 @@ class Llvm < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "c96a3ce337f7c6125b069ad01c103094e9689cbcdf54e8d8a6f5869babc4ac69"
+    sha256 cellar: :any, tahoe: "4f16dbbb45437551b40fff97c839a2215ee2a277ce4c592a178eae420a6e67ec"
   end
 
   keg_only :provided_by_macos

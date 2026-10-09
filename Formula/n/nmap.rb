@@ -4,6 +4,7 @@ class Nmap < Formula
   url "https://nmap.org/dist/nmap-7.991.tar.bz2"
   sha256 "a5d507f29437bef3bedd4771ff9aaa8fc1c2a109ddba1f5b1cf12027456929be"
   license :cannot_represent
+  revision 1
   compatibility_version 1
   head "https://svn.nmap.org/nmap/"
 
@@ -14,7 +15,7 @@ class Nmap < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "cd7cd524217861f02e7330dbd33134c1dfe7fc7f683e111e6e7908c54bae0224"
+    sha256 tahoe: "18e7d753a7914e133d1c3bb1a654c7af39efbdc69c67e6f2ae80d681421e2e6d"
   end
 
   depends_on "python-setuptools" => :build
@@ -22,7 +23,7 @@ class Nmap < Formula
   depends_on "libssh2"
   # Check supported Lua version at https://github.com/nmap/nmap/tree/master/liblua.
   depends_on "lua"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
   depends_on "python@3.14" # for ndiff
 
@@ -55,7 +56,7 @@ class Nmap < Formula
     args = %W[
       --with-liblua=#{formula_opt_prefix("lua")}
       --with-libpcre=#{formula_opt_prefix("pcre2")}
-      --with-openssl=#{formula_opt_prefix("openssl@3")}
+      --with-openssl=#{formula_opt_prefix("openssl@4")}
       --with-libpcap=#{libpcap_path}
       --without-nmap-update
       --disable-universal
