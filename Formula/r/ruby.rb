@@ -2,6 +2,7 @@ class Ruby < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
   license "Ruby"
+  revision 1
   compatibility_version 1
 
   stable do
@@ -30,7 +31,7 @@ class Ruby < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "eb9f5d6bd6e7852cf216726ea7dd759ef97901e42b69af84d56572bd154afb32"
+    sha256 tahoe: "eb030c49aa609d62c2d303f141ef7574c0ff247b3f17e52787d5550afe4ffa0a"
   end
 
   head do
@@ -42,7 +43,7 @@ class Ruby < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libyaml"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "libffi"
   uses_from_macos "libxcrypt"
@@ -83,7 +84,7 @@ class Ruby < Formula
   end
 
   def install
-    paths = %w[libyaml openssl@3].map { |f| formula_opt_prefix(f) }
+    paths = %w[libyaml openssl@4].map { |f| formula_opt_prefix(f) }
     # Add versioned Ruby RPATH so user-installed gems can work when user is switched to versioned Ruby
     paths << versioned_opt_prefix if OS.linux? && !versioned_formula?
 

@@ -13,11 +13,8 @@ class CargoC < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "0d71262d524db3e19ad34dcd815c368816a82fbee67a5342aea9c4b3afd54a91"
-    sha256 cellar: :any, arm64_tahoe:       "eb13fd4d7d4e986d0865a581f008dd963e9f38417fcb782470f35eaec7b622b3"
-    sha256 cellar: :any, arm64_sequoia:     "097299cf61942672a6845b78003ccb81f3821871f01fd06b81fb069b03cfe47e"
-    sha256 cellar: :any, arm64_linux:       "31585985200e33b1fc1f26cf99a7ad892f7da398a82e8a2129f1577a97ec1fbe"
-    sha256 cellar: :any, x86_64_linux:      "9f6dc50e0f0e712f6b87b62da625ae6a5a07f3712faaa4eec5c9fe38f0004bff"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 cellar: :any, tahoe: "ecdfc3f804db97ad5931bf332cf30c8f3e56c16427a7cf5942f9ac246113435a"
   end
 
   depends_on "pkgconf" => :build

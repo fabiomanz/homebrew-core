@@ -7,11 +7,8 @@ class Subversion < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 arm64_golden_gate: "331833ab95fed55f3157fb1bffc7b259d4aca741d101e4f91235c36caa344315"
-    sha256 arm64_tahoe:       "3e975b3f3d4fc10bb05d19249043c14a37b6f71ce2efa824bd5aeb48e764ae4d"
-    sha256 arm64_sequoia:     "7b8558161b3561f95cffe32434d1c88da25da316a2987d87577141e421ff1839"
-    sha256 arm64_linux:       "cf31f268ca18516a866151a6f6e003fdb2ab5300249d3a28107009097108f339"
-    sha256 x86_64_linux:      "ca14d8e9db67886bbadfee087cdc7b1b6739be26050fd14d4ef321e784eecece"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 tahoe: "d0f011b1779652de84548c19d88a37cb473c895bdb7c2a898a2395bd884bc087"
   end
 
   head do
