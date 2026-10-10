@@ -2,6 +2,7 @@ class Llvm < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https://llvm.org/"
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
   compatibility_version 2
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
@@ -24,7 +25,7 @@ class Llvm < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "4f16dbbb45437551b40fff97c839a2215ee2a277ce4c592a178eae420a6e67ec"
+    sha256 cellar: :any, tahoe: "b6ae09f4e9b989a0594cb80294f056e96bb19574cf21d21771d1c7c9430c477e"
   end
 
   keg_only :provided_by_macos
@@ -137,6 +138,7 @@ class Llvm < Formula
       libunwind_install_libdir = lib/"unwind"
       libcxx_rpaths = [loader_path, rpath(source: libcxx_install_libdir, target: libunwind_install_libdir)]
 
+      args << "-DCLANG_USE_XCSELECT=ON"
       args << "-DLLVM_BUILD_LLVM_C_DYLIB=ON"
       args << "-DLLVM_ENABLE_LIBCXX=ON"
       args << "-DLIBCXX_ENABLE_VENDOR_AVAILABILITY_ANNOTATIONS=ON"
@@ -396,15 +398,6 @@ class Llvm < Formula
 
       # Install a major-versioned symlink that can be used across minor/patch version upgrades.
       xctoolchain.parent.install_symlink xctoolchain.basename.to_s => "LLVM#{soversion}.xctoolchain"
-
-      # Write config files for each macOS major version so that this works across OS upgrades.
-      MacOSVersion::SYMBOLS.each_value do |v|
-        macos_version = MacOSVersion.new(v)
-        write_config_files(macos_version, MacOSVersion.kernel_major_version(macos_version), Hardware::CPU.arch)
-      end
-
-      # Also write an unversioned config file as fallback
-      write_config_files("", "", Hardware::CPU.arch)
     end
 
     # Install Vim plugins
@@ -475,23 +468,6 @@ class Llvm < Formula
         system bin/"llvm-ar", "r", static_archive, *converted_files
       end
     end
-  end
-
-  # We use the extra layer of indirection in `arch` because the FormulaAudit/OnSystemConditionals
-  # doesn't want to let us use `Hardware::CPU.arch` outside of `install` or `post_install` blocks.
-  def write_config_files(macos_version, kernel_version, arch)
-    require "utils/clang"
-
-    Utils::Clang.write_system_config_files(
-      config_dir:     clang_config_file_dir,
-      macos_version:,
-      kernel_version:,
-      arch:,
-    )
-  end
-
-  post_install_steps do
-    configure_clang_system
   end
 
   def caveats
@@ -831,11 +807,5 @@ class Llvm < Formula
         end
       end
     end
-
-    return if OS.linux?
-    return unless clang_config_file_dir.exist? # https://github.com/Homebrew/homebrew-test-bot/issues/805
-
-    assert_match("Configuration file: #{opt_prefix}/etc/clang/",
-                 shell_output("#{opt_bin}/clang --version -no-canonical-prefixes"))
   end
 end

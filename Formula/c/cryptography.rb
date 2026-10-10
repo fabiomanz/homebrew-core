@@ -4,20 +4,20 @@ class Cryptography < Formula
   url "https://files.pythonhosted.org/packages/9d/af/182eb91b0df3fe75c4d9f26fe70684569566745f6ba7e5c9c73a862c5252/cryptography-50.0.2.tar.gz"
   sha256 "7b46165bb56eb4704e2eaaf86f3c940d19154535d9b0ca7d6d590b04060e00d5"
   license any_of: ["Apache-2.0", "BSD-3-Clause"]
-  revision 1
+  revision 2
   compatibility_version 2
   head "https://github.com/pyca/cryptography.git", branch: "main"
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "4f641c2da139d3e84be1cf7b2f06917871024243d7a5ef4bef77621c9ee7b0cc"
+    sha256 cellar: :any, tahoe: "fefde079108005132d60ce764fa7fd2f02e70425e26569d0a7ea2b7185a0c294"
   end
 
   depends_on "maturin" => :build
   depends_on "pkgconf" => :build
   depends_on "python-setuptools" => :build
   depends_on "python@3.14" => [:build, :test]
-  # TODO: depends_on "python@3.15" => [:build, :test]
+  depends_on "python@3.15" => [:build, :test]
   depends_on "rust" => :build
   depends_on "cffi"
   depends_on "openssl@4"
