@@ -1,15 +1,15 @@
 class Rclone < Formula
   desc "Rsync for cloud storage"
   homepage "https://rclone.org/"
-  url "https://github.com/rclone/rclone/archive/refs/tags/v1.75.1.tar.gz"
-  sha256 "fcc9351ab3976c73b4824cf7919f98f911f2442a606e2910fc2bd562111da220"
+  url "https://github.com/rclone/rclone/archive/refs/tags/v1.75.2.tar.gz"
+  sha256 "68afd7f68c84bd978966feae2116339aa7bf454b39c573910c462e87c3774d5a"
   license "MIT"
   compatibility_version 1
   head "https://github.com/rclone/rclone.git", branch: "master"
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, tahoe: "556e84b96df9388b175df0d1248299cdad41915ed73f97cce504d85d6deb7c05"
+    sha256 cellar: :any_skip_relocation, tahoe: "03266251436123af8df28e473443dc12915a8ae4dee7d1fa1ec99884b3aa6354"
   end
 
   depends_on "go" => :build

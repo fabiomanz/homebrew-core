@@ -5,16 +5,17 @@ class Libngtcp2 < Formula
   mirror "http://fresh-center.net/linux/www/ngtcp2-1.25.0.tar.xz"
   sha256 "2a34d2484ba17847a5d11965704e9dd0fac4c6d8efc75ffe1ec7de66d8c6b6fb"
   license "MIT"
+  revision 1
   compatibility_version 1
   head "https://github.com/ngtcp2/ngtcp2.git", branch: "main"
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "ce411db3ea0b7ab527adaf1846407059abfd05d9ed5bca0030b7d6a18189551f"
+    sha256 cellar: :any, tahoe: "8e0a1190874456dce2b4f531a4306aa35af027966cbd12658d658639998bb190"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   deny_network_access!
 

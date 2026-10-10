@@ -10,6 +10,7 @@ class Git < Formula
     "BSD-3-Clause",      # xdiff/xhistogram.c; reftable/
     "MIT",               # khash.h; sha1dc/
   ]
+  revision 1
   compatibility_version 1
   head "https://github.com/git/git.git", branch: "master"
 
@@ -20,7 +21,7 @@ class Git < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "e210f5a14b7368f99dac297283f07881968205e4d4d4583f2df14d6d76255436"
+    sha256 tahoe: "8d0202701e84deb3df21d38534ae5a5c73a6cc3c47148cbe75d2cbcfc228c02e"
   end
 
   depends_on "gettext" => :build
@@ -38,7 +39,7 @@ class Git < Formula
   end
 
   on_linux do
-    depends_on "openssl@3" # for git-imap-send (GPL-2.0-or-later), uses CommonCrypto on macOS
+    depends_on "openssl@4" # for git-imap-send (GPL-2.0-or-later), uses CommonCrypto on macOS
     depends_on "zlib-ng-compat"
   end
 
@@ -115,7 +116,7 @@ class Git < Formula
     args += if OS.mac?
       %w[NO_OPENSSL=1 APPLE_COMMON_CRYPTO=1]
     else
-      openssl_prefix = formula_opt_prefix("openssl@3")
+      openssl_prefix = formula_opt_prefix("openssl@4")
 
       %W[NO_APPLE_COMMON_CRYPTO=1 OPENSSLDIR=#{openssl_prefix}]
     end
