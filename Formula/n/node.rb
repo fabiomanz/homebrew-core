@@ -1,10 +1,9 @@
 class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v26.11.0/node-v26.11.0.tar.xz"
-  sha256 "aaad9242704524109e88d48be7bb7b7943486d931e740a352c02e97e107f18c9"
+  url "https://nodejs.org/dist/v26.11.1/node-v26.11.1.tar.xz"
+  sha256 "2c79a3c1095c7da4c549c84e90b2d28df5479315ab6d0aff9bc71dcf4c9df1e0"
   license "MIT"
-  revision 1
   head "https://github.com/nodejs/node.git", branch: "main"
 
   livecheck do
@@ -14,7 +13,7 @@ class Node < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "9103b02999b9913260c1d71e70aa635989ba5a4d85d499504cca2e669fccfdbe"
+    sha256 tahoe: "0197c2d5463b32931a7cfbc6d3510ffab0904ceb7fcd1bc26938450bc4aa43b9"
   end
 
   depends_on "pkgconf" => :build
