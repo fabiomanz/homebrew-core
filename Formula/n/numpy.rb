@@ -1,16 +1,15 @@
 class Numpy < Formula
   desc "Package for scientific computing with Python"
   homepage "https://www.numpy.org/"
-  url "https://files.pythonhosted.org/packages/13/01/11703282db468b85f6f7b8c7f22d058de5970d5c7e60a3a8aaa313c3de36/numpy-2.5.3.tar.gz"
-  sha256 "df2d5874ff183595a4ba404edd04f6bd9b5505c1d7708573f6a6c17489a67563"
+  url "https://files.pythonhosted.org/packages/95/b0/c7453d0b6e2073c3264468b106ee1563750cecc910965e67357e3698c83e/numpy-2.5.4.tar.gz"
+  sha256 "9a94cf751c9ad8ebaa835bcd3d40dacf8534ad086b88c38029b65123c7999d2a"
   license "BSD-3-Clause"
-  revision 1
   compatibility_version 1
   head "https://github.com/numpy/numpy.git", branch: "main"
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "fac2babef7daa25d4e05e78aebf77d3eeeb4396813b526e5f760b7966cda6788"
+    sha256 cellar: :any, tahoe: "eea04da6040cb4204ed95f62754d064faad898736de506e8e57044c0ce8b2fe1"
   end
 
   depends_on "gcc" => :build # for gfortran
