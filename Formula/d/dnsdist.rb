@@ -14,17 +14,18 @@ class Dnsdist < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "29d94f308abaac9605be874ed3836ffd37da55db51a8a47ed8da301d58875135"
-    sha256 arm64_tahoe:       "ce14693985419ffad1ed1f66c912092ad48f1f99d4f2787209fb1578c1fc57c5"
-    sha256 arm64_sequoia:     "1f26f4d091834e062e03beece794ee5049168d222f15d8071588b93d01735d66"
-    sha256 arm64_linux:       "5893c54cfd7afb7c01f2ec2a7b0e1719cf3c90265fc4f1ad6658b54b2156ed48"
-    sha256 x86_64_linux:      "64590505cff41d67f133e8e0a1c02d716429d4f486643b9f9776c91dc063b754"
+    rebuild 1
+    sha256 arm64_golden_gate: "7bb259871ce5a173c2e7d8d7ace7df4190dc8dcdad3e31afc0c2ad9b948ba966"
+    sha256 arm64_tahoe:       "6cfee5c2079be865920fd87d6fddbe2ac88f310543054f37178ccb1e64fa6b01"
+    sha256 arm64_sequoia:     "aea3095dd0faa5ce2d979436ec36841cfd38ec994d2db4c6b1bc8dd99ae6dc8d"
+    sha256 arm64_linux:       "cc17326dd45e206fa93faf2abe55a95050bbf56e74d8d0cc3c51fda6a8f5f393"
+    sha256 x86_64_linux:      "e2279dbecb99b1aec8c440461a9ccaa4212941990bb593360939d2c9d02e59fa"
   end
 
   depends_on "boost" => :build
   depends_on "libyaml" => :build # for PyYaml
   depends_on "pkgconf" => :build
-  depends_on "python@3.14" => :build
+  depends_on "python@3.15" => :build
   depends_on "fstrm"
   depends_on "libnghttp2"
   depends_on "libsodium"
