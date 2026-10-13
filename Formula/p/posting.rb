@@ -8,11 +8,12 @@ class Posting < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e60f733cb8622a5fddfc7e401d1c0f49fa8e4499665e83bda614e34c0b5a9568"
-    sha256 cellar: :any, arm64_tahoe:       "51952906336233f93dbec73a5e7f8f68b87ef7d5d704388dfad9be1292bac7ce"
-    sha256 cellar: :any, arm64_sequoia:     "92316e00010ff036132e9a52b40c49cc97a8fe70badc4a65e421f07967dd12cb"
-    sha256 cellar: :any, arm64_linux:       "5155a1150d2c23f3074fd554140237288c8b9ca038f115f9a25b9daad1ba3dda"
-    sha256 cellar: :any, x86_64_linux:      "766749880ab1abeb11576b01553438832d0bd83cf8eaea312e1ad62665d29028"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "78b409016c226915a661e6d4b3f15603bdb99da22dd4f5ccdc8524409db0edeb"
+    sha256 cellar: :any, arm64_tahoe:       "294e93d1862bfad298dd3802ae8bbc4717afede0e0a231b94d0a6f1c9f6e91d7"
+    sha256 cellar: :any, arm64_sequoia:     "70ca1136f577e50fd1a996fcd6abc16ca5fe39cc8d6346a7643a99a43573f817"
+    sha256 cellar: :any, arm64_linux:       "ef80956a7055fbe647988bec2412485bf9e74c3d41cc5b72c664243bf773d89c"
+    sha256 cellar: :any, x86_64_linux:      "39c5a0e022dfb99c104e8c6e8c7d8ab02db581743fa005ccd77686f31958ecdd"
   end
 
   depends_on "cmake" => :build
@@ -22,7 +23,7 @@ class Posting < Formula
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "tree-sitter" => :no_linkage
 
   pypi_packages exclude_packages: ["certifi", "pydantic"]
@@ -93,8 +94,8 @@ class Posting < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/42/23/4a86fc741c38c5b69792a4ef954b281afa69bea9f083f881de1b0d23bc07/platformdirs-4.12.3.tar.gz"
-    sha256 "427fc0bb321ae0c5b037fa03238ca74820437be162e78b4848c4d4055b9b766c"
+    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
+    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
   end
 
   resource "pydantic-settings" do

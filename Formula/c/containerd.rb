@@ -16,6 +16,12 @@ class Containerd < Formula
   depends_on "go" => :build
   depends_on "go-md2man" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     args =["PREFIX=#{prefix}", "VERSION=#{version}", "REVISION="]
     # STATIC=1 is a workaround for the segfault issue on the Linux arm64 CI.

@@ -1,13 +1,13 @@
 class Fedify < Formula
   desc "CLI toolchain for Fedify"
   homepage "https://fedify.dev/cli"
-  url "https://registry.npmjs.org/@fedify/cli/-/cli-2.4.2.tgz"
-  sha256 "0736d7ceebe7ae394e00a4265dad7e83bebf67a6e5cf76860c59a601aa7b5dd2"
+  url "https://registry.npmjs.org/@fedify/cli/-/cli-2.4.4.tgz"
+  sha256 "2ade580935fdef5738b1188ddc60e174612ec2eb04b284563e0ed177f509f3c1"
   license "MIT"
   head "https://github.com/fedify-dev/fedify.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "08beff4decf233f1d34ca8eea6639b4af34a1f1b09926b89d49400b5249829c4"
+    sha256 cellar: :any_skip_relocation, all: "ec96a15fbcc8654b697edec23cf3b4869c1a0ef0bff3dbaeeae3b19c7a533658"
   end
 
   depends_on "node"

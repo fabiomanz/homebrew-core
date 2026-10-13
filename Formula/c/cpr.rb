@@ -1,18 +1,17 @@
 class Cpr < Formula
   desc "C++ Requests, a spiritual port of Python Requests"
   homepage "https://docs.libcpr.org/"
-  url "https://github.com/libcpr/cpr/archive/refs/tags/1.14.2.tar.gz"
-  sha256 "b9b529b47083bfe80bba855ca5308d12d767ae7c7b629aef5ef018c4343cf62b"
+  url "https://github.com/libcpr/cpr/archive/refs/tags/1.15.1.tar.gz"
+  sha256 "c2fc62a030c4ca5d7c3517e8068531297f938bf4ab52bf951d4fc9bbc9222716"
   license "MIT"
-  revision 2
   head "https://github.com/libcpr/cpr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "959ca8e8321668c7eda8055c08ed3b2be1f4760b8baebea7c3087e01be619b75"
-    sha256 cellar: :any, arm64_tahoe:       "286d12eebbcb7434e491f80c562bb456413123638c1f177184de6c5f3a8e9ed3"
-    sha256 cellar: :any, arm64_sequoia:     "b1322bf8804b511afe573984f68beb532209c938c69929381f71bbdf125ada2c"
-    sha256 cellar: :any, arm64_linux:       "3dab5e5dd8d24d8eab0062c9bbe37fed1ff389922f9641cc4f9f9b884318b5f5"
-    sha256 cellar: :any, x86_64_linux:      "55c0a5d660cdb67a5a637f5159cc9cc792bbdf6c2e256e6269a7d7bec3bb9ddc"
+    sha256 cellar: :any, arm64_golden_gate: "696661a3d885fef73825a5507ba4ef0a435cab6647d65e45e50bce93d95f0912"
+    sha256 cellar: :any, arm64_tahoe:       "1766c94e773c3771b321ba834e1acde1517383d8bb818d28f36cf13291850897"
+    sha256 cellar: :any, arm64_sequoia:     "478826621f526abce3e20d3ef5870ec5cdfa7dbac6ca32b8ef26510e8364f881"
+    sha256 cellar: :any, arm64_linux:       "0fd21a16e95efebd01f1ee9a54e3a408c9446fa9dcb3439d8998c615820073f7"
+    sha256 cellar: :any, x86_64_linux:      "40be696eab85b3058cb938d2c125c234f1ef778c908ac5e0f0be16f6bbc096b2"
   end
 
   depends_on "cmake" => :build
