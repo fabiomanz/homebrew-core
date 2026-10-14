@@ -6,7 +6,6 @@ qt5compat	Formula/q/qt5compat.rb	a9e538bd450381c13056330d80516d7cf9595eea	6.11.2
 qtcanvaspainter	Formula/q/qtcanvaspainter.rb	a9e538bd450381c13056330d80516d7cf9595eea	6.11.2	6.12.0
 qtcharts	Formula/q/qtcharts.rb	a9e538bd450381c13056330d80516d7cf9595eea	6.11.2	6.12.0
 qtdatavis3d	Formula/q/qtdatavis3d.rb	a9e538bd450381c13056330d80516d7cf9595eea	6.11.2	6.12.0
-qtdeclarative	Formula/q/qtdeclarative.rb	a9e538bd450381c13056330d80516d7cf9595eea	6.11.2	6.12.0
 qtgrpc	Formula/q/qtgrpc.rb	a9e538bd450381c13056330d80516d7cf9595eea	6.11.2_2	6.12.0
 qthttpserver	Formula/q/qthttpserver.rb	a9e538bd450381c13056330d80516d7cf9595eea	6.11.2	6.12.0
 qtlocation	Formula/q/qtlocation.rb	a9e538bd450381c13056330d80516d7cf9595eea	6.11.2	6.12.0
