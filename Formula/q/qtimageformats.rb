@@ -1,10 +1,10 @@
 class Qtimageformats < Formula
   desc "Plugins for additional image formats: TIFF, MNG, TGA, WBMP"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtimageformats-everywhere-src-6.11.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtimageformats-everywhere-src-6.11.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtimageformats-everywhere-src-6.11.2.tar.xz"
-  sha256 "cecd8900f34b6550076309bc94f62f828008b633a4239e0a08c86788f41001f8"
+  url "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtimageformats-everywhere-src-6.12.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qtimageformats-everywhere-src-6.12.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.12/6.12.0/submodules/qtimageformats-everywhere-src-6.12.0.tar.xz"
+  sha256 "0943132b5db8de6b6a7f1d162682173e8763c7ed94e80fd39113292845f67762"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
@@ -18,19 +18,20 @@ class Qtimageformats < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "43a4ed26f0dfcabc74afd9b658f0707022215c34bef7c4e0a0cc369c899b492f"
+    sha256 cellar: :any, tahoe: "26cfef5d674094455b99211bc447c649027ededc0a1ce18b347186b6e7002005"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "ninja" => :build
   depends_on "pkgconf" => :test
 
-  depends_on "jasper"
-  depends_on "jpeg-turbo"
-  depends_on "libmng"
   depends_on "libtiff"
   depends_on "qtbase"
   depends_on "webp"
+
+  on_linux do
+    depends_on "jasper"
+  end
 
   def install
     rm_r("src/3rdparty")
@@ -40,7 +41,11 @@ class Qtimageformats < Formula
       -DFEATURE_system_tiff=ON
       -DFEATURE_system_webp=ON
     ]
-    args << "-DQT_NO_APPLE_SDK_AND_XCODE_CHECK=ON" if OS.mac?
+    args << if OS.mac?
+      "-DQT_NO_APPLE_SDK_AND_XCODE_CHECK=ON"
+    else
+      "-DFEATURE_jasper=ON" # macOS can use Apple ImageIO Framework instead
+    end
 
     system "cmake", "-S", ".", "-B", "build", "-G", "Ninja",
                     *args, *std_cmake_args(install_prefix: HOMEBREW_PREFIX, find_framework: "FIRST")
@@ -75,9 +80,13 @@ class Qtimageformats < Formula
 
       int main(void) {
         const auto &list = QImageReader::supportedImageFormats();
-        for(const char* fmt : {"icns", "jp2", "tga", "tif", "tiff", "wbmp", "webp"}) {
-          Q_ASSERT(list.contains(fmt));
-        }
+        Q_ASSERT(list.contains("icns"));
+        Q_ASSERT(list.contains("jp2"));
+        Q_ASSERT(list.contains("tga"));
+        Q_ASSERT(list.contains("tif"));
+        Q_ASSERT(list.contains("tiff"));
+        Q_ASSERT(list.contains("wbmp"));
+        Q_ASSERT(list.contains("webp"));
       #ifdef __APPLE__
         Q_ASSERT(list.contains("heic"));
         Q_ASSERT(list.contains("heif"));
@@ -87,7 +96,7 @@ class Qtimageformats < Formula
     CPP
 
     ENV["LC_ALL"] = "en_US.UTF-8"
-    ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    ENV["QT_QPA_PLATFORM"] = "minimal"
 
     system "cmake", "-S", ".", "-B", "cmake"
     system "cmake", "--build", "cmake"
@@ -95,7 +104,7 @@ class Qtimageformats < Formula
 
     ENV.delete "CPATH" if OS.mac?
     mkdir "qmake" do
-      system Formula["qtbase"].bin/"qmake", testpath/"test.pro"
+      system formula_opt_bin("qtbase")/"qmake", testpath/"test.pro"
       system "make"
       system "./test"
     end

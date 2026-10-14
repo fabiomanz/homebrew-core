@@ -1,10 +1,10 @@
 class Qtsvg < Formula
   desc "Classes for displaying the contents of SVG files"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtsvg-everywhere-src-6.11.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtsvg-everywhere-src-6.11.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtsvg-everywhere-src-6.11.2.tar.xz"
-  sha256 "d594337feca84c26fb67fe87b85e6a5c12fda404b611d905f9d138210c311876"
+  url "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtsvg-everywhere-src-6.12.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qtsvg-everywhere-src-6.12.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.12/6.12.0/submodules/qtsvg-everywhere-src-6.12.0.tar.xz"
+  sha256 "e4ab39534ec97987b1b9b60ef7f4d3253d5912a69f8c713a01753174a4029331"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
@@ -18,7 +18,7 @@ class Qtsvg < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "db3fad7f3fa66cbbea91b162609e7a97f21d4f3fa33d64b70ac55c0c24022fe9"
+    sha256 cellar: :any, tahoe: "b010c19572dcf0842948a6e729921dc9f72a4c27fd7d0e7d918abd96db41c584"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -87,7 +87,7 @@ class Qtsvg < Formula
 
     ENV.delete "CPATH" if OS.mac?
     mkdir "qmake" do
-      system Formula["qtbase"].bin/"qmake", testpath/"test.pro"
+      system formula_opt_bin("qtbase")/"qmake", testpath/"test.pro"
       system "make"
       system "./test"
     end

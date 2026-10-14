@@ -1,10 +1,10 @@
 class Qtserialport < Formula
   desc "Provides classes to interact with hardware and virtual serial ports"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtserialport-everywhere-src-6.11.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtserialport-everywhere-src-6.11.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtserialport-everywhere-src-6.11.2.tar.xz"
-  sha256 "df3a733616444f31b2ecb689218ea1444be91d8628aa3ab8e464c5eb1b17ad8e"
+  url "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtserialport-everywhere-src-6.12.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qtserialport-everywhere-src-6.12.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.12/6.12.0/submodules/qtserialport-everywhere-src-6.12.0.tar.xz"
+  sha256 "ba8886a54eee466e57c9fa1341255cc09c462c84baab3ee7b19d67cdbcbd71c3"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
@@ -18,7 +18,7 @@ class Qtserialport < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "9d1e94f69924f69a8351588075dd4ce7dedca90c58e5261b73b98edb10b2c298"
+    sha256 cellar: :any, tahoe: "b7b59504f070e17bea1d851d8971f148f15cb92e111e71dd4f973f6918fbd682"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -88,7 +88,7 @@ class Qtserialport < Formula
 
     ENV.delete "CPATH" if OS.mac?
     mkdir "qmake" do
-      system Formula["qtbase"].bin/"qmake", testpath/"test.pro"
+      system formula_opt_bin("qtbase")/"qmake", testpath/"test.pro"
       system "make"
       system "./test"
     end
