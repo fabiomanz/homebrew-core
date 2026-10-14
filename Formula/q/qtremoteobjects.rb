@@ -1,10 +1,10 @@
 class Qtremoteobjects < Formula
   desc "Provides APIs for inter-process communication"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtremoteobjects-everywhere-src-6.11.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtremoteobjects-everywhere-src-6.11.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtremoteobjects-everywhere-src-6.11.2.tar.xz"
-  sha256 "5e0c9681799ec2b1179a712506266fb01fb2491e94bd2dba942b72fdef797cfd"
+  url "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtremoteobjects-everywhere-src-6.12.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qtremoteobjects-everywhere-src-6.12.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.12/6.12.0/submodules/qtremoteobjects-everywhere-src-6.12.0.tar.xz"
+  sha256 "54faf680f7cc84d7f54ae9bd5f98255e5d2d7ab2d6f4d0464a3fbe50f8a55509"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # repc
@@ -19,7 +19,7 @@ class Qtremoteobjects < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "e4f7be36842eb27f6e46b8ba2c3ebe2b87592f60e078153ca20e578d15f4fa88"
+    sha256 cellar: :any, tahoe: "155a1d7abd7a929ffd973a4b03627fb1936778b8317ee36846e28d06361cf34f"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -82,7 +82,7 @@ class Qtremoteobjects < Formula
 
     ENV.delete "CPATH" if OS.mac?
     mkdir "qmake" do
-      system Formula["qtbase"].bin/"qmake", testpath/"test.pro"
+      system formula_opt_bin("qtbase")/"qmake", testpath/"test.pro"
       system "make"
       system "./test"
     end

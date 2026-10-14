@@ -1,10 +1,10 @@
 class Qtsensors < Formula
   desc "Provides access to sensors via QML and C++ interfaces"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtsensors-everywhere-src-6.11.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtsensors-everywhere-src-6.11.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtsensors-everywhere-src-6.11.2.tar.xz"
-  sha256 "68c8e44dfb32e8e2182f63f5544c2f462089b1bb049574f1d504ee2648903119"
+  url "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtsensors-everywhere-src-6.12.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qtsensors-everywhere-src-6.12.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.12/6.12.0/submodules/qtsensors-everywhere-src-6.12.0.tar.xz"
+  sha256 "861df58be8808cef777a1b531d7bec804d25733ec34e8ebbdafbe27040319090"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
@@ -18,7 +18,7 @@ class Qtsensors < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "a25d3b37767906739a575f9f322961ff4cf187b4105fe20d1cd0481e2ed6da7c"
+    sha256 cellar: :any, tahoe: "fd253f0eda5e0eed2e2f8fcd03e4626f9b42e1688fc23f5feb295c0f7f7c869a"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -80,7 +80,7 @@ class Qtsensors < Formula
 
     ENV.delete "CPATH" if OS.mac?
     mkdir "qmake" do
-      system Formula["qtbase"].bin/"qmake", testpath/"test.pro"
+      system formula_opt_bin("qtbase")/"qmake", testpath/"test.pro"
       system "make"
       system "./test"
     end

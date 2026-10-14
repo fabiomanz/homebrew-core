@@ -1,10 +1,10 @@
 class Qtcanvaspainter < Formula
   desc "Accelerated 2D painting solution for Qt Quick and QRhi-based render targets"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtcanvaspainter-everywhere-src-6.11.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtcanvaspainter-everywhere-src-6.11.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtcanvaspainter-everywhere-src-6.11.2.tar.xz"
-  sha256 "8a90a27250ceef5ff659744e035ef4f5d3cd7392e027d5f953765b3f1083e760"
+  url "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtcanvaspainter-everywhere-src-6.12.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qtcanvaspainter-everywhere-src-6.12.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.12/6.12.0/submodules/qtcanvaspainter-everywhere-src-6.12.0.tar.xz"
+  sha256 "09c0747c3bef7c58e3154346ca5fe2702ab09f7ad4083243e6d20307245119e2"
   license all_of: [
     "GPL-3.0-only",
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # qcshadergen
@@ -19,7 +19,7 @@ class Qtcanvaspainter < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "475c607b60d1d5b93c3db1fe5a39798cce849df479158f578db52005d439411e"
+    sha256 cellar: :any, tahoe: "4a0721a28bcc6ef838b4096869612af14526a970d309640766fcf3d6de2f53b4"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -87,7 +87,7 @@ class Qtcanvaspainter < Formula
 
     ENV.delete "CPATH" if OS.mac?
     mkdir "qmake" do
-      system Formula["qtbase"].bin/"qmake", testpath/"test.pro"
+      system formula_opt_bin("qtbase")/"qmake", testpath/"test.pro"
       system "make"
       system "./test"
     end

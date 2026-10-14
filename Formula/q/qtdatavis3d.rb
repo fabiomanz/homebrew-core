@@ -1,10 +1,10 @@
 class Qtdatavis3d < Formula
   desc "Provides functionality for 3D visualization"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtdatavis3d-everywhere-src-6.11.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtdatavis3d-everywhere-src-6.11.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtdatavis3d-everywhere-src-6.11.2.tar.xz"
-  sha256 "d24e6919c5d6f8a16dd19ce3c7c8f47689d39a72dbe4a31c1c1bcedfa60b661d"
+  url "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtdatavis3d-everywhere-src-6.12.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qtdatavis3d-everywhere-src-6.12.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.12/6.12.0/submodules/qtdatavis3d-everywhere-src-6.12.0.tar.xz"
+  sha256 "5f79b948eb1e81ff7f69e335b075c1b48953d88f5d97970b537e348dbbaa98dc"
   license all_of: [
     "GPL-3.0-only",
     "BSD-3-Clause", # *.cmake
@@ -18,7 +18,7 @@ class Qtdatavis3d < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "148b5d1a8f74f2ae4d92fb728fab305936455d6fe08e6e499d066fd72f8ab24e"
+    sha256 cellar: :any, tahoe: "6392d6ec0af253d97aca0f80eff96739988ac689e65008b10f67ec726ee60b01"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -83,7 +83,7 @@ class Qtdatavis3d < Formula
 
     ENV.delete "CPATH" if OS.mac?
     mkdir "qmake" do
-      system Formula["qtbase"].bin/"qmake", testpath/"test.pro"
+      system formula_opt_bin("qtbase")/"qmake", testpath/"test.pro"
       system "make"
       system "./test"
     end

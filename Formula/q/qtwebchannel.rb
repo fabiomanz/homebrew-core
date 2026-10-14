@@ -1,10 +1,10 @@
 class Qtwebchannel < Formula
   desc "Bridges the gap between Qt applications and HTML/JavaScript"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtwebchannel-everywhere-src-6.11.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtwebchannel-everywhere-src-6.11.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtwebchannel-everywhere-src-6.11.2.tar.xz"
-  sha256 "feb3149758bda887f0c292656194812dd2c227595badc8fbdeb2fb2311c5575f"
+  url "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtwebchannel-everywhere-src-6.12.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qtwebchannel-everywhere-src-6.12.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.12/6.12.0/submodules/qtwebchannel-everywhere-src-6.12.0.tar.xz"
+  sha256 "9afdfb64855b33c1cc16a4fdce69a556876f0d5b9df79d88de7306ffa2dca327"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
@@ -18,7 +18,7 @@ class Qtwebchannel < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "7cec23acfcc89daa9c836ddc6a15d93ec36e574f7298e8d3379dee7ae3ae0da9"
+    sha256 cellar: :any, tahoe: "6f8e8172b3336f098944a60e2cd3ff74abe3ee429432f0b65ac5b72870fbb77e"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -89,7 +89,7 @@ class Qtwebchannel < Formula
 
     ENV.delete "CPATH" if OS.mac?
     mkdir "qmake" do
-      system Formula["qtbase"].bin/"qmake", testpath/"test.pro"
+      system formula_opt_bin("qtbase")/"qmake", testpath/"test.pro"
       system "make"
       system "./test"
     end

@@ -1,10 +1,10 @@
 class Qtscxml < Formula
   desc "Provides functionality to create state machines from SCXML files"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtscxml-everywhere-src-6.11.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtscxml-everywhere-src-6.11.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtscxml-everywhere-src-6.11.2.tar.xz"
-  sha256 "f594c4bba7f8bffb20857973c72895669d6e54df08c8d897f50d15251cec35ff"
+  url "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtscxml-everywhere-src-6.12.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qtscxml-everywhere-src-6.12.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.12/6.12.0/submodules/qtscxml-everywhere-src-6.12.0.tar.xz"
+  sha256 "adc04875b383256bcd5a412f6f249d363495ea037913ca8c96d723442be38383"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # qscxmlc
@@ -19,7 +19,7 @@ class Qtscxml < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "396fec77947de3b947b147b4bcea1cfa8c5daf02d02061d8d0d68df945410f99"
+    sha256 cellar: :any, tahoe: "c38749d3ce3433792ad8b7ea77e1b72f04d438308f2180dcbb3993bb86c4beaa"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -98,7 +98,7 @@ class Qtscxml < Formula
 
     ENV.delete "CPATH" if OS.mac?
     mkdir "qmake" do
-      system Formula["qtbase"].bin/"qmake", testpath/"test.pro"
+      system formula_opt_bin("qtbase")/"qmake", testpath/"test.pro"
       system "make"
       system "./test"
     end

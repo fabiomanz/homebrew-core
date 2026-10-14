@@ -1,10 +1,10 @@
 class Qtpositioning < Formula
   desc "Provides access to position, satellite info and area monitoring classes"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtpositioning-everywhere-src-6.11.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtpositioning-everywhere-src-6.11.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtpositioning-everywhere-src-6.11.2.tar.xz"
-  sha256 "d8cf15ad43a3b1520adac64cec5900028525cf75f01a4c82a0002e7ac1ae7499"
+  url "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtpositioning-everywhere-src-6.12.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qtpositioning-everywhere-src-6.12.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.12/6.12.0/submodules/qtpositioning-everywhere-src-6.12.0.tar.xz"
+  sha256 "b060d410fac7413b05a0e7938bbf3325f7ad08d7df14af3956270f0696e76763"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # bundled poly2tri; *.cmake
@@ -20,7 +20,7 @@ class Qtpositioning < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "2634d59aaef7818e9b4f849df197240a22deb33e916cab2937e8fea90651bc97"
+    sha256 cellar: :any, tahoe: "0205a148e46dc3fe7ab8dc09ba92b2a82363f5bd31d3a4ff0e036e76e9d42e5c"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -83,7 +83,7 @@ class Qtpositioning < Formula
 
     ENV.delete "CPATH" if OS.mac?
     mkdir "qmake" do
-      system Formula["qtbase"].bin/"qmake", testpath/"test.pro"
+      system formula_opt_bin("qtbase")/"qmake", testpath/"test.pro"
       system "make"
       system "./test"
     end

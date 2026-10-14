@@ -1,10 +1,10 @@
 class Qtwebsockets < Formula
   desc "Provides WebSocket communication compliant with RFC 6455"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtwebsockets-everywhere-src-6.11.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtwebsockets-everywhere-src-6.11.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtwebsockets-everywhere-src-6.11.2.tar.xz"
-  sha256 "2bfe25c383c37f7690e3c59b02c9907d2744cf8527b1f3f1fc2c785b2ff3c9a3"
+  url "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtwebsockets-everywhere-src-6.12.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qtwebsockets-everywhere-src-6.12.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.12/6.12.0/submodules/qtwebsockets-everywhere-src-6.12.0.tar.xz"
+  sha256 "21690a365cd5fbfa8dea051473e98968df9f4eca0121fed7481d1215b7455a31"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
@@ -18,7 +18,7 @@ class Qtwebsockets < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "9a73e8f4bfefe1398c2aa7230f1ace4f86dca7bfabafb9ff203046e30f2ba325"
+    sha256 cellar: :any, tahoe: "65cb78185dd85b32745a73b798b2c9c49f87bf72131c8510920fef1ca1534495"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -29,6 +29,8 @@ class Qtwebsockets < Formula
   depends_on "qtdeclarative"
 
   conflicts_with "qt@5", because: "both link conflicting binaries"
+
+  allow_network_access! :test
 
   def install
     args = ["-DCMAKE_STAGING_PREFIX=#{prefix}"]
@@ -82,7 +84,7 @@ class Qtwebsockets < Formula
 
     ENV.delete "CPATH" if OS.mac?
     mkdir "qmake" do
-      system Formula["qtbase"].bin/"qmake", testpath/"test.pro"
+      system formula_opt_bin("qtbase")/"qmake", testpath/"test.pro"
       system "make"
       system "./test"
     end

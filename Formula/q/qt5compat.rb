@@ -1,10 +1,10 @@
 class Qt5compat < Formula
   desc "Qt 5 Core APIs that were removed in Qt 6"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qt5compat-everywhere-src-6.11.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qt5compat-everywhere-src-6.11.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qt5compat-everywhere-src-6.11.2.tar.xz"
-  sha256 "68c320fe3391096a9f2d870170edf1b67dac8af1d0e51c0c9e5343807f114287"
+  url "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qt5compat-everywhere-src-6.12.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qt5compat-everywhere-src-6.12.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.12/6.12.0/submodules/qt5compat-everywhere-src-6.12.0.tar.xz"
+  sha256 "78cf1c283795312a7fa31c73eb7f7f556b48374adc484f10ad5a3c0bcb59264e"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-2-Clause", # src/core5/codecs
@@ -19,7 +19,7 @@ class Qt5compat < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "a543e63d16893e3cdca8efda059381a461164e10d86ca5cde8158ca93b0f1359"
+    sha256 cellar: :any, tahoe: "4ac73522c3f10265d173cbfe74545621cb7e54f36c098c8bf4a32b6a1877f157"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -86,7 +86,7 @@ class Qt5compat < Formula
 
     ENV.delete "CPATH" if OS.mac?
     mkdir "qmake" do
-      system Formula["qtbase"].bin/"qmake", testpath/"test.pro"
+      system formula_opt_bin("qtbase")/"qmake", testpath/"test.pro"
       system "make"
       system "./test"
     end

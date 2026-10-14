@@ -1,10 +1,10 @@
 class Qtcharts < Formula
   desc "UI Components for displaying visually pleasing charts"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtcharts-everywhere-src-6.11.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtcharts-everywhere-src-6.11.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtcharts-everywhere-src-6.11.2.tar.xz"
-  sha256 "5069e53b81d125509e937c6379cba6d664c562d5a1e5ed28dd383690d4b6fb29"
+  url "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtcharts-everywhere-src-6.12.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qtcharts-everywhere-src-6.12.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.12/6.12.0/submodules/qtcharts-everywhere-src-6.12.0.tar.xz"
+  sha256 "dc5e0599455c78729248a1bb95824fe6a3420e860b8cabc5ac0c7a93c2062bfb"
   license all_of: [
     "GPL-3.0-only",
     "BSD-3-Clause", # *.cmake
@@ -18,7 +18,7 @@ class Qtcharts < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "b9297189d29f5cb2e6f8bc1915c23b692338f9a0292f01267054dc1a2790f42b"
+    sha256 cellar: :any, tahoe: "37af27da39339398aed1d51a69260c3aa336845f23dd116e06af738b22633d01"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -84,7 +84,7 @@ class Qtcharts < Formula
 
     ENV.delete "CPATH" if OS.mac?
     mkdir "qmake" do
-      system Formula["qtbase"].bin/"qmake", testpath/"test.pro"
+      system formula_opt_bin("qtbase")/"qmake", testpath/"test.pro"
       system "make"
       system "./test"
     end
