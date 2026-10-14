@@ -1,10 +1,10 @@
 class Qtlottie < Formula
   desc "Display graphics and animations exported by the Bodymovin plugin"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtlottie-everywhere-src-6.11.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtlottie-everywhere-src-6.11.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtlottie-everywhere-src-6.11.2.tar.xz"
-  sha256 "f53c712716d9eba9a7ccb405b8cd2d30652097828fcfeb152f46b4ec40524852"
+  url "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtlottie-everywhere-src-6.12.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qtlottie-everywhere-src-6.12.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.12/6.12.0/submodules/qtlottie-everywhere-src-6.12.0.tar.xz"
+  sha256 "6b8f04c917f2666f8cca4e7804bcabb6edffe151406b89fb28de3bba5a5d997e"
   license all_of: [
     "GPL-3.0-only",
     "BSD-3-Clause", # *.cmake
@@ -18,7 +18,7 @@ class Qtlottie < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "40b31270668060aa5b71c4a995b9b72fdb43553ad4dfd985cd3968c3c072771e"
+    sha256 cellar: :any, tahoe: "1976befa939b9a30ab4ea459831b7b7718e89762ab36e0188c665546f17ab714"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -27,6 +27,14 @@ class Qtlottie < Formula
 
   depends_on "qtbase"
   depends_on "qtdeclarative"
+  depends_on "qtquicktimeline"
+
+  resource "rect_rotate.json", :test do
+    url "https://raw.githubusercontent.com/qt/qtlottie/888fb0ca5d5e18fe5d8b88ed721544bf204ac158/tests/manual/testApp/rect_rotate.json"
+    sha256 "d0d5d2b036c04d4b2c1211d062fe1c123053ea0d4639cd33a2cec724236bf328"
+  end
+
+  allow_network_access! :test
 
   def install
     args = ["-DCMAKE_STAGING_PREFIX=#{prefix}"]
@@ -42,10 +50,6 @@ class Qtlottie < Formula
   end
 
   test do
-    resource "rect_rotate.json" do
-      url "https://raw.githubusercontent.com/qt/qtlottie/888fb0ca5d5e18fe5d8b88ed721544bf204ac158/tests/manual/testApp/rect_rotate.json"
-      sha256 "d0d5d2b036c04d4b2c1211d062fe1c123053ea0d4639cd33a2cec724236bf328"
-    end
     testpath.install resource("rect_rotate.json")
 
     # Based on https://github.com/qt/qtlottie/blob/dev/tests/manual/testApp/main.qml
@@ -77,7 +81,7 @@ class Qtlottie < Formula
     QML
 
     ENV["LC_ALL"] = "en_US.UTF-8"
-    ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux?
-    system Formula["qtdeclarative"].bin/"qml", "test.qml"
+    ENV["QT_QPA_PLATFORM"] = "minimal"
+    system formula_opt_bin("qtdeclarative")/"qml", "test.qml"
   end
 end

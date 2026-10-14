@@ -1,10 +1,10 @@
 class Qtlocation < Formula
   desc "Provides C++ interfaces to retrieve location and navigational information"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtlocation-everywhere-src-6.11.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtlocation-everywhere-src-6.11.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtlocation-everywhere-src-6.11.2.tar.xz"
-  sha256 "4d50a7ece01fbd76f6ec17c650236cb56ea60f987c52fc391dac72f13f65c23a"
+  url "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtlocation-everywhere-src-6.12.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qtlocation-everywhere-src-6.12.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.12/6.12.0/submodules/qtlocation-everywhere-src-6.12.0.tar.xz"
+  sha256 "218696d57c9eb95e8756e9fda62a8eabf94badc507db5f6e8ab9a640c4b0f50d"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
@@ -18,7 +18,7 @@ class Qtlocation < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "f768e5dd1baf9ed7bdea987a4ef57c9b6991f8ceafbf440c2e52247effbdd555"
+    sha256 cellar: :any, tahoe: "19de791ce164c3486031ffa1d1d6c84d185542f0af7ef14afd26b581265e4b68"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -95,7 +95,7 @@ class Qtlocation < Formula
 
     ENV.delete "CPATH" if OS.mac?
     mkdir "qmake" do
-      system Formula["qtbase"].bin/"qmake", testpath/"test.pro"
+      system formula_opt_bin("qtbase")/"qmake", testpath/"test.pro"
       system "make"
       system "./test"
     end

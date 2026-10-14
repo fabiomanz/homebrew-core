@@ -1,10 +1,10 @@
 class Qthttpserver < Formula
   desc "Framework for embedding an HTTP server into a Qt application"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qthttpserver-everywhere-src-6.11.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qthttpserver-everywhere-src-6.11.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qthttpserver-everywhere-src-6.11.2.tar.xz"
-  sha256 "f0f5763b2ba58f20f5cffdfbedb97e62e32b5c639df6d9a6378905028be7bd8e"
+  url "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qthttpserver-everywhere-src-6.12.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.12/6.12.0/submodules/qthttpserver-everywhere-src-6.12.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.12/6.12.0/submodules/qthttpserver-everywhere-src-6.12.0.tar.xz"
+  sha256 "ede040264551d0930ea5f6c1a4c18a7a3dea59d635e71cd2e81f02567d7814a4"
   license all_of: [
     "GPL-3.0-only",
     "BSD-3-Clause", # *.cmake
@@ -18,7 +18,7 @@ class Qthttpserver < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "d13fd36eab4494b7f2e43552aed33f8118f22ef6f7fb92f68fef5bc535559534"
+    sha256 cellar: :any, tahoe: "7e2a6c0a063c48c14a2c93806eed9f473f2000b7b11cefe5535b64026c069237"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -79,7 +79,7 @@ class Qthttpserver < Formula
 
     ENV.delete "CPATH" if OS.mac?
     mkdir "qmake" do
-      system Formula["qtbase"].bin/"qmake", testpath/"test.pro"
+      system formula_opt_bin("qtbase")/"qmake", testpath/"test.pro"
       system "make"
       system "./test"
     end
