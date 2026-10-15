@@ -1,8 +1,8 @@
 class Jcode < Formula
   desc "AI coding agent harness for the terminal"
   homepage "https://jcode.sh"
-  url "https://github.com/1jehuang/jcode/archive/refs/tags/v0.96.0.tar.gz"
-  sha256 "02968e2235660a1befe377835d6910e9002a0d45dc7ed9112cb889efbe2196a0"
+  url "https://github.com/1jehuang/jcode/archive/refs/tags/v0.98.1.tar.gz"
+  sha256 "271b1f9c38aa1e439b1fb9c0cebff443c8747f34bdf8976b18d8f967ba819641"
   license "MIT"
 
   livecheck do
@@ -11,11 +11,11 @@ class Jcode < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1afb8b5612132056f2900a78c7a6a5f316bea51b568bf9f5a14a9eb496a4ebc9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b213486911153043bfed51e17e4814011b111708c357bc7451ed09f944cc683a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "99ec3204fabe366faf12a133505dfcb9031ef95008841690dc39d8bc639857ef"
-    sha256 cellar: :any,                 arm64_linux:       "8bca95b4640da35be890d7d7913510ffef97b2076a49591e4e0ee614ad5fe58a"
-    sha256 cellar: :any,                 x86_64_linux:      "db45c8d81ee9f8c6f610c7837e7ee05ed7a920b8b60548e253cfb13445c5d96d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "108261e9d062ba7380b0ee52f889713b95606259c2c13839d37b120b24f2f524"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c5f860c7627a4a3e643d4240ca0a7ddc6c85fea8d49f2a2c3ebe3ae304794027"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "55e737aabac26f6c49ba99b3c168ea0f605ea9b7110f3ffe63fd3137b238fbf6"
+    sha256 cellar: :any,                 arm64_linux:       "2e0f554bc027c66cb08b15a183dbb3daeed057d3659353e750baa026c2e24ac9"
+    sha256 cellar: :any,                 x86_64_linux:      "254146ba0aad5763d2c17e1cede76d1718e59889eb48b702ad73f1e5153a4a67"
   end
 
   depends_on "cmake" => :build

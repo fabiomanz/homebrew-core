@@ -1,17 +1,17 @@
 class ArcaneCli < Formula
   desc "Command-line client for the Arcane Docker management platform"
   homepage "https://getarcane.app"
-  url "https://github.com/getarcaneapp/arcane/archive/refs/tags/v2.15.1.tar.gz"
-  sha256 "cc99866518c8e66481164d9d0de3c8b3149ce349c31114d2fc2981af6ac16fd1"
+  url "https://github.com/getarcaneapp/arcane/archive/refs/tags/v2.16.1.tar.gz"
+  sha256 "6dc7313e10acef004c9bc8e01bcb566cc4decdd4dbb26413422e922db13b5459"
   license "BSD-3-Clause"
   head "https://github.com/getarcaneapp/arcane.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "74abd07737cba877afbe9eaf28aa91f156ba7e8658d5e37a9fa12ab4171b0532"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "280ac2ca0589cccaed07a68029e2b4186be1a957a3439ea0de7d22f177f1f7ac"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d6aa87fcc66cff4471ab380ddb1ffc4428ad0b65a2ec004db8d40e2c6c76c070"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8bb0daf34ffd29246387ec2047a5b5a75753ed68bba5cf206f0d30c6cd4a21d4"
-    sha256 cellar: :any,                 x86_64_linux:      "2e4ff2e0ebe6c588283b1fc6098ffcd94a28a7b24ec51c2db058bd106782d74a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5b92a928eb975ae79c56842f64cca9db69ee20d9aeb73458692193e41e83ca56"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "44736eeab67751c456d9d8db1fbb357713c4b2527aa048c8db89242c081b106e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "598d5b94fbca6a9ac03a3a1bbbe48919fca53f40ebca45b0c3cd383c6303995c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8f0e1ad330b302ca29f41c76cb0772b0ee96da5a73558388381ccb4d5a167bb7"
+    sha256 cellar: :any,                 x86_64_linux:      "555025917fe511cb6fa024a0c9324f69e0111fe650690c5a5436dd461d18777a"
   end
 
   depends_on "go" => :build
@@ -28,7 +28,10 @@ class ArcaneCli < Formula
     ENV["GOWORK"] = "off"
 
     # Homebrew manages upgrades, so drop the self-update command
-    inreplace "cli/pkg/root.go", "rootCmd.AddCommand(selfupdate.Cmd)", "_ = selfupdate.Cmd"
+    inreplace "cli/pkg/root.go" do |s|
+      s.gsub! "\t\"github.com/getarcaneapp/arcane/cli/v2/pkg/selfupdate\"\n", ""
+      s.gsub! "selfupdate.Command(), ", ""
+    end
 
     cd "cli" do
       ldflags = %W[
