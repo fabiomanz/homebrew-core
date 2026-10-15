@@ -1,11 +1,10 @@
 class Simdutf < Formula
   desc "Unicode conversion routines, fast"
   homepage "https://simdutf.github.io/simdutf/"
-  url "https://github.com/simdutf/simdutf/archive/refs/tags/v9.2.1.tar.gz"
-  sha256 "582f9d0dcf578f6d4766fa29ea12a7f2f02bd3c6ad9e0cf35a8e0ec8478eba4b"
+  url "https://github.com/simdutf/simdutf/archive/refs/tags/v9.3.0.tar.gz"
+  sha256 "f05b3549465f1bb3c5033a05395c372c0982ed1d166608185b3cc8c5c7e98071"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 1
-  compatibility_version 6
+  compatibility_version 7
   head "https://github.com/simdutf/simdutf.git", branch: "master"
 
   livecheck do
@@ -15,7 +14,7 @@ class Simdutf < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "8dda728df292c179a848b72b5a3c8ac016314b6713e5b30cb952ac789aab6e57"
+    sha256 cellar: :any, tahoe: "57ad6d63ca602800d693b6ab6b8b94d04967f72f3556e525bfbdb408f6f1009a"
   end
 
   depends_on "aklomp-base64" => :build

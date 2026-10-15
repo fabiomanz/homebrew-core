@@ -1,14 +1,14 @@
 class Simdjson < Formula
   desc "SIMD-accelerated C++ JSON parser"
   homepage "https://simdjson.org"
-  url "https://github.com/simdjson/simdjson/archive/refs/tags/v5.0.4.tar.gz"
-  sha256 "827417bcf88309df170962e7bd1b4b4a4992d5d4e5cb82a0442ada9530e916d2"
+  url "https://github.com/simdjson/simdjson/archive/refs/tags/v5.0.5.tar.gz"
+  sha256 "50bb17769e1054ff1bfcd5dbbfcf33544c77f6ebdb31a318436ea0e47f78f571"
   license "Apache-2.0"
   head "https://github.com/simdjson/simdjson.git", branch: "master"
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "3384aca0abac055bd4ab8abde61db92d269f0382066fbe4b353168f00779b4ce"
+    sha256 cellar: :any, tahoe: "71acdd277e4e5fbadb59e81d3dbd74c175c6b3388143ba836abd3da979b5c9aa"
   end
 
   depends_on "cmake" => :build

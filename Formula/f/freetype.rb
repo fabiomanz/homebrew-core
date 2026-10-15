@@ -1,9 +1,9 @@
 class Freetype < Formula
   desc "Software library to render fonts"
   homepage "https://www.freetype.org/"
-  url "https://downloads.sourceforge.net/project/freetype/freetype2/2.14.3/freetype-2.14.3.tar.xz"
-  mirror "https://download.savannah.gnu.org/releases/freetype/freetype-2.14.3.tar.xz"
-  sha256 "36bc4f1cc413335368ee656c42afca65c5a3987e8768cc28cf11ba775e785a5f"
+  url "https://downloads.sourceforge.net/project/freetype/freetype2/2.15.0/freetype-2.15.0.tar.xz"
+  mirror "https://download.savannah.gnu.org/releases/freetype/freetype-2.15.0.tar.xz"
+  sha256 "93cd47eb719c325107f2d3cf087d06299e944c3b48a40b55537302304dea1dd5"
   license "FTL"
   compatibility_version 1
 
@@ -14,7 +14,7 @@ class Freetype < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "a8a2bcc65a1d21adba6797d59f4ab1c91b0a40c53aae2794b4f94780e7379837"
+    sha256 cellar: :any, tahoe: "df5ad00e9d611b80d19df81741a935c2d9bceef6feb79b4c322dda96507d5d36"
   end
 
   depends_on "pkgconf" => :build
@@ -26,6 +26,8 @@ class Freetype < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     # This file will be installed to bindir, so we want to avoid embedding the

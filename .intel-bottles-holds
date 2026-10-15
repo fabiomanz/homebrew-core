@@ -1,17 +1,9 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
 ada-url	Formula/a/ada-url.rb	705aca66f9b229cb3af85feb8121e3c58afc8e1c	4.0.0	4.0.0_1
-ansible-lint	Formula/a/ansible-lint.rb	705aca66f9b229cb3af85feb8121e3c58afc8e1c	26.10.0	26.10.1
-awscli	Formula/a/awscli.rb	705aca66f9b229cb3af85feb8121e3c58afc8e1c	2.38.0	2.38.1
 buf	Formula/b/buf.rb	705aca66f9b229cb3af85feb8121e3c58afc8e1c	1.73.0	1.74.0
 cargo-c	Formula/c/cargo-c.rb	705aca66f9b229cb3af85feb8121e3c58afc8e1c	0.10.25_1	0.10.26
-freetype	Formula/f/freetype.rb	705aca66f9b229cb3af85feb8121e3c58afc8e1c	2.14.3	2.15.0
-gitlab-runner	Formula/g/gitlab-runner.rb	705aca66f9b229cb3af85feb8121e3c58afc8e1c	19.4.1	19.5.0
-gnupg	Formula/g/gnupg.rb	705aca66f9b229cb3af85feb8121e3c58afc8e1c	2.5.24	2.5.24_1
 imagemagick	Formula/i/imagemagick.rb	705aca66f9b229cb3af85feb8121e3c58afc8e1c	7.1.2-33	7.1.2-34
 lld	Formula/l/lld.rb	705aca66f9b229cb3af85feb8121e3c58afc8e1c	23.1.2	23.1.3
 merve	Formula/m/merve.rb	705aca66f9b229cb3af85feb8121e3c58afc8e1c	1.2.2_3	1.2.2_4
 node	Formula/n/node.rb	705aca66f9b229cb3af85feb8121e3c58afc8e1c	26.11.1	26.11.1_1
-pre-commit	Formula/p/pre-commit.rb	705aca66f9b229cb3af85feb8121e3c58afc8e1c	4.6.2_1	4.7.0
 qtserialbus	Formula/q/qtserialbus.rb	705aca66f9b229cb3af85feb8121e3c58afc8e1c	6.11.2	6.12.0
-simdjson	Formula/s/simdjson.rb	705aca66f9b229cb3af85feb8121e3c58afc8e1c	5.0.4	5.0.5
-simdutf	Formula/s/simdutf.rb	705aca66f9b229cb3af85feb8121e3c58afc8e1c	9.2.1_1	9.3.0
