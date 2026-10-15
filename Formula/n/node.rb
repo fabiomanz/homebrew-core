@@ -4,6 +4,7 @@ class Node < Formula
   url "https://nodejs.org/dist/v26.11.1/node-v26.11.1.tar.xz"
   sha256 "2c79a3c1095c7da4c549c84e90b2d28df5479315ab6d0aff9bc71dcf4c9df1e0"
   license "MIT"
+  revision 1
   head "https://github.com/nodejs/node.git", branch: "main"
 
   livecheck do
@@ -13,7 +14,7 @@ class Node < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "0197c2d5463b32931a7cfbc6d3510ffab0904ceb7fcd1bc26938450bc4aa43b9"
+    sha256 tahoe: "6570be7227823c171f8cbe465583563ee34c2009abde4147b4c2863dd6e4f68f"
   end
 
   depends_on "pkgconf" => :build
