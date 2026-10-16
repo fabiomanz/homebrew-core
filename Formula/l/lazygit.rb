@@ -12,11 +12,12 @@ class Lazygit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e277cb254fc844733c5f933871d35aba510924f5e7c6d12d00638b4a96ddc5a8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e277cb254fc844733c5f933871d35aba510924f5e7c6d12d00638b4a96ddc5a8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e277cb254fc844733c5f933871d35aba510924f5e7c6d12d00638b4a96ddc5a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "1f9a996f757d67434ffcf85497029488ef6fa9e96523d8218125fa92cf6caacb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "444d4d8bf3d1ef602171aec1dbe2ffa585ccac36ff7d2aec37af24bfbbd8011a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4be1775972ff7a776d8b1632e5760df7449adfbb23364f33079d05259a2a32f3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4be1775972ff7a776d8b1632e5760df7449adfbb23364f33079d05259a2a32f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4be1775972ff7a776d8b1632e5760df7449adfbb23364f33079d05259a2a32f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2c0c70ed94468abd34146359e1bb3da0f19b9966c3dbc0e3f5c4afa05d0a9182"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "654d9452762d7342c13d5e28bc61e680a6055980d85a60b1683ffc8280c86fb4"
   end
 
   depends_on "go" => :build
@@ -27,6 +28,8 @@ class Lazygit < Formula
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     ldflags = "-X main.version=#{version} -X main.buildSource=#{tap.user}"
     system "go", "build", "-mod=vendor", *std_go_args(ldflags:)
+
+    generate_completions_from_executable(bin/"lazygit", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do
