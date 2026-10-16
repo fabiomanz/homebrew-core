@@ -4,13 +4,13 @@ class Ccache < Formula
   url "https://github.com/ccache/ccache/releases/download/v4.14.1/ccache-4.14.1.tar.xz"
   sha256 "29f10de481ac2c41c91bfabead63d803bd2fe823e09752aade5b0b8704cc4f30"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://github.com/ccache/ccache.git", branch: "master"
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "c1f28046c89a0ef1339e2472898cece9e2734a321147e12eef1a462df1ffc42f"
+    sha256 tahoe: "68e2d3407e809c2cb8bcad3a1543501deb38cfa24c13e0c10986dbeeec6bb90f"
   end
 
   depends_on "asciidoctor" => :build

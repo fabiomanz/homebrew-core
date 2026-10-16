@@ -1,10 +1,9 @@
 class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v26.11.1/node-v26.11.1.tar.xz"
-  sha256 "2c79a3c1095c7da4c549c84e90b2d28df5479315ab6d0aff9bc71dcf4c9df1e0"
+  url "https://nodejs.org/dist/v26.12.0/node-v26.12.0.tar.xz"
+  sha256 "ce59f9038dda0e637656fb1c36cf52c07c637922fd81d419dbba2ec129afbd35"
   license "MIT"
-  revision 1
   head "https://github.com/nodejs/node.git", branch: "main"
 
   livecheck do
@@ -14,11 +13,11 @@ class Node < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "6570be7227823c171f8cbe465583563ee34c2009abde4147b4c2863dd6e4f68f"
+    sha256 tahoe: "ea93904508ca02b90b70189b758da8ee3511ab1e3920d24ba70b3b4c9a88f94f"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "python@3.14" => :build
+  depends_on "python@3.15" => :build
   depends_on "rust" => :build
   depends_on "abseil"
   depends_on "ada-url"
