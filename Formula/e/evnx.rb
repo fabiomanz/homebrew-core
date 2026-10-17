@@ -1,16 +1,16 @@
 class Evnx < Formula
   desc "Comprehensive CLI tool for managing .env files"
   homepage "https://evnx.dev"
-  url "https://github.com/urwithajit9/evnx/archive/refs/tags/v0.10.2.tar.gz"
-  sha256 "3407e97e6678feccee303f306d3e4890bd738460fdbb1a7bcbae3c2b69a15e8d"
+  url "https://github.com/urwithajit9/evnx/archive/refs/tags/v0.10.4.tar.gz"
+  sha256 "5f19d6cb5b0249559f8a58e55c2a1a6a88d41dcc14b395c2166a1bcc639318e8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cb5767399c6d13cfdd110a86101b831f8dfe09698d2d987b9123b30151dcebcd"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f03ea207b50301f4379907cddac682ef4bd209765384a4d72bc2bb4b64588dff"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "87b47766035f13d95371d2c43f32cd0c9b46cfac2dfe19f3be2854d12732a378"
-    sha256 cellar: :any,                 arm64_linux:       "95f2cefca8928d86714e87a3e7c7ff3c9a5bbd34b9654bb9e0db0630b585a581"
-    sha256 cellar: :any,                 x86_64_linux:      "3f2ce8f9619f7faa49002e445deb8868ad5050115d736185495699ce9250dc6b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "afb838790d31b33d704d8654e79d326742a970f0cb915008299cd6a926d9d8d5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3b10d2a324345607009bc9df33e8b2eceed1ba11d2ad9d784e12547064ba0dc2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6764d620f0e13cdc026f014e998251e3239d3d04182e31d09ac1ca5bc8297429"
+    sha256 cellar: :any,                 arm64_linux:       "4ba2d72c3fac93ffe21e94872d2ee819becd0421b897e8b4accd3e28778443ff"
+    sha256 cellar: :any,                 x86_64_linux:      "e0e964871f3a85b8499f12e41208143e22dad2cfeaace8dbb9d074924b98f733"
   end
 
   depends_on "rust" => :build
