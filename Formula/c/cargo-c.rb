@@ -1,11 +1,10 @@
 class CargoC < Formula
   desc "Helper program to build and install c-like libraries"
   homepage "https://github.com/lu-zero/cargo-c"
-  url "https://static.crates.io/crates/cargo-c/cargo-c-0.10.25+cargo-0.99.0.crate"
-  version "0.10.25"
-  sha256 "6b2ddde58a8a773ccce4b6384acacd3ce01373f52717dd2424633ed46755c627"
+  url "https://static.crates.io/crates/cargo-c/cargo-c-0.10.26+cargo-0.100.0.crate"
+  version "0.10.26"
+  sha256 "5ff6e05531e58286d3c02ec0adb7f254e5d532a8d4b667f30b9942d802e1db25"
   license "MIT"
-  revision 1
 
   livecheck do
     url :homepage
@@ -14,7 +13,7 @@ class CargoC < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "ecdfc3f804db97ad5931bf332cf30c8f3e56c16427a7cf5942f9ac246113435a"
+    sha256 cellar: :any, tahoe: "32d6f40e0539dbb9ed6d709f4ddcf517f8e688b1aaf6455c3b5fab33fd312272"
   end
 
   depends_on "pkgconf" => :build
