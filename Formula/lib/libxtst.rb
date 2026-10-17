@@ -7,11 +7,8 @@ class Libxtst < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "99e1bb69e67e3f12060f65a963b42f7a414e42304af01c19cac344fe7fe8bba8"
-    sha256 cellar: :any, arm64_tahoe:       "4cccd2f54e0b00cf2e0be69f1f978ab36f033851b091a22a7413174bbdc6ad7e"
-    sha256 cellar: :any, arm64_sequoia:     "1c3749e2a12829869eb8b6a85feb805cb0abcbb7ad928cdf7c706de4d9a5a75e"
-    sha256 cellar: :any, arm64_linux:       "cfd02c4c61b6556a34c4e13552c6d3086b6d625d4c412462d1fbcd8367a1ace1"
-    sha256 cellar: :any, x86_64_linux:      "6ac18f8733259cc308962131433f580e028155cd2e3cc57dd6b9c7500dac0e16"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 cellar: :any, tahoe: "50e3a1114434988a4cd18304d6f320e6f8cfd6911dc7fe55802c62cb05096c6f"
   end
 
   depends_on "pkgconf" => :build
