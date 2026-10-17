@@ -18,12 +18,8 @@ class Hashcat < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 arm64_golden_gate: "cc3fc40438facc4020562175bc2b93b73c0243828aefb7a21f7bcc0aaf3bc59e"
-    sha256 arm64_tahoe:       "9660281ddadbd08f981600044f9ab8a77bb94251709b5465904c545ad8bdbc31"
-    sha256 arm64_sequoia:     "5b76d2a56bcb712905529d4ee1cbc5f8e16b7cdcfbc1f7a79812e4124bae9258"
-    sha256 arm64_linux:       "edf1ba68b54f13e2bfa8f5e7414eb8d5ca30d7397e07d05ad210b104772537cd"
-    sha256 x86_64_linux:      "41ce78c2f40c40e00421b5706eace1feec56624fcce3cfef94432617cacf16a9"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 tahoe: "94445d88e80333213ef1179e3a59924a9445f7015baf070d528c351e99297187"
   end
 
   depends_on "minizip"

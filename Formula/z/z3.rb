@@ -14,11 +14,8 @@ class Z3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e476fd1664d2a3303ba3b6b07efbd9dd5a76a0df61ee78918755a9d1b6580064"
-    sha256 cellar: :any, arm64_tahoe:       "71608b10f9abefecfe5f2f023442f0820a253e62b3e1980c0adef9f749948709"
-    sha256 cellar: :any, arm64_sequoia:     "5436cd3b3c2a314525e5190e9d0bf57d0c90103db9f4828c646a3c8a647165ee"
-    sha256 cellar: :any, arm64_linux:       "566aeecb07d1fc926573efddd9b61d0b1753af0323f81b7f50b963fe0e569e4a"
-    sha256 cellar: :any, x86_64_linux:      "e242396095397d21baf385a0e233c4debe8b6110743c95919939c5fdbd533497"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 cellar: :any, tahoe: "6cebcd053cc46a5595d492e8259f167a94e8eee2726915d8824efd525ba4779f"
   end
 
   depends_on "cmake" => :build

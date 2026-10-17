@@ -1,14 +1,14 @@
 class Libx11 < Formula
   desc "X.Org: Core X11 protocol client library"
   homepage "https://www.x.org/"
-  url "https://xorg.freedesktop.org/archive/individual/lib/libX11-1.8.13.tar.gz"
-  sha256 "acf0e7cd7541110e6330ecb539441a2d53061f386ec7be6906dfde0de2598470"
+  url "https://xorg.freedesktop.org/archive/individual/lib/libX11-1.8.14.tar.gz"
+  sha256 "ebb8a58549ddde50aa2e742b3b256557f451053d173be8dbfc2e8ac078eee1d6"
   license "MIT"
   compatibility_version 1
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "10c0844f2a8daab11aa21bd737480e496469da1a15c37067dc34ab308f8b6285"
+    sha256 tahoe: "c6d26e6032e1a786e706b9c8679d0592276fd0a3007caadf760498808e1f0163"
   end
 
   depends_on "pkgconf" => :build
@@ -29,7 +29,6 @@ class Libx11 < Formula
       --enable-unix-transport
       --enable-tcp-transport
       --enable-ipv6
-      --enable-loadable-i18n
       --enable-xthreads
       --enable-specs=no
     ]
@@ -42,8 +41,13 @@ class Libx11 < Formula
   test do
     (testpath/"test.c").write <<~C
       #include <X11/Xlib.h>
+      #include <locale.h>
       #include <stdio.h>
+
       int main() {
+        setlocale(LC_ALL, "");
+        printf("XSupportsLocale=%d", XSupportsLocale());
+
         Display* disp = XOpenDisplay(NULL);
         if (disp == NULL)
         {
@@ -72,6 +76,6 @@ class Libx11 < Formula
       }
     C
     system ENV.cc, "test.c", "-L#{lib}", "-lX11", "-o", "test", "-I#{include}"
-    system "./test"
+    assert_match "XSupportsLocale=1", shell_output("./test")
   end
 end
