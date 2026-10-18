@@ -7,12 +7,12 @@ class GobjectIntrospection < Formula
   url "https://download.gnome.org/sources/gobject-introspection/1.86/gobject-introspection-1.86.0.tar.xz"
   sha256 "920d1a3fcedeadc32acff95c2e203b319039dd4b4a08dd1a2dfd283d19c0b9ae"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later", "MIT"]
-  revision 4
+  revision 5
   compatibility_version 1
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "cd79e127069c9094d35c783e26ae66dd6a630d2eaf6d7361b36d7b1ab958ceb5"
+    sha256 tahoe: "1d7fea5ae55bd05d5487ef3650344e0944cde0105bdbb42c96e74daf36a361d2"
   end
 
   depends_on "bison" => :build
@@ -21,8 +21,8 @@ class GobjectIntrospection < Formula
   depends_on "cairo"
   depends_on "glib"
   depends_on "pkgconf"
-  # Ships a `_giscanner.cpython-314-darwin.so`, so needs a specific version.
-  depends_on "python@3.14"
+  # Ships a `_giscanner.cpython-315-darwin.so`, so needs a specific version.
+  depends_on "python@3.15"
 
   uses_from_macos "flex" => :build
   uses_from_macos "libffi"
