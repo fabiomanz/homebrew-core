@@ -1,16 +1,16 @@
 class Libunistring < Formula
   desc "C string library for manipulating Unicode strings"
   homepage "https://www.gnu.org/software/libunistring/"
-  url "https://ftpmirror.gnu.org/libunistring/libunistring-1.4.2.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/libunistring/libunistring-1.4.2.tar.gz"
-  mirror "http://ftp.gnu.org/gnu/libunistring/libunistring-1.4.2.tar.gz"
-  sha256 "e82664b170064e62331962126b259d452d53b227bb4a93ab20040d846fec01d8"
+  url "https://ftpmirror.gnu.org/libunistring/libunistring-1.5.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/libunistring/libunistring-1.5.tar.gz"
+  mirror "http://ftp.gnu.org/gnu/libunistring/libunistring-1.5.tar.gz"
+  sha256 "5b0ecd46cbf225375f20ab4056197e66a7ac590e2684c069af407ae3383c9d81"
   license any_of: ["GPL-2.0-or-later", "LGPL-3.0-or-later"]
   compatibility_version 1
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "da6170b1ee63543eaabd1b417aa047c3af1a6b6ea4982178119e499fd9d1a112"
+    sha256 cellar: :any, tahoe: "9914a8c6c3e193c9f0b20df1d04a32f25d247f0cb62fd1501abf321e1d1d7757"
   end
 
   deny_network_access!
