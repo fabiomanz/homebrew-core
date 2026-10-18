@@ -1,8 +1,8 @@
 class DartSass < Formula
   desc "Reference implementation of Sass, written in Dart"
   homepage "https://sass-lang.com/dart-sass"
-  url "https://github.com/sass/dart-sass/archive/refs/tags/1.105.1.tar.gz"
-  sha256 "0744079d7712afa814ad6a8fb61bd4006a5902cb6746d92b13fb0d38234547c4"
+  url "https://github.com/sass/dart-sass/archive/refs/tags/1.105.2.tar.gz"
+  sha256 "ef81110f75f08979a46616458bde0d4971526b51f00b36016c0188c3b112e1ee"
   license "MIT"
 
   # Some tags are used for sass-api/sass-parser
@@ -13,7 +13,7 @@ class DartSass < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "64f01edc86c2d3d186937c84beefcd903f798ed461e9e7ff4ccdfbaca9839491"
+    sha256 cellar: :any, tahoe: "1b1498dab218a5fd531fbefed1a6d86a004a8ff7235ec2f022310423dc579610"
   end
 
   depends_on "buf" => :build

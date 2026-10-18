@@ -2,6 +2,7 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
+  revision 1
   compatibility_version 1
 
   stable do
@@ -26,7 +27,7 @@ class Gstreamer < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "c50ca4f9e6fc9e5552f5c826e8b21db430c5e3bae8d7f0cfc961123ae5c47b42"
+    sha256 tahoe: "aa1fdbe5d67607b2532439abf9a34662ef05804bd0c05018a0f6813534664897"
   end
 
   head do
@@ -92,7 +93,7 @@ class Gstreamer < Formula
   depends_on "orc"
   depends_on "pango"
   depends_on "pygobject3" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "rtmpdump"
   depends_on "speex"
   depends_on "srt"
@@ -141,7 +142,7 @@ class Gstreamer < Formula
   # These paths used to live in various `gst-*` formulae.
   link_overwrite "bin/gst-*", "lib/ligst*", "lib/libges*", "lib/girepository-1.0/Gst*-1.0.typelib"
   link_overwrite "lib/girepository-1.0/GES-1.0.typelib", "lib/gst-validate-launcher/*", "lib/gstreamer-1.0/*"
-  link_overwrite "lib/pkgconfig/gst*.pc", "lib/python3.14/site-packages/gi/overrides/*", "include/gstreamer-1.0/*"
+  link_overwrite "lib/pkgconfig/gst*.pc", "lib/python3.15/site-packages/gi/overrides/*", "include/gstreamer-1.0/*"
   link_overwrite "share/gir-1.0/Gst*.gir", "share/gir-1.0/GES-1.0.gir", "share/gstreamer-1.0/*"
   link_overwrite "share/locale/*/LC_MESSAGES/gst-*.mo", "share/man/man1/g*"
 
