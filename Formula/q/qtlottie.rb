@@ -9,6 +9,7 @@ class Qtlottie < Formula
     "GPL-3.0-only",
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtlottie.git", branch: "dev"
 
@@ -18,7 +19,7 @@ class Qtlottie < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "1976befa939b9a30ab4ea459831b7b7718e89762ab36e0188c665546f17ab714"
+    sha256 cellar: :any, tahoe: "3d169119799d4ce671ab37fea76689d118565531a9ceae6a76f1210f20a8a96d"
   end
 
   depends_on "cmake" => [:build, :test]

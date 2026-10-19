@@ -9,6 +9,7 @@ class Qthttpserver < Formula
     "GPL-3.0-only",
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qthttpserver.git", branch: "dev"
 
@@ -18,7 +19,7 @@ class Qthttpserver < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "7e2a6c0a063c48c14a2c93806eed9f473f2000b7b11cefe5535b64026c069237"
+    sha256 cellar: :any, tahoe: "0c168298514c367f6f201617225045533f0dd7cf9099a3935bda2f3cfba23980"
   end
 
   depends_on "cmake" => [:build, :test]

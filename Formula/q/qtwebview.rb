@@ -9,6 +9,7 @@ class Qtwebview < Formula
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtwebview.git", branch: "dev"
 
@@ -18,7 +19,7 @@ class Qtwebview < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "1ec749c509bf967dcf429d08c886fb09915f492b416745e88eb90bfb01b82b48"
+    sha256 cellar: :any, tahoe: "3e7e0038f4bf449afcc5480e9017e00e835a91dfbf36789f099d232c89c38558"
   end
 
   depends_on "cmake" => :build

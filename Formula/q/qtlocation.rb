@@ -9,6 +9,7 @@ class Qtlocation < Formula
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtlocation.git", branch: "dev"
 
@@ -18,7 +19,7 @@ class Qtlocation < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "19de791ce164c3486031ffa1d1d6c84d185542f0af7ef14afd26b581265e4b68"
+    sha256 cellar: :any, tahoe: "b5f2e6620beb1d78bb9d8857dd60495b1eab91e1c5489975416981cc05d37746"
   end
 
   depends_on "cmake" => [:build, :test]
