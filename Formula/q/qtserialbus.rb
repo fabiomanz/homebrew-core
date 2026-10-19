@@ -10,6 +10,7 @@ class Qtserialbus < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # canbusutil
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtserialbus.git", branch: "dev"
 
@@ -19,7 +20,7 @@ class Qtserialbus < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "8f6bd220e7397181d1d93373ab768ed4fefe861eef7f8cccef9ecd2b5f28b12c"
+    sha256 cellar: :any, tahoe: "1774c6b5a0af594e0db0a4366d1932cba5c9a499c0dc855eec1be85defc476bc"
   end
 
   depends_on "cmake" => [:build, :test]

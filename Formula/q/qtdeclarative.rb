@@ -11,6 +11,7 @@ class Qtdeclarative < Formula
     "BSD-2-Clause", # masm
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtdeclarative.git", branch: "dev"
 
@@ -20,7 +21,7 @@ class Qtdeclarative < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "2ab2ca0d0da3b9892c84662b150296e576085972d0e6ee0675cd4a5bd5663804"
+    sha256 cellar: :any, tahoe: "d2d2e1d7f095d12cb51a0a0fe86bf44695bdf3a74ddd44cc224b60d9e383ad2e"
   end
 
   depends_on "cmake" => :build

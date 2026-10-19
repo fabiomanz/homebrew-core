@@ -6,7 +6,6 @@ qt5compat	Formula/q/qt5compat.rb	a4687008192bff359668e5aeeabada586b33ad88	6.12.0
 qtcanvaspainter	Formula/q/qtcanvaspainter.rb	a4687008192bff359668e5aeeabada586b33ad88	6.12.0	6.12.0_1
 qtcharts	Formula/q/qtcharts.rb	a4687008192bff359668e5aeeabada586b33ad88	6.12.0	6.12.0_1
 qtdatavis3d	Formula/q/qtdatavis3d.rb	a4687008192bff359668e5aeeabada586b33ad88	6.12.0	6.12.0_1
-qtdeclarative	Formula/q/qtdeclarative.rb	a4687008192bff359668e5aeeabada586b33ad88	6.12.0	6.12.0_1
 qtgrpc	Formula/q/qtgrpc.rb	a4687008192bff359668e5aeeabada586b33ad88	6.12.0	6.12.0_1
 qthttpserver	Formula/q/qthttpserver.rb	a4687008192bff359668e5aeeabada586b33ad88	6.12.0	6.12.0_1
 qtlocation	Formula/q/qtlocation.rb	a4687008192bff359668e5aeeabada586b33ad88	6.12.0	6.12.0_1
@@ -16,7 +15,6 @@ qtquicktimeline	Formula/q/qtquicktimeline.rb	a4687008192bff359668e5aeeabada586b3
 qtremoteobjects	Formula/q/qtremoteobjects.rb	a4687008192bff359668e5aeeabada586b33ad88	6.12.0	6.12.0_1
 qtscxml	Formula/q/qtscxml.rb	a4687008192bff359668e5aeeabada586b33ad88	6.12.0	6.12.0_1
 qtsensors	Formula/q/qtsensors.rb	a4687008192bff359668e5aeeabada586b33ad88	6.12.0	6.12.0_1
-qtserialbus	Formula/q/qtserialbus.rb	a4687008192bff359668e5aeeabada586b33ad88	6.12.0	6.12.0_1
 qttools	Formula/q/qttools.rb	a4687008192bff359668e5aeeabada586b33ad88	6.12.0	6.12.0_1
 qtwebchannel	Formula/q/qtwebchannel.rb	a4687008192bff359668e5aeeabada586b33ad88	6.12.0	6.12.0_1
 qtwebsockets	Formula/q/qtwebsockets.rb	a4687008192bff359668e5aeeabada586b33ad88	6.12.0	6.12.0_1
