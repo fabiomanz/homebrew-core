@@ -9,6 +9,7 @@ class Qtdatavis3d < Formula
     "GPL-3.0-only",
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtdatavis3d.git", branch: "dev"
 
@@ -18,7 +19,7 @@ class Qtdatavis3d < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "6392d6ec0af253d97aca0f80eff96739988ac689e65008b10f67ec726ee60b01"
+    sha256 cellar: :any, tahoe: "ddf7a7954c17509addb14a1f291999a8ef8fa695cfcee283111443f03a441aa2"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -10,6 +10,7 @@ class Qtscxml < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # qscxmlc
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtscxml.git", branch: "dev"
 
@@ -19,7 +20,7 @@ class Qtscxml < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "c38749d3ce3433792ad8b7ea77e1b72f04d438308f2180dcbb3993bb86c4beaa"
+    sha256 cellar: :any, tahoe: "f5270096aa93bc06610de91eb2a2e2f12404cab3aea79275481a721645d85971"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -9,6 +9,7 @@ class Qtwebchannel < Formula
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtwebchannel.git", branch: "dev"
 
@@ -18,7 +19,7 @@ class Qtwebchannel < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "6f8e8172b3336f098944a60e2cd3ff74abe3ee429432f0b65ac5b72870fbb77e"
+    sha256 cellar: :any, tahoe: "8243735c2823414f4d53d0b1bbaa9a744e3fed729ae5ba6e10f611660fd0810b"
   end
 
   depends_on "cmake" => [:build, :test]

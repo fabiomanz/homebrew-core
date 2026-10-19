@@ -10,6 +10,7 @@ class Qtremoteobjects < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # repc
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtremoteobjects.git", branch: "dev"
 
@@ -19,7 +20,7 @@ class Qtremoteobjects < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "155a1d7abd7a929ffd973a4b03627fb1936778b8317ee36846e28d06361cf34f"
+    sha256 cellar: :any, tahoe: "529b5bf595e38fa91e1bc29e4d78bc18d9cc0bc7cb924cec32c9bc069eddf03d"
   end
 
   depends_on "cmake" => [:build, :test]

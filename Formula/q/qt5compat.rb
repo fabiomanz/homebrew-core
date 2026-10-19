@@ -10,6 +10,7 @@ class Qt5compat < Formula
     "BSD-2-Clause", # src/core5/codecs
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qt5compat.git", branch: "dev"
 
@@ -19,7 +20,7 @@ class Qt5compat < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "4ac73522c3f10265d173cbfe74545621cb7e54f36c098c8bf4a32b6a1877f157"
+    sha256 cellar: :any, tahoe: "fb45a8fdc9ffaf4776b0d0fb6d2742ced9dd14fb895000f8bd973e2827c0048a"
   end
 
   depends_on "cmake" => [:build, :test]

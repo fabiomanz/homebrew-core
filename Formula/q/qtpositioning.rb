@@ -11,6 +11,7 @@ class Qtpositioning < Formula
     "BSL-1.0",      # bundled clipper
     "MIT",          # bundled clip2tri
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtpositioning.git", branch: "dev"
 
@@ -20,7 +21,7 @@ class Qtpositioning < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "0205a148e46dc3fe7ab8dc09ba92b2a82363f5bd31d3a4ff0e036e76e9d42e5c"
+    sha256 cellar: :any, tahoe: "de28da0767f1ba609e4ba193b463223375337200fbb0cce9cd8839d5f927782e"
   end
 
   depends_on "cmake" => [:build, :test]

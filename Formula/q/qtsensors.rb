@@ -9,6 +9,7 @@ class Qtsensors < Formula
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtsensors.git", branch: "dev"
 
@@ -18,7 +19,7 @@ class Qtsensors < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "fd253f0eda5e0eed2e2f8fcd03e4626f9b42e1688fc23f5feb295c0f7f7c869a"
+    sha256 cellar: :any, tahoe: "a1d7197945abe0ed402e06730ca600789406f9063db149b591a4bc8f327427ee"
   end
 
   depends_on "cmake" => [:build, :test]

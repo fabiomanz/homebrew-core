@@ -9,6 +9,7 @@ class Qtwebsockets < Formula
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtwebsockets.git", branch: "dev"
 
@@ -18,7 +19,7 @@ class Qtwebsockets < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "65cb78185dd85b32745a73b798b2c9c49f87bf72131c8510920fef1ca1534495"
+    sha256 cellar: :any, tahoe: "56dc00738fb8912423ce127d6a374e26d947ff77d4f92c85c0eac1ef90f31b8f"
   end
 
   depends_on "cmake" => [:build, :test]

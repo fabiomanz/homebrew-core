@@ -11,6 +11,7 @@ class Qtcanvaspainter < Formula
     "BSD-3-Clause", # *.cmake
     "Zlib", # nanovg
   ]
+  revision 1
   head "https://code.qt.io/qt/qtcanvaspainter.git", branch: "dev"
 
   livecheck do
@@ -19,7 +20,7 @@ class Qtcanvaspainter < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "4a0721a28bcc6ef838b4096869612af14526a970d309640766fcf3d6de2f53b4"
+    sha256 cellar: :any, tahoe: "24437fee97e0c2762037bafe67accbee7b44b9d131468ce04a64e0a8bad8f683"
   end
 
   depends_on "cmake" => [:build, :test]
