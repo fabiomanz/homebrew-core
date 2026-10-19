@@ -9,6 +9,7 @@ class Qtconnectivity < Formula
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtconnectivity.git", branch: "dev"
 
@@ -18,7 +19,7 @@ class Qtconnectivity < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "6f2c3451f3ff413e179d2de6293fc0f982189a2c5d3196818ef49ee6960d6dca"
+    sha256 cellar: :any, tahoe: "18b2258f02ead0c0b0b66ac27c12d39cecdcafeb49c38972c9adf8b3ee9f08ef"
   end
 
   depends_on "cmake" => [:build, :test]

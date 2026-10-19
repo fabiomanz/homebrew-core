@@ -9,6 +9,7 @@ class Qtnetworkauth < Formula
     "GPL-3.0-only",
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtnetworkauth.git", branch: "dev"
 
@@ -18,7 +19,7 @@ class Qtnetworkauth < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "6bda261073803543fcf1343412bdab3454d3aff704d298b34c6a08d3d27abb24"
+    sha256 cellar: :any, tahoe: "b6e511486afdde9bed0b9bcae8f05116d11e575a21530374cce14f689c5bef3a"
   end
 
   depends_on "cmake" => [:build, :test]

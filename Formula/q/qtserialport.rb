@@ -9,6 +9,7 @@ class Qtserialport < Formula
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtserialport.git", branch: "dev"
 
@@ -18,7 +19,7 @@ class Qtserialport < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "b7b59504f070e17bea1d851d8971f148f15cb92e111e71dd4f973f6918fbd682"
+    sha256 cellar: :any, tahoe: "df350f036519c69d296aa3a6135b2811fe6456a3301df103ecf0a3ad94bc5593"
   end
 
   depends_on "cmake" => [:build, :test]

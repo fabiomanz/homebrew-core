@@ -4,11 +4,11 @@ class Gts < Formula
   url "https://downloads.sourceforge.net/project/gts/gts/0.7.6/gts-0.7.6.tar.gz"
   sha256 "059c3e13e3e3b796d775ec9f96abdce8f2b3b5144df8514eda0cc12e13e8b81e"
   license "LGPL-2.0-or-later"
-  revision 3
+  revision 4
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "ead167c1f6f37b8d157deb968d8ccc2b75afd8900e605dc08f8e41e9b1b3f2bf"
+    sha256 cellar: :any, tahoe: "d51fab6f9a3be60200b98f7eab7c6ecc9d2616ef72b224daf86cb071a7d967e1"
   end
 
   # We regenerate configure to avoid the `-flat_namespace` flag.
