@@ -6,6 +6,11 @@ class DartSdk < Formula
   license "BSD-3-Clause"
   compatibility_version 3
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
     sha256 cellar: :any, tahoe: "d70c32659002fcc0411e2de0d75e7083599f2bea7133b46062760d2595164283"
