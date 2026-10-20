@@ -1,10 +1,9 @@
 class S2n < Formula
   desc "Implementation of the TLS/SSL protocols"
   homepage "https://aws.github.io/s2n-tls/usage-guide/"
-  url "https://github.com/aws/s2n-tls/archive/refs/tags/v1.7.11.tar.gz"
-  sha256 "c3894e86bc09c1923f9ed42edc310d8dd1ca4d0461f037acc56762a274ebe2b1"
+  url "https://github.com/aws/s2n-tls/archive/refs/tags/v1.7.12.tar.gz"
+  sha256 "76d3e6125ad8f7d960a62bf1e18c451fb75ed6ab640247b046b5b0f55d39d099"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/aws/s2n-tls.git", branch: "main"
 
   livecheck do
@@ -14,7 +13,7 @@ class S2n < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "53a3b174240c96e5eeb68ae64e5cb565d67ba00dc90965f52de653bfed25ce0d"
+    sha256 cellar: :any, tahoe: "499e4120e90f17674a9fe6057ff24fe381bcc0552d8b3639262fcbe361b35bc0"
   end
 
   depends_on "cmake" => :build
