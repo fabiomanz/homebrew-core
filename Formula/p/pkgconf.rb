@@ -1,10 +1,10 @@
 class Pkgconf < Formula
   desc "Package compiler and linker metadata toolkit"
   homepage "https://github.com/pkgconf/pkgconf"
-  url "https://distfiles.ariadne.space/pkgconf/pkgconf-3.0.9.tar.xz"
-  mirror "https://github.com/pkgconf/pkgconf/releases/download/pkgconf-3.0.9/pkgconf-3.0.9.tar.xz"
-  mirror "http://fresh-center.net/linux/misc/pkgconf-3.0.9.tar.xz"
-  sha256 "6ab2d3b8087dcf500e34003a6a8934dca55d0a3d6066aeafb03c352db3e68bfd"
+  url "https://distfiles.ariadne.space/pkgconf/pkgconf-3.0.10.tar.xz"
+  mirror "https://github.com/pkgconf/pkgconf/releases/download/pkgconf-3.0.10/pkgconf-3.0.10.tar.xz"
+  mirror "http://fresh-center.net/linux/misc/pkgconf-3.0.10.tar.xz"
+  sha256 "9371b2f6372da574d4c6dc96fe9b1463037bcf6afcb6671c1555afde7b17e2de"
   license "ISC"
   compatibility_version 2
 
@@ -15,7 +15,7 @@ class Pkgconf < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "6205445804abdd62c810c3d4eac1ddacbcc1b93c7340e5d626cdda8e547c1d5c"
+    sha256 tahoe: "8748cc8eb5a7559b3cbe70c88bcc6515aa74d0ac3115f20cc091f9665fb805a8"
   end
 
   head do
