@@ -3,16 +3,16 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/cd/5b/f3b4277844c3ce66c16f62670cd2a26236489aa97115d04182171ce714a9/fastapi-0.146.0.tar.gz"
-  sha256 "e96047fc353ff43f7fda069c3578a7d94902a762d9aca2e065f7f801abd91a49"
+  url "https://files.pythonhosted.org/packages/35/ae/3c8fe5ea133a13dbdb0c84e586087aa811f311cb11b00efdb11c364793e6/fastapi-0.150.0.tar.gz"
+  sha256 "97583806e6de1b6fc299866bdb88730fa311ff640829af876c9e847f4c3a3b29"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2021f0844f2657aa62d3f7e92f6a4542c16814812a72d8b05325310ac9449871"
-    sha256 cellar: :any, arm64_tahoe:       "4913fc50e87741084d3585f5029bde1776860b5eb59c643d420d3fb061d4c2ea"
-    sha256 cellar: :any, arm64_sequoia:     "fb986f0f651e6d726575eb5999b9305367b94ac0c3ab29defccc2f9a72748b7d"
-    sha256 cellar: :any, arm64_linux:       "00eec6fac87649cb7ebcb5011aba749f94bec7b309514c08d3646949ba0b7d09"
-    sha256 cellar: :any, x86_64_linux:      "5da3176a78456fb7a57c8038f638c05182a5952b62be355d25ae4744e1a5d4fe"
+    sha256 cellar: :any, arm64_golden_gate: "706b6daee1f9478f9ac00ad7c8216f7bbbe8585d3c9698c21eb65b02557f592a"
+    sha256 cellar: :any, arm64_tahoe:       "dca8db7aa4d6c01c090a125b063fe614787f7b3a3d97ae01f84a351d1280e120"
+    sha256 cellar: :any, arm64_sequoia:     "59946fcdc6d21c4dd03b2d014153c3502856d6b4abeeb23806b7a33489763da4"
+    sha256 cellar: :any, arm64_linux:       "3dc55290a001ac3e7cc883a22794e425fa37d29e0e347d6efa0139e9b89d3bea"
+    sha256 cellar: :any, x86_64_linux:      "032e5e271e698a300b8484d604b2a2cd70adfe99783b67a632346d411213cc80"
   end
 
   depends_on "rust" => :build # for annotated-doc
@@ -95,8 +95,8 @@ class Fastapi < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/30/ff/b53af1b49bb2cb5fa97c92215614b173ca5c1a99ded80e2d52f15a94fa6d/httpcore2-2.14.0.tar.gz"
-    sha256 "4f57a1a8249fe6af589d935cfd456f1d13bbdcb0f0fc72af9142368fc94811d7"
+    url "https://files.pythonhosted.org/packages/c2/a9/11bc39967bb9dfaab0981ab4d49f519818acbee662a7e76d06813319c838/httpcore2-2.15.1.tar.gz"
+    sha256 "a94b6b3e6260e1a3f035915408d3dcd7dc8e844c2b544b642e227cf98a747af0"
   end
 
   resource "httptools" do
@@ -110,8 +110,8 @@ class Fastapi < Formula
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/e8/67/58353f1848b4ba568e1ec22ea1e0d8e039f0bca5fde7e2d1f07739fd83e7/httpx2-2.14.0.tar.gz"
-    sha256 "47ad61a3c40282cd8d0dc96311531f00f5bfc71a066c6fe3b36d8f63fb9e4f6e"
+    url "https://files.pythonhosted.org/packages/7f/85/07978f4afd168d6b408fa75c1dc13e3010653a81e182aa1b6d89ab94d9c6/httpx2-2.15.1.tar.gz"
+    sha256 "ff75485308fbe441e75b1218546e4e78d884df41e1a9741c1f79335ed8fcfef7"
   end
 
   resource "idna" do
@@ -280,8 +280,8 @@ class Fastapi < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/01/89/3f825ab71c242fffb62ea8fe638741c290f62f8d7aadf8125ff897747af3/websockets-17.2.tar.gz"
-    sha256 "36c2fb94c990cc2545143b12690e2de6c16300f9dbe5b4f33fa300cf57dc8792"
+    url "https://files.pythonhosted.org/packages/30/4b/4692be6d5bf739ed049b3813901c42091f8c054df89d5c089343823dea0d/websockets-17.3.tar.gz"
+    sha256 "1c7dd93a1c9f89297471493674b1fc1d9467cafd45374f2172213046bdb3a329"
   end
 
   def install

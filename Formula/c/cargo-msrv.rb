@@ -1,19 +1,17 @@
 class CargoMsrv < Formula
   desc "Find the minimum supported Rust version (MSRV) for your project"
   homepage "https://foresterre.github.io/cargo-msrv"
-  url "https://github.com/foresterre/cargo-msrv/archive/refs/tags/v0.19.3.tar.gz"
-  sha256 "b5a66ccd44e7f28bae070a730d315b71bbca727b7ea558db9af93ab23e703883"
+  url "https://github.com/foresterre/cargo-msrv/archive/refs/tags/v0.19.4.tar.gz"
+  sha256 "95a118bf46830bbbd9edbd2281cb141e1082c393fe048d3f288de2ed39ba8364"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/foresterre/cargo-msrv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ebf083dd82e964da7c6e777de0ec88accd24c1a788027eadba9efd391d7c1a40"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d09bad53b1c25eae5a27275c4f09c8b4bd2c51c5903c15128f55bd6b0530dfc9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "825fb00050c312c391d40fc958ca2e6e2b94462fd1d1c10facbf05a58e313d32"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "65327c59fc5c3f2617cc71b6b5162ea4997b48bcdd6b90a945277bd77e668a4f"
-    sha256 cellar: :any_skip_relocation, sonoma:            "169dc4d52e971a7bb085f8ba167bb169ee04e64b42abab3e84a324fdea294b03"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "5cfc25fa3873fb3eec306edd674660ca76cddfa5c0a6187ca3bfb29cd46f03e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f0c5646166caad838c63ed6c446c6235759b8622df2e7f70b15e794b99df893a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "49aede8bad2c5febe142d4eba459301e3aac69e2b116b62a90bdd47fedaf1ca3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ac7b68d836937a6997bc1936701d9e2b4def3e79a9c9cb9a4658dd9dfae2f278"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3930c076e8777dd80f3f42aeed9753c11a8a7b798b14926987468a9e121e7804"
+    sha256 cellar: :any,                 arm64_linux:       "a144d4a6b5383702fb3ea66a802e68428561a11a1b5fc9381fda31b06c2e8df5"
+    sha256 cellar: :any,                 x86_64_linux:      "16ca24356374f2d827714ce41b56aeea8a80bef60d114d7e0d2252a8babbb22c"
   end
 
   depends_on "rust" => :build
