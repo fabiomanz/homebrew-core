@@ -1,8 +1,8 @@
 class Libomp < Formula
   desc "LLVM's OpenMP runtime library"
   homepage "https://openmp.llvm.org/"
-  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.3/llvm-project-23.1.3.src.tar.xz"
-  sha256 "c44186a7762ed28954be72e5ff6df9808e0779d4f1bf014ecc4e7e211d31ee34"
+  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.4/llvm-project-23.1.4.src.tar.xz"
+  sha256 "819ecf7351f1a66f76b2d701d8942faaf5faeb324cb90c9d5b090de142434bb2"
   license "MIT"
   compatibility_version 1
 
@@ -13,7 +13,7 @@ class Libomp < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "0916f6a5a5fef1bf9df61b883162e5870ce8a05280b6dbeab60c76485dcee35f"
+    sha256 cellar: :any, tahoe: "cf297665875c5dc2d435fff0d4f70d9807ebc2408b8033be67c19679c42173cd"
   end
 
   # Ref: https://github.com/Homebrew/homebrew-core/issues/112107
@@ -23,7 +23,7 @@ class Libomp < Formula
   uses_from_macos "llvm" => :build
 
   on_linux do
-    depends_on "python@3.14"
+    depends_on "python@3.15"
   end
 
   deny_network_access!
