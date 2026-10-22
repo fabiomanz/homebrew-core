@@ -1,16 +1,16 @@
 class Iamb < Formula
   desc "Matrix client for Vim addicts"
   homepage "https://iamb.chat"
-  url "https://github.com/ulyssa/iamb/archive/refs/tags/v0.0.13.tar.gz"
-  sha256 "a87b81d4cd60f72725b5b633c78ecb28fccc457f6319037fa9d12096fd6e3ef1"
+  url "https://github.com/ulyssa/iamb/archive/refs/tags/v0.13.1.tar.gz"
+  sha256 "8e919c19ef90f328d20e6e46720a26f0dea6e61901b8180fedbbacb473f131f1"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0e4349b4008d41c4e2fbf3519e3a9994812e6a7c91ae2aa03087877cff250fb6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c471970b020fbe6191d45469cf97cd53a28618fc7e99aaca3c69ab2ab6e97753"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a6552296afd21810d3fe8dad89d410314d6312dcf4b8625a5985919d5930c228"
-    sha256 cellar: :any,                 arm64_linux:       "ae3326d2987b976bb8e16ef6347a359dcb5eef491719a6bac2b2ae229ec1fc0e"
-    sha256 cellar: :any,                 x86_64_linux:      "6b82e2c45518f3e432ce29f0cbeae10dc3286ddaae6b7b19f82e3b95df0c6ea1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8d54a8ad85db5e100b469ecf99707754a5174456d8c39e553430a288fb3764d7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "869e4d57684b2085f6f0da9e7f13281a134f34e0c277aeb547214063c0a073d8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "70289892d0fe9f3b0b763e6d64a4c16ce14398e2ce6b3fc7d23bdc3e4e55290a"
+    sha256 cellar: :any,                 arm64_linux:       "b8933aaa51bf94c66a246ee8dce08d2209afd8b6432e91de7181af4f7d33d9bd"
+    sha256 cellar: :any,                 x86_64_linux:      "5041d7cdab2c107c811e0ef08e38ec1202bb86accd5cf33a8349179d431bfd64"
   end
 
   depends_on "pkgconf" => :build

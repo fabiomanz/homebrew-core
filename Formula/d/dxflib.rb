@@ -1,8 +1,9 @@
 class Dxflib < Formula
   desc "C++ library for parsing DXF files"
   homepage "https://www.ribbonsoft.com/en/what-is-dxflib"
-  url "https://www.ribbonsoft.com/archives/dxflib/dxflib-3.26.4-src.tar.gz"
-  sha256 "507db4954b50ac521cbb2086553bf06138dc89f55196a8ba22771959c760915f"
+  # Use Debian source as the upstream removed the source
+  url "https://deb.debian.org/debian/pool/main/d/dxflib/dxflib_3.26.4.orig.tar.gz"
+  sha256 "e7208c9b67f5bc6727a0e3adf2162d8e67d80e0244dcda167fb7535556d944a1"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -26,11 +27,16 @@ class Dxflib < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "e71a7e5920a5c7d7029edcf188bebf88aea640021d459ba1e2c0fa7266970c3a"
   end
 
+  # Source and homepage URLs redirect to `https://www.qcad.org/en/` which
+  # has no mention of `dxflib`
+  deprecate! date: "2026-10-21", because: :repo_removed
+  disable! date: "2027-10-21", because: :repo_removed
+
   depends_on "qtbase" => :build
 
   # Sample DXF file made available under GNU LGPL license.
   # See https://people.math.sc.edu/Burkardt/data/dxf/dxf.html.
-  resource "testfile" do
+  resource "testfile", :test do
     url "https://people.math.sc.edu/Burkardt/data/dxf/cube.dxf"
     sha256 "e5744edaa77d1612dec44d1a47adad4aad3d402dbf53ea2aff5a57c34ae9bafa"
   end

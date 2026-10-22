@@ -1,18 +1,16 @@
 class Pcapmirror < Formula
   desc "Tool for capturing network traffic on remote host using TZSP or ERSPAN"
   homepage "https://git.freestone.net/cramer/pcapmirror"
-  url "https://git.freestone.net/cramer/pcapmirror/-/archive/0.6.1/pcapmirror-0.6.1.tar.gz"
-  sha256 "d5efbb9b8526b8b319f3040f6a7c9532c0ca9d862b1d21100e7fc8665d0bb638"
+  url "https://git.freestone.net/cramer/pcapmirror/-/archive/0.7/pcapmirror-0.7.tar.gz"
+  sha256 "e551d567b82465fa4fcf058da117186beb1b7f1073d245ea37e8e443c0ae27c4"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f583c1141c7296367507a8841bd5d12d11ba279cb9343b2d776ce5a058e74c1c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "16bc789f10ee4295caa87094965aa79ea94bd622ca90323aaa2edef273cb95a5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fe8180edeb967556b05996bf7dca34a88c504254df62ff0cc0e065d9fab931b9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "3aa36ca74213168308a6ed326403c07296e0cf0857526af047c1056e187eb543"
-    sha256 cellar: :any_skip_relocation, sonoma:            "edc10b49130adeb581e4ff3b5c962b1374de3ccf416984fcca13cc5a2e2045ff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "46ea8fd30ca7740102c048d9f9f5aecc3a80cc1a4938b6f2eb4f05471703fad5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b38420c8c3bfad8a5334c2d82d7ca1adf1897eb515e8a0710115d4c8dc3bbbaa"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "81586bf4b3d4fee4f3b0f7deb980ab54a092c00c90cf55e9d51f1b5746b890e6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "afe4a6c7a2e13292756895db9e64d29ec2d82333d613a74883ff08df17d11f73"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4e595e7e0c177cbd4be97feb4d9e9d5784c49c80e642fe7d61f36fa04e51730d"
+    sha256 cellar: :any,                 arm64_linux:       "cb176580337441f9e76294af0f7e39742f02cdd63e2c63e022e5fb9dcb9a1f80"
+    sha256 cellar: :any,                 x86_64_linux:      "622fcd8444eeead4f3c011d65332aafb4b7c7745e57918fcca84e5f23e6e10ff"
   end
 
   depends_on "make" => :build
