@@ -1,10 +1,9 @@
 class Unbound < Formula
   desc "Validating, recursive, caching DNS resolver"
   homepage "https://www.unbound.net"
-  url "https://nlnetlabs.nl/downloads/unbound/unbound-1.26.1.tar.gz"
-  sha256 "35a6dc0e425a9282c3426d9a3043144011bf0534aed4b73ab62c52aee0af1503"
+  url "https://nlnetlabs.nl/downloads/unbound/unbound-1.26.2.tar.gz"
+  sha256 "d8ee7aa6bbb3ff1be7d9e57637d0d0ec2f18273a8efff1a0afe2c665858b96f7"
   license "BSD-3-Clause"
-  revision 1
   compatibility_version 1
   head "https://github.com/NLnetLabs/unbound.git", branch: "master"
 
@@ -18,7 +17,7 @@ class Unbound < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "70b46669a4ab3620694968d6590c805c515a1f0dcdd57105e8e5bb792e340b7a"
+    sha256 tahoe: "1a4714b51160500c3f3c1c8c4c8085cf35fe4132693e7a7f7346b603352f627e"
   end
 
   depends_on "libevent"
