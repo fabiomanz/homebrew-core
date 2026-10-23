@@ -1,11 +1,10 @@
 class Mysql < Formula
   desc "Open source relational database management system"
   homepage "https://github.com/mysql/mysql-server"
-  url "https://cdn.mysql.com/Downloads/MySQL-26.7/mysql-26.7.0.tar.gz"
-  mirror "https://repo.mysql.com/apt/ubuntu/pool/mysql-innovation/m/mysql-community/mysql-community_26.7.0.orig.tar.gz"
-  sha256 "95e949183b94bbe39e70c6355e6c90d2a640a62ede996ca5f7a6a3e0827a3260"
+  url "https://cdn.mysql.com/Downloads/MySQL-26.10/mysql-26.10.0.tar.gz"
+  mirror "https://repo.mysql.com/apt/ubuntu/pool/mysql-innovation/m/mysql-community/mysql-community_26.10.0.orig.tar.gz"
+  sha256 "984507622ddfa4d84ad23fc56ec5b5f18f4fda328af5a23e5f5b1a062301ea2c"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 4
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src",
@@ -15,7 +14,7 @@ class Mysql < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "7876e220d18d8d7dbf0d472c09a3ddcd55f4fc887a4f5d6911734b6d42b545d0"
+    sha256 tahoe: "66964f4bdbc3ea76bb8a724e26f51c6b32d3b2835bcb763ac63251d49c4fe877"
   end
 
   depends_on "bison" => :build
@@ -55,25 +54,27 @@ class Mysql < Formula
     cause "fails handling PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED"
   end
 
-  # Backports to support OpenSSL 4
-  patch do
-    file "Patches/mysql/26.7.0.diff"
-    type :backport # https://github.com/mysql/mysql-server/commit/04ba58a223afc1339c75b080825042ad17a85b43
-  end
-  patch do
-    url "https://github.com/mysql/mysql-server/commit/a045c23214ec225c49d9bc4caeea78d3d1f99ba9.patch?full_index=1"
-    sha256 "b597781554b7fbcf4e13402dc8dca97bea59e059ed6e40e4eb71cd5c26a91ad9"
-    type :backport
-  end
-
   # Patch out check for Homebrew `boost`.
   # This should not be necessary when building inside `brew`.
   # https://github.com/Homebrew/homebrew-test-bot/pull/820
-  patch :DATA
+  patch do
+    file "Patches/mysql/remove-boost-check.diff"
+    type :unofficial
+  end
+
+  # Use `my_char_traits`, as libc++ 19 removed `std::char_traits<unsigned char>`.
+  patch do
+    file "Patches/mysql/innobase-char_traits.diff"
+    type :unofficial
+  end
 
   def datadir
     var/"mysql"
   end
+
+  def icu4c = deps.map(&:name).find { |dep| dep.start_with?("icu4c@") }
+
+  def openssl = deps.map(&:name).find { |dep| dep.start_with?("openssl@") }
 
   def install
     # Remove bundled libraries other than explicitly allowed below.
@@ -92,10 +93,8 @@ class Mysql < Formula
       ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", formula_opt_lib("llvm")/"c++"
     end
 
-    icu4c = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
-                .to_formula
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
-    # -DWITH_FIDO=system isn't set as feature isn't enabled and bundled copy was removed.
+    # -DWITH_FIDO=system isn't set as WebAuthn is disabled and bundled copy was removed.
     # Formula paths are set to avoid HOMEBREW_HOME logic in CMake scripts
     args = %W[
       -DCOMPILATION_COMMENT=Homebrew
@@ -108,8 +107,9 @@ class Mysql < Formula
       -DMYSQL_DATADIR=#{datadir}
       -DSYSCONFDIR=#{etc}
       -DBISON_EXECUTABLE=#{formula_opt_bin("bison")}/bison
-      -DOPENSSL_ROOT_DIR=#{formula_opt_prefix("openssl@4")}
-      -DWITH_ICU=#{icu4c.opt_prefix}
+      -DOPENSSL_ROOT_DIR=#{formula_opt_prefix(openssl)}
+      -DWITH_ICU=#{formula_opt_prefix(icu4c)}
+      -DWITH_AUTHENTICATION_WEBAUTHN=OFF
       -DWITH_SYSTEM_LIBS=ON
       -DWITH_EDITLINE=system
       -DWITH_LZ4=system
@@ -231,41 +231,3 @@ class Mysql < Formula
     end
   end
 end
-
-__END__
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 438dff720c5..47863c17e23 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -1948,31 +1948,6 @@ MYSQL_CHECK_RAPIDJSON()
- MYSQL_CHECK_FIDO()
- MYSQL_CHECK_FIDO_DLLS()
-
--IF(APPLE)
--  GET_FILENAME_COMPONENT(HOMEBREW_BASE ${HOMEBREW_HOME} DIRECTORY)
--  IF(EXISTS ${HOMEBREW_BASE}/include/boost)
--    FOREACH(SYSTEM_LIB ICU LZ4 PROTOBUF ZSTD FIDO)
--      IF(WITH_${SYSTEM_LIB} STREQUAL "system")
--        MESSAGE(FATAL_ERROR
--          "WITH_${SYSTEM_LIB}=system is not compatible with Homebrew boost\n"
--          "MySQL depends on ${BOOST_PACKAGE_NAME} with a set of patches.\n"
--          "Including headers from ${HOMEBREW_BASE}/include "
--          "will break the build.\n"
--          "Please use WITH_${SYSTEM_LIB}=bundled\n"
--          "or do 'brew uninstall boost' or 'brew unlink boost'"
--          )
--      ENDIF()
--    ENDFOREACH()
--  ENDIF()
--  # Ensure that we look in /usr/local/include or /opt/homebrew/include
--  FOREACH(SYSTEM_LIB ICU LZ4 PROTOBUF ZSTD FIDO)
--    IF(WITH_${SYSTEM_LIB} STREQUAL "system")
--      INCLUDE_DIRECTORIES(SYSTEM ${HOMEBREW_BASE}/include)
--      BREAK()
--    ENDIF()
--  ENDFOREACH()
--ENDIF()
--
- IF(WITH_AUTHENTICATION_WEBAUTHN OR
-   WITH_AUTHENTICATION_CLIENT_PLUGINS)
-   IF(WITH_FIDO STREQUAL "system" AND

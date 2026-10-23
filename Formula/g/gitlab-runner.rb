@@ -2,8 +2,8 @@ class GitlabRunner < Formula
   desc "Official GitLab CI runner"
   homepage "https://gitlab.com/gitlab-org/gitlab-runner"
   url "https://gitlab.com/gitlab-org/gitlab-runner.git",
-      tag:      "v19.5.0",
-      revision: "70f5c12dad80bfd8ab426843f38cae72fddc4e75"
+      tag:      "v19.5.1",
+      revision: "f411f264f80a4870995a7c49482d02765e86c86e"
   license "MIT"
   head "https://gitlab.com/gitlab-org/gitlab-runner.git", branch: "main"
 
@@ -14,7 +14,7 @@ class GitlabRunner < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, tahoe: "151cf3be2d8d505edbd81cff5f13dfde6510c74fcf6d2b50ad2ed6e5e174f96e"
+    sha256 cellar: :any_skip_relocation, tahoe: "fb9b18bfba66d1f2f0b01b07843559a69c58f6608eaeafa6a95d2ca1cf7c62b5"
   end
 
   depends_on "go" => :build
