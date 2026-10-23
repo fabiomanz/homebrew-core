@@ -1,8 +1,8 @@
 class GitLfs < Formula
   desc "Git extension for versioning large files"
   homepage "https://git-lfs.com/"
-  url "https://github.com/git-lfs/git-lfs/releases/download/v3.8.0/git-lfs-v3.8.0.tar.gz"
-  sha256 "4f75492c6832038fa73d39a45316657208bb6caa23b273451cb4ec2358d42ccb"
+  url "https://github.com/git-lfs/git-lfs/releases/download/v3.8.1/git-lfs-v3.8.1.tar.gz"
+  sha256 "1939307bef808580f7c8954ede7072889d7e76721f5d6fdc4ab110bf907330ab"
   license "MIT"
   compatibility_version 1
 
@@ -15,11 +15,17 @@ class GitLfs < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, tahoe: "ad5ed50cd9d90a3184d6d217e00e10dc96bb4290dcfbb799963f14228a7548bd"
+    sha256 cellar: :any_skip_relocation, tahoe: "17516dcbdc5001aad8afcf750c5dc00e6480d9daa94f28fbc6e8f51cbafb0463"
   end
 
   depends_on "asciidoctor" => :build
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ENV["GIT_LFS_SHA"] = ""

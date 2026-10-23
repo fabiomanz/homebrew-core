@@ -3,15 +3,14 @@ class YtDlp < Formula
 
   desc "Feature-rich command-line audio/video downloader"
   homepage "https://github.com/yt-dlp/yt-dlp"
-  url "https://files.pythonhosted.org/packages/1e/e0/832fa4ca334b766a06933a196066edc3dba37cdb6f14cd98d59bcc69a4b4/yt_dlp-2026.8.19.tar.gz"
-  sha256 "9e213e48cea35c66b378e4447903f118f6392a5fa380a2b6d7070ec86f4e0af1"
+  url "https://files.pythonhosted.org/packages/06/13/d2ea252871826205dc4965cb70e6037ab93697fcabf4feda49fe981f6da0/yt_dlp-2026.10.21.tar.gz"
+  sha256 "cbf748d7d17cd37647c4b9f07b6c25f24384bfd4361407ee5ec519e753d22539"
   license "Unlicense"
-  revision 2
   compatibility_version 1
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, tahoe: "1a30f9b7fcdfcaad642a0c3b9cba2680990755db1b1ab681e0b8b34b47f7d5db"
+    sha256 cellar: :any_skip_relocation, tahoe: "12e479de563c4ae2e5b718ccced4f535cd8a62e2df36d0a773de3ec580052122"
   end
 
   head do
@@ -24,7 +23,7 @@ class YtDlp < Formula
   depends_on "cffi"
   depends_on "deno"
   depends_on "pycparser"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages package_name:     "yt-dlp[default,curl-cffi]",
                 exclude_packages: %w[certifi cffi pycparser]
@@ -55,8 +54,8 @@ class YtDlp < Formula
   end
 
   resource "pycryptodomex" do
-    url "https://files.pythonhosted.org/packages/c9/85/e24bf90972a30b0fcd16c73009add1d7d7cd9140c2498a68252028899e41/pycryptodomex-3.23.0.tar.gz"
-    sha256 "71909758f010c82bc99b0abf4ea12012c98962fbf0583c2164f8b84533c2e4da"
+    url "https://files.pythonhosted.org/packages/f4/e7/50e72301e32acb73a314e663c2014e1ddefc019d5f434ff14ec89861d664/pycryptodomex-3.24.1.tar.gz"
+    sha256 "09081666ffc599976c0b8b29caf2cf82212c0f05bed233c8f8ed53e4f6e1d356"
   end
 
   resource "requests" do
@@ -70,8 +69,8 @@ class YtDlp < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/18/72/fba934cb3dff7a85d811820efffcd141ddd52b5a2a01637f64551373ff4d/websockets-17.1.tar.gz"
-    sha256 "acfea4c20bf54384883ea33b1240fc1db4f52e190823a4e2b334bc3e8bfca96a"
+    url "https://files.pythonhosted.org/packages/30/4b/4692be6d5bf739ed049b3813901c42091f8c054df89d5c089343823dea0d/websockets-17.3.tar.gz"
+    sha256 "1c7dd93a1c9f89297471493674b1fc1d9467cafd45374f2172213046bdb3a329"
   end
 
   resource "yt-dlp-ejs" do
