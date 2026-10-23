@@ -3,11 +3,5 @@ buf	Formula/b/buf.rb	8a5cb8f055c26cba4388684793391e367e2c17af	1.74.0	1.75.0
 dart-sass	Formula/d/dart-sass.rb	8a5cb8f055c26cba4388684793391e367e2c17af	1.105.2	1.106.1
 dart-sdk	Formula/d/dart-sdk.rb	8a5cb8f055c26cba4388684793391e367e2c17af	3.13.5	3.13.7
 dartaotruntime	Formula/d/dartaotruntime.rb	8a5cb8f055c26cba4388684793391e367e2c17af	3.13.5	3.13.7
-deno	Formula/d/deno.rb	8a5cb8f055c26cba4388684793391e367e2c17af	2.9.7	2.9.8
 git-lfs	Formula/g/git-lfs.rb	8a5cb8f055c26cba4388684793391e367e2c17af	3.8.0	3.8.1
-lld	Formula/l/lld.rb	8a5cb8f055c26cba4388684793391e367e2c17af	23.1.2	23.1.4
-node	Formula/n/node.rb	8a5cb8f055c26cba4388684793391e367e2c17af	26.12.0	26.12.1
-ruby	Formula/r/ruby.rb	8a5cb8f055c26cba4388684793391e367e2c17af	4.0.7_1	4.0.9
-sphinx-doc	Formula/s/sphinx-doc.rb	8a5cb8f055c26cba4388684793391e367e2c17af	9.1.0_5	9.2.0
-uv	Formula/u/uv.rb	8a5cb8f055c26cba4388684793391e367e2c17af	0.13.3	0.13.5
 yt-dlp	Formula/y/yt-dlp.rb	8a5cb8f055c26cba4388684793391e367e2c17af	2026.8.19_2	2026.10.21

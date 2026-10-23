@@ -1,15 +1,15 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.com/"
-  url "https://github.com/denoland/deno/releases/download/v2.9.7/deno_src.tar.gz"
-  sha256 "21069d2f4dd65b6832e3f5c373c24a43a8d35cb3d68d3841e15d0582bed39ea8"
+  url "https://github.com/denoland/deno/releases/download/v2.9.8/deno_src.tar.gz"
+  sha256 "b57d0281c1647effc735f242ba52bc409747fc6ed6ad4946e76f062c67e113eb"
   license "MIT"
   compatibility_version 1
   head "https://github.com/denoland/deno.git", branch: "main"
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "1f9ae01d979096504561a5322510bfa737e04e521f16b7829f49bd68a4d407bb"
+    sha256 cellar: :any, tahoe: "c1e50171326401e67506e10327e160412525173fa54489e0ffab3df851ab2286"
   end
 
   depends_on "cmake" => :build
