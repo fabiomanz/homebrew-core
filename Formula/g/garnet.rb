@@ -28,6 +28,22 @@ class Garnet < Formula
     depends_on "libaio"
   end
 
+  allow_network_access! :test
+
+  def dotnet = deps.find { |d| d.name.match?(/^dotnet(@\d+)?$/) }.to_formula
+
+  def fetch
+    # .NET named mutexes need `XDG_RUNTIME_DIR` (or `USER`) on Linux, which build containers may lack
+    ENV["XDG_RUNTIME_DIR"] = buildpath
+
+    system "dotnet", "restore", "main/GarnetServer/GarnetServer.csproj",
+                                "--use-current-runtime",
+                                "-p:TargetFrameworks=net#{dotnet.version.major_minor}"
+    cd "libs/native/bftree-garnet" do
+      system "cargo", "fetch", *std_cargo_fetch_args
+    end
+  end
+
   def install
     # .NET named mutexes need `XDG_RUNTIME_DIR` (or `USER`) on Linux, which build containers may lack
     ENV["XDG_RUNTIME_DIR"] = buildpath
@@ -56,7 +72,6 @@ class Garnet < Formula
       end
     end
 
-    dotnet = Formula["dotnet"]
     # .NET 10 flags IL3000 here even though Garnet falls back to AppContext.BaseDirectory.
     args = %W[
       --configuration Release

@@ -1,8 +1,8 @@
 class CodeCli < Formula
   desc "Command-line interface built-in Visual Studio Code"
   homepage "https://code.visualstudio.com"
-  url "https://github.com/microsoft/vscode/archive/refs/tags/1.142.0.tar.gz"
-  sha256 "aa655902cc06c5773644f0154a9a561eb3efa092bae440eeb0b4743115903805"
+  url "https://github.com/microsoft/vscode/archive/refs/tags/1.143.1.tar.gz"
+  sha256 "d0aa0fe95602998ecdab87a1f51139455b43486a3a8b50f7f62f6b459ffd31a8"
   license "MIT"
   head "https://github.com/microsoft/vscode.git", branch: "main"
 
@@ -12,11 +12,11 @@ class CodeCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4d8f32ec23a70f181f6c6127089761aac51382e5f8a7ddfd0d6e486a576dd0b8"
-    sha256 cellar: :any, arm64_tahoe:       "5eaee872412ea1a440f74a7ba93542ac99bcbef31b10a39410b86e84ba84862c"
-    sha256 cellar: :any, arm64_sequoia:     "78eb37682b50f472eb736969848330cff0136d2e811f0486a99f643b3c3fa1d3"
-    sha256 cellar: :any, arm64_linux:       "5f6a002de0c73c1d5f7c89635d1ae81cf222d3057f6b2070c46aec228e55afc3"
-    sha256 cellar: :any, x86_64_linux:      "385df0af4a9b5a5d5beff3b2144292ce49337af6d3a5fd92494680c8177f487e"
+    sha256 cellar: :any, arm64_golden_gate: "ba95a4afd216b2d5bcf172d0d27c7054d8a3205ae41e6db98809d311efdd98e7"
+    sha256 cellar: :any, arm64_tahoe:       "63f7675b12fc1742479807a1290ee7d2140f416939a5cc05932856c3545ea0f4"
+    sha256 cellar: :any, arm64_sequoia:     "864999032f7f995267c7a404647d2bdbd43ad557fd6465616dace28c71f9597d"
+    sha256 cellar: :any, arm64_linux:       "6254749aecade1170df1d4260b817419199707fe69a41741948abf4b1a117260"
+    sha256 cellar: :any, x86_64_linux:      "ed967cd01875cef76f87b36549f465e9f805043446c066aa0b9cf757a85c4a40"
   end
 
   depends_on "pkgconf" => :build
@@ -27,12 +27,20 @@ class CodeCli < Formula
     depends_on "zlib-ng-compat"
   end
 
-  def openssl = Formula["openssl@4"]
+  deny_network_access!
+
+  def openssl = deps.map(&:name).find { |d| d.match?(/^openssl(@\d+(\.\d+)*)?$/) }
+
+  def fetch
+    cd "cli" do
+      system "cargo", "fetch", *std_cargo_fetch_args
+    end
+  end
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
     # https://crates.io/crates/openssl#manual-configuration
-    ENV["OPENSSL_DIR"] = openssl.opt_prefix
+    ENV["OPENSSL_DIR"] = formula_opt_prefix(openssl)
 
     ENV["VSCODE_CLI_NAME_LONG"] = "Code OSS"
 
@@ -49,8 +57,8 @@ class CodeCli < Formula
     assert_match version.to_s, shell_output("#{bin}/code --version")
 
     linked_libraries = [
-      openssl.opt_lib/shared_library("libssl"),
-      openssl.opt_lib/shared_library("libcrypto"),
+      formula_opt_lib(openssl)/shared_library("libssl"),
+      formula_opt_lib(openssl)/shared_library("libcrypto"),
     ]
 
     linked_libraries.each do |library|

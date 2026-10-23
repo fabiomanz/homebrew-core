@@ -3,10 +3,9 @@ require File.expand_path("../../Abstract/portable-formula", __dir__)
 class PortableRuby < PortableFormula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.7.tar.gz"
-  sha256 "911ace20f90d068ca0e4dda6d0e4f0f81e52e52f2dd4f4004c721e253412e82d"
+  url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.9.tar.gz"
+  sha256 "c35350682ff050b79702d57ade4516e7336063f510155d19fb2fb5b3f3909511"
   license "Ruby"
-  revision 1
 
   # This regex restricts matching to versions other than X.Y.0.
   livecheck do
@@ -15,10 +14,10 @@ class PortableRuby < PortableFormula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "25d6becc4464b6e65ac38a76ccd27eee8be5d0d805f6b3292d74e37deb8dd13b"
-    sha256 cellar: :any_skip_relocation, big_sur:       "da1d2637272470d15f1c9f9fb56a3c7889978b857912675e7e6fa57b165678de"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a43dce308d310788045ea32b5476ad618d0e92e72b540741b83a73717479dc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f78c64df16fc4715452d059c3a8482ba12b683cc582a2e07e19bddaea88d4f7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "43ff285a82f48c84a06d0676a3800815a19d290d32e44182ddd7a6e95478e18e"
+    sha256 cellar: :any_skip_relocation, big_sur:       "c90d3891dc3805de531cd262bc8f17382f499db0eb9185d76b8785ec93753fac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "346f2c71db33cdf4c64c68954f4e1134fbf63cc0d1a5885cfdf94b881f5ec53b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20d7b22eba004e0518932ce7f8a271c16b1a9da91b81f696c735d14d817a2c07"
   end
 
   depends_on "pkgconf" => :build
@@ -55,6 +54,8 @@ class PortableRuby < PortableFormula
     end
   end
 
+  allow_network_access! :test
+
   def install
     # Remove almost all bundled gems and replace with our own set.
     rm_r ".bundle"
@@ -79,11 +80,8 @@ class PortableRuby < PortableFormula
     end
     File.write("gems/bundled_gems", bundled_gems.join)
 
-    libyaml = Formula["portable-libyaml"]
     libxcrypt = Formula["portable-libxcrypt"]
     openssl = Formula["portable-openssl"]
-    libffi = Formula["portable-libffi"]
-    zlib = Formula["portable-zlib"]
 
     args = portable_configure_args + %W[
       --prefix=#{prefix}
@@ -103,7 +101,7 @@ class PortableRuby < PortableFormula
     args << "ac_cv_header_stdckdint_h=no" if OS.mac? && Hardware::CPU.intel?
     # We don't specify OpenSSL as we want it to use the pkg-config, which `--with-openssl-dir` will disable
     args += %W[
-      --with-libyaml-dir=#{libyaml.opt_prefix}
+      --with-libyaml-dir=#{formula_opt_prefix("portable-libyaml")}
     ]
 
     if OS.linux?
@@ -111,8 +109,8 @@ class PortableRuby < PortableFormula
       ENV["XLDFLAGS"] = "-L#{libxcrypt.opt_lib}"
 
       args += %W[
-        --with-libffi-dir=#{libffi.opt_prefix}
-        --with-zlib-dir=#{zlib.opt_prefix}
+        --with-libffi-dir=#{formula_opt_prefix("portable-libffi")}
+        --with-zlib-dir=#{formula_opt_prefix("portable-zlib")}
       ]
 
       # Ensure compatibility with older Ubuntu when built with Ubuntu 22.04
