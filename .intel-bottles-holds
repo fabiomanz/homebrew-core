@@ -1,5 +1,9 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
-buf	Formula/b/buf.rb	8a5cb8f055c26cba4388684793391e367e2c17af	1.74.0	1.75.0
-dart-sass	Formula/d/dart-sass.rb	8a5cb8f055c26cba4388684793391e367e2c17af	1.105.2	1.106.1
-dart-sdk	Formula/d/dart-sdk.rb	8a5cb8f055c26cba4388684793391e367e2c17af	3.13.5	3.13.7
-dartaotruntime	Formula/d/dartaotruntime.rb	8a5cb8f055c26cba4388684793391e367e2c17af	3.13.5	3.13.7
+aws-c-sdkutils	Formula/a/aws-c-sdkutils.rb	8c58e85acd1319b84d01fd5c96641bd1e6d9cf7c	1.0.0	1.0.1
+buf	Formula/b/buf.rb	8c58e85acd1319b84d01fd5c96641bd1e6d9cf7c	1.74.0	1.75.0
+dart-sass	Formula/d/dart-sass.rb	8c58e85acd1319b84d01fd5c96641bd1e6d9cf7c	1.105.2	1.106.1
+dart-sdk	Formula/d/dart-sdk.rb	8c58e85acd1319b84d01fd5c96641bd1e6d9cf7c	3.13.5	3.13.7
+dartaotruntime	Formula/d/dartaotruntime.rb	8c58e85acd1319b84d01fd5c96641bd1e6d9cf7c	3.13.5	3.13.7
+gh	Formula/g/gh.rb	8c58e85acd1319b84d01fd5c96641bd1e6d9cf7c	2.103.0	2.103.2
+glib-networking	Formula/g/glib-networking.rb	8c58e85acd1319b84d01fd5c96641bd1e6d9cf7c	2.90.0	2.90.1
+librsvg	Formula/lib/librsvg.rb	8c58e85acd1319b84d01fd5c96641bd1e6d9cf7c	2.63.3	2.63.4
