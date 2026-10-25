@@ -1,13 +1,13 @@
 class Webpack < Formula
   desc "Bundler for JavaScript and friends"
   homepage "https://webpack.js.org/"
-  url "https://registry.npmjs.org/webpack/-/webpack-5.112.1.tgz"
-  sha256 "23400c4678a5744bd6522ce851f64ee96e12d64db9d348948016900042691e23"
+  url "https://registry.npmjs.org/webpack/-/webpack-5.112.2.tgz"
+  sha256 "fb618a5eba0f16fa43ed720cc4634df4e88c65d594c0e0ad2c5c0c9be4057dfe"
   license "MIT"
   head "https://github.com/webpack/webpack.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f2d05b811bee28899b610ef03cb824527e169d717331c33e810cff095709c484"
+    sha256 cellar: :any_skip_relocation, all: "59db8f6fe61bbdfc25dbbd5e3f09cbe378fb6a1edf9d25dbec360e94bbb71268"
   end
 
   depends_on "node"

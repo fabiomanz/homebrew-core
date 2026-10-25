@@ -1,32 +1,22 @@
 class Mcat < Formula
   desc "Terminal image, video, directory, and Markdown viewer"
   homepage "https://github.com/Skardyy/mcat"
-  url "https://github.com/Skardyy/mcat/archive/refs/tags/v0.6.6.tar.gz"
-  sha256 "f5fc7043ed5b5c467383ba1e2e62f493e629ad729a910d46202cfaa16d58b80a"
+  url "https://github.com/Skardyy/mcat/archive/refs/tags/v0.6.7.tar.gz"
+  sha256 "4de354c29504d294030183eeb94a0286849c3a02d4ac9253739030061dfd12cf"
   license "MIT"
   head "https://github.com/Skardyy/mcat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f652b1aa23fc267b3f90880ab0559f9a192dd58e8b0be937b0a15e83198020c3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bcf8153c2c50fef0cab5959f560c9f81c72359d9c0faa6af3364c09f7b1b70e4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "56ddcbd82cd9ead637451f7e490705e327084e8fc11ba9030b9770e9075ffe4f"
-    sha256 cellar: :any,                 arm64_linux:       "d4efd3ffa64f55810f950cfbd39f3a91cfd213072d12ce967fabff6c0b331f8f"
-    sha256 cellar: :any,                 x86_64_linux:      "125a94ff52566152a4202f699fefba2f3cd1859570a65104852ce9cf244320dc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e482f7e090ffafae64f34d44177efb930db6ce9c9b4d3c31b5a27d87e29c0e06"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0f1893d47a0821e850730687066aae3aabe5d49fd282551eaaaab04d7d54e65f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6acdb2571c4f8a19021612398efff2119326b838a1a8edc7ba9967e37a701ea6"
+    sha256 cellar: :any,                 arm64_linux:       "bcb106ff0d36dc683c2d816c3b179319e6f3ae743369699675835a4c2bfeb444"
+    sha256 cellar: :any,                 x86_64_linux:      "19656eeb14466d246c1d574fb7aaabb856b01148c162c4c324f4756f72f6077c"
   end
 
   depends_on "rust" => :build
 
   conflicts_with "mtools", because: "both install `mcat` binaries"
-
-  # Avoid hanging when probing a terminal that does not answer: macOS poll(2) does
-  # not support ttys, and a background process group is stopped by SIGTTOU/SIGTTIN
-  # Upstream PR ref: https://github.com/Skardyy/mcat/pull/109
-  patch do
-    url "https://github.com/Skardyy/mcat/commit/1dcf9b3cca130086d17641d73811535c3826b29b.patch?full_index=1"
-    sha256 "559307c6ddbd0217495b05024a374791aa591dcb174807efea52074cea2090ad"
-    type :unofficial
-    resolves "https://github.com/Skardyy/mcat/pull/109"
-  end
 
   deny_network_access!
 
