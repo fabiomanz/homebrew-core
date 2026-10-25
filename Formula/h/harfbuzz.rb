@@ -4,12 +4,13 @@ class Harfbuzz < Formula
   url "https://github.com/harfbuzz/harfbuzz/releases/download/15.0.0/harfbuzz-15.0.0.tar.xz"
   sha256 "968536e9abd782f07f7954044c0c4020199fcdd39b41d221ec42d2a3be4a44df"
   license "MIT"
+  revision 1
   compatibility_version 1
   head "https://github.com/harfbuzz/harfbuzz.git", branch: "main"
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "440160a73e1147b6d1368613e75dbf27d7124c21fccfb4e7a45eba7781b924d2"
+    sha256 cellar: :any, tahoe: "cb48250bba2aadd2fcd1d04a22208ea2bd5a54a20b115fa39143f7f9e6e665a1"
   end
 
   depends_on "gobject-introspection" => :build
@@ -22,7 +23,7 @@ class Harfbuzz < Formula
   depends_on "freetype"
   depends_on "glib"
   depends_on "graphite2"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "libpng"
 
   on_linux do
