@@ -6,12 +6,12 @@ class PreCommit < Formula
   url "https://files.pythonhosted.org/packages/3a/c3/6965c2690ddce885ec75121572d065a5b94c5a5d8d3e657927ecda9fd715/pre_commit-4.7.0.tar.gz"
   sha256 "1f3deee12b914c8fa184bd2b5953391c2e4f36763e403d4a23dc9983fa7c6e86"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/pre-commit/pre-commit.git", branch: "main"
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "aa9262ad94511dcff1c9e390cf593539e693286ccb03a26b1c9a8beb9bfd88f4"
+    sha256 cellar: :any, tahoe: "4276718b37ea237dcb4be41730fadf4d56ec482e6a56a91292085fad63b2d431"
   end
 
   depends_on "libyaml"
@@ -63,8 +63,8 @@ class PreCommit < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/c9/2c/1a69b3346931e9a7db9cc00cc0fa847c843a85fa7cf52a598f57261c68df/virtualenv-21.14.12.tar.gz"
-    sha256 "bbcfb78e36c22ad70c6917c4aecb5e63477d3c138e9f88c946f320e31859c76a"
+    url "https://files.pythonhosted.org/packages/70/aa/bff50daee0488e16d611258a9b6c5a1d0c9e128f8ca424e9f4e1c0444ef2/virtualenv-21.14.13.tar.gz"
+    sha256 "de5307ba4b9a0001d9c8ea02832d38f63ca432880f416c1bface61c4323fd905"
   end
 
   def install

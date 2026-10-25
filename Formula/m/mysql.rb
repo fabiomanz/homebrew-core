@@ -5,6 +5,7 @@ class Mysql < Formula
   mirror "https://repo.mysql.com/apt/ubuntu/pool/mysql-innovation/m/mysql-community/mysql-community_26.10.0.orig.tar.gz"
   sha256 "984507622ddfa4d84ad23fc56ec5b5f18f4fda328af5a23e5f5b1a062301ea2c"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
+  revision 1
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src",
@@ -14,14 +15,14 @@ class Mysql < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "66964f4bdbc3ea76bb8a724e26f51c6b32d3b2835bcb763ac63251d49c4fe877"
+    sha256 tahoe: "f610e65273ad073c08f82552c0cccf2a8ab560184a7433894ca047d6ed0df875"
   end
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "abseil"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "lz4"
   depends_on "openssl@4"
   depends_on "protobuf"

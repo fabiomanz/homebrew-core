@@ -1,8 +1,8 @@
 class Libslirp < Formula
   desc "General purpose TCP-IP emulator"
   homepage "https://gitlab.freedesktop.org/slirp/libslirp"
-  url "https://gitlab.freedesktop.org/slirp/libslirp/-/archive/v4.9.5/libslirp-v4.9.5.tar.gz"
-  sha256 "f43e68b60b580647574ec4a0e2b6c600a56281e6c39f79426510832dc810f483"
+  url "https://gitlab.freedesktop.org/slirp/libslirp/-/archive/v4.9.6/libslirp-v4.9.6.tar.gz"
+  sha256 "5bb4d30fd74042c23b4a0475f44d974a8e41dfdcf005476f03754bebc756b760"
   license "BSD-3-Clause"
   compatibility_version 1
 
@@ -13,7 +13,7 @@ class Libslirp < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "3ee96a5b3fbb04bc4be172497a24fbda5cc5e583021da3662b552f45d68bf253"
+    sha256 cellar: :any, tahoe: "915acb875406f8beed6631cf37b699ac416fe4851af818043dba2e9b60fd3c37"
   end
 
   depends_on "meson" => :build
