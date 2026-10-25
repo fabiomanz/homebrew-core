@@ -4,6 +4,7 @@ class Simdutf < Formula
   url "https://github.com/simdutf/simdutf/archive/refs/tags/v9.3.2.tar.gz"
   sha256 "d92a0a4ce216dcebf18af20fed7ea7279fa535683f790fdaeed39827a234f567"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   compatibility_version 7
   head "https://github.com/simdutf/simdutf.git", branch: "master"
 
@@ -14,12 +15,12 @@ class Simdutf < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "60842d12c860d2177ba941a36701876db62d27ff9853ee4820d109a0014378fa"
+    sha256 cellar: :any, tahoe: "265e5a081f08aafc109d1d3b1f27d377c0bd9f8af7b1018244450f6b165fe60a"
   end
 
   depends_on "aklomp-base64" => :build
   depends_on "cmake" => :build
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
 
   uses_from_macos "python" => :build
 

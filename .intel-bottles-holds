@@ -9,10 +9,8 @@ harfbuzz	Formula/h/harfbuzz.rb	59a52b27f57edd28287a1f25ba3af5a2ae2eaf8d	15.0.0	1
 libslirp	Formula/lib/libslirp.rb	59a52b27f57edd28287a1f25ba3af5a2ae2eaf8d	4.9.5	4.9.6
 mysql	Formula/m/mysql.rb	59a52b27f57edd28287a1f25ba3af5a2ae2eaf8d	26.10.0	26.10.0_1
 node	Formula/n/node.rb	59a52b27f57edd28287a1f25ba3af5a2ae2eaf8d	26.12.1	26.12.1_1
-openssl@4	Formula/o/openssl@4.rb	59a52b27f57edd28287a1f25ba3af5a2ae2eaf8d	4.0.3	4.1.0
 pre-commit	Formula/p/pre-commit.rb	59a52b27f57edd28287a1f25ba3af5a2ae2eaf8d	4.7.0_1	4.7.0_2
 python@3.15	Formula/p/python@3.15.rb	59a52b27f57edd28287a1f25ba3af5a2ae2eaf8d	3.15.0_1	3.15.1
 qt5compat	Formula/q/qt5compat.rb	59a52b27f57edd28287a1f25ba3af5a2ae2eaf8d	6.12.0_1	6.12.0_2
 qtbase	Formula/q/qtbase.rb	59a52b27f57edd28287a1f25ba3af5a2ae2eaf8d	6.12.0_1	6.12.0_2
-simdutf	Formula/s/simdutf.rb	59a52b27f57edd28287a1f25ba3af5a2ae2eaf8d	9.3.2	9.3.2_1
 tesseract	Formula/t/tesseract.rb	59a52b27f57edd28287a1f25ba3af5a2ae2eaf8d	5.5.3	5.5.3_1
