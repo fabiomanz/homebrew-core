@@ -7,7 +7,7 @@ class Qtbase < Formula
     "BSD-3-Clause", # *.cmake
     "GFDL-1.3-no-invariants-only", # *.qdoc
   ]
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://code.qt.io/qt/qtbase.git", branch: "dev"
 
@@ -42,7 +42,7 @@ class Qtbase < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "4f6789a5aaa0cc5153ee3998749fee7dac76326cc40e4a91e4c8eb0151b3c6b2"
+    sha256 cellar: :any, tahoe: "218902e793e9018de892873687671a325523c64cdfbd9faeadec95d67bb0594a"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -56,7 +56,7 @@ class Qtbase < Formula
   depends_on "freetype"
   depends_on "glib"
   depends_on "harfbuzz"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "jpeg-turbo"
   depends_on "libb2"
   depends_on "libpng"
@@ -155,9 +155,12 @@ class Qtbase < Formula
                 'set(QT_CONFIGURE_LIBLOCATION_TO_PREFIX_PATH "${from_lib_location_to_prefix}")',
                 "set(QT_CONFIGURE_LIBLOCATION_TO_PREFIX_PATH \"#{HOMEBREW_PREFIX.relative_path_from(lib)}\")"
 
+      # Avoid opportunistic linkage to `at-spi2-core`. The AT-SPI bridge is
+      # Linux-only and fails to build on macOS if `at-spi2-core` is installed.
       %w[
         -DFEATURE_relocatable=ON
         -DQT_NO_APPLE_SDK_AND_XCODE_CHECK=ON
+        -DFEATURE_accessibility_atspi_bridge=OFF
       ]
     else
       # FIXME: Unable to use workaround for relocatable installs as paths are resolved relative

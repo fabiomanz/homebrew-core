@@ -4,6 +4,7 @@ class Tesseract < Formula
   url "https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.5.3.tar.gz"
   sha256 "9218e62793116d42a9f6d14cd9348518b27f382096eea3d0f2d1a24616bb5884"
   license "Apache-2.0"
+  revision 1
   compatibility_version 1
   head "https://github.com/tesseract-ocr/tesseract.git", branch: "main"
 
@@ -14,7 +15,7 @@ class Tesseract < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "a2c6442dd9fbd0e40076971141383ff1089f0eb87c0099314c076bbbb60cdb1e"
+    sha256 cellar: :any, tahoe: "286cc0fdf128646d0684c04ed1d7a5f66c3378761d5d4ca92f6369fc23980390"
   end
 
   depends_on "autoconf" => :build
@@ -25,7 +26,7 @@ class Tesseract < Formula
   depends_on "fontconfig"
   depends_on "glib"
   depends_on "harfbuzz"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "leptonica"
   depends_on "libarchive"
   depends_on "pango"
@@ -43,6 +44,11 @@ class Tesseract < Formula
   resource "osd" do
     url "https://github.com/tesseract-ocr/tessdata_fast/raw/4.1.0/osd.traineddata"
     sha256 "9cf5d576fcc47564f11265841e5ca839001e7e6f38ff7f7aacf46d15a96b00ff"
+  end
+
+  resource "homebrew-test_resource", :test do
+    url "https://raw.githubusercontent.com/tesseract-ocr/test/6dd816cdaf3e76153271daf773e562e24c928bf5/testing/eurotext.tif"
+    sha256 "7b9bd14aba7d5e30df686fbb6f71782a97f48f81b32dc201a1b75afe6de747d6"
   end
 
   # Test downloads a sample image to OCR
@@ -77,11 +83,6 @@ class Tesseract < Formula
   end
 
   test do
-    resource "homebrew-test_resource" do
-      url "https://raw.githubusercontent.com/tesseract-ocr/test/6dd816cdaf3e76153271daf773e562e24c928bf5/testing/eurotext.tif"
-      sha256 "7b9bd14aba7d5e30df686fbb6f71782a97f48f81b32dc201a1b75afe6de747d6"
-    end
-
     resource("homebrew-test_resource").stage do
       system bin/"tesseract", "./eurotext.tif", "./output", "-l", "eng"
       assert_match "The (quick) [brown] {fox} jumps!\n", File.read("output.txt")
