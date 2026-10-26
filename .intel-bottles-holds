@@ -4,6 +4,4 @@ buf	Formula/b/buf.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	1.74.0	1.75.0
 dart-sass	Formula/d/dart-sass.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	1.105.2	1.106.1
 dart-sdk	Formula/d/dart-sdk.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	3.13.5	3.13.7
 dartaotruntime	Formula/d/dartaotruntime.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	3.13.5	3.13.7
-libsoup	Formula/lib/libsoup.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	3.8.0	3.8.1
 qtwebengine	Formula/q/qtwebengine.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	6.11.2	6.11.2_1
-yt-dlp	Formula/y/yt-dlp.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	2026.10.21	2026.10.21_1
