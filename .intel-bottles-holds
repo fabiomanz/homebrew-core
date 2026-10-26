@@ -1,6 +1,13 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
-aws-c-sdkutils	Formula/a/aws-c-sdkutils.rb	59a52b27f57edd28287a1f25ba3af5a2ae2eaf8d	1.0.0	1.0.1
-buf	Formula/b/buf.rb	59a52b27f57edd28287a1f25ba3af5a2ae2eaf8d	1.74.0	1.75.0
-dart-sass	Formula/d/dart-sass.rb	59a52b27f57edd28287a1f25ba3af5a2ae2eaf8d	1.105.2	1.106.1
-dart-sdk	Formula/d/dart-sdk.rb	59a52b27f57edd28287a1f25ba3af5a2ae2eaf8d	3.13.5	3.13.7
-dartaotruntime	Formula/d/dartaotruntime.rb	59a52b27f57edd28287a1f25ba3af5a2ae2eaf8d	3.13.5	3.13.7
+aws-c-sdkutils	Formula/a/aws-c-sdkutils.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	1.0.0	1.0.1
+buf	Formula/b/buf.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	1.74.0	1.75.0
+dart-sass	Formula/d/dart-sass.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	1.105.2	1.106.1
+dart-sdk	Formula/d/dart-sdk.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	3.13.5	3.13.7
+dartaotruntime	Formula/d/dartaotruntime.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	3.13.5	3.13.7
+hashcat	Formula/h/hashcat.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	7.1.2	8.0.0
+libsoup	Formula/lib/libsoup.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	3.8.0	3.8.1
+python@3.13	Formula/p/python@3.13.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	3.13.17	3.13.18
+python@3.14	Formula/p/python@3.14.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	3.14.9	3.14.10
+qtwebengine	Formula/q/qtwebengine.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	6.11.2	6.11.2_1
+yt-dlp	Formula/y/yt-dlp.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	2026.10.21	2026.10.21_1
+z3	Formula/z/z3.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	5.3.1	5.3.2
