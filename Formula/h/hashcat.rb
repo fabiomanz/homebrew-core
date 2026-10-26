@@ -1,9 +1,9 @@
 class Hashcat < Formula
   desc "World's fastest and most advanced password recovery utility"
   homepage "https://hashcat.net/hashcat/"
-  url "https://hashcat.net/files/hashcat-7.1.2.tar.gz"
-  mirror "https://github.com/hashcat/hashcat/archive/refs/tags/v7.1.2.tar.gz"
-  sha256 "9546a6326d747530b44fcc079babad40304a87f32d3c9080016d58b39cfc8b96"
+  url "https://hashcat.net/files/hashcat-8.0.0.tar.gz"
+  mirror "https://github.com/hashcat/hashcat/archive/refs/tags/v8.0.0.tar.gz"
+  sha256 "d6a7533e1e250a236a8b99d0b725cdd76d8fdce744c7eeacb2bf42210fe4761b"
   license all_of: [
     "MIT",
     "LZMA-SDK-9.22", # deps/LZMA-SDK/
@@ -19,7 +19,7 @@ class Hashcat < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "94445d88e80333213ef1179e3a59924a9445f7015baf070d528c351e99297187"
+    sha256 tahoe: "5201a52f378cd61d4207291c55b4748ad822c3d8101b994aa5e18530c5cc034b"
   end
 
   depends_on "minizip"
@@ -43,8 +43,9 @@ class Hashcat < Formula
     (buildpath/"deps").each_child do |dep|
       rm_r(dep) if %w[OpenCL-Headers unrar xxHash zlib].include?(dep.basename.to_s)
     end
+    # The ZC706 bootloader is board firmware, so retain its redistribution notices.
     (buildpath/"docs/license_libs").each_child do |dep|
-      rm(dep) unless %w[SSE2NEON LZMA].any? { |dep_name| dep.basename.to_s.start_with?(dep_name) }
+      rm(dep) unless %w[SSE2NEON LZMA XILINX_FSBL].any? { |dep_name| dep.basename.to_s.start_with?(dep_name) }
     end
 
     args = %W[

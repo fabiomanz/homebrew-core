@@ -1,8 +1,8 @@
 class PythonAT313 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.13.17/Python-3.13.17.tgz"
-  sha256 "9cb057caa588f122577a5054a22531cd9c23ab6706f1a19bc95a55380a895177"
+  url "https://www.python.org/ftp/python/3.13.18/Python-3.13.18.tgz"
+  sha256 "99dbc847fb6a3fb26358370fb4c591215864116ebb584f2b89ab0b74c51dfa2a"
   license "Python-2.0"
   compatibility_version 1
 
@@ -13,7 +13,7 @@ class PythonAT313 < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "e4666c983eaca5000dedbc94746e0fbdeb58de0f757022503300aea381b7a87c"
+    sha256 tahoe: "6798ff5ccbbca3503f4a7295aae916c1230dad5d0dbb676e19f72b5c7489cdf1"
   end
 
   # https://devguide.python.org/versions/#versions

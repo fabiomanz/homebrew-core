@@ -1,8 +1,8 @@
 class PythonAT314 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.14.9/Python-3.14.9.tgz"
-  sha256 "8b47e85ee67e93945e93620a051a8f44bfc1e9735ed67075d166f4a74b7a060b"
+  url "https://www.python.org/ftp/python/3.14.10/Python-3.14.10.tgz"
+  sha256 "9e4996c19ae5a3df31f10c37723661f71d3455d73bd005f79df7098e5cc13192"
   license "Python-2.0"
   compatibility_version 1
 
@@ -13,7 +13,7 @@ class PythonAT314 < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "53d3dc8673de9f97082c36c511d31838a9c0d148592fdf6dac2db11396aa3812"
+    sha256 tahoe: "7b3adec5bf2dbfc83f7585bc8d0ace93883285d05516ffabc8c62b906f49bb65"
   end
 
   # https://devguide.python.org/versions/#versions
