@@ -1,14 +1,14 @@
 class AwsCAuth < Formula
   desc "C99 library implementation of AWS client-side authentication"
   homepage "https://github.com/awslabs/aws-c-auth"
-  url "https://github.com/awslabs/aws-c-auth/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "88e1587d01fc6d172144453f72dca6f64920785b138ad383626f64ccfe85c686"
+  url "https://github.com/awslabs/aws-c-auth/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "41326f257abdfc57221e108dff2b08c687dbaff1027b9c54b0088e0e413b7390"
   license "Apache-2.0"
   compatibility_version 3
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "d7bb776ecc592e3059c7e909ed6605c93c01dc84025b54b22a9f0ae802e18eae"
+    sha256 cellar: :any, tahoe: "4fa19585b58b4087cc3d57b0e943b2f8c1556c6189bb8da603eb839b7fd1e533"
   end
 
   depends_on "cmake" => :build

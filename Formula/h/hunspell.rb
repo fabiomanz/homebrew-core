@@ -1,13 +1,13 @@
 class Hunspell < Formula
   desc "Spell checker and morphological analyzer"
   homepage "https://hunspell.github.io"
-  url "https://github.com/hunspell/hunspell/releases/download/v1.7.5/hunspell-1.7.5.tar.gz"
-  sha256 "2e559f0c2a592ba48e421477f58e9bf7e01062277a4a7821afb52fc9401010ae"
+  url "https://github.com/hunspell/hunspell/releases/download/v1.7.6/hunspell-1.7.6.tar.gz"
+  sha256 "9c650ace31d4d8cc1da925a9507c3de1d50f1a54857af2f72429f517d5d53467"
   license any_of: ["MPL-1.1", "GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "63ef4725d5bdd95041b1e6d445847439bd16d37a33896c09bda984a1aa1489e6"
+    sha256 cellar: :any, tahoe: "6e388d742ee0a0f72d946d9eca3297a77ef52a14bbb604ebaad0f7b4b76ee27c"
   end
 
   depends_on "gettext" => :build

@@ -1,11 +1,10 @@
 class Nmap < Formula
   desc "Port scanning utility for large networks"
   homepage "https://nmap.org/"
-  url "https://nmap.org/dist/nmap-7.992.tar.bz2"
-  sha256 "0c12660eddbf7eabeff6996cb0c044a4eadf2bb0c6fbcb340d6cf72b1caee402"
+  url "https://nmap.org/dist/nmap-7.993.tar.bz2"
+  sha256 "270e55f04915bfcecb5db8feb959d4c5ba86a48c094520a4f1c07571e1c79c59"
   license :cannot_represent
   compatibility_version 1
-  head "https://svn.nmap.org/nmap/"
 
   livecheck do
     url "https://nmap.org/download"
@@ -14,7 +13,13 @@ class Nmap < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "cd5b18b8aafb1e2977cd58f61552c12d59fd10d45c4e70b2f05dfea76502f6b2"
+    sha256 tahoe: "196a7e1f5d9355c5896047a841ce9a39c2e27ea2a69e14b242c250e5ff0f1a37"
+  end
+
+  head do
+    url "https://svn.nmap.org/nmap/"
+
+    depends_on "autoconf" => :build
   end
 
   depends_on "python-setuptools" => :build

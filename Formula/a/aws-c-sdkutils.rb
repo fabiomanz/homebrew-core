@@ -1,14 +1,14 @@
 class AwsCSdkutils < Formula
   desc "C99 library implementing AWS SDK specific utilities"
   homepage "https://github.com/awslabs/aws-c-sdkutils"
-  url "https://github.com/awslabs/aws-c-sdkutils/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "ddf9d09ba137ad0697afe1c09f5d778d6b2f1aadb277dffd231ff615ae34bc82"
+  url "https://github.com/awslabs/aws-c-sdkutils/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "c74ce4e19304051d961255fdeb3cd431cfc81896c608a22f94c2321b5a19d6ba"
   license "Apache-2.0"
   compatibility_version 2
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "ab419449f692ffb7c27a97e3affc0b1cd8655e8a54ac0bd2faed09e0f55b60de"
+    sha256 cellar: :any, tahoe: "556cca40ab5e0dfa7ac59952e8b366f01d8b2d5d856709752c616f508ca78019"
   end
 
   depends_on "cmake" => :build
