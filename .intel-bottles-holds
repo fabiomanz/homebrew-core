@@ -1,7 +1,18 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
-aws-c-sdkutils	Formula/a/aws-c-sdkutils.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	1.0.0	1.0.1
-buf	Formula/b/buf.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	1.74.0	1.75.0
-dart-sass	Formula/d/dart-sass.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	1.105.2	1.106.1
-dart-sdk	Formula/d/dart-sdk.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	3.13.5	3.13.7
-dartaotruntime	Formula/d/dartaotruntime.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	3.13.5	3.13.7
-qtwebengine	Formula/q/qtwebengine.rb	15b28c07fec2bbf72e7199b5b4ae812a113707b2	6.11.2	6.11.2_1
+aws-c-auth	Formula/a/aws-c-auth.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	1.0.1	1.0.2
+aws-c-io	Formula/a/aws-c-io.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	1.1.0	1.1.1
+aws-c-s3	Formula/a/aws-c-s3.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	1.3.1_1	1.4.1
+aws-c-sdkutils	Formula/a/aws-c-sdkutils.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	1.0.0	1.0.1
+awscli	Formula/a/awscli.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	2.38.5	2.38.6_1
+buf	Formula/b/buf.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	1.74.0	1.75.0
+dart-sass	Formula/d/dart-sass.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	1.105.2	1.106.1
+dart-sdk	Formula/d/dart-sdk.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	3.13.5	3.13.7
+dartaotruntime	Formula/d/dartaotruntime.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	3.13.5	3.13.7
+gdb	Formula/g/gdb.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	18.1	18.1_1
+gh	Formula/g/gh.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	2.103.2	2.103.3
+hunspell	Formula/h/hunspell.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	1.7.5	1.7.6
+libheif	Formula/lib/libheif.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	1.23.6	1.23.7
+nmap	Formula/n/nmap.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	7.992	7.993
+python@3.15	Formula/p/python@3.15.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	3.15.1	3.15.2
+qtwebengine	Formula/q/qtwebengine.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	6.11.2	6.11.2_1
+uv	Formula/u/uv.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	0.13.5	0.13.6
