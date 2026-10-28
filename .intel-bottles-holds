@@ -1,7 +1,15 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
-buf	Formula/b/buf.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	1.74.0	1.75.0
-dart-sass	Formula/d/dart-sass.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	1.105.2	1.106.1
-dart-sdk	Formula/d/dart-sdk.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	3.13.5	3.13.7
-dartaotruntime	Formula/d/dartaotruntime.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	3.13.5	3.13.7
-gdb	Formula/g/gdb.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	18.1	18.1_1
-qtwebengine	Formula/q/qtwebengine.rb	b34c47f35f366433995c2148bb2b33d0c572c8b3	6.11.2	6.11.2_1
+aws-c-common	Formula/a/aws-c-common.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	1.0.3	1.0.4
+awscli	Formula/a/awscli.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	2.38.6_1	2.39.0
+buf	Formula/b/buf.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	1.74.0	1.75.0
+cmake	Formula/c/cmake.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	4.4.4	4.4.5
+dart-sass	Formula/d/dart-sass.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	1.105.2	1.106.1
+dart-sdk	Formula/d/dart-sdk.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	3.13.5	3.13.7
+dartaotruntime	Formula/d/dartaotruntime.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	3.13.5	3.13.7
+gdb	Formula/g/gdb.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	18.1	18.1_1
+glab	Formula/g/glab.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	1.124.0	1.125.0
+qtwebengine	Formula/q/qtwebengine.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	6.11.2	6.11.2_1
+s2n	Formula/s/s2n.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	1.7.12	1.7.13
+simdjson	Formula/s/simdjson.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	5.0.5	5.0.6
+simdutf	Formula/s/simdutf.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	9.3.2_1	9.3.3
+yt-dlp	Formula/y/yt-dlp.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	2026.10.21_1	2026.10.26

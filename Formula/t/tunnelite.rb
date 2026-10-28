@@ -1,17 +1,17 @@
 class Tunnelite < Formula
   desc "Secure tunneling to local applications"
   homepage "https://tunnelite.com"
-  url "https://github.com/cristipufu/tunnelite/archive/refs/tags/v1.3.1.tar.gz"
-  sha256 "58effe38dc41b5b355bc06eeb1c230d28f9f78dbd5433d0e1c90634d76efbe53"
+  url "https://github.com/cristipufu/tunnelite/archive/refs/tags/v1.3.2.tar.gz"
+  sha256 "384af1fbac09b5cda738127b55cd178deb5e43bd7dbb90e7f2e73f458212e726"
   license "MIT"
   head "https://github.com/cristipufu/tunnelite.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b0733739b37edb345fadce0fe13fda0a006fd3010a949a35894d16103ac2e588"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "46630d02a8d181d7b8b43a667be6016e3d82dd3baec2ed317d747b9ed889ca21"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c1fe02f8d7b44a0d138f8846a8ff36c0cf24ea3f8e01257e6da61f42465aac5f"
-    sha256 cellar: :any,                 arm64_linux:       "41b466a3d51719d049d7cc5b74f56b650fe7d106bf87f5876c53e4c5305eb049"
-    sha256 cellar: :any,                 x86_64_linux:      "25f13a9d343bd85220e32955d68e7db37b627ab4fb792e4db904c04786bd96be"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b126dc90c30463d364f91736b88446df87aa9d9b02a00cf2a445ac70e063112e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a18badf65cd39aba46dc0499aa79ea6a03e30a52119fa41e9dd7b53869de48b6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c628cf1689732558ff2f85b1cba48e1a9bb83e5702be897d34a1bce66dff0c8d"
+    sha256 cellar: :any,                 arm64_linux:       "b2990d86ac84a8016d7d81678d4e1c39d02aa62d9f18612fde7829500d5faf0c"
+    sha256 cellar: :any,                 x86_64_linux:      "61bedc654efca0804d5d00bdbd468dbab10eca300174389ddd3b2d7bafe7e69e"
   end
 
   depends_on "dotnet"
