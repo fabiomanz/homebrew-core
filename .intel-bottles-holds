@@ -3,4 +3,3 @@ buf	Formula/b/buf.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	1.74.0	1.75.0
 dart-sass	Formula/d/dart-sass.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	1.105.2	1.106.1
 dart-sdk	Formula/d/dart-sdk.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	3.13.5	3.13.7
 dartaotruntime	Formula/d/dartaotruntime.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	3.13.5	3.13.7
-qtwebengine	Formula/q/qtwebengine.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	6.11.2	6.11.2_1

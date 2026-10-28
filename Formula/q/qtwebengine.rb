@@ -27,6 +27,7 @@ class Qtwebengine < Formula
     "Zlib",              # zlib (macOS)
     :public_domain,      # sigslot; SPL-SQRT-FLOOR
   ]
+  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtwebengine.git", branch: "dev"
 
@@ -36,14 +37,14 @@ class Qtwebengine < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "e4df84e96bdbafdcdfdd0afb06870b4ff4fb3328d1476e2ede8021608dbc6131"
+    sha256 cellar: :any, tahoe: "5c6fa10e9a92b1bf498fec483bbf16dba3f44db5431e3bde6798fd75d2f80e79"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "ninja" => :build
   depends_on "node" => :build
   depends_on "pkgconf" => [:build, :test]
-  depends_on "python@3.14" => :build
+  depends_on "python@3.15" => :build
   depends_on "qttools" => :build
 
   depends_on "libpng"
@@ -79,7 +80,7 @@ class Qtwebengine < Formula
     depends_on "fontconfig"
     depends_on "freetype"
     depends_on "harfbuzz"
-    depends_on "icu4c@78"
+    depends_on "icu4c@79"
     depends_on "jpeg-turbo"
     depends_on "libdrm"
     depends_on "libevent"
@@ -154,6 +155,14 @@ class Qtwebengine < Formula
       type :backport
       resolves "https://qt-project.atlassian.net/browse/QTBUG-150276"
     end
+  end
+
+  # Workaround to build with ICU 79+ until QtWebEngine updates V8
+  # https://github.com/v8/v8/commit/f607706154eabc4a949628a88b38dbe95cd2274c
+  patch do
+    file "Patches/node/icu4c-79.patch"
+    directory "src/3rdparty/chromium/v8"
+    type :unofficial # cherry-picked from V8 but not in Qt yet
   end
 
   def install
