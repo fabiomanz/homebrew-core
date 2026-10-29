@@ -1,8 +1,8 @@
 class Bqlog < Formula
   desc "Cross-language logging library"
   homepage "https://github.com/Tencent/BqLog"
-  url "https://github.com/Tencent/BqLog/archive/refs/tags/Release_2.7.1.tar.gz"
-  sha256 "39678545fe7322d2193ff5e22a6e99937de1b6dc01a0531f31440991fa4881a9"
+  url "https://github.com/Tencent/BqLog/archive/refs/tags/Release_2.7.2.tar.gz"
+  sha256 "7a8071333f3fccdf933f15f15024e370fae5717e076f3d7796de4000a3e47c81"
   license "Apache-2.0"
   head "https://github.com/Tencent/BqLog.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Bqlog < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "0c76a92c7b2343021a65c167597b8a27a68d264c37e004a123136e6b2fb029ba"
-    sha256 cellar: :any, arm64_tahoe:       "07ef057402107d3fe8125216f9a0580c045529046317fdc00de40deff8166a5a"
-    sha256 cellar: :any, arm64_sequoia:     "e2895298180e38ba48a37b830c4e0bec5bdcf1c49eb802058c3f9e81fd410bcf"
-    sha256 cellar: :any, arm64_linux:       "e3fdc005c9a41f0d2c8178bee9eca1675b99ec687369a45d41667b185e923922"
-    sha256 cellar: :any, x86_64_linux:      "81308925f0a4d59d0b300bce23f29f705c0d17d29c7196cb058f9b0ecf564f33"
+    sha256 cellar: :any, arm64_golden_gate: "dfbd17a22cfd7e6a3d8d1c6058c81904cbb7b4acead81f9af186890c7f161160"
+    sha256 cellar: :any, arm64_tahoe:       "09437a2b1d1b0e763d0d84aa3e8ff5c33af4518d74c7a8c22016805efaca4f4c"
+    sha256 cellar: :any, arm64_sequoia:     "86d0d38704111ee62d91a1838f65600269ff7d8ad1f53347ef507e0e5ec4623d"
+    sha256 cellar: :any, arm64_linux:       "b5a9e7ade9023cac7d1ab5614a90944b02ab5efa3e077afad36d4ec866093c0c"
+    sha256 cellar: :any, x86_64_linux:      "1e5379438ee3acb5ef3b0d9bb84e3691c89404e1cee0a02fcb328cb9bc98166b"
   end
 
   depends_on "cmake" => :build

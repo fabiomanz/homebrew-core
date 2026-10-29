@@ -1,5 +1,18 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
-buf	Formula/b/buf.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	1.74.0	1.75.0
-dart-sass	Formula/d/dart-sass.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	1.105.2	1.106.1
-dart-sdk	Formula/d/dart-sdk.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	3.13.5	3.13.7
-dartaotruntime	Formula/d/dartaotruntime.rb	5b84252f73bf1d88b7a8c520a5bcf7b94b351fe1	3.13.5	3.13.7
+aws-c-common	Formula/a/aws-c-common.rb	8701235251a995187352bd621a2f182a1127fa8c	1.0.4	1.0.5
+aws-c-s3	Formula/a/aws-c-s3.rb	8701235251a995187352bd621a2f182a1127fa8c	1.4.1	1.5.1
+awscli	Formula/a/awscli.rb	8701235251a995187352bd621a2f182a1127fa8c	2.39.0	2.39.1
+buf	Formula/b/buf.rb	8701235251a995187352bd621a2f182a1127fa8c	1.74.0	1.75.0
+dart-sass	Formula/d/dart-sass.rb	8701235251a995187352bd621a2f182a1127fa8c	1.105.2	1.107.0
+dart-sdk	Formula/d/dart-sdk.rb	8701235251a995187352bd621a2f182a1127fa8c	3.13.5	3.13.7
+dartaotruntime	Formula/d/dartaotruntime.rb	8701235251a995187352bd621a2f182a1127fa8c	3.13.5	3.13.7
+git	Formula/g/git.rb	8701235251a995187352bd621a2f182a1127fa8c	2.56.0_1	2.56.0_2
+gitlab-runner	Formula/g/gitlab-runner.rb	8701235251a995187352bd621a2f182a1127fa8c	19.5.1	19.5.2
+glab	Formula/g/glab.rb	8701235251a995187352bd621a2f182a1127fa8c	1.125.0	1.126.0
+jpeg-turbo	Formula/j/jpeg-turbo.rb	8701235251a995187352bd621a2f182a1127fa8c	3.2.0	3.2.1
+node	Formula/n/node.rb	8701235251a995187352bd621a2f182a1127fa8c	26.12.1_1	26.13.0
+pandoc	Formula/p/pandoc.rb	8701235251a995187352bd621a2f182a1127fa8c	3.12.1	3.13
+pipx	Formula/p/pipx.rb	8701235251a995187352bd621a2f182a1127fa8c	1.18.4	1.18.7
+qemu	Formula/q/qemu.rb	8701235251a995187352bd621a2f182a1127fa8c	11.1.2	11.1.3
+tbb	Formula/t/tbb.rb	8701235251a995187352bd621a2f182a1127fa8c	2023.1.0	2023.2.0
+tesseract	Formula/t/tesseract.rb	8701235251a995187352bd621a2f182a1127fa8c	5.5.3_1	5.5.4

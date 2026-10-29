@@ -15,6 +15,9 @@ class QuickLintJs < Formula
     sha256 cellar: :any, x86_64_linux:      "f9b0c534b47a62ce84ab7d1f62caf3c850cd6affe761f5e7ee3a698b65cb8faa"
   end
 
+  deprecate! date: "2026-10-29", because: :repo_archived
+  disable! date: "2027-10-29", because: :repo_archived
+
   depends_on "cmake" => :build
   depends_on "googletest" => :build
   depends_on "pkgconf" => :build
