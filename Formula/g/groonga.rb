@@ -4,6 +4,7 @@ class Groonga < Formula
   url "https://github.com/groonga/groonga/releases/download/v16.1.5/groonga-16.1.5.tar.gz"
   sha256 "f7ae843e80aec4a8b83743b570c0f82ffe44939405db0843f06ecd6190801476"
   license "LGPL-2.1-or-later"
+  revision 1
   compatibility_version 1
   head "https://github.com/groonga/groonga.git", branch: "main"
 
@@ -13,11 +14,11 @@ class Groonga < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "c1c308cddf79e5bb2f4db2160e633e122d46387a89060d706aa7fe08bea19fda"
-    sha256 arm64_tahoe:       "71f018ca554cf7da4217535c4c006cf027798611a12ff61a9a8603a65eeb441f"
-    sha256 arm64_sequoia:     "632e7319775d88a88654b8a346ae8e641789b42e48c98778b070684499430bdb"
-    sha256 arm64_linux:       "4a297a158aebb762542eeef537aaa758d8e64ba43326922698c4707d9c6e8299"
-    sha256 x86_64_linux:      "aeaecb9a58c41e835c91b2dbed9c82640553d01980fa744cdfab9d3cf014e681"
+    sha256 arm64_golden_gate: "3701cd6b92b5053c5d9f2e7f25fcb18e5718f81a5252244a53a560629104ab06"
+    sha256 arm64_tahoe:       "de89ed2566207eb300e1b51bbdb5b46e0c5b72ec3c1ca8d0ce1c5c7ff2173858"
+    sha256 arm64_sequoia:     "2fbf451feaca2b5fb727ff302ecc208639566540a92a432a45bcfab458717088"
+    sha256 arm64_linux:       "00b2b981c5b40c362ab2068ae037a089c3c6053448527f9f959eb27757c27919"
+    sha256 x86_64_linux:      "7a9b1860f876e91b8d574a5fc806c460d4e692dd2c56da370e49a4c9e031effa"
   end
 
   depends_on "cmake" => :build

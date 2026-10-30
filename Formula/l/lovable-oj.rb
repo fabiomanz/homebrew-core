@@ -1,17 +1,17 @@
 class LovableOj < Formula
   desc "Experimental next generation frontend tooling"
   homepage "https://github.com/lovablelabs/oj"
-  url "https://github.com/lovablelabs/oj/archive/refs/tags/v0.2.49.tar.gz"
-  sha256 "ba6f08b5cb1aba13c5979a1789d4ffb4b109762119dcc468fbb860e1bc90640d"
+  url "https://github.com/lovablelabs/oj/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "9b2cb6d53da1f9ae1a3565f2b773e2bcc87df9c400924ed81b19ccef884593ea"
   license "MIT"
   head "https://github.com/lovablelabs/oj.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "40cc2f643fdb4c618e74f9f7c7b495d98232fefd476d82ae04a0594ba378d4f2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4a4420e558879e316e0d7fc753aa95967337bd2d2c24f159b2e1d225b2bde386"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f3e8086e449415f7f9fa48701ef48ed1e064a7c7c4dd2ff679d8bc42e6882d26"
-    sha256 cellar: :any,                 arm64_linux:       "c6b257b8b39b5dcd1d17453843e497e87fb3471bc1513786342a3c36ecff9393"
-    sha256 cellar: :any,                 x86_64_linux:      "521a12d22f4185bdb43d3a5e84e908789aed190f0cf16e17f1f2cf734aded78c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dce714cece0aaa232b014990a5b10e73c382642461231915f274878a20dc63a4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7373b74f9351f89f5d0aaabdb093db45f7e50654d0692aa29fa1562572b5efd8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1615537239dd5ab7eb36573edbb2a17eb3acacd31422ca63c7f15d3299dad01f"
+    sha256 cellar: :any,                 arm64_linux:       "f49f0f3e821aa25323438b20c14360b0f8e2dbfb7585007ce34e11cdcf3779e2"
+    sha256 cellar: :any,                 x86_64_linux:      "3e6db2090e8ab8712b4a965b145e926a71da7379677cae4000610d3755edfa96"
   end
 
   depends_on "cmake" => :build
@@ -28,6 +28,11 @@ class LovableOj < Formula
   allow_network_access! :build
 
   def install
+    # Work around SIGKILL on arm64 linux runner from fat LTO
+    github_arm64_linux = OS.linux? && Hardware::CPU.arm? &&
+                         ENV["HOMEBREW_GITHUB_ACTIONS"].present? &&
+                         ENV["GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED"].blank?
+    ENV["CARGO_PROFILE_RELEASE_LTO"] = "thin" if github_arm64_linux
     ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm") if OS.linux?
 
     system "cargo", "install", *std_cargo_args(path: "crates/oj")
