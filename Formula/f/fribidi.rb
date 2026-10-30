@@ -1,13 +1,13 @@
 class Fribidi < Formula
   desc "Implementation of the Unicode BiDi algorithm"
   homepage "https://github.com/fribidi/fribidi"
-  url "https://github.com/fribidi/fribidi/releases/download/v1.0.17/fribidi-1.0.17.tar.xz"
-  sha256 "6949dcde27d41cebad1fd741fcafc36d55a1020d2d872d4a6eb3914caabbada2"
+  url "https://github.com/fribidi/fribidi/releases/download/v1.0.18/fribidi-1.0.18.tar.xz"
+  sha256 "1de5e8073d035388b71d0b2d452b1da1f8caeea8a7702997b401fe1b6250727f"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "23ec3a2c361a11e94f71dee17afbe55d1d8b3e3f9df16a327f84e1124e80dcd4"
+    sha256 cellar: :any, tahoe: "ded625adebb06d9f8b8596eb9bb558ea35e218ef8ef25dd7fe728809ad10e4c0"
   end
 
   depends_on "help2man" => :build

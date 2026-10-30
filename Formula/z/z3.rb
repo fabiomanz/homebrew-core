@@ -1,8 +1,8 @@
 class Z3 < Formula
   desc "High-performance theorem prover"
   homepage "https://github.com/Z3Prover/z3"
-  url "https://github.com/Z3Prover/z3/archive/refs/tags/z3-5.3.2.tar.gz"
-  sha256 "df91b87822f5f8b6710af1f2419ba98758cd647dee3a8f0d070f128b47024dbe"
+  url "https://github.com/Z3Prover/z3/archive/refs/tags/z3-5.3.3.tar.gz"
+  sha256 "f8373e6a753da6e336f0955fca65c7a56346f3de68a56fd353acb4abf33d4823"
   license "MIT"
   compatibility_version 5
   head "https://github.com/Z3Prover/z3.git", branch: "master"
@@ -15,7 +15,7 @@ class Z3 < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "a9352e54aaf2a80c8d267a71a39e454a93871e7ea43a8251235d522fd54a7034"
+    sha256 cellar: :any, tahoe: "11826f5deb28738d718f880dc2e019fb9d8fa67a304f1b85c19556877284fecb"
   end
 
   depends_on "cmake" => :build

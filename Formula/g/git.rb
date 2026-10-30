@@ -10,7 +10,7 @@ class Git < Formula
     "BSD-3-Clause",      # xdiff/xhistogram.c; reftable/
     "MIT",               # khash.h; sha1dc/
   ]
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://github.com/git/git.git", branch: "master"
 
@@ -21,14 +21,15 @@ class Git < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "8d0202701e84deb3df21d38534ae5a5c73a6cc3c47148cbe75d2cbcfc228c02e"
+    sha256 tahoe: "7a79893c00b6c402a2d54d0a859d3af37c14116c0232738c0f55311bf7dc178e"
   end
 
   depends_on "gettext" => :build
   depends_on "pkgconf" => :build
+  # TODO: Replace with `uses_from_macos` once Apple fixes their CA bundle.
+  depends_on "curl"
   depends_on "pcre2"
 
-  uses_from_macos "curl"
   uses_from_macos "expat"
 
   # Don't try to add a libiconv dependency without reading this PR first:
