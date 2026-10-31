@@ -2,14 +2,15 @@ class Aom < Formula
   desc "Codec library for encoding and decoding AV1 video streams"
   homepage "https://aomedia.googlesource.com/aom"
   url "https://aomedia.googlesource.com/aom.git",
-      tag:      "v3.15.2",
-      revision: "af3dc9aadc793c1b00edc003e3fc19a44fdeb574"
+      tag:      "v3.15.3",
+      revision: "b141d9c45db236335351c8a4b2a14b3ade27c937"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://aomedia.googlesource.com/aom.git", branch: "main"
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "814c11733f00682ac6375f88fae3f747f9816f9422a869a27ab4b560a2957105"
+    sha256 cellar: :any, tahoe: "6b37e110b8c9202c9277e07a6aa5deecf035a358f83b22083b7834d33a5cc5d0"
   end
 
   depends_on "cmake" => :build

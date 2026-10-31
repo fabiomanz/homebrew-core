@@ -1,8 +1,8 @@
 class Qemu < Formula
   desc "Generic machine emulator and virtualizer"
   homepage "https://www.qemu.org/"
-  url "https://download.qemu.org/qemu-11.1.2.tar.xz"
-  sha256 "731b5681e4bb18be313231579b8efd0296c5b015fa36dc533874b639ba838016"
+  url "https://download.qemu.org/qemu-11.1.3.tar.xz"
+  sha256 "5a8289c7940dc77d3873c81a6c29ba3afe1446fc9d36e77fa1658cdbecb84b22"
   license "GPL-2.0-only"
   compatibility_version 1
   head "https://gitlab.com/qemu-project/qemu.git", branch: "master"
@@ -14,7 +14,7 @@ class Qemu < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "d57588ff590aeb360d4bc96543bf1dcdf870f09300e8dbb0e53c751cad4aa0ff"
+    sha256 tahoe: "fa15d3f81ea43fef73ba2ea8cef9ad884e2f782f52cd7c818ec30dd777138e56"
   end
 
   depends_on "bison" => :build # >= 3.0
@@ -23,7 +23,7 @@ class Qemu < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "python-setuptools" => :build
-  depends_on "python@3.14" => :build # keep aligned with meson
+  depends_on "python@3.15" => :build # keep aligned with meson
   depends_on "spice-protocol" => :build
 
   depends_on "capstone"
@@ -70,6 +70,9 @@ class Qemu < Formula
     # * removes `meson` so that brew `meson` is always used
     # * keeps `pycotap` and `qemu_qmp` which are pure-python "none-any" wheels (allowed in homebrew/core)
     rm(Dir["python/wheels/*"] - Dir["python/wheels/{pycotap,qemu_qmp}-*-none-any.whl"])
+
+    # Python 3.15 no longer bundles `wheel` and setuptools builds wheels without it
+    inreplace "pythondeps.toml", /^"wheel" = .*\n/, ""
 
     args = %W[
       --prefix=#{prefix}
