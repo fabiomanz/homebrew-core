@@ -5,6 +5,7 @@ class InfluxdbAT2 < Formula
       tag:      "v2.10.0",
       revision: "01c64e96a87f0912f2550dd7e72745e70ef5a4fe"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :stable
@@ -57,7 +58,7 @@ class InfluxdbAT2 < Formula
     ENV.append_to_rustflags "--allow dead_code --allow mismatched_lifetime_syntaxes"
 
     # Workaround to avoid patchelf corruption when cgo is required (for flux)
-    if OS.linux? && Hardware::CPU.arch == :arm64
+    if OS.linux? && Hardware::CPU.arm64?
       ENV["CGO_ENABLED"] = "1"
       ENV["GO_EXTLINK_ENABLED"] = "1"
       ENV.append "GOFLAGS", "-buildmode=pie"

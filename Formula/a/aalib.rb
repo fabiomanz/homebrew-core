@@ -5,6 +5,7 @@ class Aalib < Formula
   sha256 "fbddda9230cf6ee2a4f5706b4b11e2190ae45f5eda1f0409dc4f99b35e0a70ee"
   license "LGPL-2.0-or-later"
   revision 2
+  compatibility_version 1
 
   # The latest version in the formula is a release candidate, so we have to
   # allow matching of unstable versions.
@@ -54,7 +55,7 @@ class Aalib < Formula
       --without-x
     ]
     # Help old config scripts identify arm64 linux
-    args << "--host=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    args << "--host=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
 
     system "./configure", *args, *std_configure_args
     system "make", "install"

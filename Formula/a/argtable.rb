@@ -5,6 +5,7 @@ class Argtable < Formula
   version "2.13"
   sha256 "8f77e8a7ced5301af6e22f47302fdbc3b1ff41f2b83c43c77ae5ca041771ddbf"
   license "LGPL-2.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "774aacc8867c72e7bcadd132ca14ba9b108ce20e91f5949a8f0f748b9431f312"
@@ -36,7 +37,7 @@ class Argtable < Formula
 
     args = []
     # Help old config scripts identify arm64 linux
-    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
 
     system "./configure", *args, *std_configure_args
     system "make", "install"

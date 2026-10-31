@@ -1,18 +1,17 @@
 class Neovide < Formula
   desc "No Nonsense Neovim Client in Rust"
   homepage "https://neovide.dev/"
-  url "https://github.com/neovide/neovide/archive/refs/tags/0.16.2.tar.gz"
-  sha256 "a2016cceab3cba50b6a8b2f6787ae9017a85923575e89a83ebb9d428e8f80ca9"
+  url "https://github.com/neovide/neovide/archive/refs/tags/0.17.0.tar.gz"
+  sha256 "3cd9dc6d4e3897f204528360793faf77745d7c3f142ce5d60706801f3483cbb7"
   license "MIT"
-  revision 1
   head "https://github.com/neovide/neovide.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f70aefe0ac4f6aea19620681dbdcbadd00fdc2bad3ebd184c801628cefd31392"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "eb128713d1da6d589f2b9497e90925f499870f3940b94c6beefe1bd497d7653f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a0d31361975e2f50ef1d17080167f9009da58b5ccba7e3df3c782145552c8aeb"
-    sha256 cellar: :any,                 arm64_linux:       "61e2d278c9d005c525d4f603e0ac234ed0c09981fcbfa05f4756e6dbb21b0884"
-    sha256 cellar: :any,                 x86_64_linux:      "8acbd21a7bb32aa6f7f4c66178986b267d7afdf861e7145636ab06f1ac1fb6a4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7a68ea4888944885853c8d83d660a568adb6537a7b07a8f5efb86a36e8114286"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8ea59cef9ceca355ad8e2a8c017d46a2e245c78302d003384046d3ef235e04b0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1524bd892611f330c5535fb43102b878cda9902f3de13aad0753ce0df05afd22"
+    sha256 cellar: :any,                 arm64_linux:       "5dd8070bdbf688da267752c4209a92bb412144769749b2a591be6299eee7661b"
+    sha256 cellar: :any,                 x86_64_linux:      "a9ea9b51cc910f709eb0cc88f663483a0e9b7794b8c203f00cf3cabfb9ac4dce"
   end
 
   depends_on "ninja" => :build

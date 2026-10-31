@@ -5,6 +5,7 @@ class XmlSecurityC < Formula
   sha256 "a4c9e1ae3ed3e8dab5d82f4dbdb8414bcbd0199a562ad66cd7c0cd750804ff32"
   license "Apache-2.0"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url "https://shibboleth.net/downloads/xml-security-c/"
@@ -37,6 +38,8 @@ class XmlSecurityC < Formula
     apply "patches/fix-for-openssl4-compat.patch"
     type :unofficial
   end
+
+  deny_network_access!
 
   def install
     system "./configure", "--with-openssl=#{formula_opt_prefix("openssl@4")}", *std_configure_args

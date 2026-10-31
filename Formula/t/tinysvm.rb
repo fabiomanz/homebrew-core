@@ -5,6 +5,7 @@ class Tinysvm < Formula
   mirror "http://chasen.org/~taku/software/TinySVM/src/TinySVM-0.09.tar.gz"
   sha256 "e377f7ede3e022247da31774a4f75f3595ce768bc1afe3de9fc8e962242c7ab8"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   livecheck do
     url :homepage
@@ -42,7 +43,7 @@ class Tinysvm < Formula
 
     args = []
     # Help old config scripts identify arm64 linux
-    args << "--host=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    args << "--host=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
 
     system "./configure", "--mandir=#{man}", "--disable-shared", *args, *std_configure_args
     system "make", "install"

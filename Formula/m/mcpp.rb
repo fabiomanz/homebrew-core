@@ -4,6 +4,7 @@ class Mcpp < Formula
   url "https://downloads.sourceforge.net/project/mcpp/mcpp/V.2.7.2/mcpp-2.7.2.tar.gz"
   sha256 "3b9b4421888519876c4fc68ade324a3bbd81ceeb7092ecdbbc2055099fcb8864"
   license "BSD-2-Clause"
+  compatibility_version 1
 
   livecheck do
     url :stable
@@ -44,7 +45,7 @@ class Mcpp < Formula
 
     args = []
     # Help old config scripts identify arm64 linux
-    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
 
     system "./configure", "--enable-mcpplib", *args, *std_configure_args
     system "make", "install"

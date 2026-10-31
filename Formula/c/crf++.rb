@@ -5,6 +5,7 @@ class Crfxx < Formula
   mirror "https://drive.google.com/uc?id=1lEwSRLAXpPnlPMPv8fx48y13Xy5eHNU9&export=download"
   sha256 "9d1c0a994f25a5025cede5e1d3a687ec98cd4949bfb2aae13f2a873a13259cb2"
   license any_of: ["LGPL-2.1-only", "BSD-3-Clause"]
+  compatibility_version 1
   head "https://github.com/taku910/crfpp.git", branch: "master"
 
   # Archive files from upstream are hosted on Google Drive, so we can't identify
@@ -44,7 +45,7 @@ class Crfxx < Formula
   def install
     args = []
     # Help old config scripts identify arm64 linux
-    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
 
     system "./configure", *args, *std_configure_args
     system "make", "CXXFLAGS=#{ENV.cflags}", "install"

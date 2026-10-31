@@ -1,8 +1,8 @@
 class Grokj2k < Formula
   desc "JPEG 2000 Library"
   homepage "https://github.com/GrokImageCompression/grok"
-  url "https://github.com/GrokImageCompression/grok/releases/download/v20.4.20/source-full.tar.gz"
-  sha256 "2e2053a8c31654eae6938cd517471d308d5ce59905afbc0fde35e72c3d50629b"
+  url "https://github.com/GrokImageCompression/grok/releases/download/v20.4.24/source-full.tar.gz"
+  sha256 "ca0bbddd2080b2baeac81f285f671458eb4f372e86e14274f31d9f36e41b3cc3"
   license "AGPL-3.0-or-later"
   head "https://github.com/GrokImageCompression/grok.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Grokj2k < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c87fc3e9c2b7a99782cc0355b5d5e1cb775fe45495a401a286a2e330b395c789"
-    sha256 cellar: :any, arm64_tahoe:       "d24dfa9092ab6d96716b1d6a229bc4220848347a086827bd25c811e0470b2a1f"
-    sha256 cellar: :any, arm64_sequoia:     "8e5da9501bb109a15fba973a43162e2cfa9347f457816ede27ae11ef9d24f5cb"
-    sha256 cellar: :any, arm64_linux:       "2dbbc3a2dd988c793d2c151c198088b207c63ae9fd60acb1391ff1520d0523e8"
-    sha256 cellar: :any, x86_64_linux:      "3c6be641e9d1a9a6ad6ad64fe05afce03c379763ed850cf271c37235292dc735"
+    sha256 cellar: :any, arm64_golden_gate: "ab982e89d80ff359d87e08eeb7d6c97168e4c28e9abc3d29aad0a214a58b6f3e"
+    sha256 cellar: :any, arm64_tahoe:       "78163612af5422e0c5079a5d94336b578ca905ffcc4ea335ce056cb6646b52d7"
+    sha256 cellar: :any, arm64_sequoia:     "e972e4c65568bc0cbebadf15a0a2d63ec183af0cbabe504b239b17096272006c"
+    sha256 cellar: :any, arm64_linux:       "14c8bf060a9b48babc5683db6bcc21cfb89a836b13336a043925e7392c38baa0"
+    sha256 cellar: :any, x86_64_linux:      "27536249b1d6f975acc1d46574be1c122b48fdbbc4f75927d7ad0e5320c98ef2"
   end
 
   depends_on "cmake" => :build

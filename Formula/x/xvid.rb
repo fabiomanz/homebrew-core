@@ -4,6 +4,7 @@ class Xvid < Formula
   url "https://downloads.xvid.com/downloads/xvidcore-1.3.7.tar.bz2"
   sha256 "aeeaae952d4db395249839a3bd03841d6844843f5a4f84c271ff88f7aa1acff7"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://downloads.xvid.com/downloads/"
@@ -27,6 +28,8 @@ class Xvid < Formula
   on_macos do
     patch :DATA
   end
+
+  deny_network_access!
 
   def install
     cd "build/generic" do

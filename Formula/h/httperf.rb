@@ -3,6 +3,7 @@ class Httperf < Formula
   homepage "https://github.com/httperf/httperf"
   license "GPL-2.0-or-later"
   revision 3
+  compatibility_version 1
 
   stable do
     url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/httperf/httperf-0.9.0.tar.gz"
@@ -51,7 +52,7 @@ class Httperf < Formula
 
     args = []
     # Help old config scripts identify arm64 linux
-    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
 
     system "./configure", *args, *std_configure_args
     system "make", "install"

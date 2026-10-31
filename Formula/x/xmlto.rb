@@ -4,6 +4,7 @@ class Xmlto < Formula
   url "https://codeberg.org/xmlto/xmlto/archive/0.0.29.tar.gz"
   sha256 "ccf0657f71f874d01a28729e7c08ea468ae705e087a4e12d1dcacb6b54a5d25d"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://codeberg.org/xmlto/xmlto.git"
@@ -34,6 +35,8 @@ class Xmlto < Formula
     # does not support longopts in the optstring, so use GNU getopt.
     depends_on "gnu-getopt"
   end
+
+  deny_network_access!
 
   def install
     # GNU getopt is keg-only, so point configure to it

@@ -4,6 +4,7 @@ class Mkcue < Formula
   url "https://deb.debian.org/debian/pool/main/m/mkcue/mkcue_1.orig.tar.gz"
   sha256 "2aaf57da4d0f2e24329d5e952e90ec182d4aa82e4b2e025283e42370f9494867"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   livecheck do
     url :homepage
@@ -31,7 +32,7 @@ class Mkcue < Formula
     ENV.cxx11
     args = []
     # Help old config scripts identify arm64 linux
-    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
 
     system "./configure", *args, *std_configure_args
     bin.mkpath

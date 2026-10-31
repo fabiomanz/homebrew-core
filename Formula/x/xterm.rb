@@ -5,6 +5,7 @@ class Xterm < Formula
   mirror "https://deb.debian.org/debian/pool/main/x/xterm/xterm_412.orig.tar.gz"
   sha256 "b48bc780c1cbc14f6d89269f7e593712af6095876960d650be28b55e5dad65a6"
   license all_of: ["X11", "HPND"]
+  compatibility_version 1
 
   livecheck do
     url "https://invisible-mirror.net/archives/xterm/"
@@ -33,6 +34,8 @@ class Xterm < Formula
   depends_on "libxt"
 
   uses_from_macos "ncurses"
+
+  deny_network_access!
 
   def install
     system "./configure", "--disable-silent-rules", *std_configure_args

@@ -6,6 +6,7 @@ class Plotutils < Formula
   sha256 "4f4222820f97ca08c7ea707e4c53e5a3556af4d8f1ab51e0da6ff1627ff433ab"
   license "GPL-3.0-or-later"
   revision 1
+  compatibility_version 1
 
   bottle do
     rebuild 1
@@ -47,7 +48,7 @@ class Plotutils < Formula
     # Prevent opportunistic linkage to X11
     args << "--without-x" if OS.mac?
     # Help old config scripts identify arm64 linux
-    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
 
     system "./configure", *args, *std_configure_args
     system "make"

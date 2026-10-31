@@ -4,6 +4,7 @@ class Libdsk < Formula
   url "https://www.seasip.info/Unix/LibDsk/libdsk-1.4.2.tar.gz"
   sha256 "71eda9d0e33ab580cea1bb507467877d33d887cea6ec042b8d969004db89901a"
   license "LGPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url :homepage
@@ -38,7 +39,7 @@ class Libdsk < Formula
     args = []
     if OS.linux?
       # Help old config scripts identify arm64 linux
-      args << "--build=aarch64-unknown-linux-gnu" if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      args << "--build=aarch64-unknown-linux-gnu" if Hardware::CPU.arm64?
       # Workaround for undefined reference to `major'. Remove in the next release
       ENV.append "CFLAGS", "-include sys/sysmacros.h"
       odie "Remove sys/sysmacros.h workaround!" if version >= "1.5"

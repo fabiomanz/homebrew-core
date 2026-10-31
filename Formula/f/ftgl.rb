@@ -4,6 +4,7 @@ class Ftgl < Formula
   url "https://downloads.sourceforge.net/project/ftgl/FTGL%20Source/2.1.3~rc5/ftgl-2.1.3-rc5.tar.gz"
   sha256 "5458d62122454869572d39f8aa85745fc05d5518001bcefa63bd6cbb8d26565b"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :stable
@@ -56,7 +57,7 @@ class Ftgl < Formula
 
     args << "--with-gl-inc=#{formula_opt_include("mesa-glu")}" if OS.linux?
     # Help old config scripts identify arm64 linux
-    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
 
     system "./configure", *args, *std_configure_args
 
