@@ -1,8 +1,8 @@
 class Libarchive < Formula
   desc "Multi-format archive and compression library"
   homepage "https://www.libarchive.org"
-  url "https://www.libarchive.org/downloads/libarchive-3.8.10.tar.xz"
-  sha256 "56cad765459d5ee25a3b761f90c47d99379d28297fbfb72d908880d6b875fb96"
+  url "https://www.libarchive.org/downloads/libarchive-3.8.11.tar.xz"
+  sha256 "a3dc0872b1b39da34dc18ef1b944f0f11ffd37425d70ae04be679279f1cf43d2"
   license "BSD-2-Clause"
   compatibility_version 1
 
@@ -13,7 +13,7 @@ class Libarchive < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "ef92eeb9015752a1479d578095666d7b1cafbf978c7a42f432384f43afc3509a"
+    sha256 cellar: :any, tahoe: "8e5636620676ecc5990e72982c268d167abe946b5afd36bd109716306fad0a82"
   end
 
   keg_only :provided_by_macos

@@ -3,9 +3,6 @@ buf	Formula/b/buf.rb	1d347e02e01a5853fb429af8578136d212f36d3b	1.74.0	1.75.0
 dart-sass	Formula/d/dart-sass.rb	1d347e02e01a5853fb429af8578136d212f36d3b	1.105.2	1.107.1
 dart-sdk	Formula/d/dart-sdk.rb	1d347e02e01a5853fb429af8578136d212f36d3b	3.13.5	3.13.7
 dartaotruntime	Formula/d/dartaotruntime.rb	1d347e02e01a5853fb429af8578136d212f36d3b	3.13.5	3.13.7
-imagemagick	Formula/i/imagemagick.rb	1d347e02e01a5853fb429af8578136d212f36d3b	7.1.2-34	7.1.2-35
-libarchive	Formula/lib/libarchive.rb	1d347e02e01a5853fb429af8578136d212f36d3b	3.8.10	3.8.11
 maturin	Formula/m/maturin.rb	1d347e02e01a5853fb429af8578136d212f36d3b	1.15.0_1	1.16.0
 node	Formula/n/node.rb	1d347e02e01a5853fb429af8578136d212f36d3b	26.13.0_1	26.13.0_2
 pipx	Formula/p/pipx.rb	1d347e02e01a5853fb429af8578136d212f36d3b	1.18.4	1.18.11
-simdjson	Formula/s/simdjson.rb	1d347e02e01a5853fb429af8578136d212f36d3b	5.0.7	5.1.1

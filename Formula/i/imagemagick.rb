@@ -1,8 +1,8 @@
 class Imagemagick < Formula
   desc "Tools and libraries to manipulate images in select formats"
   homepage "https://imagemagick.org"
-  url "https://github.com/ImageMagick/ImageMagick/releases/download/7.1.2-34/ImageMagick-7.1.2-34.7z"
-  sha256 "a376053195cbab4618855e1a7d90f85f41b95ec2240a91e9c0fe5815d231960d"
+  url "https://github.com/ImageMagick/ImageMagick/releases/download/7.1.2-35/ImageMagick-7.1.2-35.7z"
+  sha256 "1d95f7d0ed11e91a3ee9e3042a8e248cb88c666dd9256ab14cc871b1f73138fd"
   license "ImageMagick"
   compatibility_version 3
   head "https://github.com/ImageMagick/ImageMagick.git", branch: "main"
@@ -15,7 +15,7 @@ class Imagemagick < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "c1d577992fd91bf63cbce955864272958b23f34f88921ec29f5565d00082a9c5"
+    sha256 tahoe: "b906d9a99ca7dcb09c0cd1466ab029c92552526b856ef816cc7dee706c7ea0aa"
   end
 
   depends_on "pkgconf" => :build
