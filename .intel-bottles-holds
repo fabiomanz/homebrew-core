@@ -4,5 +4,4 @@ dart-sass	Formula/d/dart-sass.rb	1d347e02e01a5853fb429af8578136d212f36d3b	1.105.
 dart-sdk	Formula/d/dart-sdk.rb	1d347e02e01a5853fb429af8578136d212f36d3b	3.13.5	3.13.7
 dartaotruntime	Formula/d/dartaotruntime.rb	1d347e02e01a5853fb429af8578136d212f36d3b	3.13.5	3.13.7
 maturin	Formula/m/maturin.rb	1d347e02e01a5853fb429af8578136d212f36d3b	1.15.0_1	1.16.0
-node	Formula/n/node.rb	1d347e02e01a5853fb429af8578136d212f36d3b	26.13.0_1	26.13.0_2
 pipx	Formula/p/pipx.rb	1d347e02e01a5853fb429af8578136d212f36d3b	1.18.4	1.18.11
