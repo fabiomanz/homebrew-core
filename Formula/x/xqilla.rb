@@ -26,6 +26,8 @@ class Xqilla < Formula
 
   depends_on "xerces-c"
 
+  deny_network_access!
+
   def install
     ENV.cxx11
 
