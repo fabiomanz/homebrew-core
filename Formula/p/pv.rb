@@ -1,8 +1,8 @@
 class Pv < Formula
   desc "Monitor data's progress through a pipe"
   homepage "https://www.ivarch.com/programs/pv.shtml"
-  url "https://www.ivarch.com/programs/sources/pv-1.12.0.tar.gz"
-  sha256 "31fdbdb449c7143cd2968567bef7599e9f031950e6158ee7bb76e40aebf6ffb8"
+  url "https://www.ivarch.com/programs/sources/pv-1.12.7.tar.gz"
+  sha256 "5326ed7ee95ef18039390c0b17891ac28985ac7c7a4235070fab767c1fe37bd8"
   license "Artistic-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Pv < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "2208354f0a1c3689a59611597a954bf8cfb7eca9150aa8670d2e60ad7c093e62"
+    sha256 tahoe: "f31be3d6403e6e910a4114eb6314553e5d68554e032e33c0625f18e51b4b2faa"
   end
 
   uses_from_macos "ncurses"

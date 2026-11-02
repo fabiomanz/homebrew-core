@@ -1,9 +1,7 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
-bear	Formula/b/bear.rb	53d17befa900a90e9bfd5c0eb7e96c8314160876	4.2.3	4.2.4
 buf	Formula/b/buf.rb	53d17befa900a90e9bfd5c0eb7e96c8314160876	1.74.0	1.75.0
 dart-sass	Formula/d/dart-sass.rb	53d17befa900a90e9bfd5c0eb7e96c8314160876	1.105.2	1.107.1
 dart-sdk	Formula/d/dart-sdk.rb	53d17befa900a90e9bfd5c0eb7e96c8314160876	3.13.5	3.13.7
 dartaotruntime	Formula/d/dartaotruntime.rb	53d17befa900a90e9bfd5c0eb7e96c8314160876	3.13.5	3.13.7
 maturin	Formula/m/maturin.rb	53d17befa900a90e9bfd5c0eb7e96c8314160876	1.15.0_1	1.16.0
 pipx	Formula/p/pipx.rb	53d17befa900a90e9bfd5c0eb7e96c8314160876	1.18.4	1.18.11
-pv	Formula/p/pv.rb	53d17befa900a90e9bfd5c0eb7e96c8314160876	1.12.0	1.12.7
