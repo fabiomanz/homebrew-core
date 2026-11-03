@@ -1,8 +1,8 @@
 class Expat < Formula
   desc "XML 1.0 parser"
   homepage "https://libexpat.github.io/"
-  url "https://github.com/libexpat/libexpat/releases/download/R_2_9_0/expat-2.9.0.tar.xz"
-  sha256 "1e6371862cc31999b368c3b89b49994f0677e1bab5f1b2b85ae3741f5d803051"
+  url "https://github.com/libexpat/libexpat/releases/download/R_2_10_0/expat-2.10.0.tar.xz"
+  sha256 "c624ba2998fc65df1163a49641ff3f9ab73138b11641d92c86bee0fb01b1bc7f"
   license "MIT"
   compatibility_version 1
 
@@ -16,7 +16,7 @@ class Expat < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "a13f89acb0f32a6da005bf8879cdb0add4882145d3b2a33782850ac9b024ee9c"
+    sha256 cellar: :any, tahoe: "1f9d3301b7d15da001b25a5b9665fec93d93b41ff34cf01d2e1e8053ad5befaf"
   end
 
   head do

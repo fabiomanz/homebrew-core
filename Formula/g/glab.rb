@@ -2,16 +2,17 @@ class Glab < Formula
   desc "Open-source GitLab command-line tool"
   homepage "https://gitlab.com/gitlab-org/cli"
   url "https://gitlab.com/gitlab-org/cli.git",
-    tag:      "v1.126.0",
-    revision: "4dd0d32d18361db6c1c668eb4ac691c0d6edf255"
+    tag:      "v1.127.0",
+    revision: "2e352a17e7e00bef420b0f38e0ce9ab4e1a38e5d"
   license "MIT"
+  compatibility_version 1
   head "https://gitlab.com/gitlab-org/cli.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, tahoe: "9e87207a6bd76c71bcc74f5014fc8c715cdccef8ef7514d9131e14590b986b3e"
+    sha256 cellar: :any_skip_relocation, tahoe: "3fea224b31dacc723a6fff4a14f62181bc40e7af806281ab4d0efe5098652a66"
   end
 
   depends_on "go" => :build
