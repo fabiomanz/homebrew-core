@@ -7,8 +7,6 @@ buf	Formula/b/buf.rb	c10e58e7d0a4d77825080fdc1c35985d3e4cfadc	1.74.0	1.75.0
 dart-sass	Formula/d/dart-sass.rb	c10e58e7d0a4d77825080fdc1c35985d3e4cfadc	1.105.2	1.107.1
 dart-sdk	Formula/d/dart-sdk.rb	c10e58e7d0a4d77825080fdc1c35985d3e4cfadc	3.13.5	3.13.7
 dartaotruntime	Formula/d/dartaotruntime.rb	c10e58e7d0a4d77825080fdc1c35985d3e4cfadc	3.13.5	3.13.7
-libnghttp2	Formula/lib/libnghttp2.rb	c10e58e7d0a4d77825080fdc1c35985d3e4cfadc	1.70.0	1.71.0
-libnghttp3	Formula/lib/libnghttp3.rb	c10e58e7d0a4d77825080fdc1c35985d3e4cfadc	1.18.0	1.19.0
 lld	Formula/l/lld.rb	c10e58e7d0a4d77825080fdc1c35985d3e4cfadc	23.1.4	23.1.5
 maturin	Formula/m/maturin.rb	c10e58e7d0a4d77825080fdc1c35985d3e4cfadc	1.15.0_1	1.16.0
 pipx	Formula/p/pipx.rb	c10e58e7d0a4d77825080fdc1c35985d3e4cfadc	1.18.4	1.18.12
