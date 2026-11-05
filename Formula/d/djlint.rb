@@ -3,17 +3,17 @@ class Djlint < Formula
 
   desc "Lint & Format HTML Templates"
   homepage "https://djlint.com"
-  url "https://files.pythonhosted.org/packages/aa/6e/da9cd9a368c3cd065d3c4e6269e3e08e632082c92ac0820a17cae4cd8b61/djlint-1.49.4.tar.gz"
-  sha256 "871c45056b90acf9097608f2b58d6f1ba8d0a8b126d76d4ad289613cab0d33c3"
+  url "https://files.pythonhosted.org/packages/d9/7b/a464825c09d0453c292a0e36de9dbe32c39efdf941ca4186abd65b6b543c/djlint-1.49.9.tar.gz"
+  sha256 "358f4f6afa0431b7526f18764ea38f470becbbfcced825e90bcb406e48592afe"
   license "GPL-3.0-or-later"
   head "https://github.com/djlint/djLint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9a19c48a85fafe0e904de0d9b467db7e626da66184e9e805fdf3540207493ef9"
-    sha256 cellar: :any, arm64_tahoe:       "2f3bba2364bc8c604451a22bbcc76bb3b7fa16c5243d2d854e588f8efb11585d"
-    sha256 cellar: :any, arm64_sequoia:     "5b43428cfa5f5455bef22ee5cea4e0a3c75e8ac77f6c4bedcd26a274d09f7bea"
-    sha256 cellar: :any, arm64_linux:       "e98905148ad88d4a8e7c0eb139ff05f6467e3efa03bbc4f8ad0fb2f0d2f08d52"
-    sha256 cellar: :any, x86_64_linux:      "934e6d46e029be761cab0850bec8c8277a3d2c621417373aa586a24a361c2c86"
+    sha256 cellar: :any, arm64_golden_gate: "6aca3359c6a0b1a1e023b6e211b9c5032bd58a70bcc8c4413a3aa1536bc33a94"
+    sha256 cellar: :any, arm64_tahoe:       "d9615bd4844eba9c69cb44d6fad9f5a091b56cb1b4264480a990d9d841d09784"
+    sha256 cellar: :any, arm64_sequoia:     "4fbf4fb4d4c4a304d161aa30f2efd448b0ad9cdd359c4d7dec835b1f16abb55f"
+    sha256 cellar: :any, arm64_linux:       "608a64bb0a4b956eb8cbe3ec1ddf35d7842547343b50463307880c6c3dece4ff"
+    sha256 cellar: :any, x86_64_linux:      "bf57128a13f9a4346591d9a6d0b5cf1356900cb32c065ae1e2a66005e17dffb6"
   end
 
   depends_on "libyaml"
