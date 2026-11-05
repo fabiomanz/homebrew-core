@@ -6,5 +6,4 @@ dart-sdk	Formula/d/dart-sdk.rb	fc98fa29d18a8f63a46797fe756d2742b5dd665e	3.13.5	3
 dartaotruntime	Formula/d/dartaotruntime.rb	fc98fa29d18a8f63a46797fe756d2742b5dd665e	3.13.5	3.13.7
 lld	Formula/l/lld.rb	fc98fa29d18a8f63a46797fe756d2742b5dd665e	23.1.4	23.1.5
 maturin	Formula/m/maturin.rb	fc98fa29d18a8f63a46797fe756d2742b5dd665e	1.15.0_1	1.16.0
-openexr	Formula/o/openexr.rb	fc98fa29d18a8f63a46797fe756d2742b5dd665e	3.5.3	3.5.3_1
 pipx	Formula/p/pipx.rb	fc98fa29d18a8f63a46797fe756d2742b5dd665e	1.18.4	1.18.13

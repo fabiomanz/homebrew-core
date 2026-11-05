@@ -4,11 +4,12 @@ class Openexr < Formula
   url "https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.5.3.tar.gz"
   sha256 "ff1de95f4031c1c57c633e647dc97c15282d3aa3bc7fb90745f00f74de4a054f"
   license "BSD-3-Clause"
+  revision 1
   compatibility_version 2
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "49771cbf889f793fdb8c78d0eee99d93d5372f36b5367fc3a614c833555083c5"
+    sha256 cellar: :any, tahoe: "f03cdf9210d839f74b3e4c4a127776bf69fd92884314dc95650a19015c6da0ba"
   end
 
   depends_on "cmake" => :build
