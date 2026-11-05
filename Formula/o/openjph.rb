@@ -1,21 +1,34 @@
 class Openjph < Formula
   desc "Open-source implementation of JPEG2000 Part-15 (or JPH or HTJ2K)"
   homepage "https://github.com/aous72/OpenJPH"
-  url "https://github.com/aous72/OpenJPH/archive/refs/tags/0.32.0.tar.gz"
-  sha256 "5cb1ebe18e5ee1322d23ff2130b37562d447d1ad5586c3d16cf84be3ae30f719"
+  url "https://github.com/aous72/OpenJPH/archive/refs/tags/0.33.0.tar.gz"
+  sha256 "3437f296ff8531b35558650b0ed7fde45cad39394329eef4064a3d4900cf101f"
   license "BSD-2-Clause"
-  compatibility_version 7
+  compatibility_version 8
   head "https://github.com/aous72/OpenJPH.git", branch: "master"
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "3821d336a0e7fe6dff96777add3dafcb17bee45937d19a7de6d6c006de51476e"
+    sha256 cellar: :any, tahoe: "7ef7f8736b5874c7ff8a8c99c5caddaf820aa50f134ef609b188402a03f60394"
   end
 
   depends_on "cmake" => :build
   depends_on "libtiff"
 
-  allow_network_access! :test
+  resource "homebrew-test.ppm", :test do
+    url "https://raw.githubusercontent.com/aous72/jp2k_test_codestreams/ca2d370/openjph/references/Malamute.ppm"
+    sha256 "e4e36966d68a473a7f5f5719d9e41c8061f2d817f70a7de1c78d7e510a6391ff"
+  end
+
+  # Find Threads in the installed CMake config as targets now link it publicly
+  patch do
+    url "https://github.com/daeho-ro/OpenJPH/commit/3dfa201688b96f3b5dab3057bce89975ba7f2ad5.patch?full_index=1"
+    sha256 "7cfd6ff20a8e86fa17a60132d3c1cacc7bd2c97d6b229cf26d4482488a1374c7"
+    type :unofficial
+    resolves "https://github.com/aous72/OpenJPH/pull/420"
+  end
+
+  deny_network_access!
 
   def install
     ENV["DYLD_LIBRARY_PATH"] = lib.to_s
@@ -30,10 +43,6 @@ class Openjph < Formula
   end
 
   test do
-    resource "homebrew-test.ppm" do
-      url "https://raw.githubusercontent.com/aous72/jp2k_test_codestreams/ca2d370/openjph/references/Malamute.ppm"
-      sha256 "e4e36966d68a473a7f5f5719d9e41c8061f2d817f70a7de1c78d7e510a6391ff"
-    end
     resource("homebrew-test.ppm").stage testpath
 
     system bin/"ojph_compress", "-i", "Malamute.ppm", "-o", "homebrew.j2c"

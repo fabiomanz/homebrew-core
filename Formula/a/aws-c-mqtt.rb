@@ -4,6 +4,7 @@ class AwsCMqtt < Formula
   url "https://github.com/awslabs/aws-c-mqtt/archive/refs/tags/v1.1.2.tar.gz"
   sha256 "7ef8f2a031992cc42564bba4e3f937fec925247051da6e0c730aa964639d284f"
   license "Apache-2.0"
+  revision 1
   compatibility_version 4
 
   livecheck do
@@ -13,7 +14,7 @@ class AwsCMqtt < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "49d814ffff94fdc3abe857b686cdb5f235d625521e591b2087e5bb821894f86f"
+    sha256 cellar: :any, tahoe: "d00af3bf67044c8defc52eddfc7fbdb6d5e17c37ccc114b44eba0f68f0c65b0e"
   end
 
   depends_on "cmake" => :build
