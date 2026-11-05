@@ -12,12 +12,9 @@ dart-sdk	Formula/d/dart-sdk.rb	fc98fa29d18a8f63a46797fe756d2742b5dd665e	3.13.5	3
 dartaotruntime	Formula/d/dartaotruntime.rb	fc98fa29d18a8f63a46797fe756d2742b5dd665e	3.13.5	3.13.7
 ggml	Formula/g/ggml.rb	fc98fa29d18a8f63a46797fe756d2742b5dd665e	0.28.0	0.29.0
 harfbuzz	Formula/h/harfbuzz.rb	fc98fa29d18a8f63a46797fe756d2742b5dd665e	15.0.0_1	15.1.0
-libngtcp2	Formula/lib/libngtcp2.rb	fc98fa29d18a8f63a46797fe756d2742b5dd665e	1.25.0_1	1.26.0
 llama.cpp	Formula/l/llama.cpp.rb	fc98fa29d18a8f63a46797fe756d2742b5dd665e	0.8.0	0.9.0
 lld	Formula/l/lld.rb	fc98fa29d18a8f63a46797fe756d2742b5dd665e	23.1.4	23.1.5
-lz4	Formula/l/lz4.rb	fc98fa29d18a8f63a46797fe756d2742b5dd665e	1.10.0	1.11.0
 maturin	Formula/m/maturin.rb	fc98fa29d18a8f63a46797fe756d2742b5dd665e	1.15.0_1	1.16.0
-nss	Formula/n/nss.rb	fc98fa29d18a8f63a46797fe756d2742b5dd665e	3.132	3.133
 openexr	Formula/o/openexr.rb	fc98fa29d18a8f63a46797fe756d2742b5dd665e	3.5.3	3.5.3_1
 openjph	Formula/o/openjph.rb	fc98fa29d18a8f63a46797fe756d2742b5dd665e	0.32.0	0.33.0
 pipx	Formula/p/pipx.rb	fc98fa29d18a8f63a46797fe756d2742b5dd665e	1.18.4	1.18.13

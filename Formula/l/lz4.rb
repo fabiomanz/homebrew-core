@@ -1,11 +1,12 @@
 class Lz4 < Formula
   desc "Extremely Fast Compression algorithm"
   homepage "https://lz4.github.io/lz4/"
-  url "https://github.com/lz4/lz4/archive/refs/tags/v1.10.0.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/lz4-1.10.0.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/legacy/lz4-1.10.0.tar.gz"
-  sha256 "537512904744b35e232912055ccf8ec66d768639ff3abe5788d90d792ec5f48b"
+  url "https://github.com/lz4/lz4/archive/refs/tags/v1.11.0.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/lz4-1.11.0.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/legacy/lz4-1.11.0.tar.gz"
+  sha256 "247e5fa64da5f7b75ee3dd3bed484076396c9ebe8254d9ccf693eb62800c5e26"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://github.com/lz4/lz4.git", branch: "dev"
 
   livecheck do
@@ -15,8 +16,10 @@ class Lz4 < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "62eef88749aa17e5722eecc527fadab7bcc525375a5733f3da7507cabfd19b24"
+    sha256 cellar: :any, tahoe: "148579158b70e1bd8601d8e9d7a23904ed48132e7d8660ab930d8c7c3824a912"
   end
+
+  depends_on "cmake" => :build
 
   deny_network_access!
 
@@ -24,6 +27,18 @@ class Lz4 < Formula
     system "make", "install", "PREFIX=#{prefix}"
     # Prevent dependents from hardcoding Cellar paths.
     inreplace lib/"pkgconfig/liblz4.pc", prefix, opt_prefix
+
+    # We use CMake for package configuration files. These are currently needed to build `tiledb`.
+    # The Makefile is used for everything else as official build system and installs multi-threaded CLI.
+    ENV["DESTDIR"] = buildpath
+    system "cmake", "-S", "build/cmake", "-B", "build",
+                    "-DBUILD_SHARED_LIBS=ON",
+                    "-DBUILD_STATIC_LIBS=ON", # for LZ4::lz4_static target
+                    "-DLZ4_BUILD_CLI=OFF",
+                    *std_cmake_args
+    system "cmake", "--build", "build" # needed to run `--install` which rewrites build path in .cmake file
+    system "cmake", "--install", "build"
+    lib.install File.join(buildpath, lib, "cmake")
   end
 
   test do
@@ -32,5 +47,8 @@ class Lz4 < Formula
     refute_empty compressed
     decompressed = pipe_output("#{bin}/lz4 -d", compressed)
     assert_equal decompressed, input
+
+    # Make sure lz4 executable is built multi-threaded
+    assert_match "multithread", shell_output("#{bin}/lz4 -V")
   end
 end
