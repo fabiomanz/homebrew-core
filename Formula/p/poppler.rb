@@ -1,10 +1,10 @@
 class Poppler < Formula
   desc "PDF rendering library (based on the xpdf-3.0 code base)"
   homepage "https://poppler.freedesktop.org/"
-  url "https://poppler.freedesktop.org/poppler-26.10.0.tar.xz"
-  sha256 "6792cb7c69205007ad87d2e936cecc5b3a31fac29ab54ffc3175fdb6b2a6ce35"
+  url "https://poppler.freedesktop.org/poppler-26.11.0.tar.xz"
+  sha256 "41c32680160addf5a8dd7a830e4869c01e9f6bee1abb91e44fabd1ba9d7828fb"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"] # see README-XPDF
-  compatibility_version 8
+  compatibility_version 9
   head "https://gitlab.freedesktop.org/poppler/poppler.git", branch: "master"
 
   livecheck do
@@ -14,7 +14,7 @@ class Poppler < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "a8be9fc6fd78064efca9cb16ed5d46ccd4ffc6beeb0f5974126b7d0b0b7ed8f2"
+    sha256 tahoe: "06c8cb532a09210849cd659d4e18346943f9f0b1c066fc3600e769c25aa82697"
   end
 
   depends_on "cmake" => :build
