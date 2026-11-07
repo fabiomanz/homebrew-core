@@ -1,9 +1,9 @@
 class Dartaotruntime < Formula
   desc "Command-line tool for running AOT-compiled snapshots of Dart code"
   homepage "https://dart.dev/tools/dartaotruntime"
-  # NOTE: Using a placeholder file because the build source is fetched by gclient
-  url "https://raw.githubusercontent.com/dart-lang/sdk/refs/tags/3.13.5/README.md"
-  sha256 "ff4301ec8e5c1259c5778c4abc947e303308cd31af30acd55575f5ca7ed6f405"
+  url "https://github.com/dart-lang/sdk.git",
+      tag:      "3.13.7",
+      revision: "416e33b0ffaef062a60ec966bb8c82ed2b83f128"
   license "BSD-3-Clause"
   compatibility_version 3
 
@@ -13,13 +13,12 @@ class Dartaotruntime < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, tahoe: "60c9e0bf2e9a7bd8f2e2656395172a6588cd68bfc7178131a68802c8bbac8f75"
+    sha256 cellar: :any_skip_relocation, tahoe: "f8d0210fa05f07edf16c8e991b86874533e14ae9dfcec1c76591e4e699f4d19b"
   end
 
   depends_on "ninja" => :build
   depends_on "dart-sdk" => :test
 
-  uses_from_macos "curl" => :build
   uses_from_macos "python" => :build
   uses_from_macos "xz" => :build
 
@@ -30,8 +29,8 @@ class Dartaotruntime < Formula
   # always pull the latest commit from https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/refs/heads/main
   resource "depot-tools" do
     url "https://chromium.googlesource.com/chromium/tools/depot_tools.git",
-        revision: "b2042c50e4d8a0ecc69ebc60983024a5b477c4ca"
-    version "b2042c50e4d8a0ecc69ebc60983024a5b477c4ca"
+        revision: "b1c2e86792a7f2b6576c181b7327ddd53b1a42a8"
+    version "b1c2e86792a7f2b6576c181b7327ddd53b1a42a8"
 
     livecheck do
       url "https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/refs/heads/main?format=JSON"
@@ -39,8 +38,13 @@ class Dartaotruntime < Formula
     end
   end
 
-  def install
-    resource("depot-tools").stage(buildpath/"depot-tools")
+  allow_network_access! :test
+
+  def fetch
+    (buildpath/"sdk-src").install buildpath.children
+    (buildpath/"depot-tools").install resource("depot-tools")
+    mv "sdk-src", "sdk"
+
     ENV["DEPOT_TOOLS_UPDATE"] = "0"
     ENV.append_path "PATH", buildpath/"depot-tools"
 
@@ -48,9 +52,11 @@ class Dartaotruntime < Formula
     # TODO: Remove when upstream rolls clang past that commit, see https://github.com/dart-lang/sdk/issues/64264
     system "gclient", "config", "--name", "sdk",
            "--custom-var", 'clang_version="git_revision:07d67299a15ce03b053736e2d31a668ee0576987"',
-           "https://dart.googlesource.com/sdk.git@#{version}"
+           "file://#{buildpath}/sdk"
     system "gclient", "sync", "--no-history"
+  end
 
+  def install
     cd "sdk" do
       arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
       out = OS.mac? ? "xcodebuild" : "out"

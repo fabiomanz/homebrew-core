@@ -1,14 +1,19 @@
 class DartSdk < Formula
   desc "Dart Language SDK, including the VM, dart2js, core libraries, and more"
   homepage "https://dart.dev"
-  url "https://github.com/dart-lang/sdk/archive/refs/tags/3.13.5.tar.gz"
-  sha256 "2da077bf89f3a14ae5a741728549371d87013265df49b8cace6475bd9ffc59e3"
+  url "https://github.com/dart-lang/sdk/archive/refs/tags/3.13.7.tar.gz"
+  sha256 "cd2a1450f33cfeb35f180d33b836ab92a663d1335ee7f953ae3ebcb20308c99d"
   license "BSD-3-Clause"
   compatibility_version 3
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "d70c32659002fcc0411e2de0d75e7083599f2bea7133b46062760d2595164283"
+    sha256 cellar: :any, tahoe: "dc796002af271fb6fa5a2cf1afaa962f4d6f9ac4454c2f94d6b8054549419064"
   end
 
   depends_on "ninja" => :build
@@ -21,8 +26,8 @@ class DartSdk < Formula
   # always pull the latest commit from https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/refs/heads/main
   resource "depot-tools" do
     url "https://chromium.googlesource.com/chromium/tools/depot_tools.git",
-        revision: "b2042c50e4d8a0ecc69ebc60983024a5b477c4ca"
-    version "b2042c50e4d8a0ecc69ebc60983024a5b477c4ca"
+        revision: "b1c2e86792a7f2b6576c181b7327ddd53b1a42a8"
+    version "b1c2e86792a7f2b6576c181b7327ddd53b1a42a8"
 
     livecheck do
       url "https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/refs/heads/main?format=JSON"

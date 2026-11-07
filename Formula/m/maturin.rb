@@ -1,15 +1,15 @@
 class Maturin < Formula
   desc "Build and publish Rust crates as Python packages"
   homepage "https://github.com/PyO3/maturin"
-  url "https://github.com/PyO3/maturin/archive/refs/tags/v1.15.0.tar.gz"
-  sha256 "623111bddb2d7f6f4ba2e64038f91f8b673bd6f95dd6fcbaf334b7af7789b48d"
+  url "https://github.com/PyO3/maturin/archive/refs/tags/v1.16.0.tar.gz"
+  sha256 "b22d15b7dc4f27af50b831af0866bcd901bcce2433182c5b2f252dd420531c0d"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 1
+  compatibility_version 1
   head "https://github.com/PyO3/maturin.git", branch: "main"
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "f1210cbc73f4d959d1f80c3c2a119ad5de882bef310bdbd76b278d5f7a7a3b94"
+    sha256 cellar: :any, tahoe: "d033766fc77558295328f2f6ac3545689e99ffdbbcb1801c33cc396af0f62b92"
   end
 
   depends_on "pkgconf" => :build

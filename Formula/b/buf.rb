@@ -1,9 +1,10 @@
 class Buf < Formula
   desc "New way of working with Protocol Buffers"
   homepage "https://buf.build"
-  url "https://github.com/bufbuild/buf/archive/refs/tags/v1.74.0.tar.gz"
-  sha256 "09f5e4f103ff418bbce2f98ea342852b590f45357c8f3492e827a5976cb9075c"
+  url "https://github.com/bufbuild/buf/archive/refs/tags/v1.75.0.tar.gz"
+  sha256 "e1b688283938b19ff072789d37f371e9bdfbc866ebb719b20c1f1bdc4a9ca8ff"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/bufbuild/buf.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
@@ -16,7 +17,7 @@ class Buf < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, tahoe: "cd03a4a5c4e68dfe98d66f050ba7bef5ff0b953d2741480b967b9efa62de44b9"
+    sha256 cellar: :any_skip_relocation, tahoe: "38caaf34f7ab83f7afc98a4df2cec0da9eacefd707d7c29dbe10adb000dc0afc"
   end
 
   depends_on "go" => :build
