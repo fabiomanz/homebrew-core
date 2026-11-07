@@ -17,7 +17,7 @@ class AnsibleLint < Formula
   depends_on "ansible" => :test
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.15"
+  depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages exclude_packages: ["cryptography", "rpds-py"]
@@ -30,14 +30,6 @@ class AnsibleLint < Formula
   resource "ansible-core" do
     url "https://files.pythonhosted.org/packages/0b/27/d02c3f75e9f1468b5efbe49667574f68331b17e8a9f2bb99e1d18be70052/ansible_core-2.21.5.tar.gz"
     sha256 "65bb3148c58ebb843cd5074004c805f404f152114d98476dd823324616c9c6cb"
-
-    # Python 3.15 startup fix, upstream PR ref, https://github.com/ansible/ansible/pull/86976
-    patch do
-      url "https://github.com/ansible/ansible/commit/ee5c59156c61bc1f452a61846138e0d40427aeab.patch?full_index=1"
-      sha256 "d3d25e65af572af49e2c75d4096eba6ca3b97ce2b75f06977e2b6d189e2451c8"
-      type :backport
-      resolves "https://github.com/ansible/ansible/issues/87677"
-    end
   end
 
   resource "attrs" do
@@ -149,8 +141,6 @@ class AnsibleLint < Formula
     url "https://files.pythonhosted.org/packages/28/a0/8fc2d68e132cf918f18273fdc8a1b8432b60d75ac12fdae4b0ef5c9d2e8d/yamllint-1.38.0.tar.gz"
     sha256 "09e5f29531daab93366bb061e76019d5e91691ef0a40328f04c927387d1d364d"
   end
-
-  allow_network_access! :build
 
   def install
     virtualenv_install_with_resources

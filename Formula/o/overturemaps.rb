@@ -3,19 +3,17 @@ class Overturemaps < Formula
 
   desc "Python tools for interacting with Overture Maps data"
   homepage "https://overturemaps.org"
-  url "https://files.pythonhosted.org/packages/da/6b/d02503bba3a90fc333d6188b892554bcfccb30b6e3728086fa0fa4c2857f/overturemaps-1.0.2.tar.gz"
-  sha256 "e92355dcc2961da0ce95ab9837a59f2d15bcc357be51d0c415ceab3d812fc97d"
+  url "https://files.pythonhosted.org/packages/30/56/1679b57f2564f7ff1c3da582cd14a76649293f81455b85d22263229af850/overturemaps-2.0.0.tar.gz"
+  sha256 "6f844720460697594acda4d87876a5f4da17f060bdd1ab1bbce967132a532845"
   license "MIT"
-  revision 1
   head "https://github.com/OvertureMaps/overturemaps-py.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "1197410527a2b02304f7b78e47741c22dc1297864c2650c3cbb980529c27c2cd"
-    sha256 cellar: :any, arm64_tahoe:       "b07dfd9ae243c02b7b35cc0174174613fdb581d35c0c94fc235eaeae53a6d786"
-    sha256 cellar: :any, arm64_sequoia:     "a046a37e5fee566701e977818989c0c22631ecf10519f85ae0e74db77891bf51"
-    sha256 cellar: :any, arm64_linux:       "382adcc11cbe87560c52dfdada6288fabaf06ad452db23dc68e48c7b5bcd0fa2"
-    sha256 cellar: :any, x86_64_linux:      "aba42503aa0ffcfe827f90f16c118a3b5ac3232233e8260301c25ae8562b8fa0"
+    sha256 cellar: :any, arm64_golden_gate: "b7d29fef72f470c536f971e6153f56a3884a6f62ada100f73b12e5409cc8afb9"
+    sha256 cellar: :any, arm64_tahoe:       "6f7faa12a435d4298841a15ab4c7ced163f71478f9ae8f27e66e2980bca2bfec"
+    sha256 cellar: :any, arm64_sequoia:     "722bf853b1053b95493a4e338db67e4b74b111aa611fb7be5b0088119009e8dd"
+    sha256 cellar: :any, arm64_linux:       "a5b2ca5a7fc4cfd87ae5c15cf3972ef3d592a326c881476e4b8413fe0fc21beb"
+    sha256 cellar: :any, x86_64_linux:      "40940bfdf9b1fa1ac9a9fdbed9f1082982621eb6f3195bd7ee0e67d3f6e85d4a"
   end
 
   depends_on "cmake" => :build  # for pyarrow
@@ -48,8 +46,8 @@ class Overturemaps < Formula
   end
 
   resource "pyarrow" do
-    url "https://files.pythonhosted.org/packages/ec/34/17c34cb38e5d940e38f0f0d9fdfa0e8a506676409ea9b85aff7e3079f831/pyarrow-26.0.0.tar.gz"
-    sha256 "0cccd36e00ea3afeb52ded61f2721ce71f604853d70c45365c58324eb773d6ae"
+    url "https://files.pythonhosted.org/packages/bc/5e/9cb2a56d5e293aab4e2fbecc5b0620d93227d66b8d5a63c554c31e1f80fe/pyarrow-26.0.1.tar.gz"
+    sha256 "93affcbd8a343e98dc19e9ec8fe17271ebf8fe98102d8b7454175074409f8b72"
   end
 
   resource "pyfiglet" do

@@ -1,9 +1,14 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
-apr-util	Formula/a/apr-util.rb	46844d191afd33fdd48cb01b9a3dff2d05a7e77e	1.6.5_1	1.6.6
-buf	Formula/b/buf.rb	46844d191afd33fdd48cb01b9a3dff2d05a7e77e	1.74.0	1.75.0
-dart-sass	Formula/d/dart-sass.rb	46844d191afd33fdd48cb01b9a3dff2d05a7e77e	1.105.2	1.108.0
-dart-sdk	Formula/d/dart-sdk.rb	46844d191afd33fdd48cb01b9a3dff2d05a7e77e	3.13.5	3.13.7
-dartaotruntime	Formula/d/dartaotruntime.rb	46844d191afd33fdd48cb01b9a3dff2d05a7e77e	3.13.5	3.13.7
-lld	Formula/l/lld.rb	46844d191afd33fdd48cb01b9a3dff2d05a7e77e	23.1.4	23.1.5
-maturin	Formula/m/maturin.rb	46844d191afd33fdd48cb01b9a3dff2d05a7e77e	1.15.0_1	1.16.0
-pipx	Formula/p/pipx.rb	46844d191afd33fdd48cb01b9a3dff2d05a7e77e	1.18.4	1.18.13
+ansible-lint	Formula/a/ansible-lint.rb	75208c5a60e788433f807ad9158abd075b9dc281	26.10.1	26.10.1_1
+apr-util	Formula/a/apr-util.rb	75208c5a60e788433f807ad9158abd075b9dc281	1.6.5_1	1.6.6
+awscli	Formula/a/awscli.rb	75208c5a60e788433f807ad9158abd075b9dc281	2.39.5	2.39.6
+buf	Formula/b/buf.rb	75208c5a60e788433f807ad9158abd075b9dc281	1.74.0	1.75.0
+dart-sass	Formula/d/dart-sass.rb	75208c5a60e788433f807ad9158abd075b9dc281	1.105.2	1.108.1
+dart-sdk	Formula/d/dart-sdk.rb	75208c5a60e788433f807ad9158abd075b9dc281	3.13.5	3.13.7
+dartaotruntime	Formula/d/dartaotruntime.rb	75208c5a60e788433f807ad9158abd075b9dc281	3.13.5	3.13.7
+gitlab-runner	Formula/g/gitlab-runner.rb	75208c5a60e788433f807ad9158abd075b9dc281	19.5.2	19.5.3
+gstreamer	Formula/g/gstreamer.rb	75208c5a60e788433f807ad9158abd075b9dc281	1.28.8_1	1.28.9
+lld	Formula/l/lld.rb	75208c5a60e788433f807ad9158abd075b9dc281	23.1.4	23.1.5
+maturin	Formula/m/maturin.rb	75208c5a60e788433f807ad9158abd075b9dc281	1.15.0_1	1.16.0
+pipx	Formula/p/pipx.rb	75208c5a60e788433f807ad9158abd075b9dc281	1.18.4	1.18.14
+rclone	Formula/r/rclone.rb	75208c5a60e788433f807ad9158abd075b9dc281	1.75.2	1.76.0

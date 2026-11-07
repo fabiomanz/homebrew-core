@@ -19,6 +19,8 @@ class Libunibreak < Formula
     sha256 cellar: :any, tahoe: "843a44844ed63d5402283597fea73052abf3c4c78912d02b59e6efcc319d4b8b"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
