@@ -1,16 +1,18 @@
 class Libkrun < Formula
   desc "Dynamic library providing KVM-based process isolation capabilities"
   homepage "https://github.com/libkrun/libkrun"
-  url "https://github.com/containers/libkrun/archive/refs/tags/v1.19.7.tar.gz"
-  sha256 "d4541fcd959ad43fb073bff61bc91b645ea6413a10b8319e9b61664a6102d20c"
+  url "https://github.com/containers/libkrun/archive/refs/tags/v1.19.8.tar.gz"
+  sha256 "8896c71117462f868f41d26efd157c3270091814eaab3af27ca70c6857a85eb2"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "eb53700b590cb7621e19b4efe4e3d53db78daf118fa37a7914d90efa77e56c62"
-    sha256 cellar: :any, arm64_tahoe:       "27fd3b22bfab27d967bdce9a9742a3ae449807be0cb7e40dcc9978c37dbc4980"
-    sha256 cellar: :any, arm64_sequoia:     "558b669a8cb934fff9d11daeaf5343b398fcba93cdaa299a49b9b3d55b6dacba"
-    sha256 cellar: :any, arm64_linux:       "2f5512503a635463169c4d525732db2251040cc1be90463119b7160899ed31fa"
-    sha256 cellar: :any, x86_64_linux:      "50437accbd31c909bcf37cf67a067390e3801b75414d37f366f49f105cada717"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "2fb39b9ca45eaeba82a0ec11af8575f3577e0ceaf1e8d2c289fdab64bb0a4364"
+    sha256 cellar: :any, arm64_tahoe:       "5b95ca7f72b490afda382247646d82c5906e3c764d1c8841df672ef517efa955"
+    sha256 cellar: :any, arm64_sequoia:     "fe35cf544d2e0cf454fa3bb5edffac7e0994f853271db3b8f5241cf798a15c48"
+    sha256 cellar: :any, arm64_linux:       "0f517b8fec8a313ae939366ce4881bf9f4bbcbba4dad77f7ad91aa3ad5340972"
+    sha256 cellar: :any, x86_64_linux:      "f2f20987a94e20e215c07d42acd4c3b7ff27e7b84627e2588ebe4dbe928129fd"
   end
 
   depends_on "rust" => :build
