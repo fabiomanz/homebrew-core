@@ -1,15 +1,15 @@
 class Ccache < Formula
   desc "Object-file caching compiler wrapper"
   homepage "https://ccache.dev/"
-  url "https://github.com/ccache/ccache/releases/download/v4.14.2/ccache-4.14.2.tar.xz"
-  sha256 "0feb2707d9cb48885abb950e5d629e85f57fa79a2439cbbdfa681d6c3dc5f0dc"
+  url "https://github.com/ccache/ccache/releases/download/v4.14.3/ccache-4.14.3.tar.xz"
+  sha256 "e1999132cf7dbce48de7d946b767f3e26ea09adcb5daa4a7103a8fa09ee0637d"
   license "GPL-3.0-or-later"
   compatibility_version 1
   head "https://github.com/ccache/ccache.git", branch: "master"
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "e0ecd6e917035e1fb8f94eed5f223fd6bbb3d0ae24c6d6c8c1200ae0561db0a5"
+    sha256 tahoe: "cd1b9c2780cfd174921b2f42836126cd2500ca27a5c327962fd3dad2c11b7430"
   end
 
   depends_on "asciidoctor" => :build
@@ -27,9 +27,18 @@ class Ccache < Formula
   depends_on "xxhash"
   depends_on "zstd"
 
+  on_macos do
+    depends_on "llvm" => [:build, :no_linkage] if DevelopmentTools.clang_build_version <= 1400
+  end
+
   on_linux do
     depends_on "elfutils" => :build
     depends_on "zlib-ng-compat"
+  end
+
+  fails_with :clang do
+    build 1400
+    cause "Requires C++20"
   end
 
   # Workaround to allow running tests with Xcode 27 / LLVM 23 after
@@ -61,6 +70,9 @@ class Ccache < Formula
     # (especially with IPO enabled), adds negligible time to the build process, and we don't actually test
     # this formula properly in the test block since doing so would be too complicated.
     # See https://github.com/Homebrew/homebrew-core/pull/83900#issuecomment-90624064
+    #
+    # The profiling tests can't merge Apple clang's profiles with `llvm`'s `llvm-profdata`, so hide it.
+    ENV.remove "PATH", "#{formula_opt_bin("llvm")}:" if OS.mac? && DevelopmentTools.clang_build_version <= 1400
     with_env(CC: DevelopmentTools.locate(DevelopmentTools.default_compiler)) do
       system "ctest", "-j#{ENV.make_jobs}", "--test-dir", "build", "--rerun-failed", "--output-on-failure"
     end
