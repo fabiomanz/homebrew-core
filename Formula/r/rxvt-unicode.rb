@@ -11,11 +11,8 @@ class RxvtUnicode < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "95c9f33b6c07894afe1c840447f8f9ef823b78cab62daf16c9c36997dc89faa1"
-    sha256 arm64_tahoe:       "f01e13ec624a599fec75704162cc3aca71a2c9f178614479d23f337949a0015b"
-    sha256 arm64_sequoia:     "1bca4e20ce69c4bdc1f42fc9a288802358b1f764fb0e381dd96c71c582d6ff74"
-    sha256 arm64_linux:       "5fa2f714fd0900e8981eaeca2808c86aee37f8e49c65e1280ebfbb3c3b1f0694"
-    sha256 x86_64_linux:      "d83b8e7dc5b2541564707159d1c7e81891623939887d53a7926799936f81bd77"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 tahoe: "556a423612585b0503145190d305cb69751ddb797249a4b2884b0b16b90790d8"
   end
 
   depends_on "cmake" => :build
