@@ -1,11 +1,7 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
 apr-util	Formula/a/apr-util.rb	c6da72fba30ada026722b73614c2f14147624673	1.6.5_1	1.6.6
-awscli	Formula/a/awscli.rb	c6da72fba30ada026722b73614c2f14147624673	2.39.7	2.40.0
 dart-sass	Formula/d/dart-sass.rb	c6da72fba30ada026722b73614c2f14147624673	1.108.1	1.108.2
-git	Formula/g/git.rb	c6da72fba30ada026722b73614c2f14147624673	2.56.0_2	2.56.1
 glab	Formula/g/glab.rb	c6da72fba30ada026722b73614c2f14147624673	1.128.0	1.130.0
-go	Formula/g/go.rb	c6da72fba30ada026722b73614c2f14147624673	1.27.3	1.27.4
 lld	Formula/l/lld.rb	c6da72fba30ada026722b73614c2f14147624673	23.1.4	23.1.5
 llvm	Formula/l/llvm.rb	c6da72fba30ada026722b73614c2f14147624673	23.1.5	23.1.5_1
 pipx	Formula/p/pipx.rb	c6da72fba30ada026722b73614c2f14147624673	1.18.4	1.18.16
-z3	Formula/z/z3.rb	c6da72fba30ada026722b73614c2f14147624673	5.3.3	5.4.1
