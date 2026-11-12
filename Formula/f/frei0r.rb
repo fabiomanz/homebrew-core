@@ -1,14 +1,14 @@
 class Frei0r < Formula
   desc "Minimalistic plugin API for video effects"
   homepage "https://frei0r.dyne.org/"
-  url "https://github.com/dyne/frei0r/archive/refs/tags/v3.7.0.tar.gz"
-  sha256 "352e1e583865a0bb0a7404302a14cdfb30e26c2cf1e8724605bd29067d089159"
+  url "https://github.com/dyne/frei0r/archive/refs/tags/v3.7.1.tar.gz"
+  sha256 "5543917de48d2e8cc2fa02794240a3613447d00458bc2cf606aef20f4b8da515"
   license "GPL-2.0-or-later"
   compatibility_version 1
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, tahoe: "d4f9e9bcf363df14924d7650f722240cb8be4f28c1576c5b9da0d7b09a436cee"
+    sha256 cellar: :any_skip_relocation, tahoe: "07ff86c5592f34105c16636484047fb6c0ef9efd5c73b987c9649f6294f28039"
   end
 
   depends_on "cmake" => :build
