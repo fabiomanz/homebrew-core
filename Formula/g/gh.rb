@@ -19,7 +19,7 @@ class Gh < Formula
 
   depends_on "go" => :build
 
-  allow_network_access! :build
+  deny_network_access! [:postinstall, :test]
 
   def install
     gh_version = if build.stable?

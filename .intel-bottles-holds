@@ -1,5 +1,11 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
-apr-util	Formula/a/apr-util.rb	551d59745330f41bdf4fb4fcb3bc37e5b1684108	1.6.5_1	1.6.6
-dart-sass	Formula/d/dart-sass.rb	551d59745330f41bdf4fb4fcb3bc37e5b1684108	1.108.1	1.108.2
-lld	Formula/l/lld.rb	551d59745330f41bdf4fb4fcb3bc37e5b1684108	23.1.4	23.1.5
-pipx	Formula/p/pipx.rb	551d59745330f41bdf4fb4fcb3bc37e5b1684108	1.18.4	1.18.16
+apr-util	Formula/a/apr-util.rb	669624e00d16ad8637d99e2f4886d8d82888a660	1.6.5_1	1.6.6
+awscli	Formula/a/awscli.rb	669624e00d16ad8637d99e2f4886d8d82888a660	2.40.1	2.40.2
+cmake	Formula/c/cmake.rb	669624e00d16ad8637d99e2f4886d8d82888a660	4.4.5	4.5.0
+dart-sass	Formula/d/dart-sass.rb	669624e00d16ad8637d99e2f4886d8d82888a660	1.108.1	1.108.2
+gh	Formula/g/gh.rb	669624e00d16ad8637d99e2f4886d8d82888a660	2.103.3	2.104.0
+lld	Formula/l/lld.rb	669624e00d16ad8637d99e2f4886d8d82888a660	23.1.4	23.1.5
+openexr	Formula/o/openexr.rb	669624e00d16ad8637d99e2f4886d8d82888a660	3.5.3_1	3.5.4
+p11-kit	Formula/p/p11-kit.rb	669624e00d16ad8637d99e2f4886d8d82888a660	0.26.5	0.26.6
+pipx	Formula/p/pipx.rb	669624e00d16ad8637d99e2f4886d8d82888a660	1.18.4	1.18.16
+uv	Formula/u/uv.rb	669624e00d16ad8637d99e2f4886d8d82888a660	0.13.7	0.13.8
