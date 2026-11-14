@@ -1,5 +1,14 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
-apr-util	Formula/a/apr-util.rb	669624e00d16ad8637d99e2f4886d8d82888a660	1.6.5_1	1.6.6
-dart-sass	Formula/d/dart-sass.rb	669624e00d16ad8637d99e2f4886d8d82888a660	1.108.1	1.108.2
-lld	Formula/l/lld.rb	669624e00d16ad8637d99e2f4886d8d82888a660	23.1.4	23.1.5
-pipx	Formula/p/pipx.rb	669624e00d16ad8637d99e2f4886d8d82888a660	1.18.4	1.18.16
+apr-util	Formula/a/apr-util.rb	69c01b94b3b034c223f71a2de6f06e8585823c79	1.6.5_1	1.6.6
+aws-c-auth	Formula/a/aws-c-auth.rb	69c01b94b3b034c223f71a2de6f06e8585823c79	1.0.4	1.0.4_1
+aws-c-http	Formula/a/aws-c-http.rb	69c01b94b3b034c223f71a2de6f06e8585823c79	1.2.0	1.3.0
+aws-c-mqtt	Formula/a/aws-c-mqtt.rb	69c01b94b3b034c223f71a2de6f06e8585823c79	1.1.2_1	1.1.3_1
+aws-c-s3	Formula/a/aws-c-s3.rb	69c01b94b3b034c223f71a2de6f06e8585823c79	1.5.2_1	1.5.2_2
+awscli	Formula/a/awscli.rb	69c01b94b3b034c223f71a2de6f06e8585823c79	2.40.2	2.40.3_1
+dart-sass	Formula/d/dart-sass.rb	69c01b94b3b034c223f71a2de6f06e8585823c79	1.108.1	1.108.2
+ggml	Formula/g/ggml.rb	69c01b94b3b034c223f71a2de6f06e8585823c79	0.29.0	1.0.0
+llama.cpp	Formula/l/llama.cpp.rb	69c01b94b3b034c223f71a2de6f06e8585823c79	0.9.0	1.0.0
+lld	Formula/l/lld.rb	69c01b94b3b034c223f71a2de6f06e8585823c79	23.1.4	23.1.5
+pandoc	Formula/p/pandoc.rb	69c01b94b3b034c223f71a2de6f06e8585823c79	3.13	3.14
+pipx	Formula/p/pipx.rb	69c01b94b3b034c223f71a2de6f06e8585823c79	1.18.4	1.18.16
+s2n	Formula/s/s2n.rb	69c01b94b3b034c223f71a2de6f06e8585823c79	1.7.13	1.7.14
