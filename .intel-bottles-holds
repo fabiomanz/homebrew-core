@@ -1,7 +1,5 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
 apr-util	Formula/a/apr-util.rb	69c01b94b3b034c223f71a2de6f06e8585823c79	1.6.5_1	1.6.6
 dart-sass	Formula/d/dart-sass.rb	69c01b94b3b034c223f71a2de6f06e8585823c79	1.108.1	1.108.2
-ggml	Formula/g/ggml.rb	69c01b94b3b034c223f71a2de6f06e8585823c79	0.29.0	1.0.0
-llama.cpp	Formula/l/llama.cpp.rb	69c01b94b3b034c223f71a2de6f06e8585823c79	0.9.0	1.0.0
 lld	Formula/l/lld.rb	69c01b94b3b034c223f71a2de6f06e8585823c79	23.1.4	23.1.5
 pipx	Formula/p/pipx.rb	69c01b94b3b034c223f71a2de6f06e8585823c79	1.18.4	1.18.16

@@ -3,11 +3,11 @@ class LlamaCpp < Formula
   homepage "https://llama.app"
   # CMake uses Git to generate version information.
   url "https://github.com/ggml-org/llama.cpp.git",
-      tag:      "v0.9.0",
-      revision: "cd959bae99ff4bed22bef2604f45241c09bbb8c8"
+      tag:      "v1.0.0",
+      revision: "b1b770d90d94cad9e9ea5b993bdbc383a522fb28"
   license "MIT"
   version_scheme 1
-  compatibility_version 1
+  compatibility_version 2
   head "https://github.com/ggml-org/llama.cpp.git", branch: "master"
 
   livecheck do
@@ -17,7 +17,7 @@ class LlamaCpp < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "f74f28f7b7ee366cded57a80c040c7dd13131ba6e5ab219e3c70d48ce8b053d0"
+    sha256 cellar: :any, tahoe: "f61873418c0f63fd7414a66a57e41568a877fded56b949128225cbbe851f276a"
   end
 
   depends_on "cmake" => [:build, :test]
