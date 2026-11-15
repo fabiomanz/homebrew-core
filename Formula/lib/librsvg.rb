@@ -4,6 +4,7 @@ class Librsvg < Formula
   url "https://download.gnome.org/sources/librsvg/2.63/librsvg-2.63.4.tar.xz"
   sha256 "31f07d9350dad3f8964fd613c31309ac160fdef13dfac59df6fd082de78d6e8f"
   license "LGPL-2.1-or-later"
+  revision 1
   compatibility_version 1
   head "https://gitlab.gnome.org/GNOME/librsvg.git", branch: "main"
 
@@ -17,7 +18,7 @@ class Librsvg < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "1abcee8bc9c3832ec5242682472c0c41eaa368a50d3e68bccdbe49e2590e840e"
+    sha256 cellar: :any, tahoe: "9aa00cc6895d9459afbf33ba3685906d3266fe89f0e03eb98dfff90e0a21aa7c"
   end
 
   depends_on "cargo-c" => :build
