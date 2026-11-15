@@ -2,6 +2,7 @@ class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
   license "MIT"
+  revision 1
   compatibility_version 1
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -24,7 +25,7 @@ class Node < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "98de448b18615957aab98f5142f89a1aaea80d45093adfc0dfa8b8d371d95548"
+    sha256 tahoe: "1a7f7271046e43201dab4d5b14cf2417c1c5511a97d315d4e7dae9358202ff90"
   end
 
   depends_on "pkgconf" => :build
