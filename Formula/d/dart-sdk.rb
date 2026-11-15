@@ -1,9 +1,8 @@
 class DartSdk < Formula
   desc "Dart Language SDK, including the VM, dart2js, core libraries, and more"
   homepage "https://dart.dev"
-  url "https://github.com/dart-lang/sdk.git",
-      tag:      "3.13.7",
-      revision: "416e33b0ffaef062a60ec966bb8c82ed2b83f128"
+  url "https://github.com/dart-lang/sdk/archive/refs/tags/3.13.7.tar.gz"
+  sha256 "cd2a1450f33cfeb35f180d33b836ab92a663d1335ee7f953ae3ebcb20308c99d"
   license "BSD-3-Clause"
   compatibility_version 3
 
@@ -24,10 +23,6 @@ class DartSdk < Formula
   uses_from_macos "python" => :build
   uses_from_macos "xz" => :build
 
-  on_macos do
-    depends_on xcode: :build # for xcodebuild
-  end
-
   # always pull the latest commit from https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/refs/heads/main
   resource "depot-tools" do
     url "https://chromium.googlesource.com/chromium/tools/depot_tools.git",
@@ -40,36 +35,27 @@ class DartSdk < Formula
     end
   end
 
-  patch do
-    url "https://github.com/dart-lang/sdk/commit/963b46dfebad01cab9e063fc8b508df227154a31.patch?full_index=1"
-    sha256 "3a5baefdc4279689e6fea548065ff7f062ff40d4f257a6972e797a133c2c95db"
-    type :backport
-    resolves "https://github.com/dart-lang/sdk/issues/63406"
-  end
-
-  allow_network_access! :test
-
-  def fetch
-    (buildpath/"sdk-src").install buildpath.children
-    (buildpath/"depot-tools").install resource("depot-tools")
-    mv "sdk-src", "sdk"
+  def install
+    resource("depot-tools").stage(buildpath/"depot-tools")
 
     ENV["DEPOT_TOOLS_UPDATE"] = "0"
-    ENV.append_path "PATH", buildpath/"depot-tools"
+    ENV.append_path "PATH", "#{buildpath}/depot-tools"
 
     # Roll clang to include lld support for arm64e.x1 targets in the macOS 27 SDK (llvm/llvm-project#222721)
     # TODO: Remove when upstream rolls clang past that commit, see https://github.com/dart-lang/sdk/issues/64264
     system "gclient", "config", "--name", "sdk",
            "--custom-var", 'clang_version="git_revision:07d67299a15ce03b053736e2d31a668ee0576987"',
-           "file://#{buildpath}/sdk"
+           "https://dart.googlesource.com/sdk.git@#{version}"
     system "gclient", "sync", "--no-history"
-  end
 
-  def install
-    cd "sdk" do
-      arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-      out = OS.mac? ? "xcodebuild" : "out"
+    chdir "sdk" do
+      # The newer clang flags an unused variable in binaryen, which is built with -Werror
+      inreplace "third_party/binaryen/BUILD.gn", '"-Wno-unused-private-field",',
+                                                   "\\0\n        \"-Wno-unused-variable\","
+
+      arch = Hardware::CPU.arm? ? "arm64" : "x64"
       system "./tools/build.py", "--mode=release", "--arch=#{arch}", "create_sdk"
+      out = OS.linux? ? "out" : "xcodebuild"
       libexec.install Dir["#{out}/Release#{arch.upcase}/dart-sdk/*"]
     end
     bin.install_symlink libexec/"bin/dart"
@@ -77,7 +63,7 @@ class DartSdk < Formula
 
   test do
     system bin/"dart", "create", "dart-test"
-    cd "dart-test" do
+    chdir "dart-test" do
       assert_match "Hello world: 42!", shell_output("#{bin}/dart run")
     end
   end
