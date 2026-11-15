@@ -12,11 +12,8 @@ class Libffi < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9e9863c6a383c3d0d12166ffcbc52647287bad5215542ea5ec73233d69c7828a"
-    sha256 cellar: :any, arm64_tahoe:       "d4e31f96513d447db79bbee4c7c97be303964be636772957521c6a5e3ae01a6a"
-    sha256 cellar: :any, arm64_sequoia:     "b8c2e7ea5bddf49536a5394b3fc880ad8731177dbd3f7333081ba587e5634a7a"
-    sha256 cellar: :any, arm64_linux:       "0f67262b2617146853a072b974573a291cd14064b8b1996192cdc7127a95acf7"
-    sha256 cellar: :any, x86_64_linux:      "a719469ecf057ea71637b5cf198f91bd90af4c3816ddbf5cf44b3b6fb7f67346"
+    root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
+    sha256 cellar: :any, tahoe: "2544af0e05cd338450c39ec36a82a757737d706cce4b7b122d0dba8a824d6051"
   end
 
   head do

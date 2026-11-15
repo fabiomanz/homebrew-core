@@ -9,5 +9,3 @@ lld	Formula/l/lld.rb	dae9d5ee4b6ff111b445793208344465030cf557	23.1.4	23.1.5
 merve	Formula/m/merve.rb	dae9d5ee4b6ff111b445793208344465030cf557	1.2.2_4	1.2.2_5
 node	Formula/n/node.rb	dae9d5ee4b6ff111b445793208344465030cf557	26.13.1	26.13.1_1
 pipx	Formula/p/pipx.rb	dae9d5ee4b6ff111b445793208344465030cf557	1.18.4	1.18.16
-rust	Formula/r/rust.rb	dae9d5ee4b6ff111b445793208344465030cf557	1.99.1	1.100.0
-simdutf	Formula/s/simdutf.rb	dae9d5ee4b6ff111b445793208344465030cf557	9.3.3	9.4.0
