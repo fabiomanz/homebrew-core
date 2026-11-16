@@ -3,16 +3,16 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/ea/82/6b9764e52f89a8aaf68a5005093bcb8fdcadcb6ba30571def786c0d3bfc0/fastapi-0.162.7.tar.gz"
-  sha256 "b7503029c8ef2d2d5fea9049294cf8d0f2805c6621f4677ede269fce19f01efb"
+  url "https://files.pythonhosted.org/packages/a4/62/19000d0f3699cacaeffe8a3c4cc7046d87aac3291163ffeb2ef08b82d859/fastapi-0.163.1.tar.gz"
+  sha256 "3d364b02a68b67292e833ff2dfed3b8dc3aeadf73e271c15316c6c166668792f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "947477fd1bcc96ec26c9681fec41a20fabff8946614cfec737416d12a2c70d35"
-    sha256 cellar: :any, arm64_tahoe:       "bfe4556144a16574e7796c6e5608599a54c669e9fc84815b0b06c6494747b6c8"
-    sha256 cellar: :any, arm64_sequoia:     "8d56d9a465bfb6bb6a3415d0c168515b39e596c39d8fdaed4c06a40597d56d78"
-    sha256 cellar: :any, arm64_linux:       "7d187d220a9536d373eac2c0b44bab42dcb86693c9c9be99962636c5b92a75c2"
-    sha256 cellar: :any, x86_64_linux:      "041637c0d0a70133a2bc4edaaa250559cc5a1558e4a0c6a5e298394c91969b0d"
+    sha256 cellar: :any, arm64_golden_gate: "042319ccf848a82c42c6e47e5c1d253d16b1a05a1c640befb9509b185b01db46"
+    sha256 cellar: :any, arm64_tahoe:       "c008cef51c4b1079a4395f2cacfc745cf28e7efe19e860c98fd3bc98d504e32e"
+    sha256 cellar: :any, arm64_sequoia:     "9e3b6b417e83d21bcfde9dc7fb0bf945fb9795369ac56e2adb15292c4eb247e9"
+    sha256 cellar: :any, arm64_linux:       "6db3abbfb973f8a4a3b22669d509e6f8951383d9fe28a032d58279d1b2705f6c"
+    sha256 cellar: :any, x86_64_linux:      "06872c8964907fa35982840ec45e6695cd5f089831efa914436cfd5c30641dad"
   end
 
   depends_on "rust" => :build # for annotated-doc
@@ -60,8 +60,8 @@ class Fastapi < Formula
   end
 
   resource "email-validator" do
-    url "https://files.pythonhosted.org/packages/f5/22/900cb125c76b7aaa450ce02fd727f452243f2e91a61af068b40adba60ea9/email_validator-2.3.0.tar.gz"
-    sha256 "9fc05c37f2f6cf439ff414f8fc46d917929974a82244c20eb10231ba60c54426"
+    url "https://files.pythonhosted.org/packages/c0/4d/f5e9d9de19f4b8f9e33d802fe3efb0ef96e88d4d6d45d604f335bef2f1ef/email_validator-2.4.0.tar.gz"
+    sha256 "be487bc50bc3bd832a98515a55a15649d9bec06d954fa178663190714b6c4ee1"
   end
 
   resource "fastapi-cli" do
