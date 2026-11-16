@@ -7,4 +7,3 @@ lld	Formula/l/lld.rb	bcbec591b2c67db67b21a4789df19bc3a0bd322c	23.1.4	23.1.5
 node	Formula/n/node.rb	bcbec591b2c67db67b21a4789df19bc3a0bd322c	26.13.1_1	26.13.1_2
 pipx	Formula/p/pipx.rb	bcbec591b2c67db67b21a4789df19bc3a0bd322c	1.18.4	1.18.16
 qtwebengine	Formula/q/qtwebengine.rb	bcbec591b2c67db67b21a4789df19bc3a0bd322c	6.11.2_1	6.140.0
-simdjson	Formula/s/simdjson.rb	bcbec591b2c67db67b21a4789df19bc3a0bd322c	5.1.1	5.2.0
