@@ -4,12 +4,12 @@ class AwsCS3 < Formula
   url "https://github.com/awslabs/aws-c-s3/archive/refs/tags/v1.5.2.tar.gz"
   sha256 "26bac413daa8b4146abd1fceb55a282a5d3869524c24aca64a00ec1a4e0449bd"
   license "Apache-2.0"
-  revision 2
+  revision 3
   compatibility_version 8
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "c889e0d9d5ecfaf0b07580ceb7a8884ff1016bc107bdf5260fdce39687e30129"
+    sha256 cellar: :any, tahoe: "fefbbdaadc0a28bfd2014e9cdf22efe237cb6c1c43d5391101754b9c2e0cdda1"
   end
 
   depends_on "cmake" => :build

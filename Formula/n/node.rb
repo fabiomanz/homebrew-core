@@ -2,7 +2,7 @@ class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
   license "MIT"
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -25,7 +25,7 @@ class Node < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "1a7f7271046e43201dab4d5b14cf2417c1c5511a97d315d4e7dae9358202ff90"
+    sha256 tahoe: "22410ef9c2c6acb58fe050d942fff31aac9a525392eeb3e4ae87a6ee96af04b5"
   end
 
   depends_on "pkgconf" => :build
@@ -98,6 +98,10 @@ class Node < Formula
     ENV["PYTHON"] = python3
     # simdjson 5 `key_selector` uses `throw` in consteval, which clang <= 20 rejects with -fno-exceptions
     ENV.append "CXXFLAGS", "-DSIMDJSON_CONCEPT_DISABLED"
+    # highway's SVE code fails to compile with GCC when building for the host CPU
+    if OS.linux? && Hardware::CPU.arm?
+      ENV["HOMEBREW_OPTFLAGS"] = Hardware::CPU.optimization_flags.fetch(Hardware.oldest_cpu)
+    end
 
     # Ensure Homebrew deps are used
     rm_r(["deps/icu-small", "deps/npm"])

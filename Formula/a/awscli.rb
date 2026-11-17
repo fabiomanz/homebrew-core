@@ -6,13 +6,13 @@ class Awscli < Formula
   url "https://github.com/aws/aws-cli/archive/refs/tags/2.40.3.tar.gz"
   sha256 "0598c9dfad2427345dfeb52c286475bf28b64606024e8815ef3140a22ed5a81e"
   license "Apache-2.0"
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "85a101b8ea96172dc54dfb17aa3447926de575b0c403e403384b58bcead45672"
+    sha256 cellar: :any, tahoe: "d58d2195e8a5a2724f51cbcbde04ba8e5e877ddb83e406663d66f011e2c2f1a2"
   end
 
   depends_on "aws-c-auth"
