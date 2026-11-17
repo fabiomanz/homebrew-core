@@ -7,10 +7,8 @@ dart-sass	Formula/d/dart-sass.rb	768bbe745c75b6f339d3571da690ee0ae5c28cba	1.108.
 dart-sdk	Formula/d/dart-sdk.rb	768bbe745c75b6f339d3571da690ee0ae5c28cba	3.13.7	3.14.0
 dartaotruntime	Formula/d/dartaotruntime.rb	768bbe745c75b6f339d3571da690ee0ae5c28cba	3.13.7	3.14.0
 imagemagick	Formula/i/imagemagick.rb	768bbe745c75b6f339d3571da690ee0ae5c28cba	7.1.2-35	7.1.2-36
-libunibreak	Formula/lib/libunibreak.rb	768bbe745c75b6f339d3571da690ee0ae5c28cba	8.0	8.0.1
 lld	Formula/l/lld.rb	768bbe745c75b6f339d3571da690ee0ae5c28cba	23.1.4	23.1.5
 node	Formula/n/node.rb	768bbe745c75b6f339d3571da690ee0ae5c28cba	26.13.1_1	26.13.1_2
 numpy	Formula/n/numpy.rb	768bbe745c75b6f339d3571da690ee0ae5c28cba	2.5.4	2.5.5
 pipx	Formula/p/pipx.rb	768bbe745c75b6f339d3571da690ee0ae5c28cba	1.18.4	1.18.16
-pkgconf	Formula/p/pkgconf.rb	768bbe745c75b6f339d3571da690ee0ae5c28cba	3.0.10	3.0.11
 qtwebengine	Formula/q/qtwebengine.rb	768bbe745c75b6f339d3571da690ee0ae5c28cba	6.11.2_1	6.140.0

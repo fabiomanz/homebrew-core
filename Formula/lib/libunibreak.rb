@@ -1,8 +1,8 @@
 class Libunibreak < Formula
   desc "Implementation of the Unicode line- and word-breaking algorithms"
   homepage "https://github.com/adah1972/libunibreak"
-  url "https://github.com/adah1972/libunibreak/releases/download/libunibreak_8_0/libunibreak-8.0.tar.gz"
-  sha256 "9c4fad6e517338a098373acc9f35579ae2c325e6446666fb9ac2666ba15ceba4"
+  url "https://github.com/adah1972/libunibreak/releases/download/libunibreak_8_0_1/libunibreak-8.0.1.tar.gz"
+  sha256 "ac0dcc96c395bc86ff7f86f6b91d8b45bc8c39db775f3f1e73f947a11520737b"
   license "Zlib"
   compatibility_version 3
 
@@ -16,8 +16,10 @@ class Libunibreak < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "843a44844ed63d5402283597fea73052abf3c4c78912d02b59e6efcc319d4b8b"
+    sha256 cellar: :any, tahoe: "479f122d69a03d875d3992e183a6779fffb61c11ab8a60d985ce8457a4e6a67f"
   end
+
+  deny_network_access!
 
   def install
     system "./configure", *std_configure_args, "--disable-silent-rules"
