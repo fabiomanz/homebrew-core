@@ -5,4 +5,3 @@ dart-sdk	Formula/d/dart-sdk.rb	ba402b70bd81dda7ce3592d92c1973fc344ca7a0	3.13.7	3
 dartaotruntime	Formula/d/dartaotruntime.rb	ba402b70bd81dda7ce3592d92c1973fc344ca7a0	3.13.7	3.14.1
 lld	Formula/l/lld.rb	ba402b70bd81dda7ce3592d92c1973fc344ca7a0	23.1.4	23.1.6
 qtwebengine	Formula/q/qtwebengine.rb	ba402b70bd81dda7ce3592d92c1973fc344ca7a0	6.11.2_1	6.140.0
-uv	Formula/u/uv.rb	ba402b70bd81dda7ce3592d92c1973fc344ca7a0	0.13.8	0.13.9
