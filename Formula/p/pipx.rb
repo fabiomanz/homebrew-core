@@ -3,14 +3,14 @@ class Pipx < Formula
 
   desc "Execute binaries from Python packages in isolated environments"
   homepage "https://pipx.pypa.io"
-  url "https://files.pythonhosted.org/packages/62/c4/9fcaba0d7930e03fd88059760af9b283003a1846f00997dace328b123b97/pipx-1.18.4.tar.gz"
-  sha256 "7b871c2f00dd3cdbdeade21e76f58ef8c3315a68903ca7c976e20424fae78133"
+  url "https://files.pythonhosted.org/packages/25/a9/767f90fc7049f9f6204178a7ec38bcf7fc5506ce488076c60a67c3775c82/pipx-1.18.18.tar.gz"
+  sha256 "b9984a65ac07bb2f90e1fb121f40d7316c72e3ce178924e135bdb9ec4b9ddc76"
   license "MIT"
   head "https://github.com/pypa/pipx.git", branch: "main"
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, tahoe: "f5dc200f110f8947692d4809ec33f22a5a341ac03652314c84cbe93eb3fe7daa"
+    sha256 cellar: :any_skip_relocation, tahoe: "f36389244b159d76771215436bed8bd04bb907ca53ff6fb37d1e2a70e8175545"
   end
 
   depends_on "python@3.15"
@@ -21,13 +21,13 @@ class Pipx < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
-    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
+    url "https://files.pythonhosted.org/packages/45/37/edbf1b0707709013c0cf2e8317e03d97ed29bf4cac709fe328904ae92a38/click-8.5.1.tar.gz"
+    sha256 "9bbfada76703fd1d784b83eea012e3e8c6a001a876543ef104fa56aaaeb072b4"
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/d4/08/d8f81287742010e38daf3632380c8d80ede7b4df2716f8ca3d0a2b087d44/filelock-4.2.2.tar.gz"
-    sha256 "b29ff2ae9140bb17b3bc77c648dc4f010d9ac0955eccabff4f2b01dde859f787"
+    url "https://files.pythonhosted.org/packages/a1/cf/05bcdacabdc0aec7dc8e19d76281bd82325df62dae3b6430e9ba57397689/filelock-4.2.10.tar.gz"
+    sha256 "fcc3c0cb8bfe7f4b3bb0e231c04b15dbad068cb3c2515f343d8fde4dce93bd5d"
   end
 
   resource "packaging" do
@@ -36,8 +36,8 @@ class Pipx < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/b7/89/dfd269de936e76319cf27787d9eaaca513491f635d49b0fbe7cdb6d3bf6f/platformdirs-4.13.4.tar.gz"
-    sha256 "dd96496961684a7f42041923f842ec7494e09f5e87aded99117e1109cd40570e"
+    url "https://files.pythonhosted.org/packages/d7/9a/8475be631fb33ca1466915e70fd594c42a4e84b512db650eaa14f90fe75d/platformdirs-4.14.5.tar.gz"
+    sha256 "32e9921db7385aa8169bee4fe9501923e5715ba9fb7ea3b9c69b0d8e0639f7a1"
   end
 
   resource "userpath" do
@@ -50,7 +50,7 @@ class Pipx < Formula
 
   def install
     # Avoid Cellar path reference, which is only good for one version.
-    inreplace "src/pipx/interpreter.py", "return _get_sys_executable()",
+    inreplace "src/pipx/interpreter.py", "return str(Path(sys.executable).resolve())",
                                          "return '#{python3}'"
 
     venv = virtualenv_install_with_resources

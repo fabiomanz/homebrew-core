@@ -1,8 +1,8 @@
 class Gh < Formula
   desc "GitHub command-line tool"
   homepage "https://cli.github.com/"
-  url "https://github.com/cli/cli/archive/refs/tags/v2.104.0.tar.gz"
-  sha256 "779060cbdc5a354fa2fc8afb56e9277f64a29ac599daefd941558356509081e4"
+  url "https://github.com/cli/cli/archive/refs/tags/v2.105.0.tar.gz"
+  sha256 "3a8fddd2ca0f7c96983a251d3971a84ef042b230b26ca696e5e6ed811cd0ed8d"
   license "MIT"
   compatibility_version 1
   head "https://github.com/cli/cli.git", branch: "trunk"
@@ -14,7 +14,7 @@ class Gh < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, tahoe: "592649940363eeb7600525cb130d275d65f744fcb8e9bab39a67d2d46d529bd0"
+    sha256 cellar: :any_skip_relocation, tahoe: "6b3c75fe24b7e05a7a816fc74040d1e173597129026318441f9e90b0ff2548a5"
   end
 
   depends_on "go" => :build
