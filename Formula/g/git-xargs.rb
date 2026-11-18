@@ -1,8 +1,8 @@
 class GitXargs < Formula
   desc "CLI for making updates across multiple Github repositories with a single command"
   homepage "https://github.com/gruntwork-io/git-xargs"
-  url "https://github.com/gruntwork-io/git-xargs/archive/refs/tags/v0.1.17.tar.gz"
-  sha256 "817ac170a5edd7ac392aeeb5aff3cb491699d78d702f4960fa2aa67eb87fc6b4"
+  url "https://github.com/gruntwork-io/git-xargs/archive/refs/tags/v0.1.19.tar.gz"
+  sha256 "23cedaeb706b0dc96a132b134e3038d79c88518aa590f152f531a7c38d37bba6"
   license "Apache-2.0"
   head "https://github.com/gruntwork-io/git-xargs.git", branch: "master"
 
@@ -12,11 +12,11 @@ class GitXargs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6516344745ff1ac9cc100973695cc6d5686f410198553c2c3f81d4261f3d1239"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6516344745ff1ac9cc100973695cc6d5686f410198553c2c3f81d4261f3d1239"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6516344745ff1ac9cc100973695cc6d5686f410198553c2c3f81d4261f3d1239"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "f4103b1256e2345f4e04b24be2e7154415e39ebbf22188df7fce54143073d18e"
-    sha256 cellar: :any,                 x86_64_linux:      "d6911e19bb0ad29f7a9c744de61021c206aa72413988786dde6e3e252fbfe611"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c608728122c94c773a30f08b805e7ca7818e2186a18ec2527b887b3bd85816e4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c608728122c94c773a30f08b805e7ca7818e2186a18ec2527b887b3bd85816e4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c608728122c94c773a30f08b805e7ca7818e2186a18ec2527b887b3bd85816e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "38b3222297ae32d0e42ee6e24143664f6c20698fac2125535b6002c1c2514ea2"
+    sha256 cellar: :any,                 x86_64_linux:      "36748c278f2a4c127fad0ba772c87eaca6cadec1ab932ea47559c414f8ed5977"
   end
 
   depends_on "go" => :build

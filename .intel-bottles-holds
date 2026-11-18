@@ -1,8 +1,14 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
-apr-util	Formula/a/apr-util.rb	768bbe745c75b6f339d3571da690ee0ae5c28cba	1.6.5_1	1.6.6
-dart-sass	Formula/d/dart-sass.rb	768bbe745c75b6f339d3571da690ee0ae5c28cba	1.108.1	1.108.2_1
-dart-sdk	Formula/d/dart-sdk.rb	768bbe745c75b6f339d3571da690ee0ae5c28cba	3.13.7	3.14.0
-dartaotruntime	Formula/d/dartaotruntime.rb	768bbe745c75b6f339d3571da690ee0ae5c28cba	3.13.7	3.14.0
-lld	Formula/l/lld.rb	768bbe745c75b6f339d3571da690ee0ae5c28cba	23.1.4	23.1.5
-pipx	Formula/p/pipx.rb	768bbe745c75b6f339d3571da690ee0ae5c28cba	1.18.4	1.18.16
-qtwebengine	Formula/q/qtwebengine.rb	768bbe745c75b6f339d3571da690ee0ae5c28cba	6.11.2_1	6.140.0
+apr-util	Formula/a/apr-util.rb	ba402b70bd81dda7ce3592d92c1973fc344ca7a0	1.6.5_1	1.6.6
+awscli	Formula/a/awscli.rb	ba402b70bd81dda7ce3592d92c1973fc344ca7a0	2.40.3_2	2.41.0
+dart-sass	Formula/d/dart-sass.rb	ba402b70bd81dda7ce3592d92c1973fc344ca7a0	1.108.1	1.108.2_1
+dart-sdk	Formula/d/dart-sdk.rb	ba402b70bd81dda7ce3592d92c1973fc344ca7a0	3.13.7	3.14.1
+dartaotruntime	Formula/d/dartaotruntime.rb	ba402b70bd81dda7ce3592d92c1973fc344ca7a0	3.13.7	3.14.1
+gh	Formula/g/gh.rb	ba402b70bd81dda7ce3592d92c1973fc344ca7a0	2.104.0	2.105.0
+glab	Formula/g/glab.rb	ba402b70bd81dda7ce3592d92c1973fc344ca7a0	1.130.0	1.131.0
+libomp	Formula/lib/libomp.rb	ba402b70bd81dda7ce3592d92c1973fc344ca7a0	23.1.5	23.1.6
+lld	Formula/l/lld.rb	ba402b70bd81dda7ce3592d92c1973fc344ca7a0	23.1.4	23.1.6
+llvm	Formula/l/llvm.rb	ba402b70bd81dda7ce3592d92c1973fc344ca7a0	23.1.5_1	23.1.6
+pipx	Formula/p/pipx.rb	ba402b70bd81dda7ce3592d92c1973fc344ca7a0	1.18.4	1.18.18
+qtwebengine	Formula/q/qtwebengine.rb	ba402b70bd81dda7ce3592d92c1973fc344ca7a0	6.11.2_1	6.140.0
+uv	Formula/u/uv.rb	ba402b70bd81dda7ce3592d92c1973fc344ca7a0	0.13.8	0.13.9
