@@ -4,5 +4,4 @@ dart-sass	Formula/d/dart-sass.rb	aa2355fbd7243b45c1e156f76b1148370e5e47b5	1.108.
 dart-sdk	Formula/d/dart-sdk.rb	aa2355fbd7243b45c1e156f76b1148370e5e47b5	3.13.7	3.14.1
 dartaotruntime	Formula/d/dartaotruntime.rb	aa2355fbd7243b45c1e156f76b1148370e5e47b5	3.13.7	3.14.1
 lld	Formula/l/lld.rb	aa2355fbd7243b45c1e156f76b1148370e5e47b5	23.1.4	23.1.6
-nss	Formula/n/nss.rb	aa2355fbd7243b45c1e156f76b1148370e5e47b5	3.133	3.134
 qtwebengine	Formula/q/qtwebengine.rb	aa2355fbd7243b45c1e156f76b1148370e5e47b5	6.11.2_1	6.140.0
