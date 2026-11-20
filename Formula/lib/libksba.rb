@@ -1,8 +1,8 @@
 class Libksba < Formula
   desc "X.509 and CMS library"
   homepage "https://www.gnupg.org/related_software/libksba/"
-  url "https://gnupg.org/ftp/gcrypt/libksba/libksba-1.9.0.tar.bz2"
-  sha256 "b070f3da9113df3804379f55e10cd00f0bc4993d5392157fecb5fd174a5d58ce"
+  url "https://gnupg.org/ftp/gcrypt/libksba/libksba-1.9.1.tar.bz2"
+  sha256 "9afdd398b4a076735e1e7fd29c7f6e7670b6c382aee2d3a55aa937b283f43e5b"
   license any_of: ["LGPL-3.0-or-later", "GPL-2.0-or-later"]
   compatibility_version 1
 
@@ -13,7 +13,7 @@ class Libksba < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "0a35662bf4164e93868f3e903eb2eb4387d7440f33c32f4b376947cdddb82754"
+    sha256 cellar: :any, tahoe: "1985d45138f472b784cdd049e9d1fb7cc06f903a673f9a814c29ea195404dfbd"
   end
 
   depends_on "libgpg-error"
