@@ -1,8 +1,8 @@
 class Iperf3 < Formula
   desc "Update of iperf: measures TCP, UDP, and SCTP bandwidth"
   homepage "https://github.com/esnet/iperf"
-  url "https://downloads.es.net/pub/iperf/iperf-3.22.tar.gz"
-  sha256 "1c0d0fb02c52626111d6e132db80edfbf27bbaff8bd9245df2a371dcb0b35a92"
+  url "https://downloads.es.net/pub/iperf/iperf-3.22.1.tar.gz"
+  sha256 "de018b5252e2a7068c89fac8b35a295d83334f2b7814aa9532a2a8107b04a4a9"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,7 +12,7 @@ class Iperf3 < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "b4f26bbad6b81ea254b1295eec95bb428a9a35368a90f4f34557f9b69390a117"
+    sha256 cellar: :any, tahoe: "667ffcfae5980ec1c6dcb81467c8d3ebb5ee8f11e776707bcfb77ab1654359e3"
   end
 
   head do
