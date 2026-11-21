@@ -1,14 +1,14 @@
 class AwsCHttp < Formula
   desc "C99 implementation of the HTTP/1.1 and HTTP/2 specifications"
   homepage "https://github.com/awslabs/aws-c-http"
-  url "https://github.com/awslabs/aws-c-http/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "9d2fe7f0ccd2247df6722045735f14ecfa9534de72ce800d73128b89192ffda5"
+  url "https://github.com/awslabs/aws-c-http/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "40cd2009ec16712384d7bfd70251ff29d93863499f25cab0dd5507af1e0023c1"
   license "Apache-2.0"
   compatibility_version 5
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "9d67a3016856e17b3deafb231a22bd4241f1a83ee55679b9f1105ee06d80a252"
+    sha256 cellar: :any, tahoe: "b05fb6e566acf4f6fa5e94d6fa69915e10fc45456a65da253452bf07cb0a1be9"
   end
 
   depends_on "cmake" => :build

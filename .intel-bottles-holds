@@ -1,14 +1,9 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
 apr-util	Formula/a/apr-util.rb	dec47c25c81350b4d2d0c835daa4a6f1b7428734	1.6.5_1	1.6.6
-aws-c-common	Formula/a/aws-c-common.rb	dec47c25c81350b4d2d0c835daa4a6f1b7428734	1.0.5	1.0.6
-aws-c-http	Formula/a/aws-c-http.rb	dec47c25c81350b4d2d0c835daa4a6f1b7428734	1.3.0	1.3.1
-awscli	Formula/a/awscli.rb	dec47c25c81350b4d2d0c835daa4a6f1b7428734	2.41.2	2.42.1
 dart-sass	Formula/d/dart-sass.rb	dec47c25c81350b4d2d0c835daa4a6f1b7428734	1.108.1	1.108.2_1
 dart-sdk	Formula/d/dart-sdk.rb	dec47c25c81350b4d2d0c835daa4a6f1b7428734	3.13.7	3.14.1
 dartaotruntime	Formula/d/dartaotruntime.rb	dec47c25c81350b4d2d0c835daa4a6f1b7428734	3.13.7	3.14.1
-gpgme	Formula/g/gpgme.rb	dec47c25c81350b4d2d0c835daa4a6f1b7428734	2.2.0	2.3.1
 graphviz	Formula/g/graphviz.rb	dec47c25c81350b4d2d0c835daa4a6f1b7428734	16.1.1	16.1.2
-harfbuzz	Formula/h/harfbuzz.rb	dec47c25c81350b4d2d0c835daa4a6f1b7428734	15.1.0	15.2.0
 hiredis	Formula/h/hiredis.rb	dec47c25c81350b4d2d0c835daa4a6f1b7428734	1.5.0	1.5.1
 lld	Formula/l/lld.rb	dec47c25c81350b4d2d0c835daa4a6f1b7428734	23.1.4	23.1.6
 qtwebengine	Formula/q/qtwebengine.rb	dec47c25c81350b4d2d0c835daa4a6f1b7428734	6.11.2_1	6.140.0

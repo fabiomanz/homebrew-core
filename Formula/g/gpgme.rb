@@ -1,8 +1,8 @@
 class Gpgme < Formula
   desc "Library access to GnuPG"
   homepage "https://www.gnupg.org/related_software/gpgme/"
-  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-2.2.0.tar.bz2"
-  sha256 "7160e80e84dafd00d956c84891c533bb7ab16a6a54fbe1574b2f3acf0496977b"
+  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-2.3.1.tar.bz2"
+  sha256 "2bf94e0e677e5a8fc31f79dd323f91c5416b36fb851058bc1e8bce39f2642434"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
@@ -13,12 +13,14 @@ class Gpgme < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "1c27186fe8a0eabc45df6f97a870b3e3d8cf2992d448f30848c20d6df5532c34"
+    sha256 cellar: :any, tahoe: "2b9b22b60ca5239d4e5f5bf4c0ab243b191fe78d87be04b98a13c87414dd0937"
   end
 
   depends_on "gnupg"
   depends_on "libassuan"
   depends_on "libgpg-error"
+
+  deny_network_access!
 
   def install
     system "./configure", "--disable-silent-rules",
