@@ -3,10 +3,9 @@ class Qtwebengine < Formula
 
   desc "Provides functionality for rendering regions of dynamic web content"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.2/submodules/qtwebengine-everywhere-src-6.11.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.2/submodules/qtwebengine-everywhere-src-6.11.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.2/submodules/qtwebengine-everywhere-src-6.11.2.tar.xz"
-  sha256 "6101c1aa00ff933d1b65ee5d167f76e8d71b9ac5b378b0111277723ebda7c163"
+  url "https://download.qt.io/official_releases/qtwebengine/6.140/6.140.0/src/qtwebengine-everywhere-src-6.140.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qtwebengine/6.140/6.140.0/src/qtwebengine-everywhere-src-6.140.0.tar.xz"
+  sha256 "82352854a1d01dfe6abeefaf023554e4722c1d7df48ba3ce0078f6c0a9c7e1a3"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # qwebengine_convert_dict; QtWebEngineProcess
@@ -27,17 +26,17 @@ class Qtwebengine < Formula
     "Zlib",              # zlib (macOS)
     :public_domain,      # sigslot; SPL-SQRT-FLOOR
   ]
-  revision 1
   compatibility_version 1
   head "https://code.qt.io/qt/qtwebengine.git", branch: "dev"
 
   livecheck do
-    formula "qtbase"
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "5c6fa10e9a92b1bf498fec483bbf16dba3f44db5431e3bde6798fd75d2f80e79"
+    sha256 cellar: :any, tahoe: "9e8b9ae9f807315e1c7a609f533c9588346b4d5fea3913ea248ba81012b30dc9"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -145,18 +144,6 @@ class Qtwebengine < Formula
     sha256 "565f9ad031c702dae404e27a099e3e09186a3ab1b9520f06d215502b651fd910"
   end
 
-  # Fix build with the macOS 27 SDK until Qt updates its bundled Chromium.
-  # https://qt-project.atlassian.net/browse/QTBUG-150276
-  patch do
-    on_macos do
-      url "https://github.com/chromium/chromium/commit/6c0a651f9cf91d07c87be8feba854a38a311aba6.patch?full_index=1"
-      sha256 "5ed76e8bf00380d5baac097391f43c5c6f6fe438ab04efc647a8aa5511a19ce7"
-      directory "src/3rdparty/chromium"
-      type :backport
-      resolves "https://qt-project.atlassian.net/browse/QTBUG-150276"
-    end
-  end
-
   # Workaround to build with ICU 79+ until QtWebEngine updates V8
   # https://github.com/v8/v8/commit/f607706154eabc4a949628a88b38dbe95cd2274c
   patch do
@@ -178,8 +165,10 @@ class Qtwebengine < Formula
     inreplace "src/3rdparty/chromium/build/toolchain/apple/toolchain.gni",
               'rebase_path("$clang_base_path/bin/", root_build_dir)', '""'
 
+    # FEATURE_qtwebengine_build=ON prevents silently building only Qt PDF
     args = %W[
       -DCMAKE_STAGING_PREFIX=#{prefix}
+      -DFEATURE_qtwebengine_build=ON
       -DFEATURE_webengine_proprietary_codecs=ON
       -DFEATURE_webengine_kerberos=ON
       -DNinja_EXECUTABLE=#{which("ninja")}
@@ -188,7 +177,7 @@ class Qtwebengine < Formula
     # Chromium always uses bundled libraries on macOS
     args += if OS.mac?
       # Cannot deploy to version later than 14, due to functions obsoleted in macOS 15.0
-      # https://bugreports.qt.io/browse/QTBUG-128900
+      # https://issues.chromium.org/issues/327458809
       deploy = [MacOS.version, MacOSVersion.from_symbol(:sonoma)].min
 
       %W[
