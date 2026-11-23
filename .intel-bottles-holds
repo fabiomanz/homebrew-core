@@ -1,7 +1,9 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
-apr-util	Formula/a/apr-util.rb	5fe576b7ca6f8d53ec86e76660dfd0a502dfbc19	1.6.5_1	1.6.6
-dart-sass	Formula/d/dart-sass.rb	5fe576b7ca6f8d53ec86e76660dfd0a502dfbc19	1.108.1	1.108.2_1
-dart-sdk	Formula/d/dart-sdk.rb	5fe576b7ca6f8d53ec86e76660dfd0a502dfbc19	3.13.7	3.14.1
-dartaotruntime	Formula/d/dartaotruntime.rb	5fe576b7ca6f8d53ec86e76660dfd0a502dfbc19	3.13.7	3.14.1
-hiredis	Formula/h/hiredis.rb	5fe576b7ca6f8d53ec86e76660dfd0a502dfbc19	1.5.0	1.5.1
-lld	Formula/l/lld.rb	5fe576b7ca6f8d53ec86e76660dfd0a502dfbc19	23.1.4	23.1.6
+apr-util	Formula/a/apr-util.rb	9575b2295e8b309added7320c50141fa4eac761b	1.6.5_1	1.6.6
+at-spi2-core	Formula/a/at-spi2-core.rb	9575b2295e8b309added7320c50141fa4eac761b	2.62.1	2.62.2
+dart-sass	Formula/d/dart-sass.rb	9575b2295e8b309added7320c50141fa4eac761b	1.108.1	1.108.2_1
+dart-sdk	Formula/d/dart-sdk.rb	9575b2295e8b309added7320c50141fa4eac761b	3.13.7	3.14.1
+dartaotruntime	Formula/d/dartaotruntime.rb	9575b2295e8b309added7320c50141fa4eac761b	3.13.7	3.14.1
+hiredis	Formula/h/hiredis.rb	9575b2295e8b309added7320c50141fa4eac761b	1.5.0	1.5.1
+lld	Formula/l/lld.rb	9575b2295e8b309added7320c50141fa4eac761b	23.1.4	23.1.6
+openexr	Formula/o/openexr.rb	9575b2295e8b309added7320c50141fa4eac761b	3.5.4	3.5.5
