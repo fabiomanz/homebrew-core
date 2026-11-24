@@ -1,11 +1,11 @@
 class Mysql < Formula
   desc "Open source relational database management system"
   homepage "https://github.com/mysql/mysql-server"
-  url "https://cdn.mysql.com/Downloads/MySQL-26.10/mysql-26.10.0.tar.gz"
-  mirror "https://repo.mysql.com/apt/ubuntu/pool/mysql-innovation/m/mysql-community/mysql-community_26.10.0.orig.tar.gz"
-  sha256 "984507622ddfa4d84ad23fc56ec5b5f18f4fda328af5a23e5f5b1a062301ea2c"
+  url "https://cdn.mysql.com/Downloads/MySQL-26.10/mysql-26.10.0.1.tar.gz"
+  mirror "https://repo.mysql.com/apt/ubuntu/pool/mysql-innovation/m/mysql-community/mysql-community_26.10.0.1.orig.tar.gz"
+  sha256 "3d91f6b127ffd2fbd04794c1a11a364a4c73f89c8c44d1e2a07f5661a1b7a46a"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 1
+  compatibility_version 1
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src",
@@ -15,7 +15,7 @@ class Mysql < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "f610e65273ad073c08f82552c0cccf2a8ab560184a7433894ca047d6ed0df875"
+    sha256 tahoe: "32675349d272f75769ab3dc22f25dc2158fa1283cd47a80dadc48eebedb47ad0"
   end
 
   depends_on "bison" => :build
@@ -69,14 +69,6 @@ class Mysql < Formula
     type :unofficial
   end
 
-  def datadir
-    var/"mysql"
-  end
-
-  def icu4c = deps.map(&:name).find { |dep| dep.start_with?("icu4c@") }
-
-  def openssl = deps.map(&:name).find { |dep| dep.start_with?("openssl@") }
-
   def install
     # Remove bundled libraries other than explicitly allowed below.
     # `boost` and `rapidjson` must use bundled copy due to patches.
@@ -97,6 +89,8 @@ class Mysql < Formula
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
     # -DWITH_FIDO=system isn't set as WebAuthn is disabled and bundled copy was removed.
     # Formula paths are set to avoid HOMEBREW_HOME logic in CMake scripts
+    openssl_prefix = dep("openssl").opt_prefix
+    icu4c_prefix = dep("icu4c").opt_prefix
     args = %W[
       -DCOMPILATION_COMMENT=Homebrew
       -DINSTALL_DOCDIR=share/doc/#{name}
@@ -105,11 +99,11 @@ class Mysql < Formula
       -DINSTALL_MANDIR=share/man
       -DINSTALL_MYSQLSHAREDIR=share/mysql
       -DINSTALL_PLUGINDIR=lib/plugin
-      -DMYSQL_DATADIR=#{datadir}
+      -DMYSQL_DATADIR=#{var}/mysql
       -DSYSCONFDIR=#{etc}
       -DBISON_EXECUTABLE=#{formula_opt_bin("bison")}/bison
-      -DOPENSSL_ROOT_DIR=#{formula_opt_prefix(openssl)}
-      -DWITH_ICU=#{formula_opt_prefix(icu4c)}
+      -DOPENSSL_ROOT_DIR=#{openssl_prefix}
+      -DWITH_ICU=#{icu4c_prefix}
       -DWITH_AUTHENTICATION_WEBAUTHN=OFF
       -DWITH_SYSTEM_LIBS=ON
       -DWITH_EDITLINE=system

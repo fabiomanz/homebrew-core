@@ -2,10 +2,10 @@ class Dartaotruntime < Formula
   desc "Command-line tool for running AOT-compiled snapshots of Dart code"
   homepage "https://dart.dev/tools/dartaotruntime"
   url "https://github.com/dart-lang/sdk.git",
-      tag:      "3.13.7",
-      revision: "416e33b0ffaef062a60ec966bb8c82ed2b83f128"
+      tag:      "3.14.1",
+      revision: "c8a0db5978a68d4037f7e5294ffc79867935c8c2"
   license "BSD-3-Clause"
-  compatibility_version 3
+  compatibility_version 4
 
   livecheck do
     formula "dart-sdk"
@@ -13,7 +13,7 @@ class Dartaotruntime < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, tahoe: "f8d0210fa05f07edf16c8e991b86874533e14ae9dfcec1c76591e4e699f4d19b"
+    sha256 cellar: :any_skip_relocation, tahoe: "8b0a8f3cbf1171d3f65c0cc7c7e9755c2fb1a9e821b302b114ebd362b3a0d9b7"
   end
 
   depends_on "ninja" => :build
@@ -29,8 +29,8 @@ class Dartaotruntime < Formula
   # always pull the latest commit from https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/refs/heads/main
   resource "depot-tools" do
     url "https://chromium.googlesource.com/chromium/tools/depot_tools.git",
-        revision: "b1c2e86792a7f2b6576c181b7327ddd53b1a42a8"
-    version "b1c2e86792a7f2b6576c181b7327ddd53b1a42a8"
+        revision: "ec77017fb3e090ff02bffb9c6980ebcdd3006ddc"
+    version "ec77017fb3e090ff02bffb9c6980ebcdd3006ddc"
 
     livecheck do
       url "https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/refs/heads/main?format=JSON"
@@ -48,11 +48,7 @@ class Dartaotruntime < Formula
     ENV["DEPOT_TOOLS_UPDATE"] = "0"
     ENV.append_path "PATH", buildpath/"depot-tools"
 
-    # Roll clang to include lld support for arm64e.x1 targets in the macOS 27 SDK (llvm/llvm-project#222721)
-    # TODO: Remove when upstream rolls clang past that commit, see https://github.com/dart-lang/sdk/issues/64264
-    system "gclient", "config", "--name", "sdk",
-           "--custom-var", 'clang_version="git_revision:07d67299a15ce03b053736e2d31a668ee0576987"',
-           "file://#{buildpath}/sdk"
+    system "gclient", "config", "--name", "sdk", "file://#{buildpath}/sdk"
     system "gclient", "sync", "--no-history"
   end
 

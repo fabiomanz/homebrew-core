@@ -1,9 +1,10 @@
 class DartSass < Formula
   desc "Reference implementation of Sass, written in Dart"
   homepage "https://sass-lang.com/dart-sass"
-  url "https://github.com/sass/dart-sass/archive/refs/tags/1.108.1.tar.gz"
-  sha256 "a00bf6aeb0fc22183140728b72fa1f8603ff6e9e314e6fb816c3dbf5ddd5d614"
+  url "https://github.com/sass/dart-sass/archive/refs/tags/1.108.2.tar.gz"
+  sha256 "573b7d17d5369b7442534e158971c3cc1c439a19c4932b672a25b5c9d424a4ba"
   license "MIT"
+  revision 1
   compatibility_version 1
 
   # Some tags are used for sass-api/sass-parser
@@ -14,7 +15,7 @@ class DartSass < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "1336e19071fbf182f053668f5456d38fb8d3ef5d6737ba9491f1069cff171a95"
+    sha256 cellar: :any, tahoe: "aed140909c4f8436fc210257641943ac06fe15a8dc1f342dfb6e24d1ead24283"
   end
 
   depends_on "buf" => :build
@@ -45,11 +46,12 @@ class DartSass < Formula
       system "dart", "run", "grinder", "protobuf"
     end
 
+    language_version = resource("language").version
     args = %W[
       -Dversion=#{version}
       -Ddart-version=#{Formula["dart-sdk"].version}
       -Dcompiler-version=#{version}
-      -Dprotocol-version=#{resource("language").version}
+      -Dprotocol-version=#{language_version}
     ]
     system "dart", "compile", "aot-snapshot", "--output", "sass.aot", *args, "bin/sass.dart"
     libexec.install "sass.aot"

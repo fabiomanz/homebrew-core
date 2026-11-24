@@ -2,8 +2,8 @@ class Glab < Formula
   desc "Open-source GitLab command-line tool"
   homepage "https://gitlab.com/gitlab-org/cli"
   url "https://gitlab.com/gitlab-org/cli.git",
-    tag:      "v1.131.0",
-    revision: "206ebab4fc3fa590b720d2885ac890c195c46650"
+    tag:      "v1.132.0",
+    revision: "00f5b8fe102e1a07471aadd5a2e44f6ff1befeeb"
   license "MIT"
   compatibility_version 1
   head "https://gitlab.com/gitlab-org/cli.git", branch: "main"
@@ -12,7 +12,7 @@ class Glab < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, tahoe: "0f7f988de39f35b4b0834433aef65b4c82b81b041efcda1a501d71487a473c1c"
+    sha256 cellar: :any_skip_relocation, tahoe: "b588f21ed24d3de593a72365db099e49044ad460bcd478a33abe851faf98450e"
   end
 
   depends_on "go" => :build

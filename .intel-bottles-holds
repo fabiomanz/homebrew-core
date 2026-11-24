@@ -1,19 +1,7 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
 ada-url	Formula/a/ada-url.rb	287a55be6b7d1afa108c45b1650d40e440647abd	4.1.1	4.1.1_1
 apr-util	Formula/a/apr-util.rb	287a55be6b7d1afa108c45b1650d40e440647abd	1.6.5_1	1.6.6
-aws-c-mqtt	Formula/a/aws-c-mqtt.rb	287a55be6b7d1afa108c45b1650d40e440647abd	1.1.3_1	1.1.4
-awscli	Formula/a/awscli.rb	287a55be6b7d1afa108c45b1650d40e440647abd	2.42.1	2.42.2
-dart-sass	Formula/d/dart-sass.rb	287a55be6b7d1afa108c45b1650d40e440647abd	1.108.1	1.108.2_1
-dart-sdk	Formula/d/dart-sdk.rb	287a55be6b7d1afa108c45b1650d40e440647abd	3.13.7	3.14.1
-dartaotruntime	Formula/d/dartaotruntime.rb	287a55be6b7d1afa108c45b1650d40e440647abd	3.13.7	3.14.1
-ffmpeg	Formula/f/ffmpeg.rb	287a55be6b7d1afa108c45b1650d40e440647abd	9.0.2_1	9.1
-gitlab-runner	Formula/g/gitlab-runner.rb	287a55be6b7d1afa108c45b1650d40e440647abd	19.6.0	19.6.1
-glab	Formula/g/glab.rb	287a55be6b7d1afa108c45b1650d40e440647abd	1.131.0	1.132.0
-gtk4	Formula/g/gtk4.rb	287a55be6b7d1afa108c45b1650d40e440647abd	4.24.1	4.24.2
 hiredis	Formula/h/hiredis.rb	287a55be6b7d1afa108c45b1650d40e440647abd	1.5.0	1.5.1
 lld	Formula/l/lld.rb	287a55be6b7d1afa108c45b1650d40e440647abd	23.1.4	23.1.6
 merve	Formula/m/merve.rb	287a55be6b7d1afa108c45b1650d40e440647abd	1.2.2_5	1.2.2_6
-mysql	Formula/m/mysql.rb	287a55be6b7d1afa108c45b1650d40e440647abd	26.10.0_1	26.10.0.1
 node	Formula/n/node.rb	287a55be6b7d1afa108c45b1650d40e440647abd	26.13.1_2	26.13.1_4
-simdjson	Formula/s/simdjson.rb	287a55be6b7d1afa108c45b1650d40e440647abd	5.2.0	5.3.0
-simdutf	Formula/s/simdutf.rb	287a55be6b7d1afa108c45b1650d40e440647abd	9.4.0	9.5.0
