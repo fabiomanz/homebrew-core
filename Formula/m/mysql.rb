@@ -6,7 +6,6 @@ class Mysql < Formula
   sha256 "984507622ddfa4d84ad23fc56ec5b5f18f4fda328af5a23e5f5b1a062301ea2c"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
   revision 1
-  compatibility_version 1
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src",
@@ -70,6 +69,10 @@ class Mysql < Formula
     type :unofficial
   end
 
+  def datadir
+    var/"mysql"
+  end
+
   def icu4c = deps.map(&:name).find { |dep| dep.start_with?("icu4c@") }
 
   def openssl = deps.map(&:name).find { |dep| dep.start_with?("openssl@") }
@@ -102,7 +105,7 @@ class Mysql < Formula
       -DINSTALL_MANDIR=share/man
       -DINSTALL_MYSQLSHAREDIR=share/mysql
       -DINSTALL_PLUGINDIR=lib/plugin
-      -DMYSQL_DATADIR=#{var}/mysql
+      -DMYSQL_DATADIR=#{datadir}
       -DSYSCONFDIR=#{etc}
       -DBISON_EXECUTABLE=#{formula_opt_bin("bison")}/bison
       -DOPENSSL_ROOT_DIR=#{formula_opt_prefix(openssl)}

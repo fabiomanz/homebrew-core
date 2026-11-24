@@ -12,6 +12,7 @@ class Cffi < Formula
     sha256 cellar: :any_skip_relocation, tahoe: "1209a1fb0fb4df49bf282f6f218e7e7df8149864cc4960bbd6939f06a47cb2a7"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.14" => [:build, :test]
   depends_on "python@3.15" => [:build, :test]
   depends_on "pycparser"
@@ -20,15 +21,11 @@ class Cffi < Formula
 
   pypi_packages exclude_packages: "pycparser"
 
-  def pythons
-    deps.map(&:to_formula)
-        .select { |f| f.name.start_with?("python@") }
-        .map { |f| f.opt_libexec/"bin/python" }
-  end
+  deny_network_access!
 
   def install
-    pythons.each do |python|
-      system python, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
+    python3_interpreters.each do |python|
+      system python, "-m", "pip", "install", *std_pip_args, "."
     end
   end
 
@@ -54,7 +51,7 @@ class Cffi < Formula
       print(lib.sum(1, 2))
     PYTHON
 
-    pythons.each do |python|
+    python3_interpreters.each do |python|
       assert_equal 3, shell_output("#{python} sum.py").to_i
     end
   end
