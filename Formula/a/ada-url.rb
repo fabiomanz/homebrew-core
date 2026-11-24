@@ -4,12 +4,13 @@ class AdaUrl < Formula
   url "https://github.com/ada-url/ada/archive/refs/tags/v4.1.1.tar.gz"
   sha256 "ed818cfe260ec063e1f1d93fdafca4d158162ba515369bef085adc366a03a41c"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   compatibility_version 2
   head "https://github.com/ada-url/ada.git", branch: "main"
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "c52a773979c4d5dfa23031ff5230ac164fc0a7988658be94e0328497667fd184"
+    sha256 cellar: :any, tahoe: "6c202c7b6bc3f9fd0d613541cfc7f80042e92c00f21020f3a6a0bf1c41b150fb"
   end
 
   depends_on "cmake" => :build

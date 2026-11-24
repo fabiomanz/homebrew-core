@@ -1,7 +1,5 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
-ada-url	Formula/a/ada-url.rb	287a55be6b7d1afa108c45b1650d40e440647abd	4.1.1	4.1.1_1
 apr-util	Formula/a/apr-util.rb	287a55be6b7d1afa108c45b1650d40e440647abd	1.6.5_1	1.6.6
 hiredis	Formula/h/hiredis.rb	287a55be6b7d1afa108c45b1650d40e440647abd	1.5.0	1.5.1
 lld	Formula/l/lld.rb	287a55be6b7d1afa108c45b1650d40e440647abd	23.1.4	23.1.6
-merve	Formula/m/merve.rb	287a55be6b7d1afa108c45b1650d40e440647abd	1.2.2_5	1.2.2_6
 node	Formula/n/node.rb	287a55be6b7d1afa108c45b1650d40e440647abd	26.13.1_2	26.13.1_4
