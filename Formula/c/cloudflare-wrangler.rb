@@ -1,17 +1,17 @@
 class CloudflareWrangler < Formula
   desc "CLI tool for Cloudflare Workers"
   homepage "https://developers.cloudflare.com/workers/"
-  url "https://registry.npmjs.org/wrangler/-/wrangler-4.166.0.tgz"
-  sha256 "3333bd0b9491c76c2717582f69cb0d1ab2dab1c014e86aa859bc3ce04fa91d40"
+  url "https://registry.npmjs.org/wrangler/-/wrangler-4.168.0.tgz"
+  sha256 "ce779983638627326c9e6981eab0795d004eb435dfdaed96dcd9368d1be87335"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    manifest_sha256 "2ce5472ac01b32262a7439e17065555476d9c80340041c39d5086d42ed50eaf6"
-    sha256 cellar: :any, arm64_golden_gate: "5746b8894f607510944c3c30f12a1f21b1d8281c0b48a24502566c49d13a2062"
-    sha256 cellar: :any, arm64_tahoe:       "5746b8894f607510944c3c30f12a1f21b1d8281c0b48a24502566c49d13a2062"
-    sha256 cellar: :any, arm64_sequoia:     "5746b8894f607510944c3c30f12a1f21b1d8281c0b48a24502566c49d13a2062"
-    sha256 cellar: :any, arm64_linux:       "5c04f1966d54a679e4a657e9424739cd95beab74f68a48d20eb5ade4ce2920ff"
-    sha256 cellar: :any, x86_64_linux:      "26ef5058643a37efede2cd251575c2e8b667350004645f491e41be93041147f7"
+    manifest_sha256 "9d174614580d7f1b9dd4dba2efa4ddd1088fe17f9d049b2d7daaea4964c6d0db"
+    sha256 cellar: :any, arm64_golden_gate: "acc30272556496eece469f7537a153e99610e4abc08f853d5e84ad398d09d0a2"
+    sha256 cellar: :any, arm64_tahoe:       "acc30272556496eece469f7537a153e99610e4abc08f853d5e84ad398d09d0a2"
+    sha256 cellar: :any, arm64_sequoia:     "acc30272556496eece469f7537a153e99610e4abc08f853d5e84ad398d09d0a2"
+    sha256 cellar: :any, arm64_linux:       "598d3cdebd93b7557e8b43b6df6b94b8cd1af25f0d1870ebb5402f2295d85c2b"
+    sha256 cellar: :any, x86_64_linux:      "475ba9659471da8359d7550f100e814b166d917e2f857d2f2fe714cd4cf75b84"
   end
 
   depends_on "node"

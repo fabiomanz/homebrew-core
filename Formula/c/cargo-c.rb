@@ -5,7 +5,6 @@ class CargoC < Formula
   version "0.10.26"
   sha256 "5ff6e05531e58286d3c02ec0adb7f254e5d532a8d4b667f30b9942d802e1db25"
   license "MIT"
-  compatibility_version 1
 
   livecheck do
     url :homepage
@@ -42,7 +41,7 @@ class CargoC < Formula
     ENV["LIBGIT2_NO_VENDOR"] = "1"
     ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
     # Ensure the correct `openssl` will be picked up.
-    ENV["OPENSSL_DIR"] = dep("openssl").opt_prefix
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
 
     system "cargo", "install", *std_cargo_args
   end
@@ -57,8 +56,8 @@ class CargoC < Formula
     [
       formula_opt_lib("libgit2")/shared_library("libgit2"),
       formula_opt_lib("libssh2")/shared_library("libssh2"),
-      dep("openssl").opt_lib/shared_library("libssl"),
-      dep("openssl").opt_lib/shared_library("libcrypto"),
+      formula_opt_lib("openssl@4")/shared_library("libssl"),
+      formula_opt_lib("openssl@4")/shared_library("libcrypto"),
     ].each do |library|
       assert Utils.binary_linked_to_library?(bin/"cargo-cbuild", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
