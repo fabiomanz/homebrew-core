@@ -3,8 +3,3 @@ apr-util	Formula/a/apr-util.rb	b5f1f1a6476b5263e094b01406feaa51d9e99ff4	1.6.5_1	
 awscli	Formula/a/awscli.rb	b5f1f1a6476b5263e094b01406feaa51d9e99ff4	2.42.2	2.42.3
 cargo-c	Formula/c/cargo-c.rb	b5f1f1a6476b5263e094b01406feaa51d9e99ff4	0.10.26	0.10.28
 hiredis	Formula/h/hiredis.rb	b5f1f1a6476b5263e094b01406feaa51d9e99ff4	1.5.0	1.5.1
-lld	Formula/l/lld.rb	b5f1f1a6476b5263e094b01406feaa51d9e99ff4	23.1.4	23.1.6
-node	Formula/n/node.rb	b5f1f1a6476b5263e094b01406feaa51d9e99ff4	26.13.1_2	26.13.1_4
-pipx	Formula/p/pipx.rb	b5f1f1a6476b5263e094b01406feaa51d9e99ff4	1.18.19	1.19.0
-uv	Formula/u/uv.rb	b5f1f1a6476b5263e094b01406feaa51d9e99ff4	0.13.9	0.13.10
-yt-dlp	Formula/y/yt-dlp.rb	b5f1f1a6476b5263e094b01406feaa51d9e99ff4	2026.10.26	2026.11.23
