@@ -1,15 +1,15 @@
 class Baguette < Formula
   desc "Headless iOS Simulator manager and host-side input injection for iOS 26"
   homepage "https://tddworks.github.io/baguette/"
-  url "https://github.com/tddworks/baguette/archive/refs/tags/v0.3.2.tar.gz"
-  sha256 "d54807ca9364bc5bc8779883bde5f6c3ad8c6bb449270724fe0c95f6787a6813"
+  url "https://github.com/tddworks/baguette/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "6c2a781b8f52cd42a5af43058c004487f9b2eaa4eb8828d17d024a58b820db91"
   license "Apache-2.0"
   head "https://github.com/tddworks/baguette.git", branch: "main"
 
   bottle do
-    manifest_sha256 "f7c9926cf38887b1d2d9acdbeb63aa39acb7902057ed6757618e2727b2209734"
-    sha256 cellar: :any, arm64_golden_gate: "93920750acedfea30f82444aaf8324ee7a001502c647e283f9f6e200f4e064e4"
-    sha256 cellar: :any, arm64_tahoe:       "d6ff06a33b1c10c770790aa58c776fdf06be318fd487067b4645b89055354166"
+    manifest_sha256 "e9c5f95591a924d130da4d7d6c241d1a56cf23c0ee9e1b5ebc701d235967afe5"
+    sha256 cellar: :any, arm64_golden_gate: "d962769f97de33bd99a985f92c57159b53ebab3abb6ed828e29c49d9c77e55ae"
+    sha256 cellar: :any, arm64_tahoe:       "7af2d442ba9a77b677b7131436117f2711de9bd6e24ecf2d0f4d9cf52df4d5e0"
   end
 
   depends_on xcode: ["26.0", :build]

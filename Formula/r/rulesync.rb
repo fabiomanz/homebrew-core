@@ -1,17 +1,17 @@
 class Rulesync < Formula
   desc "Unified AI rules management CLI tool"
   homepage "https://github.com/dyoshikawa/rulesync"
-  url "https://registry.npmjs.org/rulesync/-/rulesync-43.12.0.tgz"
-  sha256 "c0cf7f9f89961b2d9324bef7eddb2234e4b9a5bc35b0579756d86658560f53fc"
+  url "https://registry.npmjs.org/rulesync/-/rulesync-43.14.0.tgz"
+  sha256 "ed0f088284802b75b548fc43bf34fa9a5429470b5255598989be105003635cc4"
   license "MIT"
 
   bottle do
-    manifest_sha256 "2e6bdce3e729ae54114dddf1fcbba2fb8e24035e899701c6b661cb16d440d05b"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9cebeaf1dc030c5aca14d80e6a8649e3eea0ef5c31f8a3538307b4659df349bf"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9cebeaf1dc030c5aca14d80e6a8649e3eea0ef5c31f8a3538307b4659df349bf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9cebeaf1dc030c5aca14d80e6a8649e3eea0ef5c31f8a3538307b4659df349bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "73bf8ed0c95350eb4ac74e354f1ddb7802582f5b16110dd15674a70841a00c7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "73bf8ed0c95350eb4ac74e354f1ddb7802582f5b16110dd15674a70841a00c7e"
+    manifest_sha256 "014b74a9eafbadee402ddee3c48bebd98029631e99a995401b6f7359b6b6a06a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4d2ae9ad25f2ee72012af5de250a2765c75b998ccabb6f425c3a9368ec7cb178"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4d2ae9ad25f2ee72012af5de250a2765c75b998ccabb6f425c3a9368ec7cb178"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4d2ae9ad25f2ee72012af5de250a2765c75b998ccabb6f425c3a9368ec7cb178"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ecbb595fbd06e78894089b145590ae8094cd8abe5529b6df21339a2400682b49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ecbb595fbd06e78894089b145590ae8094cd8abe5529b6df21339a2400682b49"
   end
 
   depends_on "node"
