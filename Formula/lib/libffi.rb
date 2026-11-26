@@ -1,8 +1,8 @@
 class Libffi < Formula
   desc "Portable Foreign Function Interface library"
   homepage "https://sourceware.org/libffi/"
-  url "https://github.com/libffi/libffi/releases/download/v3.8.1/libffi-3.8.1.tar.gz"
-  sha256 "81e879c094cc5ec3186c48510c6385ac6b3e866192e8bc71a35245703757ee40"
+  url "https://github.com/libffi/libffi/releases/download/v3.8.2/libffi-3.8.2.tar.gz"
+  sha256 "a699fda2b090c4b46cb79cf60c4dacfce480eb05742c0de66acf3af174a47f92"
   license "MIT"
   compatibility_version 1
 
@@ -13,7 +13,7 @@ class Libffi < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 cellar: :any, tahoe: "2544af0e05cd338450c39ec36a82a757737d706cce4b7b122d0dba8a824d6051"
+    sha256 cellar: :any, tahoe: "fad84a3894a853f86a114606978b8deec23380962ad4dab2ba4c004c3cac1d80"
   end
 
   head do

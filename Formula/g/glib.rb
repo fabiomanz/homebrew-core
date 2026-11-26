@@ -3,8 +3,8 @@ class Glib < Formula
 
   desc "Core application library for C"
   homepage "https://docs.gtk.org/glib/"
-  url "https://download.gnome.org/sources/glib/2.90/glib-2.90.1.tar.xz"
-  sha256 "93c941aa17d5eb1d53fe838365f29a8b4e539c222a256d974ec8f30fc413e396"
+  url "https://download.gnome.org/sources/glib/2.90/glib-2.90.2.tar.xz"
+  sha256 "edf473b4f5ee70a31d2410622ee605dc4a2c8c46dbc0ec53c9abbaf3960232fd"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
@@ -18,7 +18,7 @@ class Glib < Formula
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "3b0aaa12be31d6f764cdca91e2a75efe6f317eabba79a48bdf1467217a0ccbab"
+    sha256 tahoe: "47cd058b8abc01f0833895f19872816790313c2a48891e21ef458c3566ab55b8"
   end
 
   depends_on "bison" => :build # for gobject-introspection
@@ -27,7 +27,7 @@ class Glib < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "python-setuptools" => :build # for gobject-introspection
-  depends_on "python@3.14" => :build
+  depends_on "python@3.15" => :build
   depends_on "pcre2"
 
   uses_from_macos "flex" => :build # for gobject-introspection

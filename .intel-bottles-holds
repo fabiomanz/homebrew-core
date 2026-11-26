@@ -1,11 +1,5 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
-ansible-lint	Formula/a/ansible-lint.rb	d3d11d419fe31dc4c82f1d4413845ea8a97de953	26.11.0	26.11.1
 apr-util	Formula/a/apr-util.rb	d3d11d419fe31dc4c82f1d4413845ea8a97de953	1.6.5_1	1.6.6
-awscli	Formula/a/awscli.rb	d3d11d419fe31dc4c82f1d4413845ea8a97de953	2.42.2	2.42.4
 cargo-c	Formula/c/cargo-c.rb	d3d11d419fe31dc4c82f1d4413845ea8a97de953	0.10.26	0.10.28
 ggml	Formula/g/ggml.rb	d3d11d419fe31dc4c82f1d4413845ea8a97de953	1.0.0	1.1.1
-gh	Formula/g/gh.rb	d3d11d419fe31dc4c82f1d4413845ea8a97de953	2.105.0	2.106.0
-glib	Formula/g/glib.rb	d3d11d419fe31dc4c82f1d4413845ea8a97de953	2.90.1	2.90.2
 hiredis	Formula/h/hiredis.rb	d3d11d419fe31dc4c82f1d4413845ea8a97de953	1.5.0	1.5.1
-libffi	Formula/lib/libffi.rb	d3d11d419fe31dc4c82f1d4413845ea8a97de953	3.8.1	3.8.2
-pipx	Formula/p/pipx.rb	d3d11d419fe31dc4c82f1d4413845ea8a97de953	1.19.0	1.19.1
