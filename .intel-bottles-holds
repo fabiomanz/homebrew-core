@@ -1,5 +1,8 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
-apr-util	Formula/a/apr-util.rb	d3d11d419fe31dc4c82f1d4413845ea8a97de953	1.6.5_1	1.6.6
-cargo-c	Formula/c/cargo-c.rb	d3d11d419fe31dc4c82f1d4413845ea8a97de953	0.10.26	0.10.28
-ggml	Formula/g/ggml.rb	d3d11d419fe31dc4c82f1d4413845ea8a97de953	1.0.0	1.1.1
-hiredis	Formula/h/hiredis.rb	d3d11d419fe31dc4c82f1d4413845ea8a97de953	1.5.0	1.5.1
+apr-util	Formula/a/apr-util.rb	c034486c217c34a3cb8e5f0f39b7d321ab3e5d47	1.6.5_1	1.6.6
+cargo-c	Formula/c/cargo-c.rb	c034486c217c34a3cb8e5f0f39b7d321ab3e5d47	0.10.26	0.10.28
+curl-impersonate	Formula/c/curl-impersonate.rb	c034486c217c34a3cb8e5f0f39b7d321ab3e5d47	2.3.2	2.3.3
+ggml	Formula/g/ggml.rb	c034486c217c34a3cb8e5f0f39b7d321ab3e5d47	1.0.0	1.1.1
+hiredis	Formula/h/hiredis.rb	c034486c217c34a3cb8e5f0f39b7d321ab3e5d47	1.5.0	1.5.1
+llama.cpp	Formula/l/llama.cpp.rb	c034486c217c34a3cb8e5f0f39b7d321ab3e5d47	1.0.0	1.1.0
+tesseract	Formula/t/tesseract.rb	c034486c217c34a3cb8e5f0f39b7d321ab3e5d47	5.5.4	5.5.5
