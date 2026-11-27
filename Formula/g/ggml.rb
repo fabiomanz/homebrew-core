@@ -1,15 +1,15 @@
 class Ggml < Formula
   desc "Tensor library for machine learning"
   homepage "https://github.com/ggml-org/ggml"
-  url "https://github.com/ggml-org/ggml/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "27de4df871da091112a1e4ea0e13be70f364af5da666c1246fb26fde2b21fac0"
+  url "https://github.com/ggml-org/ggml/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "ee3f83e4839e4be8201fd87019855d70713362b7b657d2fde283d95274a7b8b3"
   license "MIT"
   compatibility_version 2
   head "https://github.com/ggml-org/ggml.git", branch: "master"
 
   bottle do
     root_url "https://github.com/fabiomanz/intel-bottles/releases/download/bottles"
-    sha256 tahoe: "88b95d51eda561b9837a765030da98a33e9f46aebe612c77f379198599efb50c"
+    sha256 tahoe: "d0f28b8e219461c2eff3a7889a4e950b9fbc175238f5d9d46356956171a7b74e"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -38,8 +38,8 @@ class Ggml < Formula
 
   # Lengthy test so not worth installing. Shorter examples/tests haven't been ported to new DL backend
   resource "test-backend-ops.cpp", :test do
-    url "https://raw.githubusercontent.com/ggml-org/ggml/refs/tags/v1.0.0/tests/test-backend-ops.cpp"
-    sha256 "3c0e33da6840231d862ded923457acd45feabadcfef3773d3db49c2054dd34e6"
+    url "https://raw.githubusercontent.com/ggml-org/ggml/refs/tags/v1.1.1/tests/test-backend-ops.cpp"
+    sha256 "1cc063005180538a13860ea2b90d6507bee6fcc989a19e8835bfcfa310e4877a"
 
     livecheck do
       formula :parent
