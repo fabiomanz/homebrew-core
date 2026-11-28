@@ -12,6 +12,7 @@ class Glassfish < Formula
   end
 
   bottle do
+    manifest_sha256 "7def27e9a6e9d4e9dd484aa5b0b97bfd7d4b682de6d134a26fd0b1752ef7c6cb"
     sha256 cellar: :any_skip_relocation, all: "1908efc2b6b64c122b34ae77c3588d67cdb10ff33ff89f8a08942c22625393eb"
   end
 
@@ -51,15 +52,13 @@ class Glassfish < Formula
     cp_r libexec/"glassfish/domains", testpath
     inreplace testpath/"domains/domain1/config/domain.xml", "port=\"4848\"", "port=\"#{port}\""
 
-    pid = spawn bin/"asadmin", "start-domain", "--domaindir=#{testpath}/domains", "domain1"
+    with_test_process(bin/"asadmin", "start-domain", "--domaindir=#{testpath}/domains", "domain1") do
+      output = shell_output("curl --silent --retry 5 --retry-connrefused -X GET localhost:#{port}")
+      assert_match "GlassFish Server", output
 
-    output = shell_output("curl --silent --retry 5 --retry-connrefused -X GET localhost:#{port}")
-    assert_match "GlassFish Server", output
-
-    assert_match version.to_s, shell_output("#{bin}/asadmin version")
-  ensure
-    system bin/"asadmin", "stop-domain", "--domaindir=#{testpath}/domains", "domain1"
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+      assert_match version.to_s, shell_output("#{bin}/asadmin version")
+    ensure
+      system bin/"asadmin", "stop-domain", "--domaindir=#{testpath}/domains", "domain1"
+    end
   end
 end

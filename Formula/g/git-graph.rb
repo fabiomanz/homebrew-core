@@ -12,6 +12,7 @@ class GitGraph < Formula
   end
 
   bottle do
+    manifest_sha256 "a8f9504dea6809e9179324ad7df4a17356c2c4c64fe646126043de5370c687cb"
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "29794bac9844c0a4961e6da18018387b4c55c2f54a281224b57c7e654807940a"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fadb365cd2b141445e372c3bebfb3524ea1e6a2fb93e5f13a78796a85afd1802"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b993f1de711d7ffc13c87c7e4b6ed503dcf57176dfdaf4c0ac824f7be43e6f6a"
@@ -41,14 +42,10 @@ class GitGraph < Formula
     system "git", "init"
     system "git", "commit", "--allow-empty", "-m", "Initial commit"
 
-    begin
-      output_log = testpath/"output.log"
-      pid = spawn bin/"git-graph", [:out, :err] => output_log.to_s
+    output_log = testpath/"output.log"
+    with_test_process(bin/"git-graph", [:out, :err] => output_log.to_s) do
       sleep 1
       assert_match "Initial commit", output_log.read
-    ensure
-      Process.kill("TERM", pid)
-      Process.wait(pid)
     end
   end
 end

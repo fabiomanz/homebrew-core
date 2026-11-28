@@ -12,6 +12,7 @@ class Tal < Formula
   end
 
   bottle do
+    manifest_sha256 "94122a620351faf0eea984603279e76c0b101b8723bc16b28465d4f706eb2f95"
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8d5f0e1767b74ae9c78e260d66c1900a930a7de1df4dad97b5d2e5341e9fb0b1"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a3aad8a5f10c8cee1e5b9dbfb673a6b05ff97774e5cb2f0f813b76c893b3e424"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dd3c811b07d428e7beccf39eda7c3a0af73695f03188dfc7ea652472d492c794"
@@ -26,6 +27,8 @@ class Tal < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:       "779b8afc3da3186f16ce41fd9d40257f24e01b80520b625ddcf848f636646357"
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "568fa7d6db8a642d71501bd804351e281c512fa82f3c2757bc870e7e8d871ecd"
   end
+
+  deny_network_access!
 
   def install
     system "make", "tal"

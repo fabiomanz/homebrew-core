@@ -8,6 +8,7 @@ class Bluetoothconnector < Formula
 
   bottle do
     rebuild 1
+    manifest_sha256 "69b2d326d250d87d1631b4ad40d2a044608b0be3af1f6bbed40a56d99e34aa57"
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "545a4128d0728c2a20f69c6e2863eeb8abf2c101da2e865df4e53e6ef64d9830"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6e9f16794456553e1bb96608e579c0fcdb6930b793a2f6135a3113d3bf1072e3"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:     "61cd24ebb1d29f0f3f9cfe2bb890bd29aacedb8d43a035d422566a4552670b70"
@@ -32,13 +33,9 @@ class Bluetoothconnector < Formula
     if ENV["HOMEBREW_GITHUB_ACTIONS"]
       # OS privacy restrictions may block the process on the Bluetooth permission prompt,
       # so only check the usage exit code when it actually ran to completion.
-      pid = spawn bin/"BluetoothConnector"
-      sleep 5
-      if Process.wait(pid, Process::WNOHANG)
-        assert_equal 64, $CHILD_STATUS.exitstatus
-      else
-        Process.kill("TERM", pid)
-        Process.wait(pid)
+      with_test_process(bin/"BluetoothConnector") do |pid|
+        sleep 5
+        assert_equal 64, $CHILD_STATUS.exitstatus if Process.wait(pid, Process::WNOHANG)
       end
     else
       shell_output("#{bin}/BluetoothConnector", 64)

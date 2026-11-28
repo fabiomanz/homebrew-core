@@ -12,6 +12,7 @@ class Cntlm < Formula
 
   bottle do
     rebuild 2
+    manifest_sha256 "ec2c480729a1daf5e4740ba480e670253fa1eac261f3be21fca396328d318b73"
     sha256 arm64_golden_gate: "7b63503c01598e106fd00be8d781b7241d8420a8209dacbc47e9b8781b74d90c"
     sha256 arm64_tahoe:       "730084818967f10d47a8458853ebb7a56bce4c2280759bda2f3c31d1edae9da3"
     sha256 arm64_sequoia:     "ac09c6fb2f75321560a0fedd69a9d520f9a62ee176cd7b8a03d8ea5964385f1a"
@@ -61,10 +62,11 @@ class Cntlm < Formula
       Listen		#{bind_port}
     EOS
 
-    spawn bin/"cntlm", "-c", testpath/"cntlm.conf", "-v"
-    sleep 2
-    # "unreacheable" is a typo in upstreams code. There haven't been
-    # any updates to `cntlm` in over a decade, so this can't be fixed.
-    assert_match "502 Parent proxy unreacheable", shell_output("curl -s localhost:#{bind_port}")
+    with_test_process(bin/"cntlm", "-c", testpath/"cntlm.conf", "-v") do
+      sleep 2
+      # "unreacheable" is a typo in upstreams code. There haven't been
+      # any updates to `cntlm` in over a decade, so this can't be fixed.
+      assert_match "502 Parent proxy unreacheable", shell_output("curl -s localhost:#{bind_port}")
+    end
   end
 end

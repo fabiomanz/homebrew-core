@@ -11,6 +11,7 @@ class CassandraReaper < Formula
   end
 
   bottle do
+    manifest_sha256 "51f0cca45c393ef32b3c46c9dd9407b09adae70ec3b19da319384f6f8404fa79"
     sha256 cellar: :any_skip_relocation, all: "7f8183db22df001b6d0a1c27f744688e54bce60b2e8f1cdfdeae1e1d2dd43279"
   end
 
@@ -53,8 +54,9 @@ class CassandraReaper < Formula
       s.gsub! "storageType: memory", "storageType: memory\npersistenceStoragePath: #{testpath}/persistence"
     end
 
-    spawn bin/"cassandra-reaper", testpath/"cassandra-reaper.yaml"
-    sleep 40
-    assert_match "200 OK", shell_output("curl -Im3 -o- http://localhost:#{port}/webui/login.html")
+    with_test_process(bin/"cassandra-reaper", testpath/"cassandra-reaper.yaml") do
+      sleep 40
+      assert_match "200 OK", shell_output("curl -Im3 -o- http://localhost:#{port}/webui/login.html")
+    end
   end
 end

@@ -12,6 +12,7 @@ class Tfenv < Formula
   end
 
   bottle do
+    manifest_sha256 "ce5702ad8cf5267da8b67691d608cf21273a2570c104327a593b7a33ea00f1e5"
     sha256 cellar: :any_skip_relocation, all: "f28386d9f8bcedb39429c6abf417133cd80a10bd1935c6286bcfe4871b8c0887"
   end
 
@@ -22,6 +23,8 @@ class Tfenv < Formula
   end
 
   conflicts_with "tenv", because: "tfenv symlinks terraform binaries"
+
+  allow_network_access! :test
 
   def install
     prefix.install %w[bin lib libexec share]

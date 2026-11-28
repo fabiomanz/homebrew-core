@@ -8,6 +8,7 @@ class Tag < Formula
   head "https://github.com/jdberry/tag.git", branch: "master"
 
   bottle do
+    manifest_sha256 "f38273f6dd8fa6af6b405813ca10826198d80afbe32809822b46cef1b09b5785"
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1b9e28cc7c38c193dd28f17378689ad4b9e26c8c47b2072eff8cf8b5f743a9bb"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dd8bc8fffd2b86efc0a22070b48426c82f98979625bf991332a633a83070cc85"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0276d10f3dbc55011085ba7d45f74a29760a8985108e946be3d2c6abf0bdfb34"
@@ -23,15 +24,17 @@ class Tag < Formula
 
   depends_on :macos
 
+  deny_network_access!
+
   def install
     system "make", "install", "prefix=#{prefix}"
   end
 
   test do
     test_tag = "test_tag"
-    test_file = Pathname.pwd+"test_file"
+    test_file = Pathname.pwd/"test_file"
     touch test_file
     system bin/"tag", "--add", test_tag, test_file
-    assert_equal test_tag, `#{bin}/tag --list --no-name #{test_file}`.chomp
+    assert_equal test_tag, shell_output("#{bin}/tag --list --no-name #{test_file}").chomp
   end
 end

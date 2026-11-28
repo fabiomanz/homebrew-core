@@ -7,6 +7,7 @@ class Testssl < Formula
   head "https://github.com/testssl/testssl.sh.git", branch: "3.3dev"
 
   bottle do
+    manifest_sha256 "9a07da5784941d5e6d46128caefcb087795e0050086bf9e8baf73783668b6f2b"
     sha256 cellar: :any_skip_relocation, all: "160c21907a8cf6415c74f2ecc97b4315825a71445fff4a167a880e5a74988217"
   end
 
@@ -16,6 +17,8 @@ class Testssl < Formula
     depends_on "bind" => :test # can also use `drill` or `ldns`
     depends_on "util-linux" # for `hexdump`
   end
+
+  deny_network_access!
 
   def install
     bin.install "testssl.sh"

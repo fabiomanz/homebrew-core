@@ -8,6 +8,7 @@ class Cayley < Formula
 
   bottle do
     rebuild 2
+    manifest_sha256 "d9e74bf2b7815eb59a7d5d85a536d0f35c683c7e04519a0a8cfb21ea883f55b7"
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "59934fa2bc466df25d5e4197e038b197d2f7febf046d19e9151e12deeb7d413d"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:       "003d129d37b6752ed0431b4a65c34f49edd46864957d45d294068da53c968178"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1886c195583c5d68c87f6e2cc50a52801990ea7bf973f2b8a61e2228e931adcf"
@@ -76,9 +77,10 @@ class Cayley < Formula
     assert_match version.to_s, shell_output("#{bin}/cayley version")
 
     http_port = free_port
-    spawn bin/"cayley", "http", "--host=127.0.0.1:#{http_port}"
-    sleep 3
-    response = shell_output("curl -s -i 127.0.0.1:#{http_port}")
-    assert_match "HTTP/1.1 200 OK", response
+    with_test_process(bin/"cayley", "http", "--host=127.0.0.1:#{http_port}") do
+      sleep 3
+      response = shell_output("curl -s -i 127.0.0.1:#{http_port}")
+      assert_match "HTTP/1.1 200 OK", response
+    end
   end
 end

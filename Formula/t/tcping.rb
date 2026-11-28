@@ -12,6 +12,7 @@ class Tcping < Formula
   end
 
   bottle do
+    manifest_sha256 "3bf33e64adc76804540dba9542a9d83fa87cc574b8deac997b9355f7e88b0e2c"
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0c639fc26374fec0d237a34c1586a1a7b07a8b15088f750886bde03911dfc508"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f9b6f59dabfa7d65422fa6ec42a7fec5fb60b41aeeeb732b8d90edf146494a47"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b43eafbc84776f3718d8fdcad688ca581d2b3e74de5de6f199d6af57ed810930"
@@ -26,6 +27,8 @@ class Tcping < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:       "b53bd88f1bb3f5be9aa7c52013cdb0fd60eaf39d8c05baca7556dd8600b4c6f7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "16c2e18d02839e6b0e79ac685045de38f37afd44543cd43c82ae1e0cec435282"
   end
+
+  allow_network_access! :test
 
   def install
     system "make"

@@ -7,6 +7,7 @@ class Easeprobe < Formula
   head "https://github.com/megaease/easeprobe.git", branch: "main"
 
   bottle do
+    manifest_sha256 "64f8ad7bb746acc1debce8414b9fd537a1572245e08249d9f7fce9cedceca2f0"
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7b621da83ba0eafcb8223475677040492aed19e96c2e396c01deb7cbb7a5b40a"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fb457afd21395276bd1ace4e9e2a74edcd6e480f2f9da42cddd84ebb904e6b09"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e651583b7e1cbb5b8597c0dc57f72bb9a27244f7806799907ce3d9f239dfdef2"
@@ -48,14 +49,9 @@ class Easeprobe < Formula
 
     easeprobe_stdout = (testpath/"easeprobe.log")
 
-    pid = fork do
-      $stdout.reopen(easeprobe_stdout)
-      exec bin/"easeprobe", "-f", testpath/"config.yml"
+    with_test_process(bin/"easeprobe", "-f", testpath/"config.yml", out: easeprobe_stdout.to_s) do
+      sleep 2
+      assert_match "Ready to monitor(http): brew.sh", easeprobe_stdout.read
     end
-    sleep 2
-    assert_match "Ready to monitor(http): brew.sh", easeprobe_stdout.read
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
   end
 end

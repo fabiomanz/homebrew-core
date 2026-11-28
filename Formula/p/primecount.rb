@@ -1,24 +1,22 @@
 class Primecount < Formula
   desc "Fast prime counting function program and C/C++ library"
   homepage "https://github.com/kimwalisch/primecount"
-  url "https://github.com/kimwalisch/primecount/archive/refs/tags/v9.0.tar.gz"
-  sha256 "0fcc2083a476708f5cf1728dc8a64be60d8f7ca1dc623039889e67f70da048eb"
+  url "https://github.com/kimwalisch/primecount/archive/refs/tags/v9.1.tar.gz"
+  sha256 "3f0935f74933acaab2ca06e58f8af6cff2e7dc3cc221db0ff5ad6ad9c83f64b1"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e7dcc93bf046a94bead32c63a74f96db651d03ae5e34f67bfb69027130c401b2"
-    sha256 cellar: :any, arm64_tahoe:       "46bb35987ee84f1dce43923f0809e709fb76c8461f9fd7595c9746d2b26defc3"
-    sha256 cellar: :any, arm64_sequoia:     "d24a74c3d38b4ac788c1e5e05f563ec061546bc26ccd39cb576b9143faf59776"
-    sha256 cellar: :any, arm64_linux:       "93246d56f142f9cde154866ddbee94ab7d3986a307b7b1512791bd3e564bf58c"
-    sha256 cellar: :any, x86_64_linux:      "e4fc3fa72360a313f19750e57ddea77094ae961a335dee16481bfcb0776dc941"
+    rebuild 1
+    manifest_sha256 "01ed1a0edce5a3d80065f00ee6d5e84c80aa6ac8447b0894d049d24ad28eddf4"
+    sha256 cellar: :any, arm64_golden_gate: "41bbad531e1d17805a7494b41a982b2edb026952d0888921ef640f74c32b7b57"
+    sha256 cellar: :any, arm64_tahoe:       "9be6a13206ef949027e00df638a5bbb1d7a388cba3bc75c3fbbd72cf868e6231"
+    sha256 cellar: :any, arm64_sequoia:     "4fb56e0dfb7f825c60b2ed682de385bc5e2eb9316be2acecf670a1d88855465d"
+    sha256 cellar: :any, arm64_linux:       "91355cd85025035e1a0bcbcba6ed95098f333631c2b1b234d4cc7c86b83c802b"
+    sha256 cellar: :any, x86_64_linux:      "16967c6e9fae17340b145f26e18528e15ef0c2d58df8a5407df677b0b5920fc5"
   end
 
   depends_on "cmake" => :build
   depends_on "primesieve"
-
-  on_macos do
-    depends_on "libomp"
-  end
 
   deny_network_access!
 

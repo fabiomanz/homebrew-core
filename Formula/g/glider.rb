@@ -7,6 +7,7 @@ class Glider < Formula
   head "https://github.com/nadoo/glider.git", branch: "main"
 
   bottle do
+    manifest_sha256 "fdb22f3576dc6a2ee2089463faf26cf6b75bbfa72e58939400d49a91cf145c0a"
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0660a714915df7bf8057181bb3e00e060fc38e5664766a8823a5a7a4cb7b8843"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e40af9870b9ee99ab0c80b8dae8d4d751e8c19f6f8bb09dbc4349f69c3d7158d"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:     "69178a2d743839266c81d46c2da244ecd9079e0e45c2d6b7d4bda44be9f758bd"
@@ -41,15 +42,10 @@ class Glider < Formula
 
   test do
     proxy_port = free_port
-    glider = spawn bin/"glider", "-listen", "socks5://:#{proxy_port}"
-
-    begin
+    with_test_process(bin/"glider", "-listen", "socks5://:#{proxy_port}", signal: "KILL") do
       sleep 3
       output = shell_output("curl --socks5 127.0.0.1:#{proxy_port} -L https://brew.sh")
       assert_match "The Package Manager for Everywhere", output
-    ensure
-      Process.kill 9, glider
-      Process.wait glider
     end
   end
 end

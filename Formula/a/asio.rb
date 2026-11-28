@@ -13,6 +13,7 @@ class Asio < Formula
 
   bottle do
     rebuild 1
+    manifest_sha256 "2f996210c1e65e36e549aad6315314a6a47320cf1067c95b4f1f61fbebc1f5ac"
     sha256 cellar: :any_skip_relocation, all: "11ef27f86eddd6a508404e15a51fe2b18d87c25bbc93660df71c04fc210fe0a5"
   end
 
@@ -45,12 +46,9 @@ class Asio < Formula
     system ENV.cxx, "-std=c++11", "-o", "http_server", *Dir["*.cpp"]
 
     port = free_port
-    pid = spawn "./http_server", "127.0.0.1", port.to_s, "."
-    begin
+    with_test_process("./http_server", "127.0.0.1", port.to_s, ".", signal: "KILL") do
       sleep 5
       assert_match "404 Not Found", shell_output("curl http://127.0.0.1:#{port}")
-    ensure
-      Process.kill 9, pid
     end
   end
 end

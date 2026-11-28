@@ -12,6 +12,7 @@ class Dynomite < Formula
 
   bottle do
     rebuild 1
+    manifest_sha256 "f21aa0fc1923aa8ac57eda7afda9b0c39625d21619a9b27112c1b03502b1deaf"
     sha256 arm64_golden_gate: "3863b621135c1b94ac85848d84d8b39ffe60da1c203a4aeff3af312d08e079ff"
     sha256 arm64_tahoe:       "b80a0fafcbefc40ecbe2c372a3ef9159512a4b85e0838ac65d26f5225ceaa546"
     sha256 arm64_sequoia:     "d2417262050f0f0272c2c76db3e1f4a859b6b424a03c77e2091d903279b0ce62"
@@ -69,8 +70,9 @@ class Dynomite < Formula
       s.gsub! ":22222", ":#{stats_port}"
     end
 
-    spawn sbin/"dynomite", "-c", "redis_single.yml"
-    sleep 5
-    assert_match "OK", shell_output("curl -s 127.0.0.1:#{stats_port}")
+    with_test_process(sbin/"dynomite", "-c", "redis_single.yml") do
+      sleep 5
+      assert_match "OK", shell_output("curl -s 127.0.0.1:#{stats_port}")
+    end
   end
 end

@@ -6,6 +6,7 @@ class GitPages < Formula
   license "0BSD"
 
   bottle do
+    manifest_sha256 "f4cf7e5390d0ff98ae033ae5380157a1584eddc8f34db16d61a4f3fefcbbcf90"
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "717c370e16c4efe09430e51cd36f88c817182040eb687568aa6f65d491298f0a"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f5160ebff8ff66dfd775a0df289088f8438d6dbb2c9855653ec85f3a2c52bdeb"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a3346850520b2df6657e39d99a4abc9a1eedea8181c52559cf136bb24aecf82d"
@@ -36,12 +37,12 @@ class GitPages < Formula
 
     ENV["PAGES_INSECURE"] = "1"
 
-    spawn bin/"git-pages"
+    with_test_process(bin/"git-pages") do
+      sleep 2
+      system "curl", "http://127.0.0.1:#{port}", "-X", "PUT", "-d", "https://codeberg.org/git-pages/git-pages.git"
 
-    sleep 2
-    system "curl", "http://127.0.0.1:#{port}", "-X", "PUT", "-d", "https://codeberg.org/git-pages/git-pages.git"
-
-    sleep 2
-    assert_equal "It works!\n", shell_output("curl http://127.0.0.1:#{port}")
+      sleep 2
+      assert_equal "It works!\n", shell_output("curl http://127.0.0.1:#{port}")
+    end
   end
 end

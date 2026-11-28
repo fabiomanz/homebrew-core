@@ -15,6 +15,7 @@ class Ejabberd < Formula
   end
 
   bottle do
+    manifest_sha256 "c8295300a22545b8685e09cc6e889cbfe1e02de794709a2388864bac9c7205a1"
     sha256 cellar: :any, arm64_golden_gate: "66b8495dea8063935e5bca3c2b30084455a35212c1fe51011f7bc1aebe7351c7"
     sha256 cellar: :any, arm64_tahoe:       "e07909261f40164522b2bf1a94b9cfe41c83e9ebf5e1f59627b3b2eefed90329"
     sha256 cellar: :any, arm64_sequoia:     "7362cc0b5087e94cebe20a4756af5e314603cc663a73b60332d00a57830751d2"
@@ -113,13 +114,12 @@ class Ejabberd < Formula
     inreplace testpath/"ejabberd.yml", "port: 1883", "port: #{free_port}"
 
     output_log = testpath/"output.log"
-    pid = spawn(sbin/"ejabberdctl", "--node", node, "foreground", pgroup: true, [:out, :err] => output_log.to_s)
-    sleep 5
-    assert_equal "pong\n", shell_output("#{sbin}/ejabberdctl --node #{node} ping")
-    refute_match(/ERROR/i, output_log.read)
-  ensure
     # `ejabberdctl` execs `beam.smp`, which outlives a TERM sent to the script alone; signal the group
-    Process.kill "TERM", -pid
-    Process.wait pid
+    with_test_process(sbin/"ejabberdctl", "--node", node, "foreground",
+                      signal: "-TERM", pgroup: true, [:out, :err] => output_log.to_s) do
+      sleep 5
+      assert_equal "pong\n", shell_output("#{sbin}/ejabberdctl --node #{node} ping")
+      refute_match(/ERROR/i, output_log.read)
+    end
   end
 end

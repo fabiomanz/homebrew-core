@@ -1,5 +1,7 @@
 # name, path, upstream commit, held version, upstream version -- see release_holds.sh
-apr-util	Formula/a/apr-util.rb	c034486c217c34a3cb8e5f0f39b7d321ab3e5d47	1.6.5_1	1.6.6
-cargo-c	Formula/c/cargo-c.rb	c034486c217c34a3cb8e5f0f39b7d321ab3e5d47	0.10.26	0.10.28
-curl-impersonate	Formula/c/curl-impersonate.rb	c034486c217c34a3cb8e5f0f39b7d321ab3e5d47	2.3.2	2.3.3
-hiredis	Formula/h/hiredis.rb	c034486c217c34a3cb8e5f0f39b7d321ab3e5d47	1.5.0	1.5.1
+apr-util	Formula/a/apr-util.rb	c207e8c95a416e79e0530c4618cc5230c78bfc8a	1.6.5_1	1.6.6
+awscli	Formula/a/awscli.rb	c207e8c95a416e79e0530c4618cc5230c78bfc8a	2.42.4	2.42.5
+cargo-c	Formula/c/cargo-c.rb	c207e8c95a416e79e0530c4618cc5230c78bfc8a	0.10.26	0.10.28
+curl-impersonate	Formula/c/curl-impersonate.rb	c207e8c95a416e79e0530c4618cc5230c78bfc8a	2.3.2	2.3.3
+hiredis	Formula/h/hiredis.rb	c207e8c95a416e79e0530c4618cc5230c78bfc8a	1.5.0	1.5.1
+rust	Formula/r/rust.rb	c207e8c95a416e79e0530c4618cc5230c78bfc8a	1.100.0	1.100.1

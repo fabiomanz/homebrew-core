@@ -8,6 +8,7 @@ class Cppcms < Formula
   license "MIT"
 
   bottle do
+    manifest_sha256 "1925973dcc84f8f44c9d85bfbb90337ed68c70d5447f02dc502bb5451c922eb5"
     sha256 cellar: :any, arm64_golden_gate: "0d193ab4a71fec4a93c39b200b9208511d62f4265b99cea957091b8630698c91"
     sha256 cellar: :any, arm64_tahoe:       "fdbe60780dff88f91746b900e55406d3882aa7aa2a6c44a1823cebc5e1640c51"
     sha256 cellar: :any, arm64_sequoia:     "0e022eb61efcd8345ff984e1978dabee687bea4a071c22cdcd1c595050a45e5c"
@@ -98,13 +99,9 @@ class Cppcms < Formula
       }
     JSON
     system ENV.cxx, "hello.cpp", "-std=c++11", "-L#{lib}", "-lcppcms", "-o", "hello"
-    pid = spawn "./hello", "-c", "config.json"
-
-    begin
+    with_test_process("./hello", "-c", "config.json") do
       sleep 5 # grace time for server start
       assert_match "Hello World", shell_output("curl http://127.0.0.1:#{port}/hello")
-    ensure
-      Process.kill "SIGTERM", pid
     end
   end
 end

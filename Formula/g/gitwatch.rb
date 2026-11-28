@@ -7,6 +7,7 @@ class Gitwatch < Formula
   head "https://github.com/gitwatch/gitwatch.git", branch: "master"
 
   bottle do
+    manifest_sha256 "ae4cbed8e8a21466d682fd2809664d6781e27e0f6a2fc1fce4a37d2da5a9d83f"
     sha256 cellar: :any_skip_relocation, all: "b1cc4cb70d2d7d3aa194622c2383f66f52ab560be6d7ed981384714f1b415b5f"
   end
 
@@ -31,14 +32,13 @@ class Gitwatch < Formula
     system "git", "config", "--global", "user.email", "gitwatch-ci-test@brew.sh"
     system "git", "config", "--global", "user.name", "gitwatch"
     system "git", "init", repo
-    pid = spawn "gitwatch", "-m", "Update", repo, pgroup: true
-    sleep 15
-    touch repo/"file"
-    sleep 15
-    begin
+    # The sandbox denies FSEvents, so make `fswatch` poll instead
+    watcher_args = OS.mac? ? ["-e", "--monitor=poll_monitor"] : []
+    with_test_process("gitwatch", "-m", "Update", *watcher_args, repo, signal: "-TERM", pgroup: true) do
+      sleep 15
+      touch repo/"file"
+      sleep 15
       assert_match "Update", shell_output("git -C #{repo} log -1")
-    ensure
-      Process.kill "TERM", -pid
     end
   end
 end

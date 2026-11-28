@@ -7,6 +7,7 @@ class Geckodriver < Formula
   head "https://hg.mozilla.org/mozilla-central/", using: :hg
 
   bottle do
+    manifest_sha256 "1e3dce7e0b811472540ff3c1b8a981f316efd1bd8dfc8e48b1797cbb46be1231"
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f152989af65a6b97a2c0f9676673746a9ddddb732d1ae1ab39184464cebd8372"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c80513e266eed2909d701cf89e5ace3a30521bfb3642da7a42a61e7f73dc2bfd"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d1baf9559ae4cce4f9153659c328c6537c6afc5edf785038dbc3803a516040fa"
@@ -33,13 +34,11 @@ class Geckodriver < Formula
 
   test do
     test_port = free_port
-    pid = spawn bin/"geckodriver", "--port", test_port.to_s
-    sleep 2
+    with_test_process(bin/"geckodriver", "--port", test_port.to_s) do
+      sleep 2
 
-    # A functional test requires Firefox so we just make sure HTTP GET has a response
-    assert_equal "HTTP method not allowed", shell_output("curl -s http://localhost:#{test_port}/session")
-  ensure
-    Process.kill "TERM", pid
-    Process.wait pid
+      # A functional test requires Firefox so we just make sure HTTP GET has a response
+      assert_equal "HTTP method not allowed", shell_output("curl -s http://localhost:#{test_port}/session")
+    end
   end
 end

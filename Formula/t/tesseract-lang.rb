@@ -7,6 +7,7 @@ class TesseractLang < Formula
 
   bottle do
     rebuild 2
+    manifest_sha256 "78798e30216775291e7e097420d834c51d525aec12d44da039b5c0814d495541"
     sha256 cellar: :any_skip_relocation, all: "ff6da65c5137edfec72e7826768d1d8f3fb311c45eb8c0ba21cfff191a7ed56c"
   end
 
@@ -16,6 +17,8 @@ class TesseractLang < Formula
     url "https://raw.githubusercontent.com/tesseract-ocr/test/6dd816cdaf3e76153271daf773e562e24c928bf5/testing/eurotext.tif"
     sha256 "7b9bd14aba7d5e30df686fbb6f71782a97f48f81b32dc201a1b75afe6de747d6"
   end
+
+  deny_network_access!
 
   def install
     rm "eng.traineddata"

@@ -10,6 +10,7 @@ class Ballerburg < Formula
   end
 
   bottle do
+    manifest_sha256 "6c9933523b9a9abd29b5ec711b40ddbbcd9b1e0912da0b3887fcc8b69dd0945f"
     sha256 cellar: :any,                 arm64_golden_gate: "b61d957cf4f13b6b4d3d0b5c7712eaf3c0778865c4e285c0478b1d6567a7b93d"
     sha256 cellar: :any,                 arm64_tahoe:       "cccde44114f408fbef049352adf60ffd2bfcdca158cde6b665cbbf03801daaa6"
     sha256 cellar: :any,                 arm64_sequoia:     "dd778359cebe62952c33d6a2e5c2274f7e4784ccc9f02dd86ca15bb783487608"
@@ -38,10 +39,11 @@ class Ballerburg < Formula
 
   test do
     ENV["SDL_VIDEODRIVER"] = "dummy"
-    pid = spawn bin/"ballerburg"
-    sleep 3
-    Process.kill "TERM", pid
-    Process.wait pid
-    assert_equal 0, $CHILD_STATUS.exitstatus
+    with_test_process(bin/"ballerburg") do |pid|
+      sleep 3
+      Process.kill "TERM", pid
+      Process.wait pid
+      assert_equal 0, $CHILD_STATUS.exitstatus
+    end
   end
 end

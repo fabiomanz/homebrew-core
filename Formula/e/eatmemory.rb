@@ -6,6 +6,7 @@ class Eatmemory < Formula
   license "MIT"
 
   bottle do
+    manifest_sha256 "0281e134b811e4167fc51f399fdbba7cc90e98eec7c632ced834d044a3150233"
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0a97b859f91623f16fcae0870d82a59896776b1af26e72effd823d51d33877d6"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e32821696c3aeb3cb91bdfb6a7d6ce946b837707dd4133afa4e3b5b87bf6d25e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2f38c05758f9191f81ab04d306987795e6914885ceb9a117d9df8d8aff339978"
@@ -28,20 +29,12 @@ class Eatmemory < Formula
     assert_match(/^Eating .+ in chunks of .+\.\.\.$/, out)
     assert_match(/^Done, sleeping for 0 seconds before exiting\.\.\.$/, out)
 
-    pid = spawn bin/"eatmemory", "-t", "60", "10M", [:out, :err] => File::NULL
-    sleep 5
+    with_test_process(bin/"eatmemory", "-t", "60", "10M", [:out, :err] => File::NULL) do |pid|
+      sleep 5
 
-    rss_kb = shell_output("ps -o rss= -p #{pid}").to_i
-    assert_operator rss_kb, :>=, 10 * 1024
-    assert_operator rss_kb, :<, 20 * 1024
-  ensure
-    if pid
-      begin
-        Process.kill("TERM", pid)
-        Process.wait(pid)
-      rescue Errno::ESRCH, Errno::ECHILD
-        nil
-      end
+      rss_kb = shell_output("ps -o rss= -p #{pid}").to_i
+      assert_operator rss_kb, :>=, 10 * 1024
+      assert_operator rss_kb, :<, 20 * 1024
     end
   end
 end

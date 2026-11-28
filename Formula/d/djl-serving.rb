@@ -12,6 +12,7 @@ class DjlServing < Formula
   end
 
   bottle do
+    manifest_sha256 "663207993e5b39f09acefa66bae508527ab8546e75b75d52bd4cdf9873776f69"
     sha256 cellar: :any_skip_relocation, all: "56d09133de25da28047f2f8c5fe26b6ce8994b3c15a2b27d3758bccc4c4d419a"
   end
 
@@ -41,9 +42,10 @@ class DjlServing < Formula
     EOS
     ENV["MODEL_SERVER_HOME"] = testpath
     cp_r Dir["#{libexec}/*"], testpath
-    spawn bin/"djl-serving -f config.properties"
-    sleep 30
-    cmd = "http://127.0.0.1:#{port}/ping"
-    assert_match "{}\n", shell_output("curl --fail #{cmd}")
+    with_test_process(bin/"djl-serving", "-f", "config.properties") do
+      sleep 30
+      cmd = "http://127.0.0.1:#{port}/ping"
+      assert_match "{}\n", shell_output("curl --fail #{cmd}")
+    end
   end
 end
